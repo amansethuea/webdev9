@@ -2,7 +2,7 @@ header {
     background-color: #ffffff;
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 20px;
     position: fixed;
     top: 0;
@@ -11,11 +11,18 @@ header {
 header img {
     height: 50px;
     width: 50px;
+
 }
 nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+#landing_page_about_us{
+    padding-top: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify
 }
 nav ul {
     display: flex;
@@ -34,15 +41,17 @@ h1 {
     padding: 0;
     text-align: center;
     flex-wrap: wrap;
+    font-weight: 150;
+    padding-top: 10%;
 }
 h2 {
-    /*font-family: sans-serif;*/
+    font-family: "Cormorant Garamond";
     font-size: 30px;
     margin: 0;
     padding: 0;
     text-align: center;
+    font-weight: 100;
 }
-
 footer {
     background-color: black;
     color: white;
@@ -50,13 +59,11 @@ footer {
     text-align: left;
     padding-left: 5%;
 }
-
 body, html{
     font-family: "Cormorant Garamond";
     margin: 0;
     padding-top: 50px;
 }
-
 #contact_us_own_page{
     display: flex;
     flex-direction: column;
@@ -66,7 +73,6 @@ body, html{
     /*width: 70vh;*/
 
 }
-
 #about_us_main{
     display: flex;
     justify-content: flex-start;
@@ -74,19 +80,17 @@ body, html{
     align-items: center;
     height: 85vh;
 }
-
 #landing_tag{
     font-style: italic;
     font-weight: lighter;
     font-size: 150%;
 }
-
 #main_landing_page {
-    background-image: url('Hotel_Management_System/Images/AI Images for hotel/Video of rooms_28943e6c-924b-4d5d-bc29-2d5f3dfa5129.jpeg');
+    background-image: url('/Users/joshuanewton/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Assignments/Website Repo/webdev9/Hotel_Management_System/Customer/Images/AI_Images_for_hotel/Video_of_rooms/_1c19063f-ef5b-49b3-a940-b29119550af4.jpeg');
     /**/
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -127,22 +131,84 @@ body, html{
 
 
 .room-selection {
-    width: 200px;
-    height: 50vh;
-    overflow-y: scroll;
+    /*width: 200px;*/
+    width: 23%;
+    height: 75%;
+    /*overflow-y: scroll;*/
     border: 1px solid #000;
-    position: relative;
-    left: 5vw;
-    top: 5vh;
-
+    position: absolute;
+    left: 1vw;
+    /*top: 25vh;*/
 }
-
 .rooms {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+    /* border: 1px solid #000; */
+    position: absolute;
+    /* left: 1vw; */
 }
+
+.date-in-selection{
+    width: 23%;
+    height: 75%;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    position: absolute;
+    left: 26%;
+    /*top: 25%;*/
+}
+.date-out-selection{
+    width: 23%;
+    height: 75%;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    position: absolute;
+    left: 51%;
+    /*top: 25%;*/
+}
+.additional-booking-selection{
+    width: 23%;
+    height: 75%;
+    overflow-y: scroll;
+    border: 1px solid #000;
+    position: absolute;
+    right: 1vw;
+    /*top: 25%;*/
+}
+
 
 .room {
     padding: 10px;
     border-bottom: 1px solid #000;
+}
+.booking-mechanism{
+    padding-top: 5vh;
+    position: relative;
+    height: 80%;
+}
+
+@media screen and (max-width: 768px){
+    #landing_page_about_us{
+        padding-top: 10px;
+        padding-left: 1vh;
+        padding-right: 1vh;
+        text-align: justify;
+    }
+    .landing_page_container{
+        height: 50vh;
+        /*width: 100vh;*/
+        width: 100%;
+    }
+    #contact_us_form{
+        /*width: 67vh;*/
+        height: 20vh;
+    }
+    .h1{
+        font-size: 30px;
+        padding-top: 0;
+    }
+
 }
