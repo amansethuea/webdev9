@@ -5,26 +5,23 @@
         color: white;
         display: flex;
         justify-content: space-evenly;
-        padding: 20px;
+        padding: 20px 20px 0px 20px;
         position: fixed;
         top: 0;
         width: 98%;
     }
+
     header img {
         height: 50px;
         width: 50px;
-
+        margin-right: auto;
     }
+
+    /* nav bar styling */
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-    #landing_page_about_us {
-        padding-top: 10px;
-        padding-left: 10%;
-        padding-right: 10%;
-        text-align: justify
     }
 
     nav ul {
@@ -37,7 +34,44 @@
 
     nav li {
         margin-right: 20px;
+        padding: 20px;
+        cursor: pointer;
+        transition: transform 0.5s;
     }
+
+    nav ul li a:link,
+    nav ul li a:visited {
+        padding: 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+        color: #2d0945;
+        transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+        background-color: #ffffff;
+        transform: scale(1.1);
+    }
+
+    /* Adding | between every nav link */
+    span {
+        padding: 0px 5px;
+        border-left: 1px solid #2d0945;
+        display: inline-block;
+    }
+
+    /* removing border line from left side of Home nav link */
+    li:first-child span {
+        border-left: none;
+    }
+
+    #landing_page_about_us {
+        padding-top: 10px;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: justify
+    }
+
 
     h1 {
         /*font-family: serif;*/
@@ -67,7 +101,12 @@
         padding-left: 5%;
     }
 
-    body, html {
+    footer p {
+        font-size: small;
+    }
+
+    body,
+    html {
         font-family: "Cormorant Garamond";
         margin: 0;
         padding-top: 50px;
@@ -92,18 +131,24 @@
     }
 
     #landing_tag {
-        font-style: italic;
         font-weight: lighter;
         font-size: 150%;
     }
 
+    .landing_page_container {
+        height: 100vh;
+        /*width: 100vh;*/
+        width: 100%;
+    }
+
     #main_landing_page {
-        background-image: url('/Users/joshuanewton/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Assignments/Website Repo/webdev9/Hotel_Management_System/Customer/Images/AI_Images_for_hotel/Video_of_rooms/_1c19063f-ef5b-49b3-a940-b29119550af4.jpeg');
-        /**/
-        background-size: cover;
+        /* Lighten the image opacity */
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+            url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
+        background-size: auto;
         background-position: center;
-        height: 96vh;
-        width: 100vw;
+        height: 100vh;
+        width: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -116,33 +161,15 @@
         height: 50vh;
     }
 
-    .landing_page_container {
-        height: 85vh;
-        /*width: 100vh;*/
-        width: 100%;
+    .other_pages_main_header {
+        font-size: 60px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        flex-wrap: wrap;
+        font-weight: 150;
+        padding-top: 20px;
     }
-
-    #section1 {
-        background-color: red;
-        /*width: 100%;*/
-    }
-
-    #section2 {
-        background-color: blue;
-    }
-
-    #section3 {
-        background-color: green;
-    }
-
-    #section4 {
-        background-color: yellow;
-    }
-
-    #section5 {
-        background-color: rgba(128, 0, 128, 0.27);
-    }
-
 
     .room-selection {
         /*width: 200px;*/
@@ -196,10 +223,13 @@
         /*top: 25%;*/
     }
 
-
     .room {
         padding: 10px;
         border-bottom: 1px solid #000;
+    }
+
+    .selected_room {
+        background-color: yellowgreen;
     }
 
     .booking-mechanism {
@@ -207,11 +237,12 @@
         position: relative;
         height: 80%;
     }
-    .scrolling-img{
-    }
+
+    .scrolling-img {}
 }
+
 /*Small Screen*/
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     header {
         background-color: #ffffff;
         color: white;
@@ -221,25 +252,30 @@
         top: 0;
         width: 100%;
     }
-    #header_links{
+
+    #header_links {
         display: none;
     }
+
     header img {
         height: 50px;
         width: 50px;
         left: 5px;
         position: relative;
     }
-    #landing_page_about_us{
+
+    #landing_page_about_us {
         padding-top: 10px;
         padding-left: 1vh;
         padding-right: 1vh;
         text-align: justify;
     }
-    #contact_us_form{
+
+    #contact_us_form {
         /*width: 67vh;*/
         height: 20vh;
     }
+
     h1 {
         /*font-family: serif;*/
         font-size: 30px;
@@ -258,6 +294,7 @@
         text-align: center;
         font-weight: 100;
     }
+
     nav {
         display: flex;
         flex-direction: row;
@@ -282,6 +319,7 @@
     nav li {
         margin-right: 20px;
     }
+
     footer {
         background-color: black;
         color: white;
@@ -290,11 +328,13 @@
         padding-left: 5%;
     }
 
-    body, html {
+    body,
+    html {
         font-family: "Cormorant Garamond";
         margin: 0;
         padding-top: 50px;
     }
+
     .landing_page_container {
         height: 92vh;
         /*width: 100vh;*/

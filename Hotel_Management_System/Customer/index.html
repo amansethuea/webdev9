@@ -1,241 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>The Crown Hotel</title>
-  <link rel="stylesheet" type="text/css" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css" defer>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css"
+    defer>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../../Hotel_Management_System/JS/Customer_JS/Customer_JS.js"></script>
 </head>
+
 <body>
-<header>
-  <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png">
-  <nav>
-    <ul id="header_links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="room_booking.html">Book Now</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact_us.html">Contact us</a></li>
-      <li><a href="about_us.html">About us</a></li>
-      <li><a href="city_of_norwich.html">City of Norwich</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <img
+      src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png">
+    <nav>
+      <ul id="header_links">
+        <li><span><a href="index.html">Home</a></span></li>
+        <li><span><a href="room_booking.html">Book Now</a></span></span></li>
+        <li><span><a href="gallery.html">Gallery</a></span></span></li>
+        <li><span><a href="contact_us.html">Contact us</a></span></li>
+        <li><span><a href="about_us.html">About us</a></span></li>
+        <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-
-  <div class="landing_page_container" id="main_landing_page">
-    <h1 style="padding-top: 10vh; font-weight: lighter">Welcome To</h1>
-    <h1 style="padding-top: 10px; font-size: 500%; font-weight: bold">The Crown Hotel</h1>
-    <h2 id="landing_tag">Luxury for those who seek it</h2>
-  </div>
-  <div class="landing_page_container" id="section1"> <!-- This is the rooms section -->
-    <h1>Available Rooms</h1>
-    This will be where we place the rooms
-  </div>
-  <div class="landing_page_container" id="section2"> <!-- This is the facilities section -->
-    <h1>Available Facilities</h1>
-    This will be where we place the facilities
-
-  </div>
-
-  <div class="landing_page_container" id="section3"> <!-- This is the about us section -->
-    <h1>About Us</h1>
-    <p id='landing_page_about_us'>
-      We are The Crown Hotel, a new independent hotel
-      situated in the western edge of Norwich, close to the
-      hospital and research park. Whether you are visiting
-      Norwich for business or leisure, you will find our hotel a
-      comfortable and convenient place to stay. We have 32
-      rooms available for booking, all with en-suite bathrooms,
-      free Wi-Fi, flat-screen TVs, and tea and coffee making
-      facilities. You can choose from double or twin rooms,
-      with standard or superior options to suit your budget
-      and preferences. Our hotel also has a restaurant and bar,
-      where you can enjoy a delicious meal or a relaxing drink.
-      We pride ourselves on our friendly and professional
-      service, and we look forward to welcoming you to The
-      Crown Hotel.
-    </p>
-  </div>
-
-  <div class="landing_page_container" id="section4"> <!-- This is the contact us section -->
-      <h1>Contact Us</h1>
-    <p>Landline: 01603 422 839</p>
-    <p>Mobile: +44 7246 987264</p>
-    <p>Email:CrownHotelCommunication@outlook.com</p>
-    <p>Address: The Crown Hotel, Colney Ln,Norwich NR4 7UG</p>
-
-    <div>
-      <p>Required information is marked with an asterisk (*)</p>
-      <form method="post" action="" id="contact_us_form">
-      <fieldset id="contact_us_form">
-        <legend>Contact Form</legend>
-        <div>
-            <label for="name">Name*:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" autocapitalize="words" autocomplete="name" required autofocus>
-
-            <label for="email">Email*:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" pattern=".*@.*" required>
-
-            <label for="message">Message*:</label>
-            <textarea id="message" name="message" rows="5" cols="35" required placeholder="Your message here. (255 characters max)" wrap="soft"></textarea>
-        </div>
-        <input type="submit" value="Send Now" id="submit">
-
-      </form>
+  <main>
+    <div class="landing_page_container" id="main_landing_page">
+      <h1 style="padding-top: 10vh; font-weight: lighter;">Welcome To</h1>
+      <h1 style="padding-top: 10px; font-size: 500%; font-weight: bold">The Crown Hotel</h1>
+      <h2 id="landing_tag"><em>Luxury for those who seek it</em></h2>
     </div>
+  </main>
 
-  </div>
+  <footer>
+    <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+  </footer>
 
-  <div class="landing_page_container" id="section5">
-    <h1>The City of Norwich</h1>
-    <p>The City of Norwich has many vibrant attractions and activities to suit all tastes
-      while you continue your stay with us. Whether you are looking for a cozy afternoon
-      or a exiting entertainment, Norwich can supply it.</p>
-
-
-
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <h2>Norwich Cathedral</h2>
-          <img src="../../Hotel_Management_System/Images/online_images_for_website/Norwich_Cathedral_External_tall.jpeg"
-               alt="Photograph of Norwich Cathedral from an exterior shot looking up"
-               class='scrolling-img' width="400" height="400">
-        </div>
-        <div class="swiper-slide">
-          <h2>Sainburys Center</h2>
-          <img src="../../Hotel_Management_System/Images/online_images_for_website/Sainsbury_Centre_for_the_Visual_Arts_External_Large.jpeg"
-               alt="Photograph of Sainbury Centre, exterior shot looking up"
-               class='scrolling-img' width="400" height="400">
-        </div>
-        <div class="swiper-slide">
-          <h2>Eaton Park</h2>
-          <img src="../../Hotel_Management_System/Images/online_images_for_website/Eaton_Park_Lake_Side_External.jpg">
-        </div>
-        <div class="swiper-slide">
-          <h2>Norwich Theatre Royal</h2>
-          <img src="../../Hotel_Management_System/Images/online_images_for_website/Norwich_Theatre_Royal_External_Photograph.jpg">
-        </div>
-        <div class="swiper-slide">
-          <h2>Norwich Castle</h2>
-          <img src="../../Hotel_Management_System/Images/online_images_for_website/Norwich_Castle_Arial_Photograph.jpg">
-        </div>
-        <div class="swiper-slide">
-          <h2>Dragon Hall</h2>
-          <img src="../../Hotel_Management_System/Images/online_images_for_website/Dragon_Hall_Exterior_Photograph.jpg">
-        </div>
-        <div class="swiper-slide">
-          <h2>Norwich Market</h2>
-        </div>
-        <div class="swiper-slide">
-            <h2>Elm Hill</h2>
-        </div>
-        <div class="swiper-slide">
-            <h2>Strangers Hall</h2>
-        </div>
-        <div class="swiper-slide">
-            <h2>Plantation Garden</h2>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-          },
-        },
-      });
-    </script>
-<!--    <div>-->
-<!--      <h2>Norwich Cathedral</h2>-->
-<!--      <img src="Assignments/Hotel Website/Images For Website/Norwich_Cathedral_External_tall.jpeg" alt="Photograph of Norwich Cathedral from an exterior shot looking up" width="200" height="200">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <h2>Sainburys Center</h2>-->
-<!--        <img src="Assignments/Hotel Website/Images For Website/Sainsbury_Centre_for_the_Visual_Arts_External_Large.jpeg" alt="Photograph of Sainbury Centre, exterior shot looking up" width="200" height="200">-->
-<!--    </div>-->
-  </div>
-
-  <div class="landing_page_container" id="section2">
-    <h1>Secure Your Room Today</h1>
-    <div class="booking-mechanism" style="width: 100%">
-      <div class="room-selection">
-        <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Your Room Preference</h2>
-        <div class="rooms">
-          <div class="room"><!--Room 01 -->Trafalgar Suite</div>
-          <div class="room"><!--Room 02 -->Presidential Suite</div>
-          <div class="room"><!--Room 03 -->Royal Suite</div>
-          <div class="room"><!--Room 04 -->King Suite</div>
-          <div class="room"><!--Room 05 -->Queen Suite</div>
-          <div class="room"><!--Room 06 -->Emperor Suite</div>
-          <div class="room"><!--Room 07 -->Empress Suite</div>
-          <div class="room"><!--Room 08 -->Prince Suite</div>
-          <div class="room"><!--Room 09 -->Princess Suite</div>
-          <div class="room"><!--Room 10 -->Duke Suite</div>
-          <div class="room"><!--Room 11 -->Duchess Suite</div>
-          <div class="room"><!--Room 12 -->Marquis Suite</div>
-          <div class="room"><!--Room 13 -->Marchioness Suite</div>
-          <div class="room"><!--Room 14 -->Earl Suite</div>
-          <div class="room"><!--Room 15 -->Countess Suite</div>
-          <div class="room"><!--Room 16 -->Viscount Suite</div>
-          <div class="room"><!--Room 17 -->Viscountess Suite</div>
-          <div class="room"><!--Room 18 -->Baron Suite</div>
-          <div class="room"><!--Room 19 -->Baroness Suite</div>
-          <div class="room"><!--Room 20 -->Knight Suite</div>
-          <div class="room"><!--Room 21 -->Dame Suite</div>
-          <div class="room"><!--Room 22 -->Squire Suite</div>
-          <div class="room"><!--Room 23 -->Lady Suite</div>
-        </div>
-      </div>
-      <div class="date-in-selection">
-        <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Your Booking In Date</h2>
-        <div class="booking-dates">
-          ** Add a calendar here **
-
-        </div>
-      </div>
-      <div class="date-out-selection">
-        <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Your Booking Out Date</h2>
-        <div class="booking-dates">
-          ** Add a calendar here **
-        </div>
-
-      </div>
-      <div class="additional-booking-selection">
-        <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Any Additional Information</h2>
-        <input type="radio" id="toggle-on" name="toggle" checked>
-        <label for="toggle-on">On</label>
-        <input type="radio" id="toggle-off" name="toggle">
-        <label for="toggle-off">Off</label>
-        Need radio for:
-        Quiet Room
-        Superior room
-        resurant inclusion
-        wheelchair access
-        Gym access
-        _____________
-        Meeting or function room
-
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <p>The Crown Hotel 2023 . All rights reserved.</p>
-</footer>
 </body>
+
 </html>
