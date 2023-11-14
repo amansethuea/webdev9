@@ -192,6 +192,10 @@
         float: left;
     }
 
+    .selected_room {
+        background-color: yellowgreen;
+    }
+
     .contact_form_box {
         border: 2px solid #2d0945;
         margin: 10px;
