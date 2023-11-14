@@ -35,3 +35,9 @@
 //     "swiper"
 // ]
 // }
+
+var addclass = 'selected_room';
+var $cols = $('.room').click(function(e) {
+    $cols.removeClass(addclass);
+    $(this).addClass(addclass);
+});
