@@ -249,6 +249,18 @@
         margin: 2px;
     }
 
+    .imgbtn {
+        background-color: #9e9b9b;
+        color: white;
+        font-size: 18px;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: 0px 0px 2px 1px #bdbbbb;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        border: 1px solid #ebe8e8;
+        margin: 35px 0px 50px 496.4px;
+    }
+
     .btn:hover {
         background-color: #1869ac;
         box-shadow: 0px 0px 3px 3px #9e9b9b;
@@ -334,14 +346,59 @@
         border-bottom: 1px solid #000;
     }
 
-    .selected_room {
-        background-color: yellowgreen;
-    }
-
     .booking-mechanism {
         padding-top: 5vh;
         position: relative;
         height: 80%;
+    }
+
+    .photo-gallery {
+        margin: 10px;
+        padding: 20px;
+        width: 30%;
+        height: 320px;
+        margin: 25px 10px 20px 500px;   
+    }
+
+    .photo {
+        margin: 10px;
+        cursor: pointer;
+        transition: transform 0.5s;
+        
+    }
+
+    .img-caption {
+        text-align: center;
+    }
+
+    .photo:hover {
+        transform: scale(0.95);
+    }
+
+    .mySlides {
+        height: 400px;
+        width: 500px;
+        margin: 0px;
+        padding:0px;
+    }
+    .facilities {
+        padding: 30px;
+        margin: auto;
+    }
+
+    .facility_image {
+        height: 200px;
+        width: 15%;
+        float: left;
+        padding: 30px;
+        margin-right: 0px; 
+    }
+    .facility_para {
+        float: left;
+        padding-left: 0px;
+        color: #2d0945;
+        text-decoration: solid;
+        
     }
 
     /*
