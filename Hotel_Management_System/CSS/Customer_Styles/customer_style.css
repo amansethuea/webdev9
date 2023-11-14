@@ -122,12 +122,8 @@
 
     }
 
-    #about_us_main {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: center;
-        height: 85vh;
+    #about_us_para {
+        padding: 2vh 30vh 30vh 30vh;
     }
 
     #landing_tag {
@@ -161,6 +157,18 @@
         height: 50vh;
     }
 
+    .aboutus_sub_heading {
+        font-weight: lighter;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about_para {
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+
     .contact_sub_heading {
         font-weight: lighter;
         justify-content: center;
@@ -176,6 +184,12 @@
         width: 30%;
         margin: 25px 10px 20px 500px;
         background-color: #eaeaea88;
+    }
+
+    .about_us_box {
+        margin: 10px;
+        padding: 10px;
+        float: left;
     }
 
     .contact_form_box {
