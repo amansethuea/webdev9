@@ -3,12 +3,15 @@
 <head>
   <title>The Crown Hotel</title>
   <link rel="stylesheet" type="text/css" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css" defer>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../../Hotel_Management_System/JS/Customer_JS/Customer_JS.js"></script>
 </head>
 <body>
 <header>
   <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png">
   <nav>
-    <ul>
+    <ul id="header_links">
       <li><a href="index.html">Home</a></li>
       <li><a href="room_booking.html">Book Now</a></li>
       <li><a href="gallery.html">Gallery</a></li>
@@ -26,15 +29,14 @@
     <h1 style="padding-top: 10px; font-size: 500%; font-weight: bold">The Crown Hotel</h1>
     <h2 id="landing_tag">Luxury for those who seek it</h2>
   </div>
-
   <div class="landing_page_container" id="section1"> <!-- This is the rooms section -->
     <h1>Available Rooms</h1>
     This will be where we place the rooms
   </div>
-
   <div class="landing_page_container" id="section2"> <!-- This is the facilities section -->
     <h1>Available Facilities</h1>
     This will be where we place the facilities
+
   </div>
 
   <div class="landing_page_container" id="section3"> <!-- This is the about us section -->
@@ -91,14 +93,79 @@
     <p>The City of Norwich has many vibrant attractions and activities to suit all tastes
       while you continue your stay with us. Whether you are looking for a cozy afternoon
       or a exiting entertainment, Norwich can supply it.</p>
-    <div>
-      <h2>Norwich Cathedral</h2>
-      <img src="Assignments/Hotel Website/Images For Website/Norwich_Cathedral_External_tall.jpeg" alt="Photograph of Norwich Cathedral from an exterior shot looking up" width="200" height="200">
+
+
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h2>Norwich Cathedral</h2>
+          <img src="../../Hotel_Management_System/Images/online_images_for_website/Norwich_Cathedral_External_tall.jpeg"
+               alt="Photograph of Norwich Cathedral from an exterior shot looking up"
+               class='scrolling-img' width="400" height="400">
+        </div>
+        <div class="swiper-slide">
+          <h2>Sainburys Center</h2>
+          <img src="../../Hotel_Management_System/Images/online_images_for_website/Sainsbury_Centre_for_the_Visual_Arts_External_Large.jpeg"
+               alt="Photograph of Sainbury Centre, exterior shot looking up"
+               class='scrolling-img' width="400" height="400">
+        </div>
+        <div class="swiper-slide">
+          <h2>Eaton Park</h2>
+          <img src="../../Hotel_Management_System/Images/online_images_for_website/Eaton_Park_Lake_Side_External.jpg">
+        </div>
+        <div class="swiper-slide">
+          <h2>Norwich Theatre Royal</h2>
+          <img src="../../Hotel_Management_System/Images/online_images_for_website/Norwich_Theatre_Royal_External_Photograph.jpg">
+        </div>
+        <div class="swiper-slide">
+          <h2>Norwich Castle</h2>
+          <img src="../../Hotel_Management_System/Images/online_images_for_website/Norwich_Castle_Arial_Photograph.jpg">
+        </div>
+        <div class="swiper-slide">
+          <h2>Dragon Hall</h2>
+          <img src="../../Hotel_Management_System/Images/online_images_for_website/Dragon_Hall_Exterior_Photograph.jpg">
+        </div>
+        <div class="swiper-slide">
+          <h2>Norwich Market</h2>
+        </div>
+        <div class="swiper-slide">
+            <h2>Elm Hill</h2>
+        </div>
+        <div class="swiper-slide">
+            <h2>Strangers Hall</h2>
+        </div>
+        <div class="swiper-slide">
+            <h2>Plantation Garden</h2>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div>
-        <h2>Sainburys Center</h2>
-        <img src="Assignments/Hotel Website/Images For Website/Sainsbury_Centre_for_the_Visual_Arts_External_Large.jpeg" alt="Photograph of Sainbury Centre, exterior shot looking up" width="200" height="200">
-    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+      });
+    </script>
+<!--    <div>-->
+<!--      <h2>Norwich Cathedral</h2>-->
+<!--      <img src="Assignments/Hotel Website/Images For Website/Norwich_Cathedral_External_tall.jpeg" alt="Photograph of Norwich Cathedral from an exterior shot looking up" width="200" height="200">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <h2>Sainburys Center</h2>-->
+<!--        <img src="Assignments/Hotel Website/Images For Website/Sainsbury_Centre_for_the_Visual_Arts_External_Large.jpeg" alt="Photograph of Sainbury Centre, exterior shot looking up" width="200" height="200">-->
+<!--    </div>-->
   </div>
 
   <div class="landing_page_container" id="section2">
