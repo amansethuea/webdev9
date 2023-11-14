@@ -1,53 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>The Crown Hotel</title>
     <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-<header>
-    <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png" alt="The Crown Hotel logo">
-    <nav>
-        <ul id="header_links">
-          <li><span><a href="index.html">Home</a></span></li>
-          <li><span><a href="room_booking.html">Book Now</a></span></span></li>
-          <li><span><a href="gallery.html">Gallery</a></span></span></li>
-          <li><span><a href="contact_us.html">Contact us</a></span></li>
-          <li><span><a href="about_us.html">About us</a></span></li>
-          <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
-        </ul>
-      </nav>
-</header>
+    <header>
+        <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="The Crown Hotel logo">
+        <nav>
+            <ul id="header_links">
+                <li><span><a href="index.html">Home</a></span></li>
+                <li><span><a href="room_booking.html">Book Now</a></span></span></li>
+                <li><span><a href="gallery.html">Gallery</a></span></span></li>
+                <li><span><a href="contact_us.html">Contact us</a></span></li>
+                <li><span><a href="about_us.html">About us</a></span></li>
+                <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
+            </ul>
+        </nav>
+    </header>
 
-<main id="contact_us_own_page">
-    <h1>Contact Us</h1>
+    <main>
+        <div class="landing_page_container">
+            <h1 class="other_pages_main_header">Contact Information</h1>
+            <h4 class="contact_sub_heading"><em>We are here to assist</em></h4>
+            <div class="contact_box"><span class="fa fa-phone"></span>+44 7407267950</div>
+            <div class="contact_box"><span class="fa fa-mail-bulk"></span>thecrownhotel@gmail.com</div>
+            <div class="contact_form_box"><span class="fa fa-person-booth"> Quick Inquiry Booth</span>
+                <form>
+                    <div class="form-element">
+                        <div class="form-element">
+                            <div class="form-label"><label for="name">Name</label></div>
+                            <div class="form-control-container"><input type="text" class="form-control" id="name"
+                                    name="name" autofocus="autofocus" placeholder="Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="email">Email</label></div>
+                        <div class="form-control-container"><input type="email" class="form-control" id="email"
+                                name="email" placeholder="Email Address" required="required" maxlength="32" /></div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="mobile">Mobile No.</label></div>
+                        <div class="form-control-container"><input type="number" class="form-control" id="mobile"
+                                name="mobile" placeholder="+44 07-(xxx)-(xxx)-(xxx)" required="required" /></div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="message">Inquiry Message</label></div>
+                        <div class="form-control-container"><textarea id="message" class="form-control" id="message"
+                                name="message" rows="5" cols="35" required
+                                placeholder="Your message here. (255 characters max)" wrap="soft"
+                                maxlength="255"></textarea></div>
+                    </div>
+                    <div class="contact-form-footer">
+                        <button class="btn">
+                            <input type="image"
+                                src="../../Hotel_Management_System/Images/online_images_for_website/check_mark_icon.png"
+                                width="10px" /> Submit
+                        </button>
+                        <input type="reset" class="btn reset-button" value="Reset" />
+                    </div>
+                </form>
 
-    <div>
-        <p>Required information is marked with an asterisk (*)</p>
-
-        <fieldset id="contact_us_form">
-            <legend>Contact form</legend>
-
-            <div>
-                <label for="name">Name*:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" autocapitalize="words" autocomplete="name" required autofocus>
-                <!-- </div>
-
-                <div> -->
-                <label for="email">Email*:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" pattern=".*@.*" required>
             </div>
 
-            <div>
-                <label for="message">Message*:</label>
-                <textarea id="message" name="message" rows="5" cols="35" required placeholder="Your message here. (255 characters max)" wrap="soft"></textarea>
-            </div>
+        </div>
 
-            <input type="submit" value="Send Now" id="submit">
-    </div>
-</main>
-<footer>
-    <p>The Crown Hotel 2023 . All rights reserved.</p>
-</footer>
+    </main>
+
+    <footer>
+        <p>The Crown Hotel 2023 . All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
