@@ -161,6 +161,98 @@
         height: 50vh;
     }
 
+    .contact_sub_heading {
+        font-weight: lighter;
+        justify-content: center;
+        text-align: center;
+        padding-top: 0px;
+    }
+
+    .contact_box {
+        border: 2px solid #2d0945;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 1px 1px 3px 2px purple;
+        width: 30%;
+        margin: 25px 10px 20px 500px;
+        background-color: #eaeaea88;
+    }
+
+    .contact_form_box {
+        border: 2px solid #2d0945;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 1px 1px 3px 2px purple;
+        width: 30%;
+        height: 320px;
+        margin: 25px 10px 20px 500px;
+        background-color: #eaeaea88;
+    }
+
+    .form-element {
+        height: 35px;
+        padding: auto;
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        width: 30%;
+        float: left;
+        font-size: 17px;
+    }
+
+    .form-control-container {
+        width: 70%;
+        float: left;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid #5e9adf;
+        transition: box-shadow 0.3s;
+    }
+
+    /* When the cursor is inside the form element, for eg. inside a text-box */
+    .form-control:focus {
+        box-shadow: 0px 0px 3px 2px #2b77be;
+        outline: none;
+    }
+
+    .btn {
+        background-color: #3c84be;
+        color: white;
+        padding: 10px 15px;
+        /* top bottom is 10px, left and right is 15px */
+        font-size: 18px;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: 0px 0px 2px 1px #bdbbbb;
+        /* no for top/bottom/right/left borders. 2px is blurness. 1 px is spread */
+        transition: background-color 0.3s, box-shadow 0.3s;
+        border: 1px solid #ebe8e8;
+        margin: 2px;
+    }
+
+    .btn:hover {
+        background-color: #1869ac;
+        box-shadow: 0px 0px 3px 3px #9e9b9b;
+    }
+
+    .reset-button {
+        background-color: #ee3c3c;
+    }
+
+    .reset-button:hover {
+        background-color: #c72727;
+    }
+
+    .contact-form-footer {
+        padding: 10px;
+        text-align: right;
+    }
+
     .other_pages_main_header {
         font-size: 60px;
         margin: 0;
@@ -238,7 +330,9 @@
         height: 80%;
     }
 
+    /*
     .scrolling-img {}
+    */
 }
 
 /*Small Screen*/
