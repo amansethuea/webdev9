@@ -157,6 +157,15 @@
         height: 50vh;
     }
 
+    #room-selection {
+        width: auto;
+        height: 20px;
+        background-color: #5619b8;
+        border-radius: 10px;
+        color: white;
+        font-size: medium;
+    }
+
     .aboutus_sub_heading {
         font-weight: lighter;
         justify-content: center;
@@ -464,6 +473,7 @@
         text-decoration: solid;
 
     }
+
 
     /*
     .scrolling-img {}

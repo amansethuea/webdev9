@@ -31,20 +31,20 @@
                         <div class="form-element">
                             <div class="form-label"><label for="roomtype">Select Room Type</label></div>
                             <div class="form-control-container">
-                                <div class="dropdown">
-                                    <button onclick="myFunction()" class="dropbtn">Select Room</button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                      <a href="#superior">Superior</a>
-                                      <a href="#standard">Standard</a>
-                                      <a href="#ensuite">Ensuite</a>
-                                    </div>
-                                  </div>
+                                <select id="room-selection" name="room_preference" required>
+                                    <option value="">Choose a Room from the List</option>
+                                    <option value="connecting">Standard</option>
+                                    <option value="adjoining">Superior</option>
+                                    <option value="adjacent">Suite</option>
+                                </select>
+
                             </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="guest">No. of Guests</label></div>
                             <div class="form-control-container"><input type="number" class="form-control" id="guest"
-                                    name="guest" placeholder="Enter no. of guests" required="required" autofocus="autofocus" /></div>
+                                    name="guest" placeholder="Enter no. of guests" required="required"
+                                    autofocus="autofocus" /></div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="rooms">No. of Rooms</label></div>
@@ -54,14 +54,14 @@
 
                         <div class="form-element">
                             <div class="form-label"><label for="firstname">First Name</label></div>
-                            <div class="form-control-container"><input type="text" class="form-control" id="firstname" name="firstname"
-                                    placeholder="Firstname" required="required" />
+                            <div class="form-control-container"><input type="text" class="form-control" id="firstname"
+                                    name="firstname" placeholder="Firstname" required="required" />
                             </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="firstname">Last Name</label></div>
-                            <div class="form-control-container"><input type="text" class="form-control" id="lastname" name="lastname"
-                                    placeholder="Lastname" required="required" />
+                            <div class="form-control-container"><input type="text" class="form-control" id="lastname"
+                                    name="lastname" placeholder="Lastname" required="required" />
                             </div>
                         </div>
                         <div class="form-element">
@@ -71,13 +71,13 @@
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="email">Email ID</label></div>
-                            <div class="form-control-container"><input type="email" class="form-control"
-                                    id="email" name="email" placeholder="Email address" required="required"
-                                    maxlength="32" /></div>
+                            <div class="form-control-container"><input type="email" class="form-control" id="email"
+                                    name="email" placeholder="Email address" required="required" maxlength="32" /></div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="file">Proof of ID</label></div>
-                            <div class="form-control-container"><input type="file" class="form-control" id="file" name="file" />
+                            <div class="form-control-container"><input type="file" class="form-control" id="file"
+                                    name="file" />
                             </div>
                         </div>
                     </div>
@@ -90,27 +90,6 @@
         </div>
 
     </main>
-    <script>
-        /* When the user clicks on the button, 
-        toggle between hiding and showing the dropdown content */
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-          if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-            }
-          }
-        }
-        </script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
