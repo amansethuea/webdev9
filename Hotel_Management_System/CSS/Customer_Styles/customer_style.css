@@ -242,18 +242,20 @@
     }
 
     .btn {
-        background-color: #3c84be;
+        display: inline-block;
+        background-color: #5619b8;
         color: white;
-        padding: 10px 15px;
-        /* top bottom is 10px, left and right is 15px */
-        font-size: 18px;
-        border-radius: 3px;
+        text-transform: uppercase;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        border: 2px solid #B8195A;
+        border-radius: 10px;
         cursor: pointer;
-        box-shadow: 0px 0px 2px 1px #bdbbbb;
-        /* no for top/bottom/right/left borders. 2px is blurness. 1 px is spread */
-        transition: background-color 0.3s, box-shadow 0.3s;
-        border: 1px solid #ebe8e8;
-        margin: 2px;
+
     }
 
     .imgbtn {
@@ -269,16 +271,16 @@
     }
 
     .btn:hover {
-        background-color: #1869ac;
+        background-color: #B8195A;
         box-shadow: 0px 0px 3px 3px #9e9b9b;
     }
 
     .reset-button {
-        background-color: #ee3c3c;
+        background-color: #5619b8;
     }
 
     .reset-button:hover {
-        background-color: #c72727;
+        background-color: #B8195A;
     }
 
     .contact-form-footer {
