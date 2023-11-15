@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Crown Hotel</title>
+    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="The Crown Hotel logo">
+        <nav>
+            <ul id="header_links">
+                <li><span><a href="checkin_details.html">Checkin Details</a></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="landing_page_container">
+            <h1 class="other_pages_main_header">Customer Check-in</h1>
+            <h4 class="reception_sub_heading"><em>Customer Details</em></h4>
+            <form>
+                <div class="card signup-card">
+                    <div class="card-header">Guest Details</div>
+                    <div class="card-body">
+                        <div class="form-element">
+                            <div class="form-label"><label for="roomtype">Select Room Type</label></div>
+                            <div class="form-control-container">
+                                <div class="dropdown">
+                                    <button onclick="myFunction()" class="dropbtn">Select Room</button>
+                                    <div id="myDropdown" class="dropdown-content">
+                                      <a href="#superior">Superior</a>
+                                      <a href="#standard">Standard</a>
+                                      <a href="#ensuite">Ensuite</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div class="form-element">
+                            <div class="form-label"><label for="firstname">First Name</label></div>
+                            <div class="form-control-container"><input type="text" class="form-control" id="firstname" name="firstname"
+                                    placeholder="Firstname" required="required" autofocus="autofocus" />
+                            </div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label"><label for="firstname">Last Name</label></div>
+                            <div class="form-control-container"><input type="text" class="form-control" id="lastname" name="lastname"
+                                    placeholder="Lastname" required="required" />
+                            </div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label"><label for="mobile">Mobile Number</label></div>
+                            <div class="form-control-container"><input type="number" class="form-control" id="mobile"
+                                    name="mobile" placeholder="+44 07-(xxx)-(xxx)-(xxx)" required="required" /></div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label"><label for="email">Email ID</label></div>
+                            <div class="form-control-container"><input type="email" class="form-control"
+                                    id="email" name="email" placeholder="Email address" required="required"
+                                    maxlength="32" /></div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label"><label for="guest">No. of Guests</label></div>
+                            <div class="form-control-container"><input type="number" class="form-control" id="guest"
+                                    name="guest" placeholder="Enter no. of guests" required="required" /></div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label"><label for="file">Proof of ID</label></div>
+                            <div class="form-control-container"><input type="file" class="form-control" id="file" name="file" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn">
+                            <input type="image"
+                                src="../../Hotel_Management_System/Images/online_images_for_website/check_mark_icon.png"
+                                width="10px" /> Fetch Details
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+    <footer>
+        <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+    </footer>
+
+</body>
+
+</html>

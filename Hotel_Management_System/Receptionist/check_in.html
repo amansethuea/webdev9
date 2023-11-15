@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -25,63 +26,66 @@
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-in</h1>
             <h4 class="reception_sub_heading"><em>Onboarding Customers</em></h4>
-            <div class="checkin_box">
-                <div class="checkin_form_box"><span class="fa fa-person-booth">Check-in Details</span>
-                    <form>
+            <form>
+                <div class="card signup-card">
+                    <div class="card-header">Check-in Details</div>
+                    <div class="card-body">
                         <div class="form-element">
-                            <div class="form-element">
-                                <div class="form-label"><label for="referenceno">Enter Booking Reference no</label></div>
-                                <div class="form-control-container"><input type="text" class="form-control" id="bookingref"
-                                        name="bookingref" autofocus="autofocus" placeholder="bookingRef" />
-                                </div>
+                            <div class="form-label">
+                                <label for="date">Check-in Date</label>
+                            </div>
+                            <div class="form-control-container">
+                                <input type="date" class="form-control" id="checkindate" name="checkindate"
+                                    required="required" />
                             </div>
                         </div>
                         <div class="form-element">
-                            <div class="form-element">
-                                <div class="form-label"><label for="firstname">First Name</label></div>
-                                <div class="form-control-container"><input type="text" class="form-control" id="firstname"
-                                        name="firstname" placeholder="firstName" />
-                                </div>
+                            <div class="form-label">
+                                <label for="date">Checkout Date</label>
+                            </div>
+                            <div class="form-control-container">
+                                <input type="date" class="form-control" id="checkoutdate" name="checkoutdate"
+                                    required="required" />
                             </div>
                         </div>
-                        <div class="form-element">
-                            <div class="form-element">
-                                <div class="form-label"><label for="lastname">Last Name</label></div>
-                                <div class="form-control-container"><input type="text" class="form-control" id="lastname"
-                                        name="lastname" placeholder="lastName" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-element">
-                            <div class="form-label"><label for="email">Email</label></div>
-                            <div class="form-control-container"><input type="email" class="form-control" id="email"
-                                    name="email" placeholder="Email Address" required="required" maxlength="32" /></div>
-                        </div>
-                        <div class="form-element">
-                            <div class="form-label"><label for="mobile">Mobile No.</label></div>
-                            <div class="form-control-container"><input type="number" class="form-control" id="mobile"
-                                    name="mobile" placeholder="+44 07-(xxx)-(xxx)-(xxx)" required="required" /></div>
-                        </div>
-                        <div class="contact-form-footer">
-                            <button class="btn">
-                                <input type="image"
-                                    src="../../Hotel_Management_System/Images/online_images_for_website/check_mark_icon.png"
-                                    width="10px" /> Submit
-                            </button>
-                            <input type="reset" class="btn reset-button" value="Reset" />
-                        </div>
-                    </form>
-
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn" id="redirectButton">
+                            <input type="image"
+                                src="../../Hotel_Management_System/Images/online_images_for_website/check_mark_icon.png"
+                                width="10px" /> Check Availability
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
+            <form>
+                <div class="card signup-card">
+                    <div class="card-header">Already have a booking ?</div>
+                    <div class="card-body">
+                        <div class="form-element">
+                            <div class="form-label"><label for="referenceno">Reference No.</label></div>
+                            <div class="form-control-container"><input type="referenceno" class="form-control"
+                                    id="referenceno" name="referenceno" placeholder="Reference Number" required="required"
+                                    maxlength="32" /></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn">
+                            <input type="image"
+                                src="../../Hotel_Management_System/Images/online_images_for_website/check_mark_icon.png"
+                                width="10px" /> Fetch Details
+                        </button>
+                    </div>
+                </div>
+            </form>
 
         </div>
 
     </main>
-
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
+
 </body>
 
 </html>

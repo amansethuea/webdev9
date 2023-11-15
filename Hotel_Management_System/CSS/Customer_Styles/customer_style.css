@@ -183,6 +183,20 @@
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         margin: 25px 10px 20px 500px;
+        margin: auto;
+        background-color: #eaeaea88;
+    }
+
+    .contact_form_box {
+        border: 2px solid #2d0945;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 1px 1px 3px 2px purple;
+        width: 30%;
+        height: 320px;
+        margin: 25px 10px 20px 500px;
+        margin: auto;
+        margin-top: 20px;
         background-color: #eaeaea88;
     }
 
@@ -194,17 +208,6 @@
 
     .selected_room {
         background-color: yellowgreen;
-    }
-
-    .contact_form_box {
-        border: 2px solid #2d0945;
-        margin: 10px;
-        padding: 20px;
-        box-shadow: 1px 1px 3px 2px purple;
-        width: 30%;
-        height: 320px;
-        margin: 25px 10px 20px 500px;
-        background-color: #eaeaea88;
     }
 
     .form-element {
