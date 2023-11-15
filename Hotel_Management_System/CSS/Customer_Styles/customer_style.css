@@ -9,6 +9,8 @@
         position: fixed;
         top: 0;
         width: 98%;
+        z-index: 2;
+        align-items: center;
     }
 
     header img {
@@ -33,10 +35,25 @@
     }
 
     nav li {
-        margin-right: 20px;
-        padding: 20px;
+        /*margin-right: 20px;*/
+        /*padding: 20px;*/
         cursor: pointer;
         transition: transform 0.5s;
+    }
+    #header-spacer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #header-links{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
     }
 
     nav ul li a:link,
@@ -123,23 +140,57 @@
     }
 
     #about_us_para {
-        padding: 2vh 30vh 30vh 30vh;
+        /*padding: 2vh 30vh 30vh 30vh;*/
     }
 
     #landing_tag {
         font-weight: lighter;
         font-size: 150%;
+        color: white;
     }
 
     .landing_page_container {
-        height: 100vh;
+        height: 85vh;
         /*width: 100vh;*/
         width: 100%;
+    }
+    .booking-dates {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+    .booking-date-selections {
+        padding: 50px 10px 50px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        align-content: stretch;
+        bottom: 20%;
+    }
+    h3.booking-dates-heading {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .addit-info-sections{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5% 0 2%
+    }
+    .addit-info-text{
     }
 
     #main_landing_page {
         /* Lighten the image opacity */
-        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        background-image: linear-gradient(rgb(255 255 255 / 7%),rgb(0 0 0 / 27%)),
             url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
         background-size: auto;
         background-position: center;
@@ -292,6 +343,10 @@
         font-weight: 150;
         padding-top: 20px;
     }
+    .light-shadow{
+        width: 30%;
+        box-shadow: -3px 3px 6px 0px #0000004f;
+    }
 
     .room-selection {
         /*width: 200px;*/
@@ -299,8 +354,8 @@
         height: 75%;
         /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
-        left: 1vw;
+        position: relative;
+        /*left: 1vw;*/
         /*top: 25vh;*/
     }
 
@@ -315,12 +370,12 @@
         /* left: 1vw; */
     }
 
-    .date-in-selection {
+    .stay-duration {
         width: 23%;
         height: 75%;
         overflow-y: scroll;
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         left: 26%;
         /*top: 25%;*/
     }
@@ -330,7 +385,7 @@
         height: 75%;
         overflow-y: scroll;
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         left: 51%;
         /*top: 25%;*/
     }
@@ -340,7 +395,7 @@
         height: 75%;
         overflow-y: scroll;
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         right: 1vw;
         /*top: 25%;*/
     }
@@ -348,12 +403,27 @@
     .room {
         padding: 10px;
         border-bottom: 1px solid #000;
+        cursor: context-menu;
+    }
+
+    .booking-box{
+        width: 30%;
+    }
+
+    .soft-box{
+        border-radius: 10px;
     }
 
     .booking-mechanism {
         padding-top: 5vh;
         position: relative;
         height: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .photo-gallery {
@@ -369,6 +439,11 @@
         cursor: pointer;
         transition: transform 0.5s;
         
+    }
+    .room:hover {
+        font-size: large;
+        font-weight: 400;
+
     }
 
     .img-caption {
