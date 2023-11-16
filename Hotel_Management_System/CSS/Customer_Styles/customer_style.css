@@ -9,6 +9,8 @@
         position: fixed;
         top: 0;
         width: 98%;
+        z-index: 2;
+        align-items: center;
     }
 
     header img {
@@ -33,13 +35,11 @@
     }
 
     nav li {
-        margin-right: 20px;
-        padding: 20px;
+        /*margin-right: 20px;*/
+        /*padding: 20px;*/
         cursor: pointer;
         transition: transform 0.5s;
     }
-<<<<<<< Updated upstream
-=======
 
     #header-spacer {
         display: flex;
@@ -51,13 +51,14 @@
         width: 100%;
     }
 
+
     #header-links {
+
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
     }
->>>>>>> Stashed changes
 
     nav ul li a:link,
     nav ul li a:visited {
@@ -141,25 +142,25 @@
     }
 
     #about_us_para {
-        padding: 2vh 30vh 30vh 30vh;
+        /*padding: 2vh 30vh 30vh 30vh;*/
     }
 
     #landing_tag {
         font-weight: lighter;
         font-size: 150%;
+        color: white;
     }
 
     .landing_page_container {
-        height: 100vh;
+        height: 85vh;
         /*width: 100vh;*/
         width: 100%;
     }
-<<<<<<< Updated upstream
 
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-=======
+    }
 
     .booking-dates {
         display: flex;
@@ -201,7 +202,44 @@
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
->>>>>>> Stashed changes
+    }
+    .booking-dates {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+    .booking-date-selections {
+        padding: 50px 10px 50px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        align-content: stretch;
+        bottom: 20%;
+    }
+    h3.booking-dates-heading {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .addit-info-sections{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5% 0 2%
+    }
+    .addit-info-text{
+    }
+
+    #main_landing_page {
+        /* Lighten the image opacity */
+        background-image: linear-gradient(rgb(255 255 255 / 7%),rgb(0 0 0 / 27%)),
             url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
         background-size: auto;
         background-position: center;
@@ -244,6 +282,7 @@
         padding: 20px;
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
+        /*margin: 25px 10px 20px 500px;*/
         margin: 25px 10px 20px 500px;
         margin: auto;
         background-color: #eaeaea88;
@@ -251,11 +290,12 @@
 
     .contact_form_box {
         border: 2px solid #2d0945;
-        margin: 10px;
+        /*margin: 10px;*/
         padding: 20px;
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         height: 320px;
+        /*margin: 25px 10px 20px 500px;*/
         margin: 25px 10px 20px 500px;
         margin: auto;
         margin-top: 20px;
@@ -349,6 +389,8 @@
     }
 
     .btn:hover {
+        background-color: #1869ac;
+        box-shadow: 0 0 3px 3px #9e9b9b;
         background-color: #B8195A;
         box-shadow: 0px 0px 3px 3px #9e9b9b;
         background-color: #1869ac;
@@ -376,8 +418,14 @@
         font-weight: 150;
         padding: 20px 0 0;
     }
-<<<<<<< Updated upstream
-=======
+    .light-shadow{
+        width: 30%;
+        box-shadow: -3px 3px 6px 0 #0000004f;
+    }
+    .light-shadow{
+        width: 30%;
+        box-shadow: -3px 3px 6px 0px #0000004f;
+    }
 
     .light-shadow {
         width: 30%;
@@ -388,7 +436,6 @@
         width: 30%;
         box-shadow: -3px 3px 6px 0px #0000004f;
     }
->>>>>>> Stashed changes
 
     .room-selection {
         /*width: 200px;*/
@@ -396,8 +443,8 @@
         height: 75%;
         /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
-        left: 1vw;
+        position: relative;
+        /*left: 1vw;*/
         /*top: 25vh;*/
     }
 
@@ -412,12 +459,12 @@
         /* left: 1vw; */
     }
 
-    .date-in-selection {
+    .stay-duration {
         width: 23%;
         height: 75%;
         /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         left: 26%;
         /*top: 25%;*/
     }
@@ -427,7 +474,7 @@
         height: 75%;
         /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         left: 51%;
         /*top: 25%;*/
     }
@@ -437,7 +484,7 @@
         height: 75%;
         overflow-y: scroll;
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         right: 1vw;
         /*top: 25%;*/
     }
@@ -445,8 +492,7 @@
     .room {
         padding: 10px;
         border-bottom: 1px solid #000;
-<<<<<<< Updated upstream
-=======
+
         cursor: context-menu;
     }
 
@@ -456,13 +502,29 @@
 
     .soft-box {
         border-radius: 10px;
->>>>>>> Stashed changes
+
+        cursor: context-menu;
+    }
+
+    .booking-box{
+        width: 30%;
+    }
+
+    .soft-box{
+        border-radius: 10px;
+
     }
 
     .booking-mechanism {
         padding-top: 5vh;
         position: relative;
         height: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .photo-gallery {
@@ -479,15 +541,13 @@
         transition: transform 0.5s;
 
     }
-<<<<<<< Updated upstream
-=======
 
     .room:hover {
         font-size: large;
         font-weight: 400;
 
     }
->>>>>>> Stashed changes
+
 
     .img-caption {
         text-align: center;
@@ -502,6 +562,7 @@
         width: 500px;
         margin: 0;
         padding: 0;
+
     }
 
     .facilities {
@@ -514,7 +575,7 @@
         width: 15%;
         float: left;
         padding: 30px;
-        margin-right: 0;
+        margin-right: 0; 
     }
 
     .facility_para {
