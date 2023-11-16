@@ -5,7 +5,7 @@
         color: white;
         display: flex;
         justify-content: space-evenly;
-        padding: 20 20 0 20;
+        padding: 20px 20px 0 20px;
         position: fixed;
         top: 0;
         width: 98%;
@@ -14,8 +14,8 @@
     }
 
     header img {
-        height: 50;
-        width: 50;
+        height: 50px;
+        width: 50px;
         margin-right: auto;
     }
 
@@ -35,8 +35,8 @@
     }
 
     nav li {
-        /*margin-right: 20;*/
-        /*padding: 20;*/
+        /*margin-right: 20px;*/
+        /*padding: 20px;*/
         cursor: pointer;
         transition: transform 0.5s;
     }
@@ -58,7 +58,7 @@
 
     nav ul li a:link,
     nav ul li a:visited {
-        padding: 10 20;
+        padding: 10px 20px;
         text-decoration: none;
         display: inline-block;
         color: #2d0945;
@@ -83,7 +83,7 @@
     }
 
     #landing_page_about_us {
-        padding-top: 10;
+        padding-top: 10px;
         padding-left: 10%;
         padding-right: 10%;
         text-align: justify
@@ -92,18 +92,17 @@
 
     h1 {
         /*font-family: serif;*/
-        font-size: 60;
+        font-size: 60px;
         margin: 0;
-        padding: 0;
         text-align: center;
         flex-wrap: wrap;
         font-weight: 150;
-        padding-top: 10%;
+        padding: 10% 0 0;
     }
 
     h2 {
         font-family: "Cormorant Garamond", serif;
-        font-size: 30;
+        font-size: 30px;
         margin: 0;
         padding: 0;
         text-align: center;
@@ -113,9 +112,8 @@
     footer {
         background-color: black;
         color: white;
-        padding: 3px;
         text-align: left;
-        padding-left: 5%;
+        padding: 3px 3px 3px 5%;
     }
 
     footer p {
@@ -126,7 +124,7 @@
     html {
         font-family: "Cormorant Garamond", serif;
         margin: 0;
-        padding-top: 50;
+        padding-top: 50px;
     }
 
     #contact_us_own_page {
@@ -163,7 +161,7 @@
         flex-wrap: nowrap;
     }
     .booking-date-selections {
-        padding: 50 10 50 10;
+        padding: 50px 10px 50px 10px;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -229,17 +227,17 @@
 
     .contact_box {
         border: 2px solid #2d0945;
-        /*margin: 10;*/
-        padding: 20;
+        /*margin: 10px;*/
+        padding: 20px;
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
-        /*margin: 25px 10 20 500;*/
+        /*margin: 25px 10px 20px 500px;*/
         background-color: #eaeaea88;
     }
 
     .about_us_box {
-        margin: 10;
-        padding: 10;
+        margin: 10px;
+        padding: 10px;
         float: left;
     }
 
@@ -249,19 +247,19 @@
 
     .contact_form_box {
         border: 2px solid #2d0945;
-        /*margin: 10;*/
-        padding: 20;
+        /*margin: 10px;*/
+        padding: 20px;
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
-        height: 320;
-        /*margin: 25px 10 20 500;*/
+        height: 320px;
+        /*margin: 25px 10px 20px 500px;*/
         background-color: #eaeaea88;
     }
 
     .form-element {
         height: 35px;
         /*padding: auto;*/
-        margin-bottom: 20;
+        margin-bottom: 20px;
     }
 
     .form-label {
@@ -292,8 +290,8 @@
     .btn {
         background-color: #3c84be;
         color: white;
-        padding: 10 15px;
-        /* top bottom is 10, left and right is 15px */
+        padding: 10px 15px;
+        /* top bottom is 10px, left and right is 15px */
         font-size: 18px;
         border-radius: 3px;
         cursor: pointer;
@@ -313,7 +311,7 @@
         box-shadow: 0 0 2px 1px #bdbbbb;
         transition: background-color 0.3s, box-shadow 0.3s;
         border: 1px solid #ebe8e8;
-        margin: 35px 0 50 496.4px;
+        margin: 35px 0 50px 496px;
     }
 
     .btn:hover {
@@ -330,18 +328,17 @@
     }
 
     .contact-form-footer {
-        padding: 10;
+        padding: 10px;
         text-align: right;
     }
 
     .other_pages_main_header {
-        font-size: 60;
+        font-size: 60px;
         margin: 0;
-        padding: 0;
         text-align: center;
         flex-wrap: wrap;
         font-weight: 150;
-        padding-top: 20;
+        padding: 20px 0 0;
     }
     .light-shadow{
         width: 30%;
@@ -349,7 +346,7 @@
     }
 
     .room-selection {
-        /*width: 200;*/
+        /*width: 200px;*/
         width: 23%;
         height: 75%;
         /*overflow-y: scroll;*/
@@ -401,7 +398,7 @@
     }
 
     .room {
-        padding: 10;
+        padding: 10px;
         border-bottom: 1px solid #000;
         cursor: context-menu;
     }
@@ -411,7 +408,7 @@
     }
 
     .soft-box{
-        border-radius: 10;
+        border-radius: 10px;
     }
 
     .booking-mechanism {
@@ -427,15 +424,15 @@
     }
 
     .photo-gallery {
-        margin: 10;
-        padding: 20;
+        /*margin: 10px;*/
+        padding: 20px;
         width: 30%;
-        height: 320;
-        margin: 25px 10 20 500;   
+        height: 320px;
+        margin: 25px 10px 20px 500px;   
     }
 
     .photo {
-        margin: 10;
+        margin: 10px;
         cursor: pointer;
         transition: transform 0.5s;
         
@@ -455,21 +452,21 @@
     }
 
     .mySlides {
-        height: 400;
-        width: 500;
+        height: 400px;
+        width: 500px;
         margin: 0;
         padding:0;
     }
     .facilities {
-        padding: 30;
+        padding: 30px;
         margin: auto;
     }
 
     .facility_image {
-        height: 200;
+        height: 200px;
         width: 15%;
         float: left;
-        padding: 30;
+        padding: 30px;
         margin-right: 0; 
     }
     .facility_para {
@@ -491,7 +488,7 @@
         background-color: #ffffff;
         color: white;
         display: flex;
-        padding: 10 0 10 0;
+        padding: 10px 0 10px 0;
         position: fixed;
         top: 0;
         width: 100%;
@@ -502,14 +499,14 @@
     }
 
     header img {
-        height: 50;
-        width: 50;
+        height: 50px;
+        width: 50px;
         left: 5px;
         position: relative;
     }
 
     #landing_page_about_us {
-        padding-top: 10;
+        padding-top: 10px;
         padding-left: 1vh;
         padding-right: 1vh;
         text-align: justify;
@@ -522,7 +519,7 @@
 
     h1 {
         /*font-family: serif;*/
-        font-size: 30;
+        font-size: 30px;
         margin: 0;
         padding: 0;
         text-align: center;
@@ -531,7 +528,7 @@
     }
 
     h2 {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         font-size: 25px;
         margin: 0;
         padding: 0;
@@ -546,7 +543,7 @@
     }
 
     #landing_page_about_us {
-        padding-top: 10;
+        padding-top: 10px;
         padding-left: 10%;
         padding-right: 10%;
         text-align: justify
@@ -561,22 +558,21 @@
     }
 
     nav li {
-        margin-right: 20;
+        margin-right: 20px;
     }
 
     footer {
         background-color: black;
         color: white;
-        padding: 3px;
         text-align: left;
-        padding-left: 5%;
+        padding: 3px 3px 3px 5%;
     }
 
     body,
     html {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         margin: 0;
-        padding-top: 50;
+        padding-top: 50px;
     }
 
     .landing_page_container {
@@ -631,11 +627,11 @@
 }
 
 .swiper-pagination-bullet {
-    width: 20;
-    height: 20;
+    width: 20px;
+    height: 20px;
     text-align: center;
-    line-height: 20;
-    font-size: 40;
+    line-height: 20px;
+    font-size: 40px;
     font-family: serif;
     color: #000000;
     opacity: 1;
