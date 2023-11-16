@@ -13,27 +13,33 @@
 
 <body>
   <header>
-    <img
-      src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-      alt="Logo emblem of a hotel with a crown on top">
-    <nav>
-      <ul id="header_links">
-        <li><span><a href="index.html">Home</a></span></li>
-        <li><span><a href="room_booking.html">Book Now</a></span></span></li>
-        <li><span><a href="gallery.html">Gallery</a></span></span></li>
-        <li><span><a href="contact_us.html">Contact us</a></span></li>
-        <li><span><a href="about_us.html">About us</a></span></li>
-        <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
-      </ul>
-    </nav>
+    <div id="header-spacer">
+      <div> <!-- Logo -->
+      <img
+        src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+        alt="Logo emblem of a hotel with a crown on top">
+      </div>
+      <div id="header-links"> <!-- Links -->
+        <nav>
+          <ul id="header_links">
+            <li><span><a href="index.html">Home</a></span></li>
+            <li><span><a href="room_booking.html">Book Now</a></span></li>
+            <li><span><a href="gallery.html">Gallery</a></span></li>
+            <li><span><a href="contact_us.html">Contact us</a></span></li>
+            <li><span><a href="about_us.html">About us</a></span></li>
+            <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <main>
     <div class="landing_page_container">
       <h1 class="other_pages_main_header">Secure Your Booking Today</h1>
       <div class="booking-mechanism">
-        <div class="room-selection">
-          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Your Room Preference</h2>
+        <div class="room-selection booking-box light-shadow soft-box">
+          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">Select Your Room Preference</h2>
           <div class="rooms">
             <div class="room"><!--Room 01 -->Trafalgar Suite</div>
             <div class="room"><!--Room 02 -->Presidential Suite</div>
@@ -60,37 +66,79 @@
             <div class="room"><!--Room 23 -->Lady Suite</div>
           </div>
         </div>
-        <div class="date-in-selection">
-          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Your Booking In Date</h2>
+        <div class="stay-duration booking-box light-shadow soft-box">
+          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">Select Your Duration</h2>
           <div class="booking-dates">
-            ** Add a calendar here **
+            <div class="booking-date-selections">
+            <h3 class="booking-dates-heading">Arrival Date</h3>
+              <label for="booking-in-date"></label><input type="date" id="booking-in-date">
+            </div>
+            <div class="booking-date-selections">
+            <h3 class="booking-dates-heading">Leaving Date</h3>
+              <label for="booking-out-date"></label><input type="date" id="booking-out-date">
+            </div>
           </div>
         </div>
-        <div class="date-out-selection">
-          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Your Booking Out Date</h2>
-          <div class="booking-dates">
-            ** Add a calendar here **
+        <div class="additional-booking-selection booking-box light-shadow soft-box">
+          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0;border-top-left-radius: 10px; border-top-right-radius: 10px">Select Any Additional Information</h2>
+<!--          Below is the toggle stuff for rooms-->
+          <div class="addit-info-sections">
+            <div>
+              <input type="checkbox" id="toggle-on" name="wheelchair-access">
+              <label for="toggle-on"></label>
+            </div>
+            <p class="addit-info-text">Wheelchair access</p>
           </div>
 
-        </div>
-        <div class="additional-booking-selection">
-          <h2 style="font-size: small; background: #cecece; padding:8px 0 8px 0">Select Any Additional Information</h2>
-          <input type="radio" id="toggle-on" name="toggle" checked>
-          <label for="toggle-on">On</label>
-          <input type="radio" id="toggle-off" name="toggle">
-          <label for="toggle-off">Off</label>
-          Need radio for:
-          Smoking Room
-          wheelchair access
+          <div class="addit-info-sections">
+            <div>
+              <input type="checkbox" id="toggle-on" name="smoking-room" >
+              <label for="toggle-on"></label>
+            </div>
+            <p class="addit-info-text">Smoking Room</p>
+          </div>
+
+          <div class="addit-info-sections">
+            <div>
+              <input type="checkbox" id="toggle-on" name="quiet-Room" >
+              <label for="toggle-on"></label>
+            </div>
+            <p class="addit-info-text">Quiet Room</p>
+          </div>
+
+          <div class="addit-info-sections">
+            <div>
+              <input type="checkbox" id="toggle-on" name="resturant-inclusion" >
+              <label for="toggle-on"></label>
+            </div>
+            <p class="addit-info-text">Resturant Inclusion</p>
+          </div>
+
+          <div class="addit-info-sections">
+            <div>
+              <input type="checkbox" id="toggle-on" name="gym-inclusion" >
+              <label for="toggle-on"></label>
+            </div>
+            <p class="addit-info-text">Gym Inclusion</p>
+          </div>
+
+          <div class="addit-info-sections">
+            <div>
+              <input type="checkbox" id="toggle-on" name="conference-room-inclusion" >
+              <label for="toggle-on"></label>
+            </div>
+            <p class="addit-info-text">Meeting Room Inclusion</p>
+          </div>
+<!--          ABOVE IS THE TOGGLE STUFF FOR ROOMS
+-->
         </div>
       </div>
     </div>
   </main>
   <script>
-    var addclass = 'selected_room';
-    var $cols = $('.room').click(function (e) {
-      $cols.removeClass(addclass);
-      $(this).addClass(addclass);
+    const addclass = 'selected_room';
+    $('.room').click(function (e) {
+      $(this).toggleClass(addclass);
     });
   </script>
   <footer>

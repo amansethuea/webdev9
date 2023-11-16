@@ -4,11 +4,161 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="736509cf-841a-429d-8647-9d97ca8c32f9" name="Changes" comment="Desktop booking page looking nice">
+      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" afterDir="false" />
+    </list>
     <list default="true" id="107f61d7-5167-4f7f-89da-6eb1ee52376f" name="Changes" comment="Desktop booking page looking nice" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="booking-page" />
+                    <option name="lastUsedInstant" value="1700059185" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1700057128" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="Booking-and-gallery" />
+                    <option name="lastUsedInstant" value="1700057127" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2YD6JaEJsv4RwzSNmJuFEbOr9Gi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;booking-page&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/joshuanewton/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Assignments/Website_Repo/webdev9&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JavaScript Debug.testing-stuff.html">
+    <configuration name="gallery.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdev9/Hotel_Management_System/Customer/gallery.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="room_booking.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdev9/Hotel_Management_System/Customer/room_booking.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="testing-stuff.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdev9/Hotel_Management_System/Customer/testing-stuff.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.gallery.html" />
+      <item itemvalue="JavaScript Debug.testing-stuff.html" />
+      <item itemvalue="JavaScript Debug.room_booking.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.testing-stuff.html" />
+        <item itemvalue="JavaScript Debug.gallery.html" />
+        <item itemvalue="JavaScript Debug.room_booking.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="736509cf-841a-429d-8647-9d97ca8c32f9" name="Changes" comment="" />
+      <created>1700047731197</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700047731197</updated>
+      <workItem from="1700047732297" duration="1267000" />
+      <workItem from="1700057085189" duration="10417000" />
+      <workItem from="1700126317581" duration="305000" />
+    </task>
+    <task id="LOCAL-00001" summary="Desktop booking page looking nice">
+      <option name="closed" value="true" />
+      <created>1700068456129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700068456130</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Desktop booking page looking nice">
+      <option name="closed" value="true" />
+      <created>1700126557564</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700126557564</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Desktop booking page looking nice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Desktop booking page looking nice" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {

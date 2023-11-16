@@ -5,10 +5,12 @@
         color: white;
         display: flex;
         justify-content: space-evenly;
-        padding: 20px 20px 0px 20px;
+        padding: 20px 20px 0 20px;
         position: fixed;
         top: 0;
         width: 98%;
+        z-index: 2;
+        align-items: center;
     }
 
     header img {
@@ -33,10 +35,25 @@
     }
 
     nav li {
-        margin-right: 20px;
-        padding: 20px;
+        /*margin-right: 20px;*/
+        /*padding: 20px;*/
         cursor: pointer;
         transition: transform 0.5s;
+    }
+    #header-spacer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #header-links{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
     }
 
     nav ul li a:link,
@@ -55,7 +72,7 @@
 
     /* Adding | between every nav link */
     span {
-        padding: 0px 5px;
+        padding: 0 5px;
         border-left: 1px solid #2d0945;
         display: inline-block;
     }
@@ -77,15 +94,14 @@
         /*font-family: serif;*/
         font-size: 60px;
         margin: 0;
-        padding: 0;
         text-align: center;
         flex-wrap: wrap;
         font-weight: 150;
-        padding-top: 10%;
+        padding: 10% 0 0;
     }
 
     h2 {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         font-size: 30px;
         margin: 0;
         padding: 0;
@@ -96,9 +112,8 @@
     footer {
         background-color: black;
         color: white;
-        padding: 3px;
         text-align: left;
-        padding-left: 5%;
+        padding: 3px 3px 3px 5%;
     }
 
     footer p {
@@ -107,7 +122,7 @@
 
     body,
     html {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         margin: 0;
         padding-top: 50px;
     }
@@ -123,27 +138,61 @@
     }
 
     #about_us_para {
-        padding: 2vh 30vh 30vh 30vh;
+        /*padding: 2vh 30vh 30vh 30vh;*/
     }
 
     #landing_tag {
         font-weight: lighter;
         font-size: 150%;
+        color: white;
     }
 
     .landing_page_container {
-        height: 100vh;
+        height: 85vh;
         /*width: 100vh;*/
         width: 100%;
+    }
+    .booking-dates {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+    .booking-date-selections {
+        padding: 50px 10px 50px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        align-content: stretch;
+        bottom: 20%;
+    }
+    h3.booking-dates-heading {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .addit-info-sections{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5% 0 2%
+    }
+    .addit-info-text{
     }
 
     #main_landing_page {
         /* Lighten the image opacity */
-        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        background-image: linear-gradient(rgb(255 255 255 / 7%),rgb(0 0 0 / 27%)),
             url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
         background-size: auto;
         background-position: center;
-        height: 100vh;
+        height: 88vh;
         width: auto;
         display: flex;
         flex-direction: column;
@@ -173,15 +222,16 @@
         font-weight: lighter;
         justify-content: center;
         text-align: center;
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     .contact_box {
         border: 2px solid #2d0945;
-        margin: 10px;
+        /*margin: 10px;*/
         padding: 20px;
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
+        /*margin: 25px 10px 20px 500px;*/
         margin: 25px 10px 20px 500px;
         margin: auto;
         background-color: #eaeaea88;
@@ -189,11 +239,12 @@
 
     .contact_form_box {
         border: 2px solid #2d0945;
-        margin: 10px;
+        /*margin: 10px;*/
         padding: 20px;
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         height: 320px;
+        /*margin: 25px 10px 20px 500px;*/
         margin: 25px 10px 20px 500px;
         margin: auto;
         margin-top: 20px;
@@ -212,7 +263,7 @@
 
     .form-element {
         height: 35px;
-        padding: auto;
+        /*padding: auto;*/
         margin-bottom: 20px;
     }
 
@@ -237,7 +288,7 @@
 
     /* When the cursor is inside the form element, for eg. inside a text-box */
     .form-control:focus {
-        box-shadow: 0px 0px 3px 2px #2b77be;
+        box-shadow: 0 0 3px 2px #2b77be;
         outline: none;
     }
 
@@ -255,7 +306,11 @@
         border: 2px solid #B8195A;
         border-radius: 10px;
         cursor: pointer;
-
+        box-shadow: 0 0 2px 1px #bdbbbb;
+        /* no for top/bottom/right/left borders. 2px is blurness. 1 px is spread */
+        transition: background-color 0.3s, box-shadow 0.3s;
+        border: 1px solid #ebe8e8;
+        margin: 2px;
     }
 
     .imgbtn {
@@ -264,13 +319,15 @@
         font-size: 18px;
         border-radius: 3px;
         cursor: pointer;
-        box-shadow: 0px 0px 2px 1px #bdbbbb;
+        box-shadow: 0 0 2px 1px #bdbbbb;
         transition: background-color 0.3s, box-shadow 0.3s;
         border: 1px solid #ebe8e8;
-        margin: 35px 0px 50px 496.4px;
+        margin: 35px 0 50px 496px;
     }
 
     .btn:hover {
+        background-color: #1869ac;
+        box-shadow: 0 0 3px 3px #9e9b9b;
         background-color: #B8195A;
         box-shadow: 0px 0px 3px 3px #9e9b9b;
     }
@@ -291,11 +348,18 @@
     .other_pages_main_header {
         font-size: 60px;
         margin: 0;
-        padding: 0;
         text-align: center;
         flex-wrap: wrap;
         font-weight: 150;
-        padding-top: 20px;
+        padding: 20px 0 0;
+    }
+    .light-shadow{
+        width: 30%;
+        box-shadow: -3px 3px 6px 0 #0000004f;
+    }
+    .light-shadow{
+        width: 30%;
+        box-shadow: -3px 3px 6px 0px #0000004f;
     }
 
     .room-selection {
@@ -304,8 +368,8 @@
         height: 75%;
         /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
-        left: 1vw;
+        position: relative;
+        /*left: 1vw;*/
         /*top: 25vh;*/
     }
 
@@ -320,12 +384,12 @@
         /* left: 1vw; */
     }
 
-    .date-in-selection {
+    .stay-duration {
         width: 23%;
         height: 75%;
-        overflow-y: scroll;
+        /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         left: 26%;
         /*top: 25%;*/
     }
@@ -333,9 +397,9 @@
     .date-out-selection {
         width: 23%;
         height: 75%;
-        overflow-y: scroll;
+        /*overflow-y: scroll;*/
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         left: 51%;
         /*top: 25%;*/
     }
@@ -345,7 +409,7 @@
         height: 75%;
         overflow-y: scroll;
         border: 1px solid #000;
-        position: absolute;
+        /*position: absolute;*/
         right: 1vw;
         /*top: 25%;*/
     }
@@ -353,16 +417,31 @@
     .room {
         padding: 10px;
         border-bottom: 1px solid #000;
+        cursor: context-menu;
+    }
+
+    .booking-box{
+        width: 30%;
+    }
+
+    .soft-box{
+        border-radius: 10px;
     }
 
     .booking-mechanism {
         padding-top: 5vh;
         position: relative;
         height: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .photo-gallery {
-        margin: 10px;
+        /*margin: 10px;*/
         padding: 20px;
         width: 30%;
         height: 320px;
@@ -374,6 +453,11 @@
         cursor: pointer;
         transition: transform 0.5s;
         
+    }
+    .room:hover {
+        font-size: large;
+        font-weight: 400;
+
     }
 
     .img-caption {
@@ -387,8 +471,8 @@
     .mySlides {
         height: 400px;
         width: 500px;
-        margin: 0px;
-        padding:0px;
+        margin: 0;
+        padding:0;
     }
     .facilities {
         padding: 30px;
@@ -400,11 +484,11 @@
         width: 15%;
         float: left;
         padding: 30px;
-        margin-right: 0px; 
+        margin-right: 0; 
     }
     .facility_para {
         float: left;
-        padding-left: 0px;
+        padding-left: 0;
         color: #2d0945;
         text-decoration: solid;
         
@@ -461,7 +545,7 @@
     }
 
     h2 {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         font-size: 25px;
         margin: 0;
         padding: 0;
@@ -497,14 +581,13 @@
     footer {
         background-color: black;
         color: white;
-        padding: 3px;
         text-align: left;
-        padding-left: 5%;
+        padding: 3px 3px 3px 5%;
     }
 
     body,
     html {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         margin: 0;
         padding-top: 50px;
     }
