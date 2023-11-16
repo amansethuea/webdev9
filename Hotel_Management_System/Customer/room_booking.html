@@ -200,15 +200,15 @@
     var $cols = $('.room').click(function (e) {
       $cols.removeClass(addclass);
       $(this).addClass(addclass);
-
-      const addclass = 'selected_room';
-      $('.room').click(function (e) {
-        $(this).toggleClass(addclass);
-
-        const addclass = 'selected_room';
-        $('.room').click(function (e) {
-          $(this).toggleClass(addclass);
-        });
+    });
+    const addclass = 'selected_room';
+    $('.room').click(function (e) {
+      $(this).toggleClass(addclass);
+    });
+    const addclass = 'selected_room';
+    $('.room').click(function (e) {
+      $(this).toggleClass(addclass);
+    });
   </script>
   <footer>
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
