@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
   <title>The Crown Hotel</title>
   <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css">
-  <link rel="stylesheet" href="Hotel_Management_System/CSS/Customer_Styles/Landing Page.css">
   <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+<<<<<<< Updated upstream
   <header>
     <img
       src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
@@ -25,77 +25,41 @@
       </ul>
     </nav>
   </header>
+=======
+<header>
+  <div id="header-spacer">
+    <div> <!-- Logo -->
+      <img
+              src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+              alt="Logo emblem of a hotel with a crown on top">
+    </div>
+    <div id="header-links"> <!-- Links -->
+      <nav>
+        <ul id="header_links">
+          <li><span><a href="index.html">Home</a></span></li>
+          <li><span><a href="room_booking.html">Book Now</a></span></li>
+          <li><span><a href="gallery.html">Gallery</a></span></li>
+          <li><span><a href="contact_us.html">Contact us</a></span></li>
+          <li><span><a href="about_us.html">About us</a></span></li>
+          <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+>>>>>>> Stashed changes
 
   <main>
-    <div class="landing_page_container">
+    <div>
       <h1 class="other_pages_main_header">Welcome to luxury</h1>
       <h2 class="contact_sub_heading"><em>Rooms</em></h2>
-      <div class="photo-gallery">
-        <figure class="photo">
-          <img class="mySlides"
-            src="../../Hotel_Management_System/Images/rooms/_239da642-fecd-4aa2-bbeb-3f7dd98fd572.jpeg"
-            alt="No Preview Available">
-        </figure>
-        <figure class="photo">
-          <img class="mySlides"
-            src="../../Hotel_Management_System/Images/rooms/_34530e4f-8d42-4b4e-8778-7da3814a58ce.jpeg"
-            alt="No Preview Available">
-        </figure>
-        <figure class="photo">
-          <img class="mySlides"
-            src="../../Hotel_Management_System/Images/rooms/_433771c2-1ac7-49b7-987c-53140b6a56ba.jpeg"
-            alt="No Preview Available">
-        </figure>
-      </div>
-      <button class="fa fa-chevron-left imgbtn" onclick="plusDivs(-1)">&#10094;</button>
-      <button class="fa fa-chevron-right imgbtn" onclick="plusDivs(1)">&#10095;</button>
-      <h2 class="contact_sub_heading"><em>Facilities</em></h2>
-      <div class="facilities">
-        <p class="facility_para"><u>GYM</u></p>
-        <section class="facility">
-          <img class="facility_image"
-            src="../../Hotel_Management_System/Images/gym/_7b372403-d613-4c7d-81f3-9d4c30dcc053.jpeg"
-            alt="No Preview Availble" title="Gym">
-        </section>
-        <p class="facility_para"><u>BAR</u></p>
-        <section class="facility">
-          <img class="facility_image" src="../../Hotel_Management_System/Images/bar/Bar1.jpeg" alt="No Preview Availble"
-            title="Bar">
-        </section>
-        <p class="facility_para"><u>RESTAURANT</u></p>
-        <section class="facility">
-          <img class="facility_image"
-            src="../../Hotel_Management_System/Images/dining_hall/_185e3a35-d452-474b-b26a-8a2fefc46435.jpeg"
-            alt="No Preview Availble" title="Restaurant">
-        </section>
-        <p class="facility_para"><u>MEETING ROOM</u></p>
-        <section class="facility">
-          <img class="facility_image"
-            src="../../Hotel_Management_System/Images/conference_room/_321a796f-d9c8-42ff-9379-f58145f1e56b.jpeg"
-            alt="No Preview Availble" title="Meeting Room">
-        </section>
-      </div>
     </div>
+    <div>
+
+    </div>
+
+      </div>
   </main>
-  <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      if (n > x.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = x.length }
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      x[slideIndex - 1].style.display = "block";
-    }
-  </script>
 </body>
 
 </html>

@@ -1,0 +1,229 @@
+Index: Hotel_Management_System/JS/Customer_JS/package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"name\": \"customer_js\",\n  \"version\": \"1.0.0\",\n  \"lockfileVersion\": 3,\n  \"requires\": true,\n  \"packages\": {\n    \"\": {\n      \"name\": \"customer_js\",\n      \"version\": \"1.0.0\",\n      \"license\": \"ISC\",\n      \"dependencies\": {\n        \"@fullcalendar/core\": \"^6.1.9\",\n        \"@fullcalendar/daygrid\": \"^6.1.9\",\n        \"swiper\": \"^11.0.4\"\n      }\n    },\n    \"node_modules/@fullcalendar/core\": {\n      \"version\": \"6.1.9\",\n      \"resolved\": \"https://registry.npmjs.org/@fullcalendar/core/-/core-6.1.9.tgz\",\n      \"integrity\": \"sha512-eeG+z9BWerdsU9Ac6j16rpYpPnE0wxtnEHiHrh/u/ADbGTR3hCOjCD9PxQOfhOTHbWOVs7JQunGcksSPu5WZBQ==\",\n      \"dependencies\": {\n        \"preact\": \"~10.12.1\"\n      }\n    },\n    \"node_modules/@fullcalendar/daygrid\": {\n      \"version\": \"6.1.9\",\n      \"resolved\": \"https://registry.npmjs.org/@fullcalendar/daygrid/-/daygrid-6.1.9.tgz\",\n      \"integrity\": \"sha512-o/6joH/7lmVHXAkbaa/tUbzWYnGp/LgfdiFyYPkqQbjKEeivNZWF1WhHqFbhx0zbFONSHtrvkjY2bjr+Ef2quQ==\",\n      \"peerDependencies\": {\n        \"@fullcalendar/core\": \"~6.1.9\"\n      }\n    },\n    \"node_modules/preact\": {\n      \"version\": \"10.12.1\",\n      \"resolved\": \"https://registry.npmjs.org/preact/-/preact-10.12.1.tgz\",\n      \"integrity\": \"sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==\",\n      \"funding\": {\n        \"type\": \"opencollective\",\n        \"url\": \"https://opencollective.com/preact\"\n      }\n    },\n    \"node_modules/swiper\": {\n      \"version\": \"11.0.4\",\n      \"resolved\": \"https://registry.npmjs.org/swiper/-/swiper-11.0.4.tgz\",\n      \"integrity\": \"sha512-qtUxILrD4aD++rpKzGrkz3IAWL92f9uTrDwjb6HaNLmPvJhZCE/83DL+9w4kIgDDJeF6QKalV47rMBN77UOVYQ==\",\n      \"funding\": [\n        {\n          \"type\": \"patreon\",\n          \"url\": \"https://www.patreon.com/swiperjs\"\n        },\n        {\n          \"type\": \"open_collective\",\n          \"url\": \"http://opencollective.com/swiper\"\n        }\n      ],\n      \"engines\": {\n        \"node\": \">= 4.7.0\"\n      }\n    }\n  }\n}\n
+===================================================================
+diff --git a/Hotel_Management_System/JS/Customer_JS/package-lock.json b/Hotel_Management_System/JS/Customer_JS/package-lock.json
+--- a/Hotel_Management_System/JS/Customer_JS/package-lock.json	
++++ b/Hotel_Management_System/JS/Customer_JS/package-lock.json	
+@@ -10,8 +10,12 @@
+       "license": "ISC",
+       "dependencies": {
+         "@fullcalendar/core": "^6.1.9",
++<<<<<<< HEAD
+         "@fullcalendar/daygrid": "^6.1.9",
+         "swiper": "^11.0.4"
++=======
++        "@fullcalendar/daygrid": "^6.1.9"
++>>>>>>> origin/booking-page
+       }
+     },
+     "node_modules/@fullcalendar/core": {
+@@ -38,6 +42,7 @@
+         "type": "opencollective",
+         "url": "https://opencollective.com/preact"
+       }
++<<<<<<< HEAD
+     },
+     "node_modules/swiper": {
+       "version": "11.0.4",
+@@ -56,6 +61,8 @@
+       "engines": {
+         "node": ">= 4.7.0"
+       }
++=======
++>>>>>>> origin/booking-page
+     }
+   }
+ }
+Index: Hotel_Management_System/JS/Customer_JS/package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"name\": \"customer_js\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"main.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"@fullcalendar/core\": \"^6.1.9\",\n    \"@fullcalendar/daygrid\": \"^6.1.9\",\n    \"swiper\": \"^11.0.4\"\n  }\n}\n
+===================================================================
+diff --git a/Hotel_Management_System/JS/Customer_JS/package.json b/Hotel_Management_System/JS/Customer_JS/package.json
+--- a/Hotel_Management_System/JS/Customer_JS/package.json	
++++ b/Hotel_Management_System/JS/Customer_JS/package.json	
+@@ -11,7 +11,11 @@
+   "license": "ISC",
+   "dependencies": {
+     "@fullcalendar/core": "^6.1.9",
++<<<<<<< HEAD
+     "@fullcalendar/daygrid": "^6.1.9",
+     "swiper": "^11.0.4"
++=======
++    "@fullcalendar/daygrid": "^6.1.9"
++>>>>>>> origin/booking-page
+   }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"736509cf-841a-429d-8647-9d97ca8c32f9\" name=\"Changes\" comment=\"Desktop booking page looking nice\">\n      <change beforePath=\"$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Hotel_Management_System/Customer/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Hotel_Management_System/Customer/index.html\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"HTML File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitToolBoxStore\">\n    <option name=\"projectConfigVersion\" value=\"5\" />\n    <option name=\"recentBranches\">\n      <RecentBranches>\n        <option name=\"branchesForRepo\">\n          <list>\n            <RecentBranchesForRepo>\n              <option name=\"branches\">\n                <list>\n                  <RecentBranch>\n                    <option name=\"branchName\" value=\"booking-page\" />\n                    <option name=\"lastUsedInstant\" value=\"1700059185\" />\n                  </RecentBranch>\n                  <RecentBranch>\n                    <option name=\"branchName\" value=\"main\" />\n                    <option name=\"lastUsedInstant\" value=\"1700057128\" />\n                  </RecentBranch>\n                  <RecentBranch>\n                    <option name=\"branchName\" value=\"Booking-and-gallery\" />\n                    <option name=\"lastUsedInstant\" value=\"1700057127\" />\n                  </RecentBranch>\n                </list>\n              </option>\n              <option name=\"repositoryRootUrl\" value=\"file://$PROJECT_DIR$\" />\n            </RecentBranchesForRepo>\n          </list>\n        </option>\n      </RecentBranches>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2YD6JaEJsv4RwzSNmJuFEbOr9Gi\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;booking-page&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/joshuanewton/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Assignments/Website_Repo/webdev9&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RunManager\" selected=\"JavaScript Debug.testing-stuff.html\">\n    <configuration name=\"gallery.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:63342/webdev9/Hotel_Management_System/Customer/gallery.html\" useBuiltInWebServerPort=\"true\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"room_booking.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:63342/webdev9/Hotel_Management_System/Customer/room_booking.html\" useBuiltInWebServerPort=\"true\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"testing-stuff.html\" type=\"JavascriptDebugType\" temporary=\"true\" nameIsGenerated=\"true\" uri=\"http://localhost:63342/webdev9/Hotel_Management_System/Customer/testing-stuff.html\" useBuiltInWebServerPort=\"true\">\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"JavaScript Debug.gallery.html\" />\n      <item itemvalue=\"JavaScript Debug.testing-stuff.html\" />\n      <item itemvalue=\"JavaScript Debug.room_booking.html\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JavaScript Debug.testing-stuff.html\" />\n        <item itemvalue=\"JavaScript Debug.gallery.html\" />\n        <item itemvalue=\"JavaScript Debug.room_booking.html\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"736509cf-841a-429d-8647-9d97ca8c32f9\" name=\"Changes\" comment=\"\" />\n      <created>1700047731197</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1700047731197</updated>\n      <workItem from=\"1700047732297\" duration=\"1267000\" />\n      <workItem from=\"1700057085189\" duration=\"10417000\" />\n      <workItem from=\"1700126317581\" duration=\"305000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Desktop booking page looking nice\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700068456129</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700068456130</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Desktop booking page looking nice\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700126557564</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700126557564</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Desktop booking page looking nice\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Desktop booking page looking nice\" />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,15 +4,28 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
++<<<<<<< HEAD
+     <list default="true" id="736509cf-841a-429d-8647-9d97ca8c32f9" name="Changes" comment="Desktop booking page looking nice">
+       <change beforePath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" afterDir="false" />
++=======
++    <list default="true" id="736509cf-841a-429d-8647-9d97ca8c32f9" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/about_us.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/city_of_norwich.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/city_of_norwich.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/contact_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/contact_us.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/gallery.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/room_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/room_booking.html" afterDir="false" />
++>>>>>>> origin/booking-page
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++<<<<<<< HEAD
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+@@ -20,6 +33,8 @@
+       </list>
+     </option>
+   </component>
++=======
++>>>>>>> origin/booking-page
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+@@ -29,7 +44,10 @@
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitToolBoxStore">
++<<<<<<< HEAD
+     <option name="projectConfigVersion" value="5" />
++=======
++>>>>>>> origin/booking-page
+     <option name="recentBranches">
+       <RecentBranches>
+         <option name="branchesForRepo">
+@@ -69,6 +87,7 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
++<<<<<<< HEAD
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+@@ -106,6 +125,31 @@
+       <list>
+         <item itemvalue="JavaScript Debug.testing-stuff.html" />
+         <item itemvalue="JavaScript Debug.gallery.html" />
++=======
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "booking-page",
++    "last_opened_file_path": "/Users/joshuanewton/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Assignments/Website_Repo/webdev9",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "run.code.analysis.last.selected.profile": "pProject Default",
++    "settings.editor.selected.configurable": "preferences.pluginManager",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="RunManager">
++    <configuration name="room_booking.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdev9/Hotel_Management_System/Customer/room_booking.html" useBuiltInWebServerPort="true">
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++>>>>>>> origin/booking-page
+         <item itemvalue="JavaScript Debug.room_booking.html" />
+       </list>
+     </recent_temporary>
+@@ -119,6 +163,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1700047731197</updated>
+       <workItem from="1700047732297" duration="1267000" />
++<<<<<<< HEAD
+       <workItem from="1700057085189" duration="10417000" />
+       <workItem from="1700126317581" duration="305000" />
+     </task>
+@@ -139,6 +184,10 @@
+       <updated>1700126557564</updated>
+     </task>
+     <option name="localTasksCounter" value="3" />
++=======
++      <workItem from="1700057085189" duration="6998000" />
++    </task>
++>>>>>>> origin/booking-page
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -155,8 +204,11 @@
+       </map>
+     </option>
+   </component>
++<<<<<<< HEAD
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Desktop booking page looking nice" />
+     <option name="LAST_COMMIT_MESSAGE" value="Desktop booking page looking nice" />
+   </component>
++=======
++>>>>>>> origin/booking-page
+ </project>
+\ No newline at end of file
+Index: .idea/jsLibraryMappings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"JavaScriptLibraryMappings\">\n    <file url=\"PROJECT\" libraries=\"{all, jquery-3.6.4}\" />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/jsLibraryMappings.xml b/.idea/jsLibraryMappings.xml
+--- a/.idea/jsLibraryMappings.xml	
++++ b/.idea/jsLibraryMappings.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="JavaScriptLibraryMappings">
+-    <file url="PROJECT" libraries="{all, jquery-3.6.4}" />
++    <file url="PROJECT" libraries="{all, jquery-3.6.4, swiper}" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Hotel_Management_System/JS/Customer_JS/node_modules/.package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"name\": \"customer_js\",\n  \"version\": \"1.0.0\",\n  \"lockfileVersion\": 3,\n  \"requires\": true,\n  \"packages\": {\n    \"node_modules/@fullcalendar/core\": {\n      \"version\": \"6.1.9\",\n      \"resolved\": \"https://registry.npmjs.org/@fullcalendar/core/-/core-6.1.9.tgz\",\n      \"integrity\": \"sha512-eeG+z9BWerdsU9Ac6j16rpYpPnE0wxtnEHiHrh/u/ADbGTR3hCOjCD9PxQOfhOTHbWOVs7JQunGcksSPu5WZBQ==\",\n      \"dependencies\": {\n        \"preact\": \"~10.12.1\"\n      }\n    },\n    \"node_modules/@fullcalendar/daygrid\": {\n      \"version\": \"6.1.9\",\n      \"resolved\": \"https://registry.npmjs.org/@fullcalendar/daygrid/-/daygrid-6.1.9.tgz\",\n      \"integrity\": \"sha512-o/6joH/7lmVHXAkbaa/tUbzWYnGp/LgfdiFyYPkqQbjKEeivNZWF1WhHqFbhx0zbFONSHtrvkjY2bjr+Ef2quQ==\",\n      \"peerDependencies\": {\n        \"@fullcalendar/core\": \"~6.1.9\"\n      }\n    },\n    \"node_modules/preact\": {\n      \"version\": \"10.12.1\",\n      \"resolved\": \"https://registry.npmjs.org/preact/-/preact-10.12.1.tgz\",\n      \"integrity\": \"sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==\",\n      \"funding\": {\n        \"type\": \"opencollective\",\n        \"url\": \"https://opencollective.com/preact\"\n      }\n    },\n    \"node_modules/swiper\": {\n      \"version\": \"11.0.4\",\n      \"resolved\": \"https://registry.npmjs.org/swiper/-/swiper-11.0.4.tgz\",\n      \"integrity\": \"sha512-qtUxILrD4aD++rpKzGrkz3IAWL92f9uTrDwjb6HaNLmPvJhZCE/83DL+9w4kIgDDJeF6QKalV47rMBN77UOVYQ==\",\n      \"funding\": [\n        {\n          \"type\": \"patreon\",\n          \"url\": \"https://www.patreon.com/swiperjs\"\n        },\n        {\n          \"type\": \"open_collective\",\n          \"url\": \"http://opencollective.com/swiper\"\n        }\n      ],\n      \"engines\": {\n        \"node\": \">= 4.7.0\"\n      }\n    }\n  }\n}\n
+===================================================================
+diff --git a/Hotel_Management_System/JS/Customer_JS/node_modules/.package-lock.json b/Hotel_Management_System/JS/Customer_JS/node_modules/.package-lock.json
+--- a/Hotel_Management_System/JS/Customer_JS/node_modules/.package-lock.json	
++++ b/Hotel_Management_System/JS/Customer_JS/node_modules/.package-lock.json	
+@@ -28,6 +28,7 @@
+         "type": "opencollective",
+         "url": "https://opencollective.com/preact"
+       }
++<<<<<<< HEAD
+     },
+     "node_modules/swiper": {
+       "version": "11.0.4",
+@@ -46,6 +47,8 @@
+       "engines": {
+         "node": ">= 4.7.0"
+       }
++=======
++>>>>>>> origin/booking-page
+     }
+   }
+ }
