@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p><button class="btn" type="submit">Check Availability</button></p>
+                        <p><button class="btn" type="submit" onclick="javascript:clickBtn(this);">Check Availability</button></p>
                     </div>
                 </div>
             </form>
@@ -74,6 +74,11 @@
         </div>
 
     </main>
+    <script>
+        function clickBtn(target) {
+            location.href = 'checkin_details.html'
+        };
+    </script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

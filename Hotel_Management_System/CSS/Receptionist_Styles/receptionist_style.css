@@ -267,7 +267,7 @@
         width: 700px;
         margin: auto;
         margin-top: 20px;
-        margin-bottom: 100px;
+        margin-bottom: 90px;
         background-color: #eaeaea88;
     }
 
@@ -290,7 +290,7 @@
     }
 
     .form-control {
-        width: 100%;
+        width: 90%;
         padding: 8px;
         border-radius: 3px;
         border: 1px solid #5e9adf;
