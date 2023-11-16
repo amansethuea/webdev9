@@ -141,9 +141,10 @@
 
     }
 
+    /*padding: 2vh 30vh 30vh 30vh;
     #about_us_para {
-        /*padding: 2vh 30vh 30vh 30vh;*/
-    }
+        
+    } */
 
     #landing_tag {
         font-weight: lighter;
@@ -197,12 +198,15 @@
         padding: 0 5% 0 2%
     }
 
+    /*
     .addit-info-text {}
+    */
 
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
     }
+
     .booking-dates {
         display: flex;
         flex-direction: column;
@@ -211,6 +215,7 @@
         align-content: center;
         flex-wrap: nowrap;
     }
+
     .booking-date-selections {
         padding: 50px 10px 50px 10px;
         display: flex;
@@ -220,6 +225,7 @@
         align-content: stretch;
         bottom: 20%;
     }
+
     h3.booking-dates-heading {
         position: relative;
         display: flex;
@@ -227,19 +233,18 @@
         align-items: center;
         justify-content: center;
     }
-    .addit-info-sections{
+
+    .addit-info-sections {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0 5% 0 2%
     }
-    .addit-info-text{
-    }
 
     #main_landing_page {
         /* Lighten the image opacity */
-        background-image: linear-gradient(rgb(255 255 255 / 7%),rgb(0 0 0 / 27%)),
+        background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
             url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
         background-size: auto;
         background-position: center;
@@ -418,11 +423,13 @@
         font-weight: 150;
         padding: 20px 0 0;
     }
-    .light-shadow{
+
+    .light-shadow {
         width: 30%;
         box-shadow: -3px 3px 6px 0 #0000004f;
     }
-    .light-shadow{
+
+    .light-shadow {
         width: 30%;
         box-shadow: -3px 3px 6px 0px #0000004f;
     }
@@ -506,11 +513,11 @@
         cursor: context-menu;
     }
 
-    .booking-box{
+    .booking-box {
         width: 30%;
     }
 
-    .soft-box{
+    .soft-box {
         border-radius: 10px;
 
     }
@@ -575,7 +582,7 @@
         width: 15%;
         float: left;
         padding: 30px;
-        margin-right: 0; 
+        margin-right: 0;
     }
 
     .facility_para {
