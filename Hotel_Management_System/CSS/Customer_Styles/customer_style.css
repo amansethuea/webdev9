@@ -381,18 +381,6 @@
         margin: 2px;
     }
 
-    .imgbtn {
-        background-color: #9e9b9b;
-        color: white;
-        font-size: 18px;
-        border-radius: 3px;
-        cursor: pointer;
-        box-shadow: 0 0 2px 1px #bdbbbb;
-        transition: background-color 0.3s, box-shadow 0.3s;
-        border: 1px solid #ebe8e8;
-        margin: 35px 0 50px 496px;
-    }
-
     .btn:hover {
         background-color: #1869ac;
         box-shadow: 0 0 3px 3px #9e9b9b;
@@ -400,10 +388,6 @@
         box-shadow: 0px 0px 3px 3px #9e9b9b;
         background-color: #1869ac;
         box-shadow: 0 0 3px 3px #9e9b9b;
-    }
-
-    .reset-button {
-        background-color: #5619b8;
     }
 
     .reset-button:hover {
