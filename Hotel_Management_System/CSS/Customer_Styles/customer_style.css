@@ -232,6 +232,22 @@
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         /*margin: 25px 10px 20px 500px;*/
+        margin: 25px 10px 20px 500px;
+        margin: auto;
+        background-color: #eaeaea88;
+    }
+
+    .contact_form_box {
+        border: 2px solid #2d0945;
+        /*margin: 10px;*/
+        padding: 20px;
+        box-shadow: 1px 1px 3px 2px purple;
+        width: 30%;
+        height: 320px;
+        /*margin: 25px 10px 20px 500px;*/
+        margin: 25px 10px 20px 500px;
+        margin: auto;
+        margin-top: 20px;
         background-color: #eaeaea88;
     }
 
@@ -243,17 +259,6 @@
 
     .selected_room {
         background-color: yellowgreen;
-    }
-
-    .contact_form_box {
-        border: 2px solid #2d0945;
-        /*margin: 10px;*/
-        padding: 20px;
-        box-shadow: 1px 1px 3px 2px purple;
-        width: 30%;
-        height: 320px;
-        /*margin: 25px 10px 20px 500px;*/
-        background-color: #eaeaea88;
     }
 
     .form-element {
@@ -288,12 +293,18 @@
     }
 
     .btn {
-        background-color: #3c84be;
+        display: inline-block;
+        background-color: #5619b8;
         color: white;
-        padding: 10px 15px;
-        /* top bottom is 10px, left and right is 15px */
-        font-size: 18px;
-        border-radius: 3px;
+        text-transform: uppercase;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        border: 2px solid #B8195A;
+        border-radius: 10px;
         cursor: pointer;
         box-shadow: 0 0 2px 1px #bdbbbb;
         /* no for top/bottom/right/left borders. 2px is blurness. 1 px is spread */
@@ -317,14 +328,16 @@
     .btn:hover {
         background-color: #1869ac;
         box-shadow: 0 0 3px 3px #9e9b9b;
+        background-color: #B8195A;
+        box-shadow: 0px 0px 3px 3px #9e9b9b;
     }
 
     .reset-button {
-        background-color: #ee3c3c;
+        background-color: #5619b8;
     }
 
     .reset-button:hover {
-        background-color: #c72727;
+        background-color: #B8195A;
     }
 
     .contact-form-footer {

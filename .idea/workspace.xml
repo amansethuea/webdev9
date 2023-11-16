@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/CSS/Customer_Styles/customer_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel_Management_System/Customer/index.html" afterDir="false" />
     </list>
+    <list default="true" id="107f61d7-5167-4f7f-89da-6eb1ee52376f" name="Changes" comment="Desktop booking page looking nice" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,5 +159,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Desktop booking page looking nice" />
     <option name="LAST_COMMIT_MESSAGE" value="Desktop booking page looking nice" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
   </component>
 </project>
