@@ -288,8 +288,8 @@
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         /*margin: 25px 10px 20px 500px;*/
-        margin: 25px 10px 20px 500px;
-        margin: auto;
+        /*margin: 25px 10px 20px 500px;*/
+        /*margin: auto;*/
         background-color: #eaeaea88;
     }
 
@@ -300,11 +300,9 @@
         box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         height: 320px;
-        /*margin: 25px 10px 20px 500px;*/
         margin: 25px 10px 20px 500px;
         margin: auto;
         margin-top: 20px;
-        /*margin: 25px 10px 20px 500px;*/
         background-color: #eaeaea88;
     }
 
@@ -588,6 +586,15 @@
         width: 100%;
         height: 100%;
         /*background: #000;*/
+    }
+
+    .slider-background-slide-a {
+        background-image: url(../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg);
+        width: 200px;
+        height: 200px;
+        padding: 20%;
+        background-size: cover;
+        background-position: center;
     }
 
     .swiper-slide {
