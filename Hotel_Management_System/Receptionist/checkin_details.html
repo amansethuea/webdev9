@@ -4,6 +4,7 @@
 <head>
     <title>The Crown Hotel</title>
     <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/checkin_detail_val.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -19,81 +20,66 @@
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-in</h1>
             <h4 class="reception_sub_heading"><em>Customer Details</em></h4>
-            <form>
+            <form id="checkin_details_form">
                 <div class="card signup-card">
                     <div class="card-header">Guest Details</div>
                     <div class="card-body">
-                        <div class="form-element">
-                            <div class="form-label"><label for="roomtype">Select Room Type</label></div>
-                            <div class="form-control-container">
-                                <select id="room-selection" name="room_preference" required>
-                                    <option value="">Choose a Room from the List</option>
-                                    <option value="connecting">Standard</option>
-                                    <option value="adjoining">Superior</option>
-                                    <option value="adjacent">Suite</option>
-                                </select>
 
-                            </div>
-                        </div>
                         <div class="form-element">
                             <div class="form-label"><label for="guest">No. of Guests</label></div>
                             <div class="form-control-container">
-				    <input type="number" class="form-control" id="guest"
-                                 	name="guest" placeholder="Enter no. of guests" required="required"
-                                    	autofocus="autofocus" />
-				    <span id="span1" class="error"> No. of guests cannot be blank </span>
-				    <span id="span2" class="error"> No. of guests cannot be 0 </span>
-				    <span id="span3" class="error"> No. of guests should be in numbers only </span>
-				    <span id="span4" class="error"> No. of guests cannot be more than 3 per room </span>
-			    </div>
+                                <input type="number" class="form-control" id="guest" name="guest"
+                                    placeholder="Enter no. of guests" autofocus="autofocus" />
+                                <span id="span1" class="error"> No. of guests cannot be blank or 0 </span>
+                                <span id="span2" class="error"> No. of guests cannot be more than 3 per room </span>
+                            </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="rooms">No. of Rooms</label></div>
                             <div class="form-control-container">
-				    <input type="number" class="form-control" id="rooms"
-                                    	name="rooms" placeholder="Enter no. of rooms" required="required" />
-				    <span id="5" class="error"> No. of rooms cannot be blank </span>
-				    <span id="6" class="error"> No. of rooms should be in numbers only </span>
-			    </div>
+                                <input type="number" class="form-control" id="rooms" name="rooms"
+                                    placeholder="Enter no. of rooms" />
+                                <span id="span3" class="error"> Room no. can't be 0 or blank </span>
+                            </div>
                         </div>
 
                         <div class="form-element">
                             <div class="form-label"><label for="firstname">First Name</label></div>
                             <div class="form-control-container">
-				    <input type="text" class="form-control" id="firstname"
-                                    	name="firstname" placeholder="Firstname" required="required" />
-				    <span id="7" class="error"> First name can't be blank </span>
-				    <span id="8" class="error"> First name contains alphabets only </span>
+                                <input type="text" class="form-control" id="firstname" name="firstname"
+                                    placeholder="Firstname" />
+                                <span id="span4" class="error"> First name can't be blank </span>
+                                <span id="span5" class="error"> First name contains alphabets only </span>
                             </div>
                         </div>
                         <div class="form-element">
-                            <div class="form-label"><label for="firstname">Last Name</label></div>
+                            <div class="form-label"><label for="lastname">Last Name</label></div>
                             <div class="form-control-container">
-				    <input type="text" class="form-control" id="lastname"
-                                    	name="lastname" placeholder="Lastname" required="required" />
-				    <span id="9" class="error"> Last name can't be blank </span>
-				    <span id="10" class="error"> Last name contains alphabets only </span>
+                                <input type="text" class="form-control" id="lastname" name="lastname"
+                                    placeholder="Lastname" />
+                                <span id="span6" class="error"> Last name can't be blank </span>
+                                <span id="span7" class="error"> Last name contains alphabets only </span>
                             </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="mobile">Mobile Number</label></div>
                             <div class="form-control-container">
-				    <input type="number" class="form-control" id="mobile"
-                                    	name="mobile" placeholder="+44 07-(xxx)-(xxx)-(xxx)" required="required" />
-				    <span id="12" class="error"> Mobile no. contains numbers only </span>
-			    </div>
+                                <input type="number" class="form-control" id="mobile" name="mobile"
+                                    placeholder="07-(xxx)-(xxx)-(xxx)" />
+                                <span id="span8" class="error"> Please enter valid phone number </span>
+                            </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="email">Email ID</label></div>
                             <div class="form-control-container">
-				    <input type="email" class="form-control" id="email"
-                                    	name="email" placeholder="Email address" required="required" maxlength="32" />
-				    <span id="12" class="error"> Please enter a valid email address </span>
-			    </div>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Email address" maxlength="32" />
+                                <span id="span9" class="error"> Please enter valid email address </span>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p><button class="btn" type="submit">Proceed</button></p>
+                        <p><button class="btn" id="checkin_detail_btn" type="submit">Proceed</button></p>
                     </div>
                 </div>
             </form>
@@ -101,6 +87,7 @@
         </div>
 
     </main>
+    <script src="../../Hotel_Management_System/JS/Receptionist_JS/checkin_details_validations.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
