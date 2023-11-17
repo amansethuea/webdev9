@@ -35,6 +35,18 @@ refButton.addEventListener("click", function(event){
     else {
         document.getElementById("span5").style.display = "none";
     } 
+    if (referenceno.length >= 1 &&  referenceno.length < 16) {
+        document.getElementById("span6").style.display = "inline";
+        document.getElementById("span8").style.display = "none";
+    }
+    else if (referenceno.length > 16) {
+        document.getElementById("span8").style.display = "inline";
+        document.getElementById("span6").style.display = "none";
+    }
+    else {
+        document.getElementById("span6").style.display = "none";
+        document.getElementById("span8").style.display = "none";
+    }
 
     event.preventDefault();
 });

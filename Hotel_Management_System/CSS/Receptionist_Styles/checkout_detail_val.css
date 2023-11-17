@@ -1,0 +1,29 @@
+.error {
+    background: #c51244 !important;
+    padding: 0px !important;
+    border-radius: 0 !important;
+    position: relative;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+#span1,
+#span2,
+#span3,
+#span4,
+#span5,
+#span6,
+#span7,
+#span8
+{
+    display: none;
+}
+
+.class1 {
+    border: 1px solid red;
+}
+
+.class2 {
+    border: 1px solid black;
+}

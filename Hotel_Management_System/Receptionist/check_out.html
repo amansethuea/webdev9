@@ -4,6 +4,7 @@
 <head>
     <title>The Crown Hotel</title>
     <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/checkout_detail_val.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -26,29 +27,46 @@
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-out</h1>
             <h4 class="reception_sub_heading"><em>Checking out Customer</em></h4>
-            <form>
+            <form id="checkout_details_form">
                 <div class="card signup-card">
                     <div class="card-header">Checkout Details</div>
                     <div class="card-body">
                         <div class="form-element">
-                            <div class="form-label"><label for="email">Reference No.</label></div>
-                            <div class="form-control-container"><input type="referenceno" class="form-control"
-                                    id="referenceno" name="email" placeholder="Reference Number" required="required"
-                                    maxlength="32" /></div>
+                            <div class="form-label"><label for="referenceno">Reference No.</label></div>
+                            <div class="form-control-container">
+                                <input type="referenceno" class="form-control" id="referenceno" name="referenceno"
+                                    placeholder="Reference Number" />
+                                <span id="span1" class="error"> Invalid Reference number. Not found in our records.
+                                </span>
+                                <span id="span2" class="error"> Reference number too short. Hint: Reference no. is a 16
+                                    digit booking reference </span>
+                                    <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 16
+                                        digit booking reference </span>
+                                <span id="span7" class="error"> Please enter either reference no. / email address /
+                                    phone no. </span>
+                            </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="email">Email</label></div>
-                            <div class="form-control-container"><input type="email" class="form-control" id="email"
-                                    name="email" placeholder="Email Address" required="required" maxlength="32" /></div>
+                            <div class="form-control-container">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Email Address" maxlength="32" />
+                                <span id="span3" class="error"> Please enter valid email address </span>
+                                <span id="span4" class="error"> Email address not found in our records </span>
+                            </div>
                         </div>
                         <div class="form-element">
                             <div class="form-label"><label for="mobile">Mobile No.</label></div>
-                            <div class="form-control-container"><input type="number" class="form-control" id="mobile"
-                                    name="mobile" placeholder="+44 07-(xxx)-(xxx)-(xxx)" required="required" /></div>
+                            <div class="form-control-container">
+                                <input type="number" class="form-control" id="mobile" name="mobile"
+                                    placeholder="07-(xxx)-(xxx)-(xxx)" />
+                                <span id="span5" class="error"> Please enter valid mobile number </span>
+                                <span id="span6" class="error"> Mobile number not found in our records </span>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p><button class="btn" type="submit">Checkout</button></p>
+                        <p><button class="btn" id="checkoutbtn" type="submit">Checkout</button></p>
                         </button>
                     </div>
                 </div>
@@ -57,6 +75,7 @@
         </div>
 
     </main>
+    <script src="../../Hotel_Management_System/JS/Receptionist_JS/checkout_validation.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
