@@ -1,5 +1,11 @@
 .error {
-    color: red;
+    background: #c51244 !important;
+    padding: 0px !important;
+    border-radius: 0 !important;
+    position: relative;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    border: 2px solid red;
+    border-radius: 10px;
 }
 
 #span1,
