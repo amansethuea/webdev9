@@ -4,6 +4,7 @@
 <head>
     <title>The Crown Hotel</title>
     <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/checkin_validation.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -26,17 +27,17 @@
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-in</h1>
             <h4 class="reception_sub_heading"><em>Onboarding Customers</em></h4>
-            <form>
+            <form id="form1">
                 <div class="card signup-card">
                     <div class="card-header">Check-in Details</div>
                     <div class="card-body">
                         <div class="form-element">
                             <div class="form-label">
-                                <label for="date">Check-in Date</label>
+                                <label for="date" id="checkinlabel">Check-in Date</label>
                             </div>
                             <div class="form-control-container">
-                                <input type="date" class="form-control" id="checkindate" name="checkindate"
-                                    required="required" />
+                                <input type="date" class="form-control" id="checkindate" name="checkindate" />
+                                <span id="span2" class="error">Check-in date can't be of a previous date</span>
                             </div>
                         </div>
                         <div class="form-element">
@@ -44,29 +45,34 @@
                                 <label for="date">Checkout Date</label>
                             </div>
                             <div class="form-control-container">
-                                <input type="date" class="form-control" id="checkoutdate" name="checkoutdate"
-                                    required="required" />
+                                <input type="date" class="form-control" id="checkoutdate" name="checkoutdate" />
+                                <span id="span4" class="error">Check-out date can't be of current or previous
+                                    date</span>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p><button class="btn" type="submit" onclick="javascript:clickBtn(this);">Check Availability</button></p>
+                        <p><button class="btn" id="checkavailbtn" type="submit">Check
+                                Availability</button></p>
                     </div>
                 </div>
             </form>
-            <form>
+            <form id="form2">
                 <div class="card signup-card">
                     <div class="card-header">Already have a booking ?</div>
                     <div class="card-body">
                         <div class="form-element">
                             <div class="form-label"><label for="referenceno">Reference No.</label></div>
-                            <div class="form-control-container"><input type="referenceno" class="form-control"
-                                    id="referenceno" name="referenceno" placeholder="Reference Number" required="required"
-                                    maxlength="32" /></div>
+                            <div class="form-control-container">
+                                <input type="referenceno" class="form-control" id="referenceno" name="referenceno"
+                                    placeholder="Reference Number" />
+                            </div>
+                            <span id="span5" class="error">Please enter a booking reference</span>
+                            <span id="span6" class="error">Invalid details. Reference no. too long</span>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p><button class="btn" type="submit">Fetch Details</button></p>
+                        <p><button class="btn" id="refbtn" type="submit">Fetch Details</button></p>
                     </div>
                 </div>
             </form>
@@ -74,15 +80,10 @@
         </div>
 
     </main>
-    <script>
-        function clickBtn(target) {
-            location.href = 'checkin_details.html'
-        };
-    </script>
+    <script src="../../Hotel_Management_System/JS/Receptionist_JS/checkin_validation.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
-
 </body>
 
 </html>
