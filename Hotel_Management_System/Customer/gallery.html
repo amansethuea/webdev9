@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
   <title>The Crown Hotel</title>
   <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css">
   <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 </head>
 
 <body>
-  <header>
-    <img
-      src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-      alt="The Crown Hotel logo">
-    <nav>
-      <ul id="header_links">
-        <li><span><a href="index.html">Home</a></span></li>
-        <li><span><a href="room_booking.html">Book Now</a></span></span></li>
-        <li><span><a href="gallery.html">Gallery</a></span></span></li>
-        <li><span><a href="contact_us.html">Contact us</a></span></li>
-        <li><span><a href="about_us.html">About us</a></span></li>
-        <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
-      </ul>
-    </nav>
-  </header>
   <header>
     <div id="header-spacer">
       <div> <!-- Logo -->
@@ -51,12 +42,149 @@
       <h1 class="other_pages_main_header">Welcome to luxury</h1>
       <h2 class="contact_sub_heading"><em>Rooms</em></h2>
     </div>
-    <div>
+    <div id="swiper_container">
+      <!-- Swiper -->
 
+      <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          
+          <div style="background-image: url(../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg)" class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">room name</div>
+            <div class="subtitle" data-swiper-parallax="-200">tag line</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+          <div style="background-image: url(../Images/rooms/_a53d2c58-eb0d-42fd-b4c4-cde40eea2772.jpeg)"  class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">Slide 2</div>
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+          <div style="background-image: url(../Images/rooms/_576eeaf8-66b9-4ad7-8c5b-d9a9e435a62e.jpeg)"  class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">Room 3</div>
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+          <div style="background-image: url(../Images/rooms/_433771c2-1ac7-49b7-987c-53140b6a56ba.jpeg)"  class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">Slide 2</div>
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+          <div style="background-image: url(../Images/rooms/_6760ce93-6bfd-43ba-ad02-ff003bc7aee9.jpeg)"  class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">Slide 2</div>
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+          <div style="background-image: url(../Images/rooms/_b375fe70-2411-49e1-a522-ea23e3ada5ea.jpeg)"  class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">Slide 2</div>
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+          <div style="background-image: url(../Images/rooms/_a519b6f9-eae6-4a39-9566-79850b1e3be3.jpeg)"  class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">Slide 2</div>
+            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
 
     </div>
   </main>
 </body>
 
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    speed: 600,
+    parallax: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+
+
+<footer>
+  <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+</footer>
+</body>
 </html>
