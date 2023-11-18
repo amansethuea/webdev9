@@ -411,20 +411,6 @@
         box-shadow: -3px 3px 6px 0 #0000004f;
     }
 
-    .light-shadow {
-        width: 30%;
-        box-shadow: -3px 3px 6px 0px #0000004f;
-    }
-
-    .light-shadow {
-        width: 30%;
-        box-shadow: -3px 3px 6px 0 #0000004f;
-    }
-
-    .light-shadow {
-        width: 30%;
-        box-shadow: -3px 3px 6px 0px #0000004f;
-    }
 
     .room-selection {
         /*width: 200px;*/
@@ -574,71 +560,7 @@
         text-decoration: solid;
 
     }
-    #swiper_container{
-        height:72vh;
-        width:100%;
-    }
 
-    /*
-    .scrolling-img {}
-    */
-    .swiper {
-        width: 100%;
-        height: 100%;
-        /*background: #000;*/
-    }
-
-    .slider-background-slide-a {
-        background-image: url(../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg);
-        width: 200px;
-        height: 200px;
-        padding: 20%;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .swiper-slide {
-        font-size: 30px;
-        color: #000000;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 40px 60px;
-        background-position: center;
-        background-size: cover;
-
-    }
-
-    .parallax-bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 130%;
-        height: 100%;
-        -webkit-background-size: cover;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .swiper-slide .title {
-        font-size: 100px;
-        font-weight: 300;
-        text-transform: capitalize;
-    }
-
-    .swiper-slide .subtitle {
-        font-size: 75px;
-        text-transform: capitalize
-    }
-
-    .swiper-slide .text {
-        font-size: 20px;
-        max-width: 400px;
-        line-height: 1.3;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 2%;
-        padding: 3px;
-        box-shadow: -4px 4px 6px 0px rgba(0, 0, 0, 0.13);
-    }
 }
 
 /*Small Screen*/
@@ -762,42 +684,144 @@
     }
 }
 
+.swiper {
+    width: 100%;
+    height: 72vh;
+}
 
-/*.swiper {*/
-/*    width: 100%;*/
-/*    height: 64%;*/
-/*}*/
+.swiper-slide {
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
 
-/*.swiper-slide {*/
-/*    text-align: center;*/
-/*    font-size: 18px;*/
-/*    !*background: #fff;*!*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
+.swiper-slide img {
+    display: block;
+    width: 55vw;
+    height: 55vh;
+    margin-top: 20px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 22px;
+    cursor: pointer;
+}
 
-/*.swiper-slide img {*/
-/*    display: block;*/
-/*    width: 60%;*/
-/*    height: 80%;*/
-/*    object-fit: cover;*/
-/*    margin: auto;*/
-/*}*/
+.image-shadow{
+    box-shadow: -3px 3px 11px 1px #00000038;
+}
 
-/*.swiper-pagination-bullet {*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*    text-align: center;*/
-/*    line-height: 20px;*/
-/*    font-size: 40px;*/
-/*    font-family: serif;*/
-/*    color: #000000;*/
-/*    opacity: 1;*/
-/*    background: rgba(0, 0, 0, 0.2);*/
-/*}*/
+:root{
+    --swiper-theme-color: #0c4b22 !important;
+}
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
 
-/*.swiper-pagination-bullet-active {*/
-/*    color: #000000;*/
-/*    background: #418f22;*/
-/*}*/
+span.swiper-pagination-bullet {
+    width: 5px;
+    height: 16px;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+/*animation: scrollDownAnimation 1s infinite linear;*/
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #37ce56;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    /*background-color: #000;*/
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    animation: pulse 4s infinite linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
+    animation-delay: 12s;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+.swiper-image-container{
+    position: relative;
+}
+.swiper-image-container:hover .swiper-image {
+    transition-duration: 500ms;
+    filter: blur(2px)
+    opacity(0.5);
+    cursor: default;
+}
+
+/*
+This CSS rule targets the `.swiper-hover-text` class. It applies several properties to style the text box that appears when hovering over the swiper image:
+
+- `position: absolute;` Positions the text box relative to the nearest positioned ancestor.
+- `top: 50%;` and `left: 50%;` Positions the text box at the center of the ancestor.
+- `transform: translate(-50%, -50%);` Moves the text box up and to the left by half of its own width and height.
+- `color: #fff;` Sets the text color to white.
+- `font-size: 24px;` Sets the font size of the text to 24 pixels.
+- `text-align: justify;` Justifies the text.
+- `opacity: 0;` Sets the initial opacity of the text box to 0.
+- `transition: opacity 0.3s;` Adds a transition effect to the opacity property.
+- `background-color: rgba(0, 0, 0, 0.5);` Sets the background color to a semi-transparent black.
+- `z-index: 1;` Positions the text box above the swiper image.
+- `border-radius: 6px;` Rounds the corners of the text box.
+- `padding: 20px;` Adds space around the text.
+- `width: 80%;` Sets the width of the text box to 80% of the ancestor.
+*/
+.swiper-hover-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    text-align: justify;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: rgba(6, 44, 18, 0.82); /* Add a semi-transparent black background */
+    z-index: 1; /* Ensure the text box is on top of the image */
+    border-radius: 6px;
+    padding: 20px;
+    width: 80%;
+    box-shadow: -3px 3px 11px 1px #00000045;
+;
+}
+/*This code will change the opacity of the text box to 1 as to appear on hover*/
+.swiper-image-container:hover .swiper-hover-text {
+    transition-duration: 1500ms;
+    opacity: 1;
+    cursor: default;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
