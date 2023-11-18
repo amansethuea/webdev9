@@ -10,6 +10,7 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../JS/Customer_JS/Customer_JS.js"></script>
 
 
 </head>
@@ -38,141 +39,81 @@
   </header>
 
   <main>
-    <div>
+    <div id="gallery_heading">
       <h1 class="other_pages_main_header">Welcome to luxury</h1>
       <h2 class="contact_sub_heading"><em>Rooms</em></h2>
     </div>
-    <div id="swiper_container">
-      <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
-      <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          
-          <div style="background-image: url(../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg)" class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">room name</div>
-            <div class="subtitle" data-swiper-parallax="-200">tag line</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
+
+        <div class="swiper-slide" style="display: flex">
+          <h1  style="padding: 0" >Room 01</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg" alt="">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business or pleasure, you'll feel like royalty at our hotel.</div>
           </div>
-          <div style="background-image: url(../Images/rooms/_a53d2c58-eb0d-42fd-b4c4-cde40eea2772.jpeg)"  class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Slide 2</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </div>
-          <div style="background-image: url(../Images/rooms/_576eeaf8-66b9-4ad7-8c5b-d9a9e435a62e.jpeg)"  class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Room 3</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </div>
-          <div style="background-image: url(../Images/rooms/_433771c2-1ac7-49b7-987c-53140b6a56ba.jpeg)"  class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Slide 2</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </div>
-          <div style="background-image: url(../Images/rooms/_6760ce93-6bfd-43ba-ad02-ff003bc7aee9.jpeg)"  class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Slide 2</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </div>
-          <div style="background-image: url(../Images/rooms/_b375fe70-2411-49e1-a522-ea23e3ada5ea.jpeg)"  class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Slide 2</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </div>
-          <div style="background-image: url(../Images/rooms/_a519b6f9-eae6-4a39-9566-79850b1e3be3.jpeg)"  class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Slide 2</div>
-            <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-            <div class="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+          <div class="swiper-slide" style="display: flex">
+          <h1  style="padding: 0" >Room 02</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_576eeaf8-66b9-4ad7-8c5b-d9a9e435a62e.jpeg" alt="">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
+        <div class="swiper-slide" style="display: flex">
+          <h1  style="padding: 0" >Room 03</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_6760ce93-6bfd-43ba-ad02-ff003bc7aee9.jpeg">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
+        <div class="swiper-slide" style="display: flex">
+          <h1  style="padding: 0" >Room 04</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_34530e4f-8d42-4b4e-8778-7da3814a58ce.jpeg">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
       </div>
+      <div class="swiper-pagination"></div>
     </div>
-
     </div>
   </main>
 </body>
 
 
 <!-- Initialize Swiper -->
+<!--<script>-->
+<!--  var swiper = new Swiper(".mySwiper", {-->
+<!--    pagination: {-->
+<!--      el: ".swiper-pagination",-->
+<!--      type: "fraction",-->
+<!--    },-->
+<!--    navigation: {-->
+<!--      nextEl: ".swiper-button-next",-->
+<!--      prevEl: ".swiper-button-prev",-->
+<!--    },-->
+<!--  });-->
+<!--</script>-->
+
 <script>
   var swiper = new Swiper(".mySwiper", {
-    speed: 600,
-    parallax: true,
     pagination: {
       el: ".swiper-pagination",
+      type: "bullets",
       clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -180,6 +121,8 @@
     },
   });
 </script>
+
+
 
 
 
