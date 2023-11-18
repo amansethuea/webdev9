@@ -117,7 +117,10 @@
         background-color: black;
         color: white;
         text-align: left;
-        padding: 3px 3px 3px 5%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
     footer p {
@@ -140,11 +143,6 @@
         /*width: 70vh;*/
 
     }
-
-    /*padding: 2vh 30vh 30vh 30vh;
-    #about_us_para {
-        
-    } */
 
     #landing_tag {
         font-weight: lighter;
@@ -239,6 +237,12 @@
         width: 50%;
         text-align: center;
         margin: auto;
+
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: #eaeaea88;
+        padding: 20px;
     }
 
     .contact_sub_heading {
@@ -249,49 +253,36 @@
     }
 
     .contact_box {
-        border: 2px solid #2d0945;
-        /*margin: 10px;*/
-        padding: 20px;
-        box-shadow: 1px 1px 3px 2px purple;
-        width: 30%;
-        /*margin: 25px 10px 20px 500px;*/
-        /*margin: 25px 10px 20px 500px;*/
-        /*margin: auto;*/
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
         background-color: #eaeaea88;
+        padding: 20px;
+        width: 30%;
+        margin: auto;
     }
 
     .contact_form_box {
-        border: 2px solid #2d0945;
-        /*margin: 10px;*/
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: #eaeaea88;
         padding: 20px;
-        box-shadow: 1px 1px 3px 2px purple;
         width: 30%;
         height: 320px;
         margin: 25px 10px 20px 500px;
         margin: auto;
         margin-top: 20px;
-        background-color: #eaeaea88;
     }
 
     .about_us_box {
-        margin: 10px;
-        padding: 10px;
+        margin: 30px;
+        padding: 20px;
         float: left;
     }
 
     .selected_room {
         background-color: rgba(0, 84, 29, 0.38);
-    }
-
-    .contact_form_box {
-        border: 2px solid #2d0945;
-        /*margin: 10px;*/
-        padding: 20px;
-        box-shadow: 1px 1px 3px 2px purple;
-        width: 30%;
-        height: 320px;
-        /*margin: 25px 10px 20px 500px;*/
-        background-color: #eaeaea88;
     }
 
     .form-element {
@@ -327,8 +318,8 @@
 
     .btn {
         display: inline-block;
-        background-color: #5619b8;
-        color: white;
+        background-color:  rgba(0, 84, 29, 0.38);
+        color: black;
         text-transform: uppercase;
         padding-top: 6px;
         padding-bottom: 6px;
@@ -336,7 +327,6 @@
         padding-right: 10px;
         font-weight: 700;
         font-size: 16px;
-        border: 2px solid #B8195A;
         border-radius: 10px;
         cursor: pointer;
         box-shadow: 0 0 2px 1px #bdbbbb;
@@ -347,16 +337,8 @@
     }
 
     .btn:hover {
-        background-color: #1869ac;
-        box-shadow: 0 0 3px 3px #9e9b9b;
-        background-color: #B8195A;
+        background-color: #26690f;
         box-shadow: 0px 0px 3px 3px #9e9b9b;
-        background-color: #1869ac;
-        box-shadow: 0 0 3px 3px #9e9b9b;
-    }
-
-    .reset-button:hover {
-        background-color: #B8195A;
     }
 
     .contact-form-footer {
@@ -381,25 +363,20 @@
 
 
     .room-selection {
-        /*width: 200px;*/
         width: 23%;
         height: 75%;
-        /*overflow-y: scroll;*/
         border: 1px solid #000;
         position: relative;
-        /*left: 1vw;*/
-        /*top: 25vh;*/
     }
 
     .rooms {
+        background-color: #eaeaea88;
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 90%;
         overflow-y: scroll;
-        /* border: 1px solid #000; */
         position: absolute;
-        /* left: 1vw; */
     }
 
     .stay-duration {
@@ -410,6 +387,7 @@
         /*position: absolute;*/
         left: 26%;
         /*top: 25%;*/
+        background-color: #eaeaea88;
     }
 
     .date-out-selection {
@@ -430,8 +408,10 @@
         /*position: absolute;*/
         right: 1vw;
         /*top: 25%;*/
+        background-color: #eaeaea88;
     }
-    .additional-booking-selection-container{
+
+    .additional-booking-selection-container {
         display: flex;
         flex-direction: column;
         overflow: auto;
@@ -461,12 +441,15 @@
 
     }
 
-    #toggle-on{
+    #toggle-on {
         cursor: pointer;
     }
-    #booking-in-date, #booking-out-date{
+
+    #booking-in-date,
+    #booking-out-date {
         cursor: pointer;
     }
+
     .booking-mechanism {
         padding-top: 5vh;
         position: relative;
@@ -623,7 +606,12 @@
         background-color: black;
         color: white;
         text-align: left;
-        padding: 3px 3px 3px 5%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+     
     }
 
     body,
@@ -687,13 +675,14 @@
     cursor: pointer;
 }
 
-.image-shadow{
+.image-shadow {
     box-shadow: -3px 3px 11px 1px #00000038;
 }
 
-:root{
+:root {
     --swiper-theme-color: #0c4b22 !important;
 }
+
 .swiper-pagination-bullet {
     width: 20px;
     height: 20px;
@@ -709,18 +698,21 @@ span.swiper-pagination-bullet {
     width: 5px;
     height: 16px;
 }
+
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 /*animation: scrollDownAnimation 1s infinite linear;*/
 .swiper-pagination-bullet-active {
     color: #fff;
     background: #37ce56;
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
     /*background-color: #000;*/
     width: 30px;
     height: 30px;
@@ -738,13 +730,14 @@ span.swiper-pagination-bullet {
 .swiper-button-prev {
     left: 10px;
 }
-.swiper-image-container{
+
+.swiper-image-container {
     position: relative;
 }
+
 .swiper-image-container:hover .swiper-image {
     transition-duration: 500ms;
-    filter: blur(2px)
-    opacity(0.5);
+    filter: blur(2px) opacity(0.5);
     cursor: default;
 }
 
@@ -765,7 +758,7 @@ This CSS rule targets the `.swiper-hover-text` class. It applies several propert
 - `padding: 20px;` Adds space around the text.
 - `width: 80%;` Sets the width of the text box to 80% of the ancestor.
 */
-.swiper-hover-text{
+.swiper-hover-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -775,14 +768,17 @@ This CSS rule targets the `.swiper-hover-text` class. It applies several propert
     text-align: justify;
     opacity: 0;
     transition: opacity 0.3s;
-    background-color: rgba(6, 44, 18, 0.82); /* Add a semi-transparent black background */
-    z-index: 1; /* Ensure the text box is on top of the image */
+    background-color: rgba(6, 44, 18, 0.82);
+    /* Add a semi-transparent black background */
+    z-index: 1;
+    /* Ensure the text box is on top of the image */
     border-radius: 6px;
     padding: 20px;
     width: 80%;
     box-shadow: -3px 3px 11px 1px #00000045;
-;
+    ;
 }
+
 /*This code will change the opacity of the text box to 1 as to appear on hover*/
 .swiper-image-container:hover .swiper-hover-text {
     transition-duration: 1500ms;
@@ -795,9 +791,11 @@ This CSS rule targets the `.swiper-hover-text` class. It applies several propert
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(2);
     }
+
     100% {
         transform: scale(1);
     }
