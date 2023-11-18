@@ -164,16 +164,18 @@
     }
 
     .booking-dates {
+        overflow-y: scroll;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: stretch;
         align-content: center;
         flex-wrap: nowrap;
+        height: 85%;
     }
 
     .booking-date-selections {
-        padding: 50px 10px 50px 10px;
+        /*padding: 50px 10px 50px 10px;*/
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -205,41 +207,6 @@
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
-    }
-
-    .booking-dates {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: stretch;
-        align-content: center;
-        flex-wrap: nowrap;
-    }
-
-    .booking-date-selections {
-        padding: 50px 10px 50px 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-between;
-        align-content: stretch;
-        bottom: 20%;
-    }
-
-    h3.booking-dates-heading {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .addit-info-sections {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 5% 0 2%
     }
 
     #main_landing_page {
@@ -313,7 +280,7 @@
     }
 
     .selected_room {
-        background-color: yellowgreen;
+        background-color: rgba(0, 84, 29, 0.38);
     }
 
     .contact_form_box {
@@ -399,6 +366,7 @@
 
     .other_pages_main_header {
         font-size: 60px;
+        text-decoration-line: underline;
         margin: 0;
         text-align: center;
         flex-wrap: wrap;
@@ -457,18 +425,31 @@
     .additional-booking-selection {
         width: 23%;
         height: 75%;
-        overflow-y: scroll;
+        /*overflow-y: auto;*/
         border: 1px solid #000;
         /*position: absolute;*/
         right: 1vw;
         /*top: 25%;*/
     }
+    .additional-booking-selection-container{
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        height: 89%;
+    }
 
     .room {
         padding: 10px;
         border-bottom: 1px solid #000;
+        cursor: pointer;
+    }
 
-        cursor: context-menu;
+    .booking-box {
+        width: 30%;
+    }
+
+    .soft-box {
+        border-radius: 10px;
     }
 
     .booking-box {
@@ -478,18 +459,14 @@
     .soft-box {
         border-radius: 10px;
 
-        cursor: context-menu;
     }
 
-    .booking-box {
-        width: 30%;
+    #toggle-on{
+        cursor: pointer;
     }
-
-    .soft-box {
-        border-radius: 10px;
-
+    #booking-in-date, #booking-out-date{
+        cursor: pointer;
     }
-
     .booking-mechanism {
         padding-top: 5vh;
         position: relative;
