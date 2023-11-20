@@ -38,8 +38,34 @@
     <div class="landing_page_container">
       <h1 class="other_pages_main_header">Secure Your Booking Today</h1>
       <div class="booking-mechanism">
+        <div class="stay-duration booking-box light-shadow soft-box">
+          <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">Select Your Duration</h2>
+          <div class="booking-dates">
+            <div class="booking-date-selections">
+              <h3 class="booking-dates-heading">Arrival Date</h3>
+              <label for="booking-in-date"></label><input type="date" id="booking-in-date">
+            </div>
+            <div class="booking-date-selections">
+              <h3 class="booking-dates-heading">Leaving Date</h3>
+              <label for="booking-out-date"></label><input type="date" id="booking-out-date">
+            </div>
+            <div class="booking-date-selections">
+              <h3 class="booking-dates-heading">Room Type</h3>
+              <form action="">
+                <select name="room_type" id="room_type_select">
+                  <option value="standard_double">Standard Double</option>
+                  <option value="standard_twin">Standard Twin</option>
+                  <option value="superior_double">Superior Double</option>
+                  <option value="superior_twin">Superior Twin</option>
+                </select>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        
         <div class="room-selection booking-box light-shadow soft-box">
-          <h2 style="font-size: medium; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+          <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
             Select Your Room Preference</h2>
           <div class="rooms">
             <div class="room"><!--Room 01 -->Trafalgar Suite</div>
@@ -67,69 +93,22 @@
             <div class="room"><!--Room 23 -->Lady Suite</div>
           </div>
         </div>
-        <div class="stay-duration booking-box light-shadow soft-box">
-          <h2 style="font-size: large; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">Select Your Duration</h2>
-          <div class="booking-dates">
-            <div class="booking-date-selections">
-            <h3 class="booking-dates-heading">Arrival Date</h3>
-              <label for="booking-in-date"></label><input type="date" id="booking-in-date">
+
+        <div class="room-selection booking-box light-shadow soft-box">
+          <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+            Booking Summary</h2>
+            <div class="booking-box-summary-container">
+              <div class="booking-box-summary booking-box-summary-a">number of rooms: N</div>
+              <div class="booking-box-summary">arrival date: date</div>
+              <div class="booking-box-summary booking-box-summary-a">checkout date: date</div>
+              <div class="booking-box-summary">duration of stay: (checkout date - checkin date)</div>
+              <div class="booking-box-summary booking-box-summary-a">cost of stay</div>
+              <div class="booking-box-summary">
+              <button type="button" onclick="alert('Proceeding to checkout')">Reserve Room</button>
+              </div>
             </div>
-            <div class="booking-date-selections">
-            <h3 class="booking-dates-heading">Leaving Date</h3>
-              <label for="booking-out-date"></label><input type="date" id="booking-out-date">
-            </div>
-          </div>
         </div>
-        <div class="additional-booking-selection booking-box light-shadow soft-box">
-          <h2 style="font-size: medium; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0;border-top-left-radius: 10px; border-top-right-radius: 10px">Select Any Additional Information</h2>
-<!--          Below is the toggle stuff for rooms-->
-          <div class="additional-booking-selection-container">
-            <div class="addit-info-sections">
-              <div>
-                <input type="checkbox" id="toggle-on" name="wheelchair-access">
-                <label for="toggle-on"></label>
-              </div>
-              <p class="addit-info-text">Wheelchair access</p>
-            </div>
-            <div class="addit-info-sections">
-              <div>
-                <input type="checkbox" id="toggle-on" name="smoking-room" >
-                <label for="toggle-on"></label>
-              </div>
-              <p class="addit-info-text">Smoking Room</p>
-            </div>
-            <div class="addit-info-sections">
-              <div>
-                <input type="checkbox" id="toggle-on" name="quiet-Room" >
-                <label for="toggle-on"></label>
-              </div>
-              <p class="addit-info-text">Quiet Room</p>
-            </div>
-            <div class="addit-info-sections">
-              <div>
-                <input type="checkbox" id="toggle-on" name="resturant-inclusion" >
-                <label for="toggle-on"></label>
-              </div>
-              <p class="addit-info-text">Resturant Inclusion</p>
-            </div>
-            <div class="addit-info-sections">
-              <div>
-                <input type="checkbox" id="toggle-on" name="gym-inclusion" >
-                <label for="toggle-on"></label>
-              </div>
-              <p class="addit-info-text">Gym Inclusion</p>
-            </div>
-            <div class="addit-info-sections">
-              <div>
-                <input type="checkbox" id="toggle-on" name="conference-room-inclusion" >
-                <label for="toggle-on"></label>
-              </div>
-              <p class="addit-info-text">Meeting Room Inclusion</p>
-            </div>
-          </div>
-<!--          ABOVE IS THE TOGGLE STUFF FOR ROOMS
--->
-        </div>
+        
       </div>
     </div>
   </main>
