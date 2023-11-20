@@ -295,6 +295,7 @@
         width: 30%;
         float: left;
         font-size: 17px;
+        padding-top: 3%;
     }
 
     .form-control-container {
@@ -308,6 +309,7 @@
         border-radius: 3px;
         border: 1px solid #5e9adf;
         transition: box-shadow 0.3s;
+        margin-top: 3%;
     }
 
     /* When the cursor is inside the form element, for eg. inside a text-box */
