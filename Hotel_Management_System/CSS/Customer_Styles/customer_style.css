@@ -320,7 +320,7 @@
 
     .btn {
         display: inline-block;
-        background-color:  rgba(0, 84, 29, 0.38);
+        background-color: rgba(0, 84, 29, 0.38);
         color: black;
         text-transform: uppercase;
         padding-top: 6px;
@@ -613,7 +613,7 @@
         bottom: 0;
         width: 100%;
 
-     
+
     }
 
     body,
@@ -798,6 +798,11 @@ This CSS rule targets the `.swiper-hover-text` class. It applies several propert
     cursor: grabbing;
 }
 
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
 
 @keyframes pulse {
     0% {
@@ -807,6 +812,7 @@ This CSS rule targets the `.swiper-hover-text` class. It applies several propert
     80% {
         transform: scale(1);
     }
+
     90% {
         transform: scale(1.5);
     }
