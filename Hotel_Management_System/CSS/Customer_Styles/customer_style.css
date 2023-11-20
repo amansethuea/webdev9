@@ -231,13 +231,14 @@
         font-weight: lighter;
         justify-content: center;
         text-align: center;
+        margin-top: 10px;
     }
 
     .about_para {
-        width: 50%;
+        width: 60%;
         text-align: center;
         margin: auto;
-
+        margin-top: 30px;
         border: 2px solid rgba(7, 202, 75, 0.38);
         box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
         border-radius: 10px;
