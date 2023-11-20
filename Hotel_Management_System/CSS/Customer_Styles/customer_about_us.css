@@ -72,6 +72,7 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
+    text-decoration: none;
 }
 
 .button:hover {
