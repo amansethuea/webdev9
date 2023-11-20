@@ -12,7 +12,7 @@
 <body>
     <header>
         <div id="header-spacer">
-            <div> 
+            <div>
                 <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
                     alt="Logo emblem of a hotel with a crown on top">
             </div>
@@ -22,7 +22,8 @@
                         <li><span><a href="index.html">Home</a></span></li>
                         <li><span><a href="room_booking.html">Book Now</a></span></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
-                        <li><span style="font-size: larger; font-weight: bold"><a href="contact_us.html">Contact us</a></span></li>
+                        <li><span style="font-size: larger; font-weight: bold"><a href="contact_us.html">Contact
+                                    us</a></span></li>
                         <li><span><a href="about_us.html">About us</a></span></li>
                         <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
                     </ul>
@@ -44,7 +45,7 @@
                             <div class="form-label"><label for="name">Name</label></div>
                             <div class="form-control-container">
                                 <input type="text" class="form-control" id="name" name="name" autofocus="autofocus"
-                                    placeholder="Name" />
+                                    placeholder="Name" maxlength="32" />
                                 <span id="span1" class="error">Name can't be blank</span>
                                 <span id="span2" class="error">Name must contain alphabets only</span>
                             </div>
@@ -73,6 +74,7 @@
                                 wrap="soft" maxlength="300"></textarea>
                             <span id="span5" class="error">Inquiry message can't be blank</span>
                             <span id="span6" class="error">Inquiry message too long</span>
+                            <span id="span7">255 words left</span>
                         </div>
                     </div>
                     <div class="contact-form-footer">
@@ -83,6 +85,8 @@
             </div>
         </div>
     </main>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="../../Hotel_Management_System/JS/Customer_JS/contact_us_message_restrict.js"></script>
     <script src="../../Hotel_Management_System/JS/Customer_JS/contact_us_form_validation.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
