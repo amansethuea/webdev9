@@ -367,7 +367,7 @@
         /*top: 25vh;*/
     }
 
-    .rooms {
+    .all_rooms_container {
         display: flex;
         flex-direction: column;
         width: 100%;

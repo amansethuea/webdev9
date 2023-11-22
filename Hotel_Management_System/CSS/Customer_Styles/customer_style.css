@@ -1,6 +1,8 @@
 /*Large Screen*/
 @media screen and (min-width: 768px) {
-    header {
+
+    /*Header styles*/
+    header { /*The main bulk of the header style*/
         background-color: #ffffff;
         color: white;
         display: flex;
@@ -12,36 +14,7 @@
         z-index: 2;
         align-items: center;
     }
-
-    header img {
-        height: 50px;
-        width: 50px;
-        margin-right: auto;
-    }
-
-    /* nav bar styling */
-    nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav li {
-        /*margin-right: 20px;*/
-        /*padding: 20px;*/
-        cursor: pointer;
-        transition: transform 0.5s;
-    }
-
-    #header-spacer {
+    #header-spacer { /* To separate the logo and nav links */
         display: flex;
         justify-content: space-between;
         flex-direction: row;
@@ -50,25 +23,41 @@
         align-items: center;
         width: 100%;
     }
-
-
-    #header-links {
-
+    header img { /* Logo  contained in header*/
+        height: auto;
+        width: 50px;
+        /*margin-right: auto;*/
+    }
+    #header-links-container{ /*container for all the nav links*/
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
     }
-
-    nav ul li a:link,
-    nav ul li a:visited {
+    /* nav bar styling */
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav li {
+        cursor: pointer;
+        transition: transform 0.5s;
+    }
+    nav ul li a:link, nav ul li a:visited {
         padding: 10px 20px;
         text-decoration: none;
         display: inline-block;
         color: #2d0945;
         transition: background-color 0.3s;
     }
-
     nav ul li a:hover {
         background-color: #ffffff;
         transform: scale(1.1);
@@ -85,6 +74,175 @@
     li:first-child span {
         border-left: none;
     }
+
+    /*Footer styles*/
+    footer {
+        background-color: black;
+        color: white;
+        text-align: left;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    footer p {
+        font-size: small;
+        padding-left: 2%;
+    }
+
+    /*Main body styling*/
+    body, html {
+        font-family: "Cormorant Garamond", serif;
+        margin: 0;
+        padding-top: 50px;
+    }
+    #main_landing_page {
+        /* Lighten the image opacity */
+        background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
+        url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 88vh;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #landing_tag { /*The small text under the 'welcome to..'*/
+        font-weight: lighter;
+        font-size: 150%;
+        color: rgba(255, 255, 255, 0.71);
+    }
+
+    /*GENERAL STYLING*/
+    /*used on most pages*/
+    .landing_page_container {
+        height: 85vh;
+        width: auto;
+    }
+    /*used on most pages to change h1*/
+    .other_pages_main_header {
+        font-size: 60px;
+        text-decoration-line: underline;
+        margin: 0;
+        text-align: center;
+        flex-wrap: wrap;
+        font-weight: 150;
+        padding: 20px 0 0;
+    }
+
+    /*Book Now styling*/
+    .booking-mechanism {/*Contains the three booking boxes*/
+        padding-top: 7vh;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        height: 70vh;
+    }
+    .soft-box { /*Used for a few boxes to give them curved edges*/
+        border-radius: 10px;
+    }
+    .booking-box {/*use to set for appropriate width for distribution*/
+        width: 30%;
+    }
+    .light-shadow {/*Used for a generic shadow effect, rather subtle*/
+        /*width: 30%;*/
+        box-shadow: -3px 3px 6px 0 #0000004f;
+    }
+
+    /*------ Duration of stay ------*/
+    .stay-duration {/*used to style the box for 'duration'*/
+        height: 75%;
+        /*left: 26%;*/
+        background-color: #eaeaea88;
+    }
+    .booking-dates {/*used as a container for the dates and room types*/
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: center;
+        flex-wrap: nowrap;
+        height: 85%;
+    }
+    .booking-date-selections {/*Used to space and set the calendar and room types*/
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        align-content: stretch;
+        bottom: 20%;
+        padding: 0 5% 0 5%;
+    }
+    h3.booking-dates-heading {/*used for the headers of both in and out dates*/
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    #booking-in-date, #booking-out-date {
+        cursor: text;
+        font-size: 1.2rem;
+    }
+    select#room_type_select { /*used to style the dropdown box for the room type*/
+        width: 100%;
+        font-size: 1.2rem;
+        margin-bottom: 3%;
+    }
+    /*------ Selection Of Room ------*/
+    .room-selection {/*Used to style the box which holds the various rooms*/
+        /*width: 23%;*/
+        height: 75%;
+        /* border: 1px solid #000; */
+        position: relative;
+        background-color: #eaeaea88;
+    }
+    .all_rooms_container {/*The container for all the individual rooms*/
+        background-color: #eaeaea88;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: -webkit-fill-available;
+        overflow-y: scroll;
+        position: absolute;
+    }
+    .room {/*Each individual room*/
+        padding: 10px;
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+    }
+    /*------ Summary of Booking------*/
+    .booking-box-summary-container {/*This will hold all the individual divs for each summary point*/
+        display: flex;
+        flex-direction: column;
+        height: 89%;
+        justify-content: space-between;
+        overflow: auto;
+    }
+    .booking-box-summary.booking-box-summary-a { /*Just adds a darker colour per every other line*/
+        background: #e1e1e1;
+    }
+    .booking-box-summary {/*Styling for each line of text within the booking summary*/
+        font-size: 1.2rem;
+        padding: 8% 5% 8% 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    div#book-now-page-checkout-button {/*style for the button at the end of the summary*/
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /*BGallery Styling*/
+    /*-------- PROGRESS LINE --------*/
+
+
+
 
     #landing_page_about_us {
         padding-top: 10px;
@@ -113,26 +271,9 @@
         font-weight: 100;
     }
 
-    footer {
-        background-color: black;
-        color: white;
-        text-align: left;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
 
-    footer p {
-        font-size: small;
-    }
 
-    body,
-    html {
-        font-family: "Cormorant Garamond", serif;
-        margin: 0;
-        padding-top: 50px;
-    }
+
 
     #contact_us_own_page {
         display: flex;
@@ -144,51 +285,6 @@
 
     }
 
-    #landing_tag {
-        font-weight: lighter;
-        font-size: 150%;
-        color: white;
-    }
-
-    .landing_page_container {
-        height: 85vh;
-        /*width: 100vh;*/
-        width: 100%;
-    }
-
-    #main_landing_page {
-        /* Lighten the image opacity */
-        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    }
-
-    .booking-dates {
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: stretch;
-        align-content: center;
-        flex-wrap: nowrap;
-        height: 85%;
-    }
-
-    .booking-date-selections {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-between;
-        align-content: stretch;
-        bottom: 20%;
-        padding: 0 5% 0 5%;
-    }
-
-    h3.booking-dates-heading {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
 
     .addit-info-sections {
         display: flex;
@@ -202,25 +298,7 @@
     .addit-info-text {}
     */
 
-    #main_landing_page {
-        /* Lighten the image opacity */
-        background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
-    }
 
-    #main_landing_page {
-        /* Lighten the image opacity */
-        background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
-            url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
-        background-size: cover;
-        background-position: center;
-        height: 88vh;
-        width: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-    }
 
     #contact_us_form {
         width: 80%;
@@ -350,50 +428,11 @@
         text-align: right;
     }
 
-    .other_pages_main_header {
-        font-size: 60px;
-        text-decoration-line: underline;
-        margin: 0;
-        text-align: center;
-        flex-wrap: wrap;
-        font-weight: 150;
-        padding: 20px 0 0;
-    }
-
-    .light-shadow {
-        width: 30%;
-        box-shadow: -3px 3px 6px 0 #0000004f;
-    }
 
 
-    .room-selection {
-        width: 23%;
-        height: 75%;
-        /* border: 1px solid #000; */
-        position: relative;
-        background-color: #eaeaea88;
-    }
 
-    .rooms {
-        background-color: #eaeaea88;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 90%;
-        overflow-y: scroll;
-        position: absolute;
-    }
 
-    .stay-duration {
-        width: 23%;
-        height: 75%;
-        /*overflow-y: scroll;*/
-        /* border: 1px solid #000; */
-        /*position: absolute;*/
-        left: 26%;
-        /*top: 25%;*/
-        background-color: #eaeaea88;
-    }
+
 
     .date-out-selection {
         width: 23%;
@@ -415,29 +454,9 @@
         /*top: 25%;*/
         background-color: #eaeaea88;
     }
-    select#room_type_select {
-        width: 100%;
-        font-size: 1.2rem;
-        margin-bottom: 3%;
-    }
 
-    .booking-box-summary-container {
-        display: flex;
-        flex-direction: column;
-        height: 89%;
-        justify-content: space-between;
-        overflow: auto;
-    }
 
-    .booking-box-summary.booking-box-summary-a {
-        background: #e1e1e1;
-    }
 
-    .booking-box-summary {
-        font-size: 18px;
-        font-size: 1.2rem;
-        padding: 5% 5% 5% 5%;
-    }
     .additional-booking-selection-container {
         display: flex;
         flex-direction: column;
@@ -445,50 +464,18 @@
         height: 89%;
     }
 
-    .room {
-        padding: 10px;
-        border-bottom: 1px solid #000;
-        cursor: pointer;
-    }
 
-    .booking-box {
-        width: 30%;
-    }
 
-    .soft-box {
-        border-radius: 10px;
-    }
 
-    .booking-box {
-        width: 30%;
-    }
 
-    .soft-box {
-        border-radius: 10px;
-
-    }
 
     #toggle-on {
         cursor: pointer;
     }
 
-    #booking-in-date,
-    #booking-out-date {
-        cursor: text;
-        font-size: 1.2rem;
-    }
 
-    .booking-mechanism {
-        padding-top: 5vh;
-        position: relative;
-        height: 80%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+
+
 
     .photo-gallery {
         /*margin: 10px;*/
