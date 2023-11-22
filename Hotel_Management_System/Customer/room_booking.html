@@ -8,7 +8,8 @@
   <link rel="stylesheet" type="text/css" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css">
   <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+  <script src="../../Hotel_Management_System/JS/Customer_JS/Customer_JS.js" defer></script>
 </head>
 
 <body>
@@ -66,8 +67,8 @@
         
         <div class="room-selection booking-box light-shadow soft-box">
           <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
-            Select Your Room Preference</h2>
-          <div class="rooms">
+            Select Your Room</h2>
+          <div class="all_rooms_container">
             <div class="room"><!--Room 01 -->Trafalgar Suite</div>
             <div class="room"><!--Room 02 -->Presidential Suite</div>
             <div class="room"><!--Room 03 -->Royal Suite</div>
@@ -98,12 +99,27 @@
           <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
             Booking Summary</h2>
             <div class="booking-box-summary-container">
-              <div class="booking-box-summary booking-box-summary-a">number of rooms: N</div>
-              <div class="booking-box-summary">arrival date: date</div>
-              <div class="booking-box-summary booking-box-summary-a">checkout date: date</div>
-              <div class="booking-box-summary">duration of stay: (checkout date - checkin date)</div>
-              <div class="booking-box-summary booking-box-summary-a">cost of stay</div>
+              <div class="booking-box-summary booking-box-summary-a">
+                <div>Number of rooms: </div>
+                <div>*int*</div>
+              </div>
               <div class="booking-box-summary">
+                <div>Arrival Date: </div>
+                <div>*Date*</div>
+              </div>
+              <div class="booking-box-summary booking-box-summary-a">
+                <div>Checkout Date: </div>
+                <div>*Date*</div>
+              </div>
+              <div class="booking-box-summary">
+                <div>Duration of Stay: </div>
+                <div>*int*</div>
+              </div>
+              <div class="booking-box-summary booking-box-summary-a">
+                <div>Cost of Stay: </div>
+                <div>*float*</div>
+              </div>
+              <div class="booking-box-summary" id="book-now-page-checkout-button">
               <button type="button" onclick="alert('Proceeding to checkout')">Reserve Room</button>
               </div>
             </div>
@@ -112,12 +128,13 @@
       </div>
     </div>
   </main>
-  <script>
-    const addclass = 'selected_room';
-    $('.room').click(function (e) {
-      $(this).toggleClass(addclass);
-    });
-  </script>
+
+<!--  <script>-->
+<!--    const addclass = 'selected_room';-->
+<!--    $('.room').click(function (e) {-->
+<!--      $(this).toggleClass(addclass);-->
+<!--    });-->
+<!--  </script>-->
   <footer>
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
   </footer>
