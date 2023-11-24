@@ -2,7 +2,7 @@ const config = {
     development: {
         host: "cmpstudb-01.cmp.uea.ac.uk",
         user: "zfb23ecu",
-        password: "ArriveItsSoap05-",
+        password: "",
         database: "zfb23ecu",
         port: "5432"
     },
