@@ -45,6 +45,10 @@ function onSubmitClick(event) {
     else {
         document.getElementById("span5").style.display = "none";
         document.getElementById("span6").style.display = "none";
+        document.body.innerHTML = `<h2>Thank you ${name} for contacting us. We will get in touch soon. Re-directing to Contact us page in 5 seconds..</h2>`
+        window.setTimeout(function () {
+            window.location.href = "contact_us.html";
+        }, 5000);
     }
 
     event.preventDefault();
