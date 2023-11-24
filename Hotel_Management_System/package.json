@@ -1,0 +1,19 @@
+{
+  "name": "hotel_management_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "pg": "^8.11.3"
+  }
+}
