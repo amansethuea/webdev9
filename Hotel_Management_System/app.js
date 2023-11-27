@@ -1,7 +1,7 @@
 const env = process.env.NODE_ENV || 'development';
 
 // import database configurations 
-const config = require('config.js')[env];
+const config = require('./config.js')[env];
 
 const express = require('express')
 const app = express();
@@ -20,7 +20,7 @@ const pg = require('pg');
 const bodyParser = require('body-parser');
 // const jsonParser = bodyParser.json();
 
-app.use(express.static('Hotel_Management_System'));
+app.use(express.static('public'));
 
 // use json body parser by default
 app.use(bodyParser.json());
@@ -28,15 +28,30 @@ app.use(bodyParser.json());
 // use express html sanitizer
 app.use(sanitizeReqBody);
 
-/* landing page GET request */
+
+const path = require('path');
+
 app.get('/', (req, res) => {
-    /// send the static file 
-    res.sendFile('', (err) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'), (err) => {
         if (err){
             console.log(err);
         }
-    })
-  });
+    });
+});
+
+/* landing page GET request */
+app.get('/:userType', (req, res) => {
+    let userType = req.params.userType;
+    if (['Customer', 'Housekeeper', 'Receptionist'].includes(userType)) {
+        res.sendFile(path.join(__dirname, 'public', userType, 'index.html'), (err) => {
+            if (err){
+                console.log(err);
+            }
+        });
+    } else {
+        res.status(400).send('Invalid user type');
+    }
+});
 
 /* GET booking details data from database */
 app.get('/refno', async (req, res) => {

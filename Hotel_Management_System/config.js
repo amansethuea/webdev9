@@ -1,9 +1,9 @@
 const config = {
     development: {
         host: "cmpstudb-01.cmp.uea.ac.uk",
-        user: "zfb23ecu",
+        user: "xzu22dbu",
         password: "",
-        database: "zfb23ecu",
+        database: "xzu22dbu",
         port: "5432"
     },
     production: {
