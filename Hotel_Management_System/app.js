@@ -33,7 +33,7 @@ const path = require('path');
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'), (err) => {
-        if (err){
+        if (err) {
             console.log(err);
         }
     });
@@ -44,7 +44,7 @@ app.get('/:userType', (req, res) => {
     let userType = req.params.userType;
     if (['Customer', 'Housekeeper', 'Receptionist'].includes(userType)) {
         res.sendFile(path.join(__dirname, 'public', userType, 'index.html'), (err) => {
-            if (err){
+            if (err) {
                 console.log(err);
             }
         });
@@ -54,14 +54,14 @@ app.get('/:userType', (req, res) => {
 });
 
 /* GET booking details data from database - Receptionist*/
-app.get('/refno', async (req, res) => {
+app.get('/receptionist/refno', async (req, res) => {
     try {
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
         const { b_ref } = req.query;
-        const q = 'select r_no, checkin, checkout from hotelbooking.roombooking where b_ref = $1;'
+        const q = 'select r_no, checkin, checkout from hotelbooking.roombooking where b_ref = $1;';
         await client.query(q, [b_ref], (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -80,6 +80,38 @@ app.get('/refno', async (req, res) => {
         console.log(e);
     }
 });
+
+/* GET available rooms within selected dates - Receptionist*/
+app.get('/receptionist/roomavailability', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const { checkin_date } = req.query;
+        const { checkout_date } = req.query;
+        const q = 
+        'select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in (select hotelbooking.roombooking.r_no from hotelbooking.roombooking where (checkin <= $1 and checkout >= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no);';
+        await client.query(q, [checkin_date, checkout_date], (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                // console.log(results); //
+                data = results.rows;
+                count = results.rows.length;
+                res.json({ results: data, rows: count });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+
 
 // handling errors // 
 app.use(function (err, req, res, next) {
