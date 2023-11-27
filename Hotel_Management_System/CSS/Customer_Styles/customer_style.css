@@ -216,11 +216,12 @@
     }
     /*------ Summary of Booking------*/
     .booking-box-summary-container {/*This will hold all the individual divs for each summary point*/
-        display: flex;
-        flex-direction: column;
-        height: 89%;
-        justify-content: space-between;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        height: 91%;
+        /*justify-content: space-between;*/
         overflow: auto;
+        display: block;
     }
     .booking-box-summary.booking-box-summary-a { /*Just adds a darker colour per every other line*/
         background: #e1e1e1;
