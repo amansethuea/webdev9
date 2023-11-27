@@ -53,14 +53,16 @@ app.get('/:userType', (req, res) => {
     }
 });
 
-/* GET booking details data from database */
+/* GET booking details data from database - Receptionist*/
 app.get('/refno', async (req, res) => {
     try {
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
-        const q = 'select * from hotelbooking.roombooking;'
-        await client.query(q, (err, results) => {
+
+        const { b_ref } = req.query;
+        const q = 'select r_no, checkin, checkout from hotelbooking.roombooking where b_ref = $1;'
+        await client.query(q, [b_ref], (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");

@@ -35,11 +35,11 @@ refButton.addEventListener("click", function(event){
     else {
         document.getElementById("span5").style.display = "none";
     } 
-    if (referenceno.length >= 1 &&  referenceno.length < 16) {
+    if (referenceno.length >= 1 &&  referenceno.length < 5) {
         document.getElementById("span6").style.display = "inline";
         document.getElementById("span8").style.display = "none";
     }
-    else if (referenceno.length > 16) {
+    else if (referenceno.length > 5) {
         document.getElementById("span8").style.display = "inline";
         document.getElementById("span6").style.display = "none";
     }

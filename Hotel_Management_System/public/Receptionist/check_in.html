@@ -23,7 +23,8 @@
                 <nav>
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
-                        <li><span style="font-size: larger; font-weight: bold"><a href="check_in.html">Check-in</a></span></li>
+                        <li><span style="font-size: larger; font-weight: bold"><a
+                                    href="check_in.html">Check-in</a></span></li>
                         <li><span><a href="check_out.html">Checkout</a></span></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
                     </ul>
@@ -78,11 +79,12 @@
                                 <input type="referenceno" class="form-control" id="referenceno" name="referenceno"
                                     placeholder="Reference Number" />
                                 <span id="span5" class="error">Please enter a booking reference</span>
-                                <span id="span6" class="error"> Reference number too short. Hint: Reference no. is a 16
+                                <span id="span6" class="error"> Reference number too short. Hint: Reference no. is a 5
                                     digit booking reference </span>
-                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 16
+                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 5
                                     digit booking reference </span>
                                 <span id="span7" class="error">Reference number not found in our records</span>
+                                <div id="results"></div>
                             </div>
                         </div>
                     </div>
@@ -96,7 +98,7 @@
         <div id="refresults"></div>
     </main>
     <script src="../JS/Receptionist_JS/checkin_validation.js"></script>
-    <script src="../JS/Receptionist_JS/get_ref_details.js"></script>
+    <script src="../JS/Receptionist_JS/booking_ref_details.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
