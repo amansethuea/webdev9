@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Crown Hotel</title>
+    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_style.css">
+    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Customer_Styles/customer_contact_validate.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="header-spacer">
+            <div> <!-- Logo -->
+                <a href="index.html">
+                    <img
+                            src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                            alt="Logo emblem of a hotel with a crown on top">
+                </a>
+            </div>
+            <div id="header-links">
+                <nav>
+                    <ul id="header_links">
+                        <li><span><a href="index.html">Home</a></span></li>
+                        <li><span><a href="room_booking.html">Book Now</a></span></span></li>
+                        <li><span><a href="gallery.html">Gallery</a></span></span></li>
+                        <li><span style="font-size: larger; font-weight: bold"><a href="contact_us.html">Contact
+                                    us</a></span></li>
+                        <li><span><a href="about_us.html">About us</a></span></li>
+                        <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="landing_page_container">
+            <h1 class="other_pages_main_header">Contact Information</h1>
+            <h4 class="contact_sub_heading"><em>We are here to assist</em></h4>
+            <div class="contact_box"><span class="fa fa-phone"></span>+44 7407267950</div>
+            <div class="contact_box"><span class="fa fa-mail-bulk"></span><a
+                    href="mailto:zfb23ecu@uea.ac.uk">thecrownhotel@gmail.com</a></div>
+            <div class="contact_form_box"><span class="fa fa-person-booth"> Quick Inquiry Booth</span>
+                <form id="contact_us_form">
+                    <div class="form-element">
+                        <div class="form-element">
+                            <div class="form-label"><label for="name">Name</label></div>
+                            <div class="form-control-container">
+                                <input type="text" class="form-control" id="name" name="name" autofocus="autofocus"
+                                    placeholder="Name" maxlength="32" />
+                                <span id="span1" class="error">Name can't be blank</span>
+                                <span id="span2" class="error">Name must contain alphabets only</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="email">Email</label></div>
+                        <div class="form-control-container">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
+                                maxlength="32" />
+                            <span id="span3" class="error">Please enter a valid email address</span>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="mobile">Mobile No.</label></div>
+                        <div class="form-control-container">
+                            <input type="number" class="form-control" id="mobile" name="mobile"
+                                placeholder="+44 07-(xxx)-(xxx)-(xxx)" />
+                            <span id="span4" class="error">Please enter a valid phone no.</span>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="message">Inquiry Message</label></div>
+                        <div class="form-control-container"><textarea id="message" class="form-control" id="message"
+                                name="message" rows="5" cols="35" placeholder="Your message here. (255 characters max)"
+                                wrap="soft" maxlength="300"></textarea>
+                            <span id="span5" class="error">Inquiry message can't be blank</span>
+                            <span id="span6" class="error">Inquiry message too long</span>
+                            <span id="span7">255 words left</span>
+                        </div>
+                    </div>
+                    <div class="contact-form-footer">
+                        <button class="btn" id="contact_submit_btn" type="submit">Submit</button>
+                        <button class="btn" id="contact_reset_btn" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="../../Hotel_Management_System/JS/Customer_JS/contact_us_message_restrict.js"></script>
+    <script src="../../Hotel_Management_System/JS/Customer_JS/contact_us_form_validation.js"></script>
+    <footer>
+        <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+    </footer>
+</body>
+
+</html>
