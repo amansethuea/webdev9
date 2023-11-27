@@ -1,7 +1,9 @@
 /*Large Screen*/
 @media screen and (min-width: 768px) {
-     /*Header styles*/
-     header { /*The main bulk of the header style*/
+
+    /*Header styles*/
+    header {
+        /*The main bulk of the header style*/
         background-color: #ffffff;
         color: white;
         display: flex;
@@ -13,7 +15,9 @@
         z-index: 2;
         align-items: center;
     }
-    #header-spacer { /* To separate the logo and nav links */
+
+    #header-spacer {
+        /* To separate the logo and nav links */
         display: flex;
         justify-content: space-between;
         flex-direction: row;
@@ -22,22 +26,28 @@
         align-items: center;
         width: 100%;
     }
-    header img { /* Logo  contained in header*/
+
+    header img {
+        /* Logo  contained in header*/
         height: auto;
         width: 50px;
     }
-    #header-links-container{ /*container for all the nav links*/
+
+    #header-links-container {
+        /*container for all the nav links*/
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
     }
+
     /* nav bar styling */
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
+
     nav ul {
         display: flex;
         flex-direction: row;
@@ -45,17 +55,21 @@
         margin: 0;
         padding: 0;
     }
+
     nav li {
         cursor: pointer;
         transition: transform 0.5s;
     }
-    nav ul li a:link, nav ul li a:visited {
+
+    nav ul li a:link,
+    nav ul li a:visited {
         padding: 10px 20px;
         text-decoration: none;
         display: inline-block;
         color: #2d0945;
         transition: background-color 0.3s;
     }
+
     nav ul li a:hover {
         background-color: #ffffff;
         transform: scale(1.1);
@@ -73,27 +87,18 @@
         border-left: none;
     }
 
-    #landing_page_about_us {
-        padding-top: 10px;
-        padding-left: 10%;
-        padding-right: 10%;
-        text-align: justify
-    }
-
-
     h1 {
         /*font-family: serif;*/
         font-size: 60px;
         margin: 0;
-        padding: 0;
         text-align: center;
         flex-wrap: wrap;
         font-weight: 150;
-        padding-top: 10%;
+        padding: 10% 0 0;
     }
 
     h2 {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         font-size: 30px;
         margin: 0;
         padding: 0;
@@ -104,67 +109,62 @@
     footer {
         background-color: black;
         color: white;
-        padding: 3px;
         text-align: left;
-        padding-left: 5%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
-
     footer p {
         font-size: small;
+        padding-left: 2%;
     }
 
+    /*Main body styling*/
     body,
     html {
-        font-family: "Cormorant Garamond";
+        font-family: "Cormorant Garamond", serif;
         margin: 0;
         padding-top: 50px;
     }
 
-    #landing_tag {
-        font-weight: lighter;
-        font-size: 150%;
-    }
-
-    .landing_page_container {
-        height: 100vh;
-        /*width: 100vh;*/
-        width: 100%;
-    }
-
     #main_landing_page {
         /* Lighten the image opacity */
-        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
             url("../../Images/video_of_rooms/Hotel_background_image.jpeg");
-        background-size: auto;
+        background-size: cover;
         background-position: center;
-        height: 100vh;
+        height: 88vh;
         width: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
 
-    #room-selection {
-        width: auto;
-        height: 20px;
-        background-color: #5619b8;
-        border-radius: 10px;
-        color: white;
-        font-size: medium;
-    }
-
-    .aboutus_sub_heading {
+    #landing_tag {
+        /*The small text under the 'welcome to..'*/
         font-weight: lighter;
-        justify-content: center;
-        text-align: center;
+        font-size: 150%;
+        color: rgba(255, 255, 255, 0.71);
     }
 
-    .about_para {
-        width: 50%;
+    /*GENERAL STYLING*/
+    /*used on most pages*/
+    .landing_page_container {
+        height: 85vh;
+        width: auto;
+    }
+
+    /*used on most pages to change h1*/
+    .other_pages_main_header {
+        font-size: 60px;
+        text-decoration-line: underline;
+        margin: 0;
         text-align: center;
-        margin: auto;
+        flex-wrap: wrap;
+        font-weight: 150;
+        padding: 20px 0 0;
     }
 
     .reception_sub_heading {
@@ -294,7 +294,7 @@
 
     .btn {
         display: inline-block;
-        background-color:  rgba(0, 84, 29, 0.38);
+        background-color: rgba(0, 84, 29, 0.38);
         color: black;
         text-transform: uppercase;
         padding-top: 6px;
