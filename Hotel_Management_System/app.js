@@ -1,7 +1,7 @@
 const env = process.env.NODE_ENV || 'development';
 
 // import database configurations 
-const config = require('./config.js')[env];
+const config = require('config.js')[env];
 
 const express = require('express')
 const app = express();
