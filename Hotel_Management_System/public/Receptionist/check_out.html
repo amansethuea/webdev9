@@ -3,8 +3,8 @@
 
 <head>
     <title>The Crown Hotel</title>
-    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/receptionist_style.css">
-    <link rel="stylesheet" href="../../Hotel_Management_System/CSS/Receptionist_Styles/checkout_detail_val.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/checkout_detail_val.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -12,15 +12,24 @@
 
 <body>
     <header>
-        <img src="../../Hotel_Management_System/Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-            alt="The Crown Hotel logo">
-        <nav>
-            <ul id="header_links">
-                <li><span><a href="index.html">Home</a></span></li>
-                <li><span><a href="check_in.html">Check-in</a></span></span></li>
-                <li><span><a href="check_out.html">Checkout</a></span></span></li>
-            </ul>
-        </nav>
+        <div id="header-spacer">
+            <div> <!-- Logo -->
+                <a href="index.html">
+                    <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                        alt="Logo emblem of a hotel with a crown on top">
+                </a>
+            </div>
+            <div id="header-links-container"> <!-- Links -->
+                <nav>
+                    <ul id="header_links">
+                        <li><span><a href="index.html">Home</a></span></li>
+                        <li><span><a href="check_in.html">Check-in</a></span></span></li>
+                        <li><span style="font-size: larger; font-weight: bold"><a href="check_out.html">Checkout</a></span></li>
+                        <li><span><a href="gallery.html">Gallery</a></span></span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -40,8 +49,8 @@
                                 </span>
                                 <span id="span2" class="error"> Reference number too short. Hint: Reference no. is a 16
                                     digit booking reference </span>
-                                    <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 16
-                                        digit booking reference </span>
+                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 16
+                                    digit booking reference </span>
                                 <span id="span7" class="error"> Please enter either reference no. / email address /
                                     phone no. </span>
                             </div>
@@ -75,7 +84,7 @@
         </div>
 
     </main>
-    <script src="../../Hotel_Management_System/JS/Receptionist_JS/checkout_validation.js"></script>
+    <script src="../JS/Receptionist_JS/checkout_validation.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

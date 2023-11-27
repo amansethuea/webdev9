@@ -1,29 +1,43 @@
 /*Large Screen*/
 @media screen and (min-width: 768px) {
-    header {
+     /*Header styles*/
+     header { /*The main bulk of the header style*/
         background-color: #ffffff;
         color: white;
         display: flex;
         justify-content: space-evenly;
-        padding: 20px 20px 0px 20px;
+        padding: 20px 20px 0 20px;
         position: fixed;
         top: 0;
         width: 98%;
+        z-index: 2;
+        align-items: center;
     }
-
-    header img {
-        height: 50px;
+    #header-spacer { /* To separate the logo and nav links */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    header img { /* Logo  contained in header*/
+        height: auto;
         width: 50px;
-        margin-right: auto;
     }
-
+    #header-links-container{ /*container for all the nav links*/
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
     /* nav bar styling */
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-
     nav ul {
         display: flex;
         flex-direction: row;
@@ -31,23 +45,17 @@
         margin: 0;
         padding: 0;
     }
-
     nav li {
-        margin-right: 20px;
-        padding: 20px;
         cursor: pointer;
         transition: transform 0.5s;
     }
-
-    nav ul li a:link,
-    nav ul li a:visited {
+    nav ul li a:link, nav ul li a:visited {
         padding: 10px 20px;
         text-decoration: none;
         display: inline-block;
         color: #2d0945;
         transition: background-color 0.3s;
     }
-
     nav ul li a:hover {
         background-color: #ffffff;
         transform: scale(1.1);
@@ -55,7 +63,7 @@
 
     /* Adding | between every nav link */
     span {
-        padding: 0px 5px;
+        padding: 0 5px;
         border-left: 1px solid #2d0945;
         display: inline-block;
     }
@@ -112,20 +120,6 @@
         padding-top: 50px;
     }
 
-    #contact_us_own_page {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 85vh;
-        /*width: 70vh;*/
-
-    }
-
-    #about_us_para {
-        padding: 2vh 30vh 30vh 30vh;
-    }
-
     #landing_tag {
         font-weight: lighter;
         font-size: 150%;
@@ -140,7 +134,7 @@
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-            url("../../../Hotel_Management_System/Images/video_of_rooms/Hotel_background_image.jpeg");
+            url("../../Images/video_of_rooms/Hotel_background_image.jpeg");
         background-size: auto;
         background-position: center;
         height: 100vh;
@@ -150,11 +144,6 @@
         justify-content: center;
         align-items: center;
 
-    }
-
-    #contact_us_form {
-        width: 80%;
-        height: 50vh;
     }
 
     #room-selection {

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>The Crown Hotel</title>
+  <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+  <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../JS/Receptionist_JS/Receptionist_JS.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div id="header-spacer">
+      <div> <!-- Logo -->
+        <a href="index.html">
+          <img
+            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="Logo emblem of a hotel with a crown on top">
+        </a>
+      </div>
+      <div id="header-links"> <!-- Links -->
+        <nav>
+          <ul id="header_links">
+            <li><span><a href="index.html">Home</a></span></li>
+            <li><span><a href="check_in.html">Check-in</a></span></li>
+            <li><span><a href="check_out.html">Checkout</a></span></span></li>
+            <li><span style="font-size: larger; font-weight: bold"><a href="gallery.html">Gallery</a></span></span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="gallery_heading">
+      <h1 class="other_pages_main_header">Welcome to luxury</h1>
+      <h2 class="contact_sub_heading"><em>Rooms</em></h2>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="display: flex">
+          <h1 style="padding: 0">Room 01</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg"
+              alt="">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
+              comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
+              flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
+              or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
+        <div class="swiper-slide" style="display: flex">
+          <h1 style="padding: 0">Room 02</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_576eeaf8-66b9-4ad7-8c5b-d9a9e435a62e.jpeg"
+              alt="">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
+              comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
+              flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
+              or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
+        <div class="swiper-slide" style="display: flex">
+          <h1 style="padding: 0">Room 03</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_6760ce93-6bfd-43ba-ad02-ff003bc7aee9.jpeg">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
+              comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
+              flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
+              or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
+        <div class="swiper-slide" style="display: flex">
+          <h1 style="padding: 0">Room 04</h1>
+          <div class="swiper-image-container">
+            <img class="swiper-image image-shadow" src="../Images/rooms/_34530e4f-8d42-4b4e-8778-7da3814a58ce.jpeg">
+            <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
+              comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
+              flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
+              or pleasure, you'll feel like royalty at our hotel.</div>
+          </div>
+          <div class="swiper-button-next" style="right: 10%"></div>
+          <div class="swiper-button-prev" style="left: 10%"></div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+  </footer>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>
