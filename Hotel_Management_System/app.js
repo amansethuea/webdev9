@@ -90,8 +90,8 @@ app.get('/receptionist/roomavailability', async (req, res) => {
 
         const { checkin_date } = req.query;
         const { checkout_date } = req.query;
-        const q = 
-        'select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in (select hotelbooking.roombooking.r_no from hotelbooking.roombooking where (checkin <= $1 and checkout >= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no);';
+        const q =
+            'select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in (select hotelbooking.roombooking.r_no from hotelbooking.roombooking where (checkin <= $1 and checkout >= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no);';
         await client.query(q, [checkin_date, checkout_date], (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -121,8 +121,8 @@ app.get('/customer/roomavailability', async (req, res) => {
         const { checkin_date } = req.query;
         const { checkout_date } = req.query;
         const { room_type } = req.query;
-        const q = 
-        'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=$1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;';
+        const q =
+            'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=$1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;';
         await client.query(q, [checkin_date, checkout_date, room_type], (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -149,19 +149,18 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
-        const { ref_no } = req.query;
-        const { email } = req.query;
+        const { b_ref } = req.query;
         const { checkout_date } = req.query;
-        const q = 
-        'select distinct(hotelbooking.customer.c_name), hotelbooking.customer.c_email, hotelbooking.booking.b_ref, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.booking.b_notes, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.room.r_class  from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.customer.c_email = $2 and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $3;';
-        await client.query(q, [ref_no, email, checkout_date], (err, results) => {
+        console.log(b_ref);
+        console.log(checkout_date);
+        const q = `select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_class from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = ${b_ref} and hotelbooking.roombooking.checkout = '${checkout_date}';`;
+        await client.query(q, (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();
-                // console.log(results); //
                 data = results.rows;
                 count = results.rows.length;
                 res.json({ results: data, rows: count });
