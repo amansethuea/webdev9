@@ -23,10 +23,3 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
 });
-
-
-// Script for room selection
-const addclass = 'selected_room';
-$('.room').click(function (e) {
-    $(this).toggleClass(addclass);
-});
