@@ -36,7 +36,7 @@
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-out</h1>
             <h4 class="reception_sub_heading"><em>Checking out Customer</em></h4>
-            <form id="checkout_details_form">
+            <section id="checkout_details_form">
                 <div class="card signup-card">
                     <div class="card-header">Checkout Details</div>
                     <div class="card-body">
@@ -47,12 +47,11 @@
                                     placeholder="Reference Number" />
                                 <span id="span1" class="error"> Invalid Reference number. Not found in our records.
                                 </span>
-                                <span id="span2" class="error"> Reference number too short. Hint: Reference no. is a 16
+                                <span id="span2" class="error"> Reference number too short. Hint: Reference no. is a 5
                                     digit booking reference </span>
-                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 16
+                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 5
                                     digit booking reference </span>
-                                <span id="span7" class="error"> Please enter either reference no. / email address /
-                                    phone no. </span>
+                                    <span id="span7" class="error"> Please enter a Reference Number </span>
                             </div>
                         </div>
                         <div class="form-element">
@@ -62,29 +61,33 @@
                                     placeholder="Email Address" maxlength="32" />
                                 <span id="span3" class="error"> Please enter valid email address </span>
                                 <span id="span4" class="error"> Email address not found in our records </span>
+                                <span id="span10" class="error"> Please enter an Email ID </span>
                             </div>
                         </div>
+
                         <div class="form-element">
-                            <div class="form-label"><label for="mobile">Mobile No.</label></div>
+                            <div class="form-label"> <label for="date">Checkout Date</label></div>
                             <div class="form-control-container">
-                                <input type="number" class="form-control" id="mobile" name="mobile"
-                                    placeholder="07-(xxx)-(xxx)-(xxx)" />
-                                <span id="span5" class="error"> Please enter valid mobile number </span>
-                                <span id="span6" class="error"> Mobile number not found in our records </span>
+                                <input type="date" class="form-control" id="checkoutdate" name="checkoutdate"
+                                    required="required" />
+                                    <div id="checkoutsummary"></div>
                             </div>
                         </div>
+
+                        
                     </div>
                     <div class="card-footer">
                         <p><button class="btn" id="checkoutbtn" type="submit">Checkout</button></p>
                         </button>
                     </div>
                 </div>
-            </form>
+            </section>
 
         </div>
 
     </main>
     <script src="../JS/Receptionist_JS/checkout_validation.js"></script>
+    <script src="../JS/Receptionist_JS/viewDetailsOnCheckout.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

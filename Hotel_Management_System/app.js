@@ -142,6 +142,37 @@ app.get('/customer/roomavailability', async (req, res) => {
     }
 });
 
+/* GET booking data on checkout - Receptionist*/
+app.get('/receptionist/checkoutdetails', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const { ref_no } = req.query;
+        const { email } = req.query;
+        const { checkout_date } = req.query;
+        const q = 
+        'select distinct(hotelbooking.customer.c_name), hotelbooking.customer.c_email, hotelbooking.booking.b_ref, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.booking.b_notes, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.room.r_class  from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.customer.c_email = $2 and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $3;';
+        await client.query(q, [ref_no, email, checkout_date], (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                // console.log(results); //
+                data = results.rows;
+                count = results.rows.length;
+                res.json({ results: data, rows: count });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
 
 // handling errors // 
 app.use(function (err, req, res, next) {
