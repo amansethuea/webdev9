@@ -17,9 +17,8 @@
     <div id="header-spacer">
       <div> <!-- Logo -->
         <a href="index.html">
-          <img
-                  src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                  alt="Logo emblem of a hotel with a crown on top">
+          <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="Logo emblem of a hotel with a crown on top">
         </a>
       </div>
       <div id="header-links"> <!-- Links -->
@@ -42,7 +41,9 @@
       <h1 class="other_pages_main_header">Secure Your Booking Today</h1>
       <div class="booking-mechanism">
         <div class="stay-duration booking-box light-shadow soft-box">
-          <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">Select Your Duration</h2>
+          <h2
+            style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+            Select Your Duration</h2>
           <div class="booking-dates">
             <div class="booking-date-selections">
               <h3 class="booking-dates-heading">Arrival Date</h3>
@@ -63,12 +64,14 @@
                 </select>
               </form>
             </div>
-            
+            <div id="bookingdates"></div>
+            <p><button class="btn" id="bookingbtn" type="submit">Check Availability</button></p>
           </div>
         </div>
-        
+
         <div class="room-selection booking-box light-shadow soft-box">
-          <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+          <h2
+            style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
             Select Your Room</h2>
           <div class="all_rooms_container">
             <div class="room"><!--Room 01 -->Trafalgar Suite</div>
@@ -98,45 +101,47 @@
         </div>
 
         <div class="room-selection booking-box light-shadow soft-box">
-          <h2 style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+          <h2
+            style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
             Booking Summary</h2>
-            <div class="booking-box-summary-container">
-              <div class="booking-box-summary booking-box-summary-a">
-                <div>Number of rooms: </div>
-                <div>*int*</div>
-              </div>
-              <div class="booking-box-summary">
-                <div>Arrival Date: </div>
-                <div>*Date*</div>
-              </div>
-              <div class="booking-box-summary booking-box-summary-a">
-                <div>Checkout Date: </div>
-                <div>*Date*</div>
-              </div>
-              <div class="booking-box-summary">
-                <div>Duration of Stay: </div>
-                <div>*int*</div>
-              </div>
-              <div class="booking-box-summary booking-box-summary-a">
-                <div>Cost of Stay: </div>
-                <div>*float*</div>
-              </div>
-              <div class="booking-box-summary" id="book-now-page-checkout-button">
-              <button type="button" onclick="alert('Proceeding to checkout')">Reserve Room</button>
-              </div>
+          <div class="booking-box-summary-container">
+            <div class="booking-box-summary booking-box-summary-a">
+              <div>Number of rooms: </div>
+              <div>*int*</div>
             </div>
+            <div class="booking-box-summary">
+              <div>Arrival Date: </div>
+              <div>*Date*</div>
+            </div>
+            <div class="booking-box-summary booking-box-summary-a">
+              <div>Checkout Date: </div>
+              <div>*Date*</div>
+            </div>
+            <div class="booking-box-summary">
+              <div>Duration of Stay: </div>
+              <div>*int*</div>
+            </div>
+            <div class="booking-box-summary booking-box-summary-a">
+              <div>Cost of Stay: </div>
+              <div>*float*</div>
+            </div>
+            <div class="booking-box-summary" id="book-now-page-checkout-button">
+              <button type="button" onclick="alert('Proceeding to checkout')">Reserve Room</button>
+            </div>
+          </div>
         </div>
-        
+
       </div>
     </div>
   </main>
+  <script src="../JS/Customer_JS/customer_room_availability.js"></script>
 
-<!--  <script>-->
-<!--    const addclass = 'selected_room';-->
-<!--    $('.room').click(function (e) {-->
-<!--      $(this).toggleClass(addclass);-->
-<!--    });-->
-<!--  </script>-->
+  <!--  <script>-->
+  <!--    const addclass = 'selected_room';-->
+  <!--    $('.room').click(function (e) {-->
+  <!--      $(this).toggleClass(addclass);-->
+  <!--    });-->
+  <!--  </script>-->
   <footer>
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
   </footer>
