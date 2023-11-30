@@ -9,8 +9,8 @@
 
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="../JS/Customer_JS/Customer_JS.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="../JS/Customer_JS/Customer_JS.js" defer></script>
 
 
 </head>
@@ -110,36 +110,5 @@
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
   </footer>
 
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
 </body>
-
 </html>
-
-<!-- Initialize Swiper -->
-<!--<script>-->
-<!--  var swiper = new Swiper(".mySwiper", {-->
-<!--    pagination: {-->
-<!--      el: ".swiper-pagination",-->
-<!--      type: "fraction",-->
-<!--    },-->
-<!--    navigation: {-->
-<!--      nextEl: ".swiper-button-next",-->
-<!--      prevEl: ".swiper-button-prev",-->
-<!--    },-->
-<!--  });-->
-<!--</script>-->
