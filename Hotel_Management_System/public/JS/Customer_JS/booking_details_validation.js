@@ -1,4 +1,4 @@
-var checkinbtn = document.getElementById("checkin_detail_btn");
+var checkinbtn = document.getElementById("details_submit_btn");
 checkinbtn.addEventListener("click", function(event){
     var guest = document.getElementById("guest").value;
     //var rooms = document.getElementById("rooms").value;
