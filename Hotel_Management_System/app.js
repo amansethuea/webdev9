@@ -172,7 +172,6 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
     }
 });
 
-
 // handling errors // 
 app.use(function (err, req, res, next) {
     let responseData;
