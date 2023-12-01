@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Crown Hotel</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/Receptionist_Styles/receptionist_style.css">
+  <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+  <script src="../JS/Receptionist_JS/Receptionist_JS.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div id="header-spacer">
+      <div> <!-- Logo -->
+        <a href="index.html">
+          <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="Logo emblem of a hotel with a crown on top">
+        </a>
+      </div>
+      <div id="header-links"> <!-- Links -->
+        <nav>
+          <ul id="header_links">
+            <li><span><a href="check_in.html">Back</a></span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="landing_page_container">
+      <h1 class="other_pages_main_header">Secure Your Booking Today</h1>
+      <div class="booking-mechanism">
+        <div class="stay-duration booking-box light-shadow soft-box">
+          <h2
+            style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+            Select Your Duration</h2>
+          <div class="booking-dates">
+            <div class="booking-date-selections">
+              <h3 class="booking-dates-heading">Arrival Date</h3>
+              <label for="booking-in-date"></label><input type="date" id="booking-in-date">
+            </div>
+            <div class="booking-date-selections">
+              <h3 class="booking-dates-heading">Leaving Date</h3>
+              <label for="booking-out-date"></label><input type="date" id="booking-out-date">
+            </div>
+            <div class="booking-date-selections">
+              <h3 class="booking-dates-heading">Room Type</h3>
+              <form action="">
+                <select name="room_type" id="room_type_select">
+                  <option value="standard_double">Standard Double</option>
+                  <option value="standard_twin">Standard Twin</option>
+                  <option value="superior_double">Superior Double</option>
+                  <option value="superior_twin">Superior Twin</option>
+                </select>
+              </form>
+            </div>
+            <div id="bookingdates"></div>
+            <p class="booking-dates-button-container"><button class="btn" id="bookingbtn" type="submit">Check Availability</button></p>
+          </div>
+        </div>
+
+        <div class="room-selection booking-box light-shadow soft-box">
+          <h2
+            style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+            Select Your Room</h2>
+          <div class="all_rooms_container">
+            <div class="room" id="101"><!--Room 01 -->Trafalgar Suite</div>
+            <div class="room" id="102"><!--Room 02 -->Presidential Suite</div>
+            <div class="room" id="103"><!--Room 03 -->Royal Suite</div>
+            <div class="room" id="104"><!--Room 03 -->Prestige Suite</div>
+            <div class="room" id="105"><!--Room 04 -->King Suite</div>
+            <div class="room" id="106"><!--Room 05 -->Queen Suite</div>
+            <div class="room" id="107"><!--Room 06 -->Emperor Suite</div>
+            <div class="room" id="108"><!--Room 07 -->Empress Suite</div>
+            <div class="room" id="201"><!--Room 08 -->Prince Suite</div>
+            <div class="room" id="202"><!--Room 09 -->Princess Suite</div>
+            <div class="room" id="203"><!--Room 10 -->Duke Suite</div>
+            <div class="room" id="204"><!--Room 11 -->Duchess Suite</div>
+            <div class="room" id="205"><!--Room 12 -->Marquis Suite</div>
+            <div class="room" id="206"><!--Room 13 -->Marchioness Suite</div>
+            <div class="room" id="207"><!--Room 14 -->Earl Suite</div>
+            <div class="room" id="208"><!--Room 15 -->Countess Suite</div>
+            <div class="room" id="209"><!--Room 16 -->Viscount Suite</div>
+            <div class="room" id="210"><!--Room 17 -->Viscountess Suite</div>
+            <div class="room" id="211"><!--Room 18 -->Baron Suite</div>
+            <div class="room" id="212"><!--Room 19 -->Baroness Suite</div>
+            <div class="room" id="301"><!--Room 20 -->Knight Suite</div>
+            <div class="room" id="302"><!--Room 21 -->Dame Suite</div>
+            <div class="room" id="303"><!--Room 22 -->Squire Suite</div>
+            <div class="room" id="304"><!--Room 23 -->Lady Suite</div>
+          </div>
+        </div>
+
+        <div class="room-selection booking-box light-shadow soft-box">
+          <h2
+            style="font-size: 150%; background: rgba(0, 84, 29, 0.38); padding:8px 0 8px 0; border-top-left-radius: 10px; border-top-right-radius: 10px">
+            Booking Summary</h2>
+          <div class="booking-box-summary-container">
+            <div class="booking-box-summary booking-box-summary-a">
+              <div>Number of rooms: </div>
+              <div id="roomsCount"></div>
+            </div>
+            <div class="booking-box-summary">
+              <div>Arrival Date: </div>
+              <div id="checkinDate">*Date*</div>
+            </div>
+            <div class="booking-box-summary booking-box-summary-a">
+              <div>Checkout Date: </div>
+              <div id="checkoutDate">*Date*</div>
+            </div>
+            <div class="booking-box-summary">
+              <div>Duration of Stay: </div>
+              <div id="duration_of_stay">0</div>
+            </div>
+            <div class="booking-box-summary booking-box-summary-a">
+              <div>Cost of Stay: </div>
+              <div id="price_of_stay">£0.00</div>
+            </div>
+            <div class="booking-box-summary" id="book-now-page-checkout-button">
+              <button type="submit" id="reserve_room_btn" class="btn">Reserve Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="booking_result"></div>
+    </div>
+  </main>
+  <script src="../JS/Receptionist_JS/receptionist_room_availability.js"></script>
+  <script src="../JS/Receptionist_JS/roombooking_details.js"></script>
+
+  <footer>
+    <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+  </footer>
+</body>
+
+</html>

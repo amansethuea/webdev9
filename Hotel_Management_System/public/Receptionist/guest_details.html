@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Crown Hotel</title>
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/booking_details.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="The Crown Hotel logo">
+    </header>
+
+    <main>
+        <div class="landing_page_container">
+            <h1 class="other_pages_main_header">Customer Check-in</h1>
+            <h4 class="contact_sub_heading"><em>Customer Details</em></h4>
+            <div class="contact_form_box">
+                <form id="contact_us_form">
+
+                    <div class="form-element">
+                        <div class="form-label"><label for="guest">No. of Guests</label></div>
+                        <div class="form-control-container">
+                            <input type="number" class="form-control" id="guest" name="guest"
+                                placeholder="Enter no. of guests" autofocus="autofocus" />
+                            <span id="span1" class="error"> No. of guests cannot be blank or 0 </span>
+                        </div>
+                    </div>
+
+                    <div class="form-element">
+                        <div class="form-label"><label for="firstname">First Name</label></div>
+                        <div class="form-control-container">
+                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                placeholder="Firstname" />
+                            <span id="span4" class="error"> First name can't be blank </span>
+                            <span id="span5" class="error"> First name contains alphabets only </span>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="lastname">Last Name</label></div>
+                        <div class="form-control-container">
+                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                placeholder="Lastname" />
+                            <span id="span6" class="error"> Last name can't be blank </span>
+                            <span id="span7" class="error"> Last name contains alphabets only </span>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="mobile">Mobile Number</label></div>
+                        <div class="form-control-container">
+                            <input type="number" class="form-control" id="mobile" name="mobile"
+                                placeholder="07-(xxx)-(xxx)-(xxx)" />
+                            <span id="span8" class="error"> Please enter valid phone number </span>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-label"><label for="email">Email ID</label></div>
+                        <div class="form-control-container">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email address"
+                                maxlength="32" />
+                            <span id="span9" class="error"> Please enter valid email address </span>
+                            <div id="booking_result"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-form-footer">
+                        <button class="btn" id="details_submit_btn" type="submit">Submit</button>
+                        <button class="btn" id="contact_reset_btn" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+    </main>
+    <script src="../JS/Receptionist_JS/booking_details_validation.js"></script>
+    <script src="../JS/Receptionist_JS/guestDetails.js"></script>
+    <footer>
+        <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+    </footer>
+
+</body>
+
+</html>

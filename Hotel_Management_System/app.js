@@ -90,9 +90,10 @@ app.get('/receptionist/roomavailability', async (req, res) => {
 
         const { checkin_date } = req.query;
         const { checkout_date } = req.query;
+        const { room_type } = req.query;
         const q =
-            'select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in (select hotelbooking.roombooking.r_no from hotelbooking.roombooking where (checkin <= $1 and checkout >= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no);';
-        await client.query(q, [checkin_date, checkout_date], (err, results) => {
+            'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=$1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;';
+        await client.query(q, [checkin_date, checkout_date, room_type], (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");
