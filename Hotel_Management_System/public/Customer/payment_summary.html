@@ -11,8 +11,22 @@
 
 <body>
     <header>
-        <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-            alt="The Crown Hotel logo">
+        <div id="header-spacer">
+            <div> <!-- Logo -->
+                <a href="index.html">
+                    <img
+                            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                            alt="Logo emblem of a hotel with a crown on top">
+                </a>
+            </div>
+            <div id="header-links"> 
+                <nav>
+                    <ul id="header_links">
+                        <li><span><a href="index.html">Back to Home</a></span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
     <main>
         <div class="landing_page_container">
@@ -25,27 +39,27 @@
                         <ul>
                             <li>
                                 <em>Booking Reference Number</em>
-                                <span>12345</span>
+                                <span id="b_ref">12345</span>
                             </li>
                             <li>
                                 <em>Amount</em>
-                                <span>£1246.00</span>
+                                <span id="amount">£1246.00</span>
                             </li>
                             <li>
                                 <em>Check-in Date</em>
-                                <span>December 23 2023</span>
+                                <span id="checkin">December 23 2023</span>
                             </li>
                             <li>
                                 <em>Check-out Date</em>
-                                <span>December 26 2023</span>
+                                <span id="checkout">December 26 2023</span>
                             </li>
                             <li>
                                 <em>Guest</em>
-                                <span>3</span>
+                                <span id="guest">3</span>
                             </li>
                             <li>
                                 <em>Issuer</em>
-                                <span>The Crown Hotel Inc</span>
+                                <span id="issuer">The Crown Hotel Inc</span>
                             </li>
                         </ul>
                     </div>
@@ -59,8 +73,9 @@
                         </div>
                         <div class="msg">
                             <h2>Hi, Aman!</h2>
-                            <p>Thank you for your booking. We are exteremly delighted to confirm that 
-                                your Booking at <em>The Crown Hotel</em> is successful. We are looking forward to serve with one of 
+                            <p>Thank you for your booking. We are exteremly delighted to confirm that
+                                your Booking at <em>The Crown Hotel</em> is successful. We are looking forward to
+                                serve with one of
                                 the finest hospitality service experience. </p>
                             <span class="ej">Enjoy!</span>
                             <p class="sender">
