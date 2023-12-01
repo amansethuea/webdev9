@@ -168,6 +168,37 @@
         padding: 20px 0 0;
     }
 
+    .contact_sub_heading {
+        font-weight: lighter;
+        justify-content: center;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .contact_box {
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: #eaeaea88;
+        padding: 20px;
+        width: 60%;
+        margin: auto;
+    }
+
+    .contact_form_box {
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: #eaeaea88;
+        padding: 20px;
+        width: 60%;
+        height: 320px;
+        margin: 25px 10px 20px 500px;
+        margin: auto;
+        margin-top: 20px;
+        height: 40%;
+    }
+
 
     /*Book Now styling*/
     .booking-mechanism {
