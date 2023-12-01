@@ -249,7 +249,6 @@
 
 
 
-
     #landing_page_about_us {
         padding-top: 10px;
         padding-left: 10%;
@@ -684,6 +683,10 @@
     align-items: center;
     flex-direction: column;
 }
+.swiper-slide h1{
+    font-size: 45px; /* Makes the header per slider a little smaller than other h1's*/
+    padding: 16px 0 0;
+}
 
 .swiper-slide img {
     display: block;
@@ -705,19 +708,19 @@
 }
 
 .swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
+    /*width: 20px;*/
+    /*height: 20px;*/
     text-align: center;
-    line-height: 20px;
-    font-size: 12px;
+    /*line-height: 20px;*/
+    font-size: 28px;
     color: #000;
-    opacity: 1;
+    /*opacity: 1;*/
     background: rgba(0, 0, 0, 0.2);
 }
 
 span.swiper-pagination-bullet {
-    width: 5px;
-    height: 16px;
+    width: 2vh;
+    height: auto;
 }
 
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -730,6 +733,9 @@ span.swiper-pagination-bullet {
 .swiper-pagination-bullet-active {
     color: #fff;
     background: #37ce56;
+}
+.swiper-pagination-bullet{
+    border-radius: 10%!important;
 }
 
 .swiper-button-next,
@@ -840,3 +846,5 @@ textarea {
         transform: scale(1);
     }
 }
+
+
