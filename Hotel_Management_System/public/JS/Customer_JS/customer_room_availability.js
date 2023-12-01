@@ -130,18 +130,33 @@ const checkoutDateDiv = document.querySelector('#checkoutDate');
 const durationDiv = document.querySelector('#duration_of_stay');
 
 // Function to update the dates and duration
+// Function to update the dates and duration
+// Function to update the dates and duration
 function updateDatesAndDuration() {
     // Get the selected dates
     const checkinDate = new Date(checkinDateInput.value);
     const checkoutDate = new Date(checkoutDateInput.value);
 
     // Update the arrival and checkout dates
-    arrivalDateDiv.textContent = checkinDate.toDateString();
-    checkoutDateDiv.textContent = checkoutDate.toDateString();
+    if (checkinDateInput.value) {
+        arrivalDateDiv.textContent = checkinDate.toDateString();
+    } else {
+        arrivalDateDiv.textContent = '----'; // This will be shown while no date is selected
+    }
+
+    if (checkoutDateInput.value) {
+        checkoutDateDiv.textContent = checkoutDate.toDateString();
+    } else {
+        checkoutDateDiv.textContent = '----'; // This will be shown while no date is selected
+    }
 
     // Calculate and update the duration of stay
-    const duration = Math.round((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
-    durationDiv.textContent = duration;
+    if (checkinDateInput.value && checkoutDateInput.value) {
+        const duration = Math.round((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+        durationDiv.textContent = duration;
+    } else {
+        durationDiv.textContent = 0; // This will be shown when no checkin AND checkout dates are selected
+    }
 }
 
 // Add change event listeners to the date input elements
