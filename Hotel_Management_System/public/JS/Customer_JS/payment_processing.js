@@ -3,3 +3,4 @@ console.log(bookingDetails);
 
 const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
 console.log(customerDetails);
+

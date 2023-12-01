@@ -39,7 +39,7 @@ checkinbtn.addEventListener("click", function(event){
     else {
         document.getElementById("span7").style.display = "inline";
     }
-    if (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(mobileno) == true) {
+    if (/^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(mobileno) == true) {
         document.getElementById("span8").style.display = "none";
     }
     else {

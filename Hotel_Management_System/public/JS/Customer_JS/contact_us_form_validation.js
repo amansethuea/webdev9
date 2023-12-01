@@ -27,7 +27,7 @@ function onSubmitClick(event) {
         document.getElementById("span3").style.display = "inline";
     }
     // phone check validation including blank field check
-    if (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(mobileno) == true) {
+    if (/^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(mobileno) == true) {
         document.getElementById("span4").style.display = "none";
     }
     else {
