@@ -99,10 +99,8 @@ checkinbtn.addEventListener("click", function (event) {
     else {
         document.getElementById("span12").style.display = "none";
     }
-    if (expiryMonth == "January" || expiryMonth == "january" || expiryMonth == "February" || expiryMonth == "february" || expiryMonth == "March" || expiryMonth == "march" || expiryMonth == "April" || expiryMonth == "april"
-        || expiryMonth == "May" || expiryMonth == "may" || expiryMonth == "June" || expiryMonth == "june" || expiryMonth == "July" || expiryMonth == "july" || expiryMonth == "August" || expiryMonth == "august"
-        || expiryMonth == "September" || expiryMonth == "september" || expiryMonth == "October" || expiryMonth == "october" || expiryMonth == "November" || expiryMonth == "november" || expiryMonth == "December"
-        || expiryMonth == "december") {
+    if (expiryMonth == "01" || expiryMonth == "02" || expiryMonth == "03" || expiryMonth == "04" || expiryMonth == "05" || expiryMonth == "06" || expiryMonth == "07" || expiryMonth == "08"
+        || expiryMonth == "09" || expiryMonth == "10" || expiryMonth == "11" || expiryMonth == "12") {
         document.getElementById("span13").style.display = "none";
     }
     else {
@@ -115,7 +113,7 @@ checkinbtn.addEventListener("click", function (event) {
         document.getElementById("span14").style.display = "none";
     }
 
-    if (expiryYear == "2023" || expiryYear == "2024" || expiryYear == "2025" || expiryYear == "2026" || expiryYear == "2027" || expiryYear == "2028" || expiryYear == "2029" || expiryYear == "2030") {
+    if (expiryYear == "23" || expiryYear == "24" || expiryYear == "25" || expiryYear == "26" || expiryYear == "27" || expiryYear == "28" || expiryYear == "29" || expiryYear == "30") {
         document.getElementById("span15").style.display = "none";
     }
     else {
