@@ -46,36 +46,58 @@
                                 <label for="availability" id="availability">Click for new booking</label>
                             </div>
                             <div class="form-control-container">
-                                <button class="btn" id="checkavailbtn" type="submit" onclick="window.location.href='room_booking.html'">New Booking</button>
+                                <button class="btn" id="checkavailbtn" type="submit"
+                                    onclick="window.location.href='room_booking.html'">New Booking</button>
                             </div>
                         </div>
                     </div>
                 </div>
-        </section>
-        <section id="form2">
-            <div class="card signup-card">
-                <div class="card-header">Already have a booking ?</div>
-                <div class="card-body">
-                    <div class="form-element">
-                        <div class="form-label"><label for="referenceno">Reference No.</label></div>
-                        <div class="form-control-container">
-                            <input type="referenceno" class="form-control" id="referenceno" name="referenceno"
-                                placeholder="Reference Number" />
-                            <span id="span5" class="error">Please enter a booking reference</span>
-                            <span id="span6" class="error"> Reference number too short. Hint: Reference no. is a 5
-                                digit booking reference </span>
-                            <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 5
-                                digit booking reference </span>
-                            <span id="span7" class="error">Reference number not found in our records</span>
-                            <div id="results"></div>
+            </section>
+            <section id="form2">
+                <div class="card signup-card">
+                    <div class="card-header">Already have a booking ?</div>
+                    <div class="card-body">
+                        <div class="form-element">
+                            <div class="form-label"><label for="referenceno">Reference No.</label></div>
+                            <div class="form-control-container">
+                                <input type="referenceno" class="form-control" id="referenceno" name="referenceno"
+                                    placeholder="Reference Number" />
+                                <span id="span5" class="error">Please enter a booking reference</span>
+                                <span id="span6" class="error"> Reference number too short. Hint: Reference no. is a 5
+                                    digit booking reference </span>
+                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 5
+                                    digit booking reference </span>
+                                <span id="span7" class="error">Reference number not found in our records</span>
+                                <div id="results"></div>
+                            </div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label">
+                                <label for="date" id="checkinlabel">Check-in Date</label>
+                            </div>
+                            <div class="form-control-container">
+                                <input type="date" class="form-control" id="checkindate" name="checkindate"
+                                    required="required" />
+                                <span id="span2" class="error">Check-in date can't be of a previous date</span>
+                            </div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-label">
+                                <label for="date">Checkout Date</label>
+                            </div>
+                            <div class="form-control-container">
+                                <input type="date" class="form-control" id="checkoutdate" name="checkoutdate"
+                                    required="required" />
+                                <span id="span4" class="error">Check-out date can't be of current or previous
+                                    date</span>
+                            </div>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <p><button class="btn" id="refbtn" type="submit">Fetch Details</button></p>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <p><button class="btn" id="refbtn" type="submit">Fetch Details</button></p>
-                </div>
-            </div>
-        </section>
+            </section>
 
         </div>
         <div id="refresults"></div>

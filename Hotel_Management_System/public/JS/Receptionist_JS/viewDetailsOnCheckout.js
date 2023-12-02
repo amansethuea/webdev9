@@ -6,7 +6,7 @@ function onTextReadyForCheckoutDetails(text) {
     data.results.forEach(element => {
         // console.log(element);
         output += 
-        `<li>  Customer Name: ${element.c_name} Check-in Date: ${element.checkin} Checkout Date: ${element.checkout} Total Booking Cost: ${element.b_cost} Total Outstanding Amount: ${element.b_outstanding} Room Type: ${element.r_class}  </li>`;
+        `<li>  Customer Name: ${element.c_name} Check-in Date: ${element.checkin} Checkout Date: ${element.checkout} Total Booking Cost: ${element.b_cost} Total Outstanding Amount: ${element.b_outstanding}  </li>`;
     })
     output += '</ul>'
 

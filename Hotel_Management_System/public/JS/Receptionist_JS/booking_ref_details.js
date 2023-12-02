@@ -5,7 +5,7 @@ function onTextReady(text) {
     let output = '<ul> ';
     data.results.forEach(element => {
         // console.log(element);
-        output += `<li>  Room ID: ${element.r_no}  Checkin: ${element.checkin}  Checkout: ${element.checkout} </li>`;
+        output += `<li>  Customer Name: ${element.c_name} Ref No: ${element.b_ref}  Checkin: ${element.checkin}  Checkout: ${element.checkout} Total Cost: ${element.b_cost} Outstanding Cost: ${element.b_outstanding} </li>`;
     })
     output += '</ul>'
 
@@ -25,8 +25,10 @@ function onResponse(response) {
 var refButton = document.getElementById("refbtn");
 refButton.addEventListener("click", function (event) {
     const referenceNo = document.getElementById('referenceno').value;
+    const checkin = document.getElementById('checkindate').value;
+    const checkout = document.getElementById('checkoutdate').value;
     console.log(referenceNo)
-    fetch(`http://localhost:3000/receptionist/refno?b_ref=${referenceNo}`)
+    fetch(`http://localhost:3000/receptionist/refno?b_ref=${referenceNo}&checkin_date=${checkin}&checkout_date=${checkout}`)
         .then(onResponse)
         .then(onTextReady);
     event.preventDefault();
