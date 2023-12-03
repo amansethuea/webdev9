@@ -175,6 +175,281 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
     }
 });
 
+
+// Insert a new customer record with the booking in the DB - Customer
+app.post('/api/customer/newbooking', async (req, res) => {
+    try {
+
+        const bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
+        const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
+        const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
+
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const latestCustNoQuery = 'SELECT MAX(c_no) FROM hotelbooking.customer;';
+        await client.query(latestCustNoQuery, async (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+
+                const latestCustNumber = results.rows[0].max || 0; // Fetch the latest customer number
+                newCustomerNumber = latestCustNumber + 1; // Create latest or new customer number
+
+                const customerName = getPaymentDetails.full_name;
+                const customerEmail = getPaymentDetails.email;
+                const customerAddr = getPaymentDetails.address + "," + getPaymentDetails.city + "," + getPaymentDetails.state + "," + getPaymentDetails.zip;
+                const customerCardType = 'V';
+                const customerCardExpMonth = getPaymentDetails.card_expiry_month;
+                const customerCardExpYear = getPaymentDetails.card_expiry_year;
+                const cardExpMonthYear = customerCardExpMonth + "/" + customerCardExpYear;
+                const customerCardNo = getPaymentDetails.card_no;
+
+                //Inserting new customer data
+                const insertNewCustQuery =
+                    'INSERT INTO hotelbooking.customer (c_no, c_name, c_email, c_address, c_cardtype, c_cardexp, c_cardno) VALUES ($1, $2, $3, $4, $5, $6, $7);';
+                await client.query(insertNewCustQuery, [newCustomerNumber, customerName, customerEmail, customerAddr, customerCardType, cardExpMonthYear, customerCardNo], (err, results) => {
+                    if (err) {
+                        console.log(err.stack)
+                        errors = err.stack.split(" at ");
+                        res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                    } else {
+                        client.release();
+                        // After creating new customer, create new booking with reference
+                        createNewCustomerBooking(newCustomerNumber);
+
+                    }
+                });
+            }
+        });
+
+        // Create new booking for newly created customer - function
+        async function createNewCustomerBooking(customerNo) {
+            const latestBookRefNoQuery = 'SELECT MAX(b_ref) FROM hotelbooking.booking;';
+            await client.query(latestBookRefNoQuery, async (err, results) => {
+                if (err) {
+                    console.log(err.stack)
+                    errors = err.stack.split(" at ");
+                    res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                } else {
+                    const bookingCost = bookingDetails.total_cost;
+                    const outstandingCost = '0';
+                    const bookingNotes = 'Lorem Ipsum';
+
+                    client.release();
+                    const latestBookRefNumber = results.rows[0].max || 0; // Fetch the latest booking reference number
+                    newBookRefNumber = latestBookRefNumber + 1; // Create latest or new booking reference number
+
+                    // Create entry inside booking table with the newly generated booking reference number
+                    const insertNewBookingRefQuery =
+                        'INSERT INTO hotelbooking.booking (b_ref, c_no, b_cost, b_outstanding, b_notes) VALUES ($1, $2, $3, $4, $5);';
+                    await client.query(insertNewBookingRefQuery, [newBookRefNumber, newCustomerNumber, outstandingCost, bookingNotes], async (err, results) => {
+                        if (err) {
+                            console.log(err.stack)
+                            errors = err.stack.split(" at ");
+                            res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                        } else {
+                            client.release();
+                            // After creating new booking reference, create entry into roombooking table as well
+                            const getRoomsList = bookingDetails.room_data;
+                            const checkin = bookingDetails.arrival_date;
+                            const checkout = bookingDetails.checkout_date;
+                            for (var i = 1; i <= getRoomsList.length; i++) {
+                                const insertNewRoomBookQuery = 'INSERT INTO hotelbooking.roombooking (r_no, b_ref, checkin, checkout) VALUES ($1, $2, $3, $4);';
+                                await client.query(insertNewRoomBookQuery, [getRoomsList[i], newBookRefNumber, checkin, checkout], async (err, results) => {
+                                    if (err) {
+                                        console.log(err.stack)
+                                        errors = err.stack.split(" at ");
+                                        res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                                    } else {
+                                        client.release();
+                                        // Lastly, update the room/s status as the booking is successful 
+                                        const updateRoomStatus = 'UPDATE hotelbooking.room SET r_status = O WHERE r_no = $1;';
+                                        await client.query(updateRoomStatus, [getRoomsList[i]], async (err, results) => {
+                                            if (err) {
+                                                console.log(err.stack)
+                                                errors = err.stack.split(" at ");
+                                                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                                            } else {
+                                                client.release();
+                                                res.status(200).json({ message: 'Room booked successfully by customer' });
+                                            }
+                                        });
+                                    }
+
+                                });
+                            }
+                        }
+                    });
+                }
+
+            });
+        }
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+
+// Insert a new customer record with the booking in the DB - Receptionist
+app.post('/api/receptionist/newbooking', async (req, res) => {
+    try {
+
+        const bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
+        const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
+        const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
+
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const latestCustNoQuery = 'SELECT MAX(c_no) FROM hotelbooking.customer;';
+        await client.query(latestCustNoQuery, async (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+
+                const latestCustNumber = results.rows[0].max || 0; // Fetch the latest customer number
+                newCustomerNumber = latestCustNumber + 1; // Create latest or new customer number
+
+                const customerName = getPaymentDetails.full_name;
+                const customerEmail = getPaymentDetails.email;
+                const customerAddr = getPaymentDetails.address + "," + getPaymentDetails.city + "," + getPaymentDetails.state + "," + getPaymentDetails.zip;
+                const customerCardType = 'V';
+                const customerCardExpMonth = getPaymentDetails.card_expiry_month;
+                const customerCardExpYear = getPaymentDetails.card_expiry_year;
+                const cardExpMonthYear = customerCardExpMonth + "/" + customerCardExpYear;
+                const customerCardNo = getPaymentDetails.card_no;
+
+                //Inserting new customer data
+                const insertNewCustQuery =
+                    'INSERT INTO hotelbooking.customer (c_no, c_name, c_email, c_address, c_cardtype, c_cardexp, c_cardno) VALUES ($1, $2, $3, $4, $5, $6, $7);';
+                await client.query(insertNewCustQuery, [newCustomerNumber, customerName, customerEmail, customerAddr, customerCardType, cardExpMonthYear, customerCardNo], (err, results) => {
+                    if (err) {
+                        console.log(err.stack)
+                        errors = err.stack.split(" at ");
+                        res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                    } else {
+                        client.release();
+                        // After creating new customer, create new booking with reference
+                        createNewCustomerBooking(newCustomerNumber);
+
+                    }
+                });
+            }
+        });
+
+        // Create new booking for newly created customer - function
+        async function createNewCustomerBooking(customerNo) {
+            const latestBookRefNoQuery = 'SELECT MAX(b_ref) FROM hotelbooking.booking;';
+            await client.query(latestBookRefNoQuery, async (err, results) => {
+                if (err) {
+                    console.log(err.stack)
+                    errors = err.stack.split(" at ");
+                    res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                } else {
+                    const bookingCost = bookingDetails.total_cost;
+                    const outstandingCost = '0';
+                    const bookingNotes = 'Lorem Ipsum';
+
+                    client.release();
+                    const latestBookRefNumber = results.rows[0].max || 0; // Fetch the latest booking reference number
+                    newBookRefNumber = latestBookRefNumber + 1; // Create latest or new booking reference number
+
+                    // Create entry inside booking table with the newly generated booking reference number
+                    const insertNewBookingRefQuery =
+                        'INSERT INTO hotelbooking.booking (b_ref, c_no, b_cost, b_outstanding, b_notes) VALUES ($1, $2, $3, $4, $5);';
+                    await client.query(insertNewBookingRefQuery, [newBookRefNumber, newCustomerNumber, outstandingCost, bookingNotes], async (err, results) => {
+                        if (err) {
+                            console.log(err.stack)
+                            errors = err.stack.split(" at ");
+                            res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                        } else {
+                            client.release();
+                            // After creating new booking reference, create entry into roombooking table as well
+                            const getRoomsList = bookingDetails.room_data;
+                            const checkin = bookingDetails.arrival_date;
+                            const checkout = bookingDetails.checkout_date;
+                            for (var i = 1; i <= getRoomsList.length; i++) {
+                                const insertNewRoomBookQuery = 'INSERT INTO hotelbooking.roombooking (r_no, b_ref, checkin, checkout) VALUES ($1, $2, $3, $4);';
+                                await client.query(insertNewRoomBookQuery, [getRoomsList[i], newBookRefNumber, checkin, checkout], async (err, results) => {
+                                    if (err) {
+                                        console.log(err.stack)
+                                        errors = err.stack.split(" at ");
+                                        res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                                    } else {
+                                        client.release();
+                                        // Lastly, update the room/s status as the booking is successful 
+                                        const updateRoomStatus = 'UPDATE hotelbooking.room SET r_status = O WHERE r_no = $1;';
+                                        await client.query(updateRoomStatus, [getRoomsList[i]], async (err, results) => {
+                                            if (err) {
+                                                console.log(err.stack)
+                                                errors = err.stack.split(" at ");
+                                                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                                            } else {
+                                                client.release();
+                                                res.status(200).json({ message: 'Room booked successfully via receptionist' });
+                                            }
+                                        });
+                                    }
+
+                                });
+                            }
+                        }
+                    });
+                }
+
+            });
+        }
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+
+// Housekeeper to update room back to available once cleaned
+app.put('/api/housekeeper/:roomNumber', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const { roomNo } = req.query;
+        const updateRoomStatusToCleanQuery = `UPDATE hotelbooking.room SET r_status = C WHERE r_no = $1`;;
+        await client.query(updateRoomStatusToCleanQuery, [roomNo], async (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                // After changing room status to clean, update the status to Available
+                const updateRoomStatusToAvailableQuery = `UPDATE hotelbooking.room SET r_status = A WHERE r_no = $1`;
+                await client.query(updateRoomStatusToAvailableQuery, [roomNo], (err, results) => {
+                    if (err) {
+                        console.log(err.stack)
+                        errors = err.stack.split(" at ");
+                        res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+                    } else {
+                        client.release();
+                        res.status(200).json({ message: `Room ${roomNumber} is Available again to book.` });
+                    }
+                });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
 // handling errors // 
 app.use(function (err, req, res, next) {
     let responseData;
@@ -206,6 +481,7 @@ app.use(function (err, req, res, next) {
         next(err);
     }
 });
+
 
 app.listen(port, () => {
     console.log(`My first app listening on port ${port}!`)

@@ -15,7 +15,7 @@ function createPaymentData(full_name, email, address, city, state, zip, card_no,
         zip: zip,
         card_no: card_no,
         card_expiry_month: card_expiry_month,
-        card_expiry_year:card_expiry_year
+        card_expiry_year: card_expiry_year
     };
     return data;
 }
@@ -31,12 +31,12 @@ refButton.addEventListener("click", function (event) {
     const card_no = document.getElementById('cname').value;
     const card_expiry_month = document.getElementById('expmonth').value;
     const card_expiry_year = document.getElementById('expyear').value;
-    localStorage.setItem('setPaymentDetails', JSON.stringify(createPaymentData(full_name.trim(), email.trim(), address.trim(), 
-    city.trim(), state.trim(), zip.trim(), card_no.trim(), card_expiry_month.trim(), card_expiry_year.trim())));
+    localStorage.setItem('setPaymentDetails', JSON.stringify(createPaymentData(full_name.trim(), email.trim(), address.trim(),
+        city.trim(), state.trim(), zip.trim(), card_no.trim(), card_expiry_month.trim(), card_expiry_year.trim())));
 
     const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
     console.log(getPaymentDetails);
 
-    //window.location.href="http://localhost:3000/customer/payment_summary.html";
+    window.location.href="http://localhost:3000/customer/payment_summary.html";
     event.preventDefault();
 });
