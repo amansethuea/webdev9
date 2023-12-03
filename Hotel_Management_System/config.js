@@ -1,9 +1,9 @@
 const config = {
     development: {
         host: "cmpstudb-01.cmp.uea.ac.uk",
-        user: "zfb23ecu",
-        password: "",
-        database: "zfb23ecu",
+        user: "xzu22dbu",
+        password: "KillSharpSubstance80*",
+        database: "xzu22dbu",
     },
     production: {
         user: '', // env var: PGUSER  - YOUR UEA username
@@ -15,3 +15,4 @@ const config = {
 
 };
 module.exports = config;
+
