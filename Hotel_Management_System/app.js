@@ -156,7 +156,7 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
         const { checkout_date } = req.query;
         console.log(b_ref);
         console.log(checkout_date);
-        const q = `select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = ${b_ref} and hotelbooking.roombooking.checkout = '${checkout_date}' limit 1;`;
+        const q = `select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = ${b_ref} and hotelbooking.roombooking.checkout = '${checkout_date}' group by hotelbooking.room.r_no;`;
         await client.query(q, (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -414,6 +414,32 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
     }
 });
 
+// Update room status to NA on successful customer checkout - Receptionist
+app.put('/api/housekeeper/:roomNumber', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const { roomNo } = req.query;
+        const updateRoomStatusToCleanQuery = `UPDATE hotelbooking.room SET r_status = X WHERE r_no = $1`;;
+        await client.query(updateRoomStatusToCleanQuery, [roomNo], async (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                res.status(200).json({ message: `Room ${roomNumber} is checked out successfully.` });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+
 // Housekeeper to update room back to available once cleaned
 app.put('/api/housekeeper/:roomNumber', async (req, res) => {
     try {
@@ -442,6 +468,33 @@ app.put('/api/housekeeper/:roomNumber', async (req, res) => {
                         res.status(200).json({ message: `Room ${roomNumber} is Available again to book.` });
                     }
                 });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+/* GET NA rooms from DB - Housekeeper*/
+app.get('/housekeeper/roomInfo', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const q = 'SELECT r_no hotelbooking.room WHERE r_status = X';
+        await client.query(q, [b_ref, checkin_date, checkout_date], (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                // console.log(results); //
+                data = results.rows;
+                count = results.rows.length;
+                res.json({ results: data, rows: count });
             }
         });
 
