@@ -5,7 +5,7 @@ function onTextReady(text) {
     let output = '<ul> ';
     data.results.forEach(element => {
         // console.log(element);
-        output += `<li>  Customer Name: ${element.c_name} Ref No: ${element.b_ref}  Checkin: ${element.checkin}  Checkout: ${element.checkout} Total Cost: ${element.b_cost} Outstanding Cost: ${element.b_outstanding} </li>`;
+        output += `<li>  Customer Name: ${element.c_name} Ref No: ${element.b_ref}  Checkin: ${element.checkin}  Checkout: ${element.checkout} Total Cost: ${element.b_cost} Outstanding Cost: ${element.b_outstanding}  </li>`;
     })
     output += '</ul>'
 
