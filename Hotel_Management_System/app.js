@@ -97,9 +97,8 @@ app.get('/receptionist/roomavailability', async (req, res) => {
         const { checkout_date } = req.query;
         const { room_type } = req.query;
         const q =
-            `select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking 
-            where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=${checkin_date} and checkout>= ${checkout_date}) 
-            and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = ${room_type};`;
+            'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <= $1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;'
+            console.log(q);
         await client.query(q, [checkin_date, checkout_date, room_type], (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -130,9 +129,8 @@ app.get('/customer/roomavailability', async (req, res) => {
         const { checkout_date } = req.query;
         const { room_type } = req.query;
         const q =
-            `select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking 
-            where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=${checkin_date} and checkout>= ${checkout_date}) 
-            and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = ${room_type};`;
+            'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=$1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;'
+        
         await client.query(q, [checkin_date, checkout_date, room_type], (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -163,10 +161,7 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
         const { checkout_date } = req.query;
         console.log(b_ref);
         console.log(checkout_date);
-        const q = `select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, 
-                    hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and 
-                    hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = ${b_ref} and hotelbooking.roombooking.checkout = '${checkout_date}' and hotelbooking.room.r_status = 'O' 
-                    group by hotelbooking.room.r_no, hotelbooking.customer.c_name, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding;`;
+        const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $2 and hotelbooking.room.r_status = "O" group by hotelbooking.room.r_no, hotelbooking.customer.c_name, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding;'
         await client.query(q, (err, results) => {
             if (err) {
                 console.log(err.stack)

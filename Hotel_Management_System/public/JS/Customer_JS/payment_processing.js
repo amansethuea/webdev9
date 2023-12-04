@@ -4,6 +4,18 @@ console.log(bookingDetails);
 const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
 console.log(customerDetails);
 
+window.onload = function() {
+    updateCart();
+}
+
+function updateCart() {
+    const getCost = bookingDetails.total_cost;
+    const getNoOfRooms = bookingDetails.no_of_rooms;
+    document.getElementById("cart_rooms").innerText = getNoOfRooms;
+    document.getElementById("total_rooms").innerText = getNoOfRooms;
+    document.getElementById("total_cost").innerText = getCost;
+}
+
 /* wrap up the data */
 function createPaymentData(full_name, email, address, city, state, zip, card_no, card_expiry_month, card_expiry_year) {
     const data = {
