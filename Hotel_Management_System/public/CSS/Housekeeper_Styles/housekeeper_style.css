@@ -1,6 +1,5 @@
 /*Large Screen*/
 @media screen and (min-width: 768px) {
-
     /*Header styles*/
     header { /*The main bulk of the header style*/
         background-color: #ffffff;
@@ -89,7 +88,72 @@
         font-size: small;
         padding-left: 2%;
     }
+    #housekeeper_room_container{
+        /*border: 2px solid black;*/
+        /*border-radius: 10px;*/
+        width: 40vw;
+        position: absolute;
+        left: 30vw;
+        height: 50vh;
+        overflow-y: auto;
+        margin-top: 5%;
+    }
+    .housekeeper_individual_room_container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+    }
+    .icon-radio-selector input[type="radio"] {
+        display: none;
+    }
 
+    .icon-radio-selector {
+        display: flex;
+    }
+    .icon-radio-selector label {
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-radio-selector label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 1px solid #000000;
+        border-radius: 50%;
+    }
+
+    .icon-radio-selector input[type="radio"]:checked + label::before {
+        background: #083116;
+    }
+    #housekeeper_room_buttons {
+        right: 31vw;
+        position: fixed;
+        top: 70vh;
+        width: 39%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .housekeeper_room_button_indv{
+        width: 15vw;
+        height: 40px;
+        background-color: rgba(15, 74, 35, 0.88);
+        font-size: larger;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .housekeeper_room_button_indv:hover {
+        background-color: rgb(15, 74, 35);
+        font-size: x-large;
+    }
     /*Main body styling*/
     body, html {
         font-family: serif;
@@ -132,66 +196,12 @@
         padding: 20px 0 0;
     }
 
-    /*Book Now styling*/
-    .booking-mechanism {/*Contains the three booking boxes*/
-        padding-top: 7vh;
-        position: relative;
-        display: flex;
-        justify-content: space-evenly;
-        height: 70vh;
-    }
-    .soft-box { /*Used for a few boxes to give them curved edges*/
-        border-radius: 10px;
-    }
-    .booking-box {/*use to set for appropriate width for distribution*/
-        width: 30%;
-    }
     .light-shadow {/*Used for a generic shadow effect, rather subtle*/
         /*width: 30%;*/
         box-shadow: -3px 3px 6px 0 #0000004f;
     }
 
-    /*------ Duration of stay ------*/
-    .stay-duration {/*used to style the box for 'duration'*/
-        height: 75%;
-        /*left: 26%;*/
-        background-color: #eaeaea88;
-    }
-    .booking-dates {/*used as a container for the dates and room types*/
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: stretch;
-        align-content: center;
-        flex-wrap: nowrap;
-        height: 85%;
-    }
-    .booking-date-selections {/*Used to space and set the calendar and room types*/
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-between;
-        align-content: stretch;
-        bottom: 20%;
-        padding: 0 5% 0 5%;
-    }
-    h3.booking-dates-heading {/*used for the headers of both in and out dates*/
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    #booking-in-date, #booking-out-date {
-        cursor: text;
-        font-size: 1.2rem;
-    }
-    select#room_type_select { /*used to style the dropdown box for the room type*/
-        width: 100%;
-        font-size: 1.2rem;
-        margin-bottom: 3%;
-    }
+
     /*------ Selection Of Room ------*/
     .room-selection {/*Used to style the box which holds the various rooms*/
         /*width: 23%;*/
@@ -211,33 +221,9 @@
     }
     .room {/*Each individual room*/
         padding: 10px;
-        border-bottom: 1px solid #000;
+        /*border-bottom: 1px solid #000;*/
         cursor: pointer;
     }
-    /*------ Summary of Booking------*/
-    .booking-box-summary-container {/*This will hold all the individual divs for each summary point*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        height: 91%;
-        /*justify-content: space-between;*/
-        overflow: auto;
-        display: block;
-    }
-    .booking-box-summary.booking-box-summary-a { /*Just adds a darker colour per every other line*/
-        background: #e1e1e1;
-    }
-    .booking-box-summary {/*Styling for each line of text within the booking summary*/
-        font-size: 1.2rem;
-        padding: 8% 5% 8% 5%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    div#book-now-page-checkout-button {/*style for the button at the end of the summary*/
-        display: flex;
-        justify-content: center;
-    }
-
 
     /*BGallery Styling*/
     /*-------- PROGRESS LINE --------*/

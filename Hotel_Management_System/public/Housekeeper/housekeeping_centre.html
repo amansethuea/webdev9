@@ -3,8 +3,10 @@
 
 <head>
     <title>The Crown Hotel</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/customer_style.css">
+<!--    <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/customer_style.css">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/Housekeeper_Styles/housekeeper_style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../JS/Customer_JS/Customer_JS.js"></script>
 </head>
@@ -31,36 +33,323 @@
     </header>
 
     <main>
-        <div class="landing_page_container">
-            <div class="house_keeper_container">
-                <h2>Room Info</h2>
-                <div class="all_rooms_container" id="all_rooms">
+            <div id="housekeeper_room_container">
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="101"><!--Room 01 -->Trafalgar Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="101_icon1" name="icon_101" value="icon1" checked>
+                        <label for="101_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="101_icon2" name="icon_101" value="icon2">
+                        <label for="101_icon2">Cleaned</label>
+
+                        <input type="radio" id="101_icon3" name="icon_101" value="icon3">
+                        <label for="101_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="102"><!--Room 02 -->Presidential Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="102_icon1" name="icon_102" value="icon1" checked>
+                        <label for="102_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="102_icon2" name="icon_102" value="icon2">
+                        <label for="102_icon2">Cleaned</label>
+
+                        <input type="radio" id="102_icon3" name="icon_102" value="icon3">
+                        <label for="102_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="103"><!--Room 03 -->Royal Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="103_icon1" name="icon_103" value="icon1" checked>
+                        <label for="103_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="103_icon2" name="icon_103" value="icon2">
+                        <label for="103_icon2">Cleaned</label>
+
+                        <input type="radio" id="103_icon3" name="icon_103" value="icon3">
+                        <label for="103_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="104"><!--Room 03 -->Prestige Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="104_icon1" name="icon_104" value="icon1" checked>
+                        <label for="104_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="104_icon2" name="icon_104" value="icon2">
+                        <label for="104_icon2">Cleaned</label>
+
+                        <input type="radio" id="104_icon3" name="icon_104" value="icon3">
+                        <label for="104_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="105"><!--Room 04 -->King Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="105_icon1" name="icon_105" value="icon1" checked>
+                        <label for="105_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="105_icon2" name="icon_105" value="icon2">
+                        <label for="105_icon2">Cleaned</label>
+
+                        <input type="radio" id="105_icon3" name="icon_105" value="icon3">
+                        <label for="105_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="106"><!--Room 05 -->Queen Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="106_icon1" name="icon_106" value="icon1" checked>
+                        <label for="106_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="106_icon2" name="icon_106" value="icon2">
+                        <label for="106_icon2">Cleaned</label>
+
+                        <input type="radio" id="106_icon3" name="icon_106" value="icon3">
+                        <label for="106_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="107"><!--Room 06 -->Emperor Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="107_icon1" name="icon_107" value="icon1" checked>
+                        <label for="107_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="107_icon2" name="icon_107" value="icon2">
+                        <label for="107_icon2">Cleaned</label>
+
+                        <input type="radio" id="107_icon3" name="icon_107" value="icon3">
+                        <label for="107_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="108"><!--Room 07 -->Empress Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="108_icon1" name="icon_108" value="icon1" checked>
+                        <label for="108_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="108_icon2" name="icon_108" value="icon2">
+                        <label for="108_icon2">Cleaned</label>
+
+                        <input type="radio" id="108_icon3" name="icon_108" value="icon3">
+                        <label for="108_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="201"><!--Room 08 -->Prince Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="201_icon1" name="icon_201" value="icon1" checked>
+                        <label for="201_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="201_icon2" name="icon_201" value="icon2">
+                        <label for="201_icon2">Cleaned</label>
+
+                        <input type="radio" id="201_icon3" name="icon_201" value="icon3">
+                        <label for="201_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="202"><!--Room 09 -->Princess Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="202_icon1" name="icon_202" value="icon1" checked>
+                        <label for="202_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="202_icon2" name="icon_202" value="icon2">
+                        <label for="202_icon2">Cleaned</label>
+
+                        <input type="radio" id="202_icon3" name="icon_202" value="icon3">
+                        <label for="202_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="203"><!--Room 10 -->Duke Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="203_icon1" name="icon_203" value="icon1" checked>
+                        <label for="203_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="203_icon2" name="icon_203" value="icon2">
+                        <label for="203_icon2">Cleaned</label>
+
+                        <input type="radio" id="203_icon3" name="icon_203" value="icon3">
+                        <label for="203_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="204"><!--Room 11 -->Duchess Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="204_icon1" name="icon_204" value="icon1" checked>
+                        <label for="204_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="204_icon2" name="icon_204" value="icon2">
+                        <label for="204_icon2">Cleaned</label>
+
+                        <input type="radio" id="204_icon3" name="icon_204" value="icon3">
+                        <label for="204_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="205"><!--Room 12 -->Marquis Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="205_icon1" name="icon_205" value="icon1" checked>
+                        <label for="205_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="205_icon2" name="icon_205" value="icon2">
+                        <label for="205_icon2">Cleaned</label>
+
+                        <input type="radio" id="205_icon3" name="icon_205" value="icon3">
+                        <label for="205_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="206"><!--Room 13 -->Marchioness Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="206_icon1" name="icon_206" value="icon1" checked>
+                        <label for="206_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="206_icon2" name="icon_206" value="icon2">
+                        <label for="206_icon2">Cleaned</label>
+
+                        <input type="radio" id="206_icon3" name="icon_206" value="icon3">
+                        <label for="206_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="207"><!--Room 14 -->Earl Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="207_icon1" name="icon_207" value="icon1" checked>
+                        <label for="207_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="207_icon2" name="icon_207" value="icon2">
+                        <label for="207_icon2">Cleaned</label>
+
+                        <input type="radio" id="207_icon3" name="icon_207" value="icon3">
+                        <label for="207_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="208"><!--Room 15 -->Countess Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="208_icon1" name="icon_208" value="icon1" checked>
+                        <label for="208_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="208_icon2" name="icon_208" value="icon2">
+                        <label for="208_icon2">Cleaned</label>
+
+                        <input type="radio" id="208_icon3" name="icon_208" value="icon3">
+                        <label for="208_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="209"><!--Room 16 -->Viscount Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="209_icon1" name="icon_209" value="icon1" checked>
+                        <label for="209_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="209_icon2" name="icon_209" value="icon2">
+                        <label for="209_icon2">Cleaned</label>
+
+                        <input type="radio" id="209_icon3" name="icon_209" value="icon3">
+                        <label for="209_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="210"><!--Room 17 -->Viscountess Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="210_icon1" name="icon_210" value="icon1" checked>
+                        <label for="210_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="210_icon2" name="icon_210" value="icon2">
+                        <label for="210_icon2">Cleaned</label>
+
+                        <input type="radio" id="210_icon3" name="icon_210" value="icon3">
+                        <label for="210_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="211"><!--Room 18 -->Baron Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="211_icon1" name="icon_211" value="icon1" checked>
+                        <label for="211_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="211_icon2" name="icon_211" value="icon2">
+                        <label for="211_icon2">Cleaned</label>
+
+                        <input type="radio" id="211_icon3" name="icon_211" value="icon3">
+                        <label for="211_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="212"><!--Room 19 -->Baroness Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="212_icon1" name="icon_212" value="icon1" checked>
+                        <label for="212_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="212_icon2" name="icon_212" value="icon2">
+                        <label for="212_icon2">Cleaned</label>
+
+                        <input type="radio" id="212_icon3" name="icon_212" value="icon3">
+                        <label for="212_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="301"><!--Room 20 -->Knight Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="301_icon1" name="icon_301" value="icon1" checked>
+                        <label for="301_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="301_icon2" name="icon_301" value="icon2">
+                        <label for="301_icon2">Cleaned</label>
+
+                        <input type="radio" id="301_icon3" name="icon_301" value="icon3">
+                        <label for="301_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="302"><!--Room 21 -->Dame Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="302_icon1" name="icon_302" value="icon1" checked>
+                        <label for="302_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="302_icon2" name="icon_302" value="icon2">
+                        <label for="302_icon2">Cleaned</label>
+
+                        <input type="radio" id="302_icon3" name="icon_302" value="icon3">
+                        <label for="302_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="303"><!--Room 22 -->Squire Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="303_icon1" name="icon_303" value="icon1" checked>
+                        <label for="303_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="303_icon2" name="icon_303" value="icon2">
+                        <label for="303_icon2">Cleaned</label>
+
+                        <input type="radio" id="303_icon3" name="icon_303" value="icon3">
+                        <label for="303_icon3">Ready for Check In</label>
+                    </div>
+                </div>
+                <div class="housekeeper_individual_room_container">
                     <div class="room" id="304"><!--Room 23 -->Lady Suite</div>
+                    <div class="icon-radio-selector">
+                        <input type="radio" id="304_icon1" name="icon_304" value="icon1" checked>
+                        <label for="304_icon1">Not Cleaned</label>
+
+                        <input type="radio" id="304_icon2" name="icon_304" value="icon2">
+                        <label for="304_icon2">Cleaned</label>
+
+                        <input type="radio" id="304_icon3" name="icon_304" value="icon3">
+                        <label for="304_icon3">Ready for Check In</label>
+                    </div>
                 </div>
             </div>
+        <div id="housekeeper_room_buttons">
+            <button class="housekeeper_room_button_indv">Grab Rooms</button> <!-- This button might act as a refresh button to get all rooms -->
+            <button class="housekeeper_room_button_indv">Confirm</button> <!-- This button will confirm the rooms that are cleaned -->
         </div>
     </main>
 
