@@ -63,10 +63,7 @@ app.get('/receptionist/refno', async (req, res) => {
         const { b_ref } = req.query;
         const { checkin_date } = req.query;
         const { checkout_date } = req.query;
-        const q = `select distinct(hotelbooking.customer.c_name), hotelbooking.booking.b_ref, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, 
-                    hotelbooking.booking.b_outstanding from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room where hotelbooking.customer.c_no = hotelbooking.booking.c_no and 
-                    hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.room.r_status = 'O' and hotelbooking.booking.b_ref = ${b_ref} 
-                    and (hotelbooking.roombooking.checkin = ${checkin_date} and hotelbooking.roombooking.checkout = ${checkout_date});`;
+        const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.booking.b_ref, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room where hotelbooking.customer.c_no = hotelbooking.booking.c_no and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.room.r_status = "O" and hotelbooking.booking.b_ref = $1 and (hotelbooking.roombooking.checkin = $2 and hotelbooking.roombooking.checkout = $3);';
         await client.query(q, [b_ref, checkin_date, checkout_date], (err, results) => {
             if (err) {
                 console.log(err.stack)
