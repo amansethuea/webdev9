@@ -177,6 +177,57 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
     }
 });
 
+/* GET booking reference - Customer*/
+app.get('/customer/getref', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const q = 'SELECT MAX(b_ref) FROM hotelbooking.booking;';
+        await client.query(q, (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                data = results.rows;
+                res.json({ results: data });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+/* GET booking reference - Receptionist*/
+app.get('/receptionist/getref', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+
+        const q = 'SELECT MAX(b_ref) FROM hotelbooking.booking;';
+        await client.query(q, (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                data = results.rows;
+                count = results.rows.length;
+                res.json({ results: data, rows: count });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
 // Insert a new customer record with the booking in the DB - Customer
 app.post('/api/customer/newbooking', async (req, res) => {
     try {
@@ -244,7 +295,6 @@ app.post('/api/customer/newbooking', async (req, res) => {
 
                     const latestBookRefNumber = results.rows[0].max || 0; // Fetch the latest booking reference number
                     newBookRefNumber = latestBookRefNumber + 1; // Create latest or new booking reference number
-                    console.log(`New booking reference generated is: ${newBookRefNumber}`);
                     // Create entry inside booking table with the newly generated booking reference number
                     const insertNewBookingRefQuery =
                         'INSERT INTO hotelbooking.booking (b_ref, c_no, b_cost, b_outstanding, b_notes) VALUES ($1, $2, $3, $4, $5);';
