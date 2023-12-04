@@ -175,15 +175,20 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
     }
 });
 
-
 // Insert a new customer record with the booking in the DB - Customer
 app.post('/api/customer/newbooking', async (req, res) => {
     try {
+        const body = req.body;
+        var bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
+        console.log(bookingDetails);
 
-        const bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
-        const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
-        const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
+        var customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
+        console.log(customerDetails);
 
+        var getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
+        console.log(getPaymentDetails);
+        
+        console.log("CALLING ROOM BOOKING API")
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();

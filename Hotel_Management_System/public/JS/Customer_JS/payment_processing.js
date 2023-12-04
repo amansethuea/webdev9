@@ -28,15 +28,62 @@ refButton.addEventListener("click", function (event) {
     const city = document.getElementById('city').value;
     const state = document.getElementById('state').value;
     const zip = document.getElementById('zip').value;
-    const card_no = document.getElementById('cname').value;
+    const card_no = document.getElementById('ccnum').value;
     const card_expiry_month = document.getElementById('expmonth').value;
     const card_expiry_year = document.getElementById('expyear').value;
     localStorage.setItem('setPaymentDetails', JSON.stringify(createPaymentData(full_name.trim(), email.trim(), address.trim(),
         city.trim(), state.trim(), zip.trim(), card_no.trim(), card_expiry_month.trim(), card_expiry_year.trim())));
 
     const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
-    console.log(getPaymentDetails);
 
-    window.location.href="http://localhost:3000/customer/payment_summary.html";
+
+    /* wrap up the data */
+    function createData(full_name, email, address, city, state, zip, card_no, card_expiry_month, card_expiry_year, booking_data, checkin, checkout) {
+        const data = {
+            full_name: full_name,
+            email: email,
+            address: address,
+            city: city,
+            state: state,
+            zip: zip,
+            card_no: card_no,
+            card_expiry_month: card_expiry_month,
+            card_expiry_year: card_expiry_year,
+            booking_data: booking_data,
+            checkin: checkin,
+            checkout: checkout    
+        };
+        return JSON.stringify(data);
+    }
+
+    /* create send meta data */
+    function createOptions(data) {
+        const fetchOptions = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: data
+        }
+
+        return fetchOptions;
+    }
+
+
+    //const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
+    //console.log(getPaymentDetails);
+    const data = createData(getPaymentDetails.full_name, getPaymentDetails.email, getPaymentDetails.address, getPaymentDetails.city, getPaymentDetails.state,
+        getPaymentDetails.zip, getPaymentDetails.card_no, getPaymentDetails.card_expiry_month, getPaymentDetails.card_expiry_year, bookingDetails.booking_data,
+        bookingDetails.arrival_date, bookingDetails.checkout_date);
+    const fetchOptions = createOptions(data);
+    console.log("POST body prepared")
+    console.log(fetchOptions)
+
+
+    //fetch('http://localhost:3000/api/customer/newbooking', fetchOptions)
+    //.then(window.location.href="http://localhost:3000/customer/payment_summary.html");
+
+    //window.location.href="http://localhost:3000/customer/payment_summary.html";
     event.preventDefault();
 });
