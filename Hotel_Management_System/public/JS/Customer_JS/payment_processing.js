@@ -38,7 +38,7 @@ refButton.addEventListener("click", function (event) {
 
 
     /* wrap up the data */
-    function createData(full_name, email, address, city, state, zip, card_no, card_expiry_month, card_expiry_year, booking_data, checkin, checkout) {
+    function createData(full_name, email, address, city, state, zip, card_no, card_expiry_month, card_expiry_year, room_data, checkin, checkout, total_cost) {
         const data = {
             full_name: full_name,
             email: email,
@@ -49,9 +49,10 @@ refButton.addEventListener("click", function (event) {
             card_no: card_no,
             card_expiry_month: card_expiry_month,
             card_expiry_year: card_expiry_year,
-            booking_data: booking_data,
+            room_data: room_data,
             checkin: checkin,
-            checkout: checkout    
+            checkout: checkout,
+            total_cost: total_cost
         };
         return JSON.stringify(data);
     }
@@ -70,20 +71,13 @@ refButton.addEventListener("click", function (event) {
         return fetchOptions;
     }
 
-
-    //const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
-    //console.log(getPaymentDetails);
     const data = createData(getPaymentDetails.full_name, getPaymentDetails.email, getPaymentDetails.address, getPaymentDetails.city, getPaymentDetails.state,
-        getPaymentDetails.zip, getPaymentDetails.card_no, getPaymentDetails.card_expiry_month, getPaymentDetails.card_expiry_year, bookingDetails.booking_data,
-        bookingDetails.arrival_date, bookingDetails.checkout_date);
+        getPaymentDetails.zip, getPaymentDetails.card_no, getPaymentDetails.card_expiry_month, getPaymentDetails.card_expiry_year, bookingDetails.room_data,
+        bookingDetails.arrival_date, bookingDetails.checkout_date, bookingDetails.total_cost);
     const fetchOptions = createOptions(data);
-    console.log("POST body prepared")
-    console.log(fetchOptions)
 
+    fetch('http://localhost:3000/api/customer/newbooking', fetchOptions)
+        .then(window.location.href="http://localhost:3000/customer/payment_summary.html");
 
-    //fetch('http://localhost:3000/api/customer/newbooking', fetchOptions)
-    //.then(window.location.href="http://localhost:3000/customer/payment_summary.html");
-
-    //window.location.href="http://localhost:3000/customer/payment_summary.html";
     event.preventDefault();
 });

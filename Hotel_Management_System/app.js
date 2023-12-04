@@ -179,16 +179,8 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
 app.post('/api/customer/newbooking', async (req, res) => {
     try {
         const body = req.body;
-        var bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
-        console.log(bookingDetails);
-
-        var customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
-        console.log(customerDetails);
-
-        var getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
-        console.log(getPaymentDetails);
-        
-        console.log("CALLING ROOM BOOKING API")
+        console.log(body);
+        var getRoomsList = [];
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
@@ -204,15 +196,15 @@ app.post('/api/customer/newbooking', async (req, res) => {
 
                 const latestCustNumber = results.rows[0].max || 0; // Fetch the latest customer number
                 newCustomerNumber = latestCustNumber + 1; // Create latest or new customer number
-
-                const customerName = getPaymentDetails.full_name;
-                const customerEmail = getPaymentDetails.email;
-                const customerAddr = getPaymentDetails.address + "," + getPaymentDetails.city + "," + getPaymentDetails.state + "," + getPaymentDetails.zip;
+                console.log(`The new customer no. formed is: ${newCustomerNumber}`);
+                const customerName = body.full_name;
+                const customerEmail = body.email;
+                const customerAddr = body.address + "," + body.city + "," + body.state + "," + body.zip;
                 const customerCardType = 'V';
-                const customerCardExpMonth = getPaymentDetails.card_expiry_month;
-                const customerCardExpYear = getPaymentDetails.card_expiry_year;
+                const customerCardExpMonth = body.card_expiry_month;
+                const customerCardExpYear = body.card_expiry_year;
                 const cardExpMonthYear = customerCardExpMonth + "/" + customerCardExpYear;
-                const customerCardNo = getPaymentDetails.card_no;
+                const customerCardNo = body.card_no;
 
                 //Inserting new customer data
                 const insertNewCustQuery =
@@ -223,7 +215,8 @@ app.post('/api/customer/newbooking', async (req, res) => {
                         errors = err.stack.split(" at ");
                         res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                     } else {
-                        client.release();
+                        //client.release();
+                        console.log("New customer is created in DB successfully.")
                         // After creating new customer, create new booking with reference
                         createNewCustomerBooking(newCustomerNumber);
 
@@ -241,47 +234,49 @@ app.post('/api/customer/newbooking', async (req, res) => {
                     errors = err.stack.split(" at ");
                     res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                 } else {
-                    const bookingCost = bookingDetails.total_cost;
+                    const bookingCost = body.total_cost;
+                    const newBookingCost = bookingCost.replace(/\u00A3/g, '');
+                    console.log(`Booking Cost is coming out to be: ${newBookingCost}`)
                     const outstandingCost = '0';
                     const bookingNotes = 'Lorem Ipsum';
 
-                    client.release();
                     const latestBookRefNumber = results.rows[0].max || 0; // Fetch the latest booking reference number
                     newBookRefNumber = latestBookRefNumber + 1; // Create latest or new booking reference number
-
+                    console.log(`New booking reference generated is: ${newBookRefNumber}`);
                     // Create entry inside booking table with the newly generated booking reference number
                     const insertNewBookingRefQuery =
                         'INSERT INTO hotelbooking.booking (b_ref, c_no, b_cost, b_outstanding, b_notes) VALUES ($1, $2, $3, $4, $5);';
-                    await client.query(insertNewBookingRefQuery, [newBookRefNumber, newCustomerNumber, outstandingCost, bookingNotes], async (err, results) => {
+                    await client.query(insertNewBookingRefQuery, [newBookRefNumber, newCustomerNumber, newBookingCost, outstandingCost, bookingNotes], async (err, results) => {
                         if (err) {
                             console.log(err.stack)
                             errors = err.stack.split(" at ");
                             res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                         } else {
-                            client.release();
+                            console.log(`Booking Reference has been created successfully: ${newBookRefNumber}`);
                             // After creating new booking reference, create entry into roombooking table as well
-                            const getRoomsList = bookingDetails.room_data;
-                            const checkin = bookingDetails.arrival_date;
-                            const checkout = bookingDetails.checkout_date;
-                            for (var i = 1; i <= getRoomsList.length; i++) {
+                            getRoomsList = body.room_data;
+                            const checkin = body.checkin;
+                            const checkout = body.checkout;
+                            for (let i = 0; i < getRoomsList.length; i++) {
                                 const insertNewRoomBookQuery = 'INSERT INTO hotelbooking.roombooking (r_no, b_ref, checkin, checkout) VALUES ($1, $2, $3, $4);';
                                 await client.query(insertNewRoomBookQuery, [getRoomsList[i], newBookRefNumber, checkin, checkout], async (err, results) => {
+                                    await new Promise(resolve => setTimeout(resolve, 1000));
                                     if (err) {
                                         console.log(err.stack)
                                         errors = err.stack.split(" at ");
                                         res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                                     } else {
-                                        client.release();
+                                        getRoomsList = body.room_data;
+                                        console.log(`New entry has been generated in roombooking table for room: ${getRoomsList[i]}`);
                                         // Lastly, update the room/s status as the booking is successful 
-                                        const updateRoomStatus = 'UPDATE hotelbooking.room SET r_status = O WHERE r_no = $1;';
-                                        await client.query(updateRoomStatus, [getRoomsList[i]], async (err, results) => {
+                                        const updateRoomStatus = `UPDATE hotelbooking.room SET r_status = 'O' WHERE r_no = ${getRoomsList[i]};`;
+                                        await client.query(updateRoomStatus, async (err, results) => {
                                             if (err) {
                                                 console.log(err.stack)
                                                 errors = err.stack.split(" at ");
                                                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                                             } else {
-                                                client.release();
-                                                res.status(200).json({ message: 'Room booked successfully by customer' });
+                                                console.log(`Booking Complete!`);
                                             }
                                         });
                                     }
@@ -303,11 +298,9 @@ app.post('/api/customer/newbooking', async (req, res) => {
 // Insert a new customer record with the booking in the DB - Receptionist
 app.post('/api/receptionist/newbooking', async (req, res) => {
     try {
-
-        const bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
-        const customerDetails = JSON.parse(localStorage.getItem("customerDetails"));
-        const getPaymentDetails = JSON.parse(localStorage.getItem("setPaymentDetails"));
-
+        const body = req.body;
+        console.log(body);
+        var getRoomsList = [];
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
@@ -323,15 +316,15 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
 
                 const latestCustNumber = results.rows[0].max || 0; // Fetch the latest customer number
                 newCustomerNumber = latestCustNumber + 1; // Create latest or new customer number
-
-                const customerName = getPaymentDetails.full_name;
-                const customerEmail = getPaymentDetails.email;
-                const customerAddr = getPaymentDetails.address + "," + getPaymentDetails.city + "," + getPaymentDetails.state + "," + getPaymentDetails.zip;
+                console.log(`The new customer no. formed is: ${newCustomerNumber}`);
+                const customerName = body.full_name;
+                const customerEmail = body.email;
+                const customerAddr = body.address + "," + body.city + "," + body.state + "," + body.zip;
                 const customerCardType = 'V';
-                const customerCardExpMonth = getPaymentDetails.card_expiry_month;
-                const customerCardExpYear = getPaymentDetails.card_expiry_year;
+                const customerCardExpMonth = body.card_expiry_month;
+                const customerCardExpYear = body.card_expiry_year;
                 const cardExpMonthYear = customerCardExpMonth + "/" + customerCardExpYear;
-                const customerCardNo = getPaymentDetails.card_no;
+                const customerCardNo = body.card_no;
 
                 //Inserting new customer data
                 const insertNewCustQuery =
@@ -342,7 +335,8 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
                         errors = err.stack.split(" at ");
                         res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                     } else {
-                        client.release();
+                        //client.release();
+                        console.log("New customer is created in DB successfully.")
                         // After creating new customer, create new booking with reference
                         createNewCustomerBooking(newCustomerNumber);
 
@@ -360,47 +354,49 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
                     errors = err.stack.split(" at ");
                     res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                 } else {
-                    const bookingCost = bookingDetails.total_cost;
+                    const bookingCost = body.total_cost;
+                    const newBookingCost = bookingCost.replace(/\u00A3/g, '');
+                    console.log(`Booking Cost is coming out to be: ${newBookingCost}`)
                     const outstandingCost = '0';
                     const bookingNotes = 'Lorem Ipsum';
 
-                    client.release();
                     const latestBookRefNumber = results.rows[0].max || 0; // Fetch the latest booking reference number
                     newBookRefNumber = latestBookRefNumber + 1; // Create latest or new booking reference number
-
+                    console.log(`New booking reference generated is: ${newBookRefNumber}`);
                     // Create entry inside booking table with the newly generated booking reference number
                     const insertNewBookingRefQuery =
                         'INSERT INTO hotelbooking.booking (b_ref, c_no, b_cost, b_outstanding, b_notes) VALUES ($1, $2, $3, $4, $5);';
-                    await client.query(insertNewBookingRefQuery, [newBookRefNumber, newCustomerNumber, outstandingCost, bookingNotes], async (err, results) => {
+                    await client.query(insertNewBookingRefQuery, [newBookRefNumber, newCustomerNumber, newBookingCost, outstandingCost, bookingNotes], async (err, results) => {
                         if (err) {
                             console.log(err.stack)
                             errors = err.stack.split(" at ");
                             res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                         } else {
-                            client.release();
+                            console.log(`Booking Reference has been created successfully: ${newBookRefNumber}`);
                             // After creating new booking reference, create entry into roombooking table as well
-                            const getRoomsList = bookingDetails.room_data;
-                            const checkin = bookingDetails.arrival_date;
-                            const checkout = bookingDetails.checkout_date;
-                            for (var i = 1; i <= getRoomsList.length; i++) {
+                            getRoomsList = body.room_data;
+                            const checkin = body.checkin;
+                            const checkout = body.checkout;
+                            for (let i = 0; i < getRoomsList.length; i++) {
                                 const insertNewRoomBookQuery = 'INSERT INTO hotelbooking.roombooking (r_no, b_ref, checkin, checkout) VALUES ($1, $2, $3, $4);';
                                 await client.query(insertNewRoomBookQuery, [getRoomsList[i], newBookRefNumber, checkin, checkout], async (err, results) => {
+                                    await new Promise(resolve => setTimeout(resolve, 1000));
                                     if (err) {
                                         console.log(err.stack)
                                         errors = err.stack.split(" at ");
                                         res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                                     } else {
-                                        client.release();
+                                        getRoomsList = body.room_data;
+                                        console.log(`New entry has been generated in roombooking table for room: ${getRoomsList[i]}`);
                                         // Lastly, update the room/s status as the booking is successful 
-                                        const updateRoomStatus = 'UPDATE hotelbooking.room SET r_status = O WHERE r_no = $1;';
-                                        await client.query(updateRoomStatus, [getRoomsList[i]], async (err, results) => {
+                                        const updateRoomStatus = `UPDATE hotelbooking.room SET r_status = 'O' WHERE r_no = ${getRoomsList[i]};`;
+                                        await client.query(updateRoomStatus, async (err, results) => {
                                             if (err) {
                                                 console.log(err.stack)
                                                 errors = err.stack.split(" at ");
                                                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                                             } else {
-                                                client.release();
-                                                res.status(200).json({ message: 'Room booked successfully via receptionist' });
+                                                console.log(`Booking Complete!`);
                                             }
                                         });
                                     }
