@@ -29,21 +29,13 @@
     </header>
     <main>
         <div class="landing_page_container">
-            <h1 class="other_pages_main_header">Booking Summary</h1>
-            <h4 class="contact_sub_heading"><em>Booking Details</em></h4>
+            <h1 class="other_pages_main_header">Customer Checkout</h1>
+            <h4 class="contact_sub_heading"><em>Checkout Details</em></h4>
             <div class="wapper">
                 <section class="sidebar-section">
                     <div class="paysam">
-                        <h2>Payment Summary</h2>
+                        <h2>Checkout Summary</h2>
                         <ul>
-                            <li>
-                                <em>Booking Reference Number</em>
-                                <span id="b_ref">0</span>
-                            </li>
-                            <li>
-                                <em>Amount</em>
-                                <span id="amount"> £0 </span>
-                            </li>
                             <li>
                                 <em>Check-in Date</em>
                                 <span id="checkin">December 23 2023</span>
@@ -52,13 +44,16 @@
                                 <em>Check-out Date</em>
                                 <span id="checkout">December 26 2023</span>
                             </li>
-                            <li>
-                                <em>Guest</em>
-                                <span id="guest">0</span>
+                            <li id="roomList">
+                                <em>Room/s No.</em>
                             </li>
                             <li>
-                                <em>Issuer</em>
-                                <span id="issuer">The Crown Hotel Inc</span>
+                                <em>Amount</em>
+                                <span id="amount"> £0.00</span>
+                            </li>
+                            <li>
+                                <em>Outstanding Amount</em>
+                                <span id="outstanding_amt">0</span>
                             </li>
                         </ul>
                     </div>
@@ -66,21 +61,13 @@
                 <section class="container-section">
                     <div class="user-info">
                         <h1>The Crown Hotel</h1>
-                        <div class="address">
-                            <p><span>From:</span><em>thecrownhotel@uea.ac.uk</em></p>
-                            <p><span>To:</span><em id="receiveremail">dummy@gmail.com</em></p>
-                        </div>
                         <div class="msg">
-                            <h2>Hi, <strong id="personName">dummy!</strong></h2>
-                            <p>Thank you for your booking. We are exteremly delighted to confirm that
-                                your Booking at <em>The Crown Hotel</em> is successful. We are looking forward to
-                                serve with one of
-                                the finest hospitality service experience. </p>
-                            <span class="ej">Enjoy!</span>
+                            <h2>You are about to checkout customer Mr/Mrs <strong id="personName">dummy!</strong></h2>
+                            <p>Please proceed and press <em>Confirm Checkout.</em></p>
                             <p class="sender">
                                 - The Crown Hotel Team
                             </p>
-                            <button class="btn" id="print_invoice" type="submit">Print Invoice</button>
+                            <button class="btn" id="complete_checkout_btn" type="submit">Confirm Checkout</button>
                         </div>
                         <div class="bottom">
                             <p class="nlink">www.thecrownhotel.uea.ac.uk/help</p>
@@ -88,12 +75,11 @@
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
 
     </main>
-    <script src="../JS/Receptionist_JS/payment_summary.js"></script>
+    <script src="../JS/Receptionist_JS/updateDetailsOnFinalCheckout.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

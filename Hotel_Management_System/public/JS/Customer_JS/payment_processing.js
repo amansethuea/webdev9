@@ -89,7 +89,7 @@ refButton.addEventListener("click", function (event) {
     const fetchOptions = createOptions(data);
 
     fetch('http://localhost:3000/api/customer/newbooking', fetchOptions)
-        .then(window.location.href="http://localhost:3000/customer/payment_summary.html");
+        .then(window.location.href="http://localhost:3000/receptionist/payment_summary.html");
 
     event.preventDefault();
 });
