@@ -4,9 +4,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
-    <link rel="stylesheet" href="../CSS/Customer_Styles/payment_summary.css">
-    <link rel="stylesheet" href="../CSS/Customer_Styles/payment_detail_validation.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/payment_summary.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/payment_detail_validation.css">
 </head>
 
 <body>
@@ -14,15 +14,14 @@
         <div id="header-spacer">
             <div> <!-- Logo -->
                 <a href="index.html">
-                    <img
-                            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                            alt="Logo emblem of a hotel with a crown on top">
+                    <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                        alt="Logo emblem of a hotel with a crown on top">
                 </a>
             </div>
-            <div id="header-links"> 
+            <div id="header-links">
                 <nav>
                     <ul id="header_links">
-                        <li><span><a href="../Customer/index.html">Back to Home</a></span></li>
+                        <li><span><a href="../Receptionist/index.html">Back to Home</a></span></li>
                     </ul>
                 </nav>
             </div>
@@ -30,20 +29,16 @@
     </header>
     <main>
         <div class="landing_page_container">
-            <h1 class="other_pages_main_header">Booking Summary</h1>
-            <h4 class="contact_sub_heading"><em>Booking Details</em></h4>
+            <h1 class="other_pages_main_header">Checkin Summary</h1>
+            <h4 class="contact_sub_heading"><em>Checkin Details</em></h4>
             <div class="wapper">
                 <section class="sidebar-section">
                     <div class="paysam">
-                        <h2>Payment Summary</h2>
+                        <h2>Booking Summary</h2>
                         <ul>
                             <li>
                                 <em>Booking Reference Number</em>
                                 <span id="b_ref">0</span>
-                            </li>
-                            <li>
-                                <em>Amount</em>
-                                <span id="amount"> £0</span>
                             </li>
                             <li>
                                 <em>Check-in Date</em>
@@ -54,12 +49,12 @@
                                 <span id="checkout">December 26 2023</span>
                             </li>
                             <li>
-                                <em>Guest</em>
-                                <span id="guest">0</span>
+                                <em>Amount</em>
+                                <span id="amount"> £0.00</span>
                             </li>
                             <li>
-                                <em>Issuer</em>
-                                <span id="issuer">The Crown Hotel Inc</span>
+                                <em>Outstanding Amount</em>
+                                <span id="outstanding_amt">0</span>
                             </li>
                         </ul>
                     </div>
@@ -67,21 +62,13 @@
                 <section class="container-section">
                     <div class="user-info">
                         <h1>The Crown Hotel</h1>
-                        <div class="address">
-                            <p><span>From:</span><em>thecrownhotel@uea.ac.uk</em></p>
-                            <p><span>To:</span><em id="receiveremail">dummy@gmail.com</em></p>
-                        </div>
                         <div class="msg">
-                            <h2>Hi, <strong id="personName">dummy!</strong></h2>
-                            <p>Thank you for your booking. We are exteremly delighted to confirm that
-                                your Booking at <em>The Crown Hotel</em> is successful. We are looking forward to
-                                serve with one of
-                                the finest hospitality service experience. </p>
-                            <span class="ej">Enjoy!</span>
+                            <h2>You are about to checking customer Mr/Mrs <strong id="personName">dummy!</strong></h2>
+                            <p>Please proceed and press <em>Confirm Checkin.</em></p>
                             <p class="sender">
                                 - The Crown Hotel Team
                             </p>
-                            <a href="#">Print Invoice</a>
+                            <button class="btn" id="complete_checkin_btn" type="submit">Confirm Checkin</button>
                         </div>
                         <div class="bottom">
                             <p class="nlink">www.thecrownhotel.uea.ac.uk/help</p>
@@ -94,7 +81,7 @@
         </div>
 
     </main>
-    <script src="../JS/Customer_JS/payment_summary.js"></script>
+    <script src="../JS/Receptionist_JS/updateDetailsOnFinalCheckin.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

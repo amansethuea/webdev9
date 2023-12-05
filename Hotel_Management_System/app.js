@@ -60,21 +60,21 @@ app.get('/receptionist/refno', async (req, res) => {
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
+        const {room_status} = req.query;
         const { b_ref } = req.query;
         const { checkin_date } = req.query;
         const { checkout_date } = req.query;
-        const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.booking.b_ref, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room where hotelbooking.customer.c_no = hotelbooking.booking.c_no and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.room.r_status = "O" and hotelbooking.booking.b_ref = $1 and (hotelbooking.roombooking.checkin = $2 and hotelbooking.roombooking.checkout = $3);';
-        await client.query(q, [b_ref, checkin_date, checkout_date], (err, results) => {
+        const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.booking.b_ref, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room where hotelbooking.customer.c_no = hotelbooking.booking.c_no and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.room.r_status = $1 and hotelbooking.booking.b_ref = $2 and (hotelbooking.roombooking.checkin = $3 and hotelbooking.roombooking.checkout = $4);';
+        await client.query(q, [room_status, b_ref, checkin_date, checkout_date], (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();
-                // console.log(results); //
                 data = results.rows;
                 count = results.rows.length;
-                res.json({ results: data, rows: count });
+                res.json({ results: data});
             }
         });
 
@@ -156,8 +156,6 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
 
         const { b_ref } = req.query;
         const { checkout_date } = req.query;
-        console.log(b_ref);
-        console.log(checkout_date);
         const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $2 and hotelbooking.room.r_status = "O" group by hotelbooking.room.r_no, hotelbooking.customer.c_name, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding;'
         await client.query(q, (err, results) => {
             if (err) {
@@ -168,7 +166,7 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
                 client.release();
                 data = results.rows;
                 count = results.rows.length;
-                res.json({ results: data, rows: count });
+                res.json({ results: data, rows: count});
             }
         });
 

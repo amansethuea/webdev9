@@ -110,7 +110,7 @@
     display: block;
 }
 
-.msg a {
+.msg button {
     text-decoration: none;
     background: #66AA33;
     color: #fff;

@@ -1,24 +1,32 @@
-function onTextReady(text) {
-    console.log(text);
-    const data = JSON.parse(text);
-
-    let output = '<ul> ';
-    data.results.forEach(element => {
-        // console.log(element);
-        output += `<li>  Customer Name: ${element.c_name} Ref No: ${element.b_ref}  Checkin: ${element.checkin}  Checkout: ${element.checkout} Total Cost: ${element.b_cost} Outstanding Cost: ${element.b_outstanding}  </li>`;
-    })
-    output += '</ul>'
-
-    const results = document.querySelector('#results');
-    results.innerHTML =
-        ` <h3> Results </h3>
-      <h6> rows count: ${data.rows} </h6>
-      <ul> ${output} </ul>
-    `;
+function onTextReadyReceptionistCheckinData(text) {
+    collectRefData(text);
 
 }
 
-function onResponse(response) {
+function createReferenceData(customerName, referenceNo, checkin, checkout, totalCost, outstandingCost) {
+    const data = {
+        customerName: customerName,
+        referenceNo: referenceNo,
+        checkin: checkin,
+        checkout: checkout,
+        totalCost: totalCost,
+        outstandingCost: outstandingCost
+    };
+    return data;
+}
+
+function collectRefData(text) {
+    const data = JSON.parse(text);
+    const customerName = data['results'][0]['c_name'];
+    const referenceNo = data['results'][0]['b_ref'];
+    const checkin = data['results'][0]['checkin'];
+    const checkout = data['results'][0]['checkout'];
+    const totalCost = data['results'][0]['b_cost'];
+    const outstandingCost = data['results'][0]['b_outstanding'];
+    localStorage.setItem('checkinDetails', JSON.stringify(createReferenceData(customerName, referenceNo, checkin, checkout, totalCost, outstandingCost)));
+}
+
+function onResponseReceptionistCheckinData(response) {
     return response.text();
 }
 
@@ -27,10 +35,11 @@ refButton.addEventListener("click", function (event) {
     const referenceNo = document.getElementById('referenceno').value;
     const checkin = document.getElementById('checkindate').value;
     const checkout = document.getElementById('checkoutdate').value;
-    console.log(referenceNo)
-    fetch(`http://localhost:3000/receptionist/refno?b_ref=${referenceNo}&checkin_date=${checkin}&checkout_date=${checkout}`)
-        .then(onResponse)
-        .then(onTextReady);
+    const roomStatus = 'O';
+    fetch(`http://localhost:3000/receptionist/refno?room_status=${roomStatus}&b_ref=${referenceNo}&checkin_date=${checkin}&checkout_date=${checkout}`)
+        .then(onResponseReceptionistCheckinData)
+        .then(onTextReadyReceptionistCheckinData)
+        .then(window.location.href="http://localhost:3000/receptionist/final_checkin.html");
     event.preventDefault();
 });
 
