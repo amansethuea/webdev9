@@ -467,22 +467,26 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
 });
 
 // Update room status to NA on successful customer checkout - Receptionist
-app.put('/api/housekeeper/:roomNumber', async (req, res) => {
+app.post('/api/receptionist/roomStatusUpdateOnCheckout', async (req, res) => {
     try {
+        const body = req.body;
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
-
-        const { roomNo } = req.query;
-        const updateRoomStatusToCleanQuery = `UPDATE hotelbooking.room SET r_status = X WHERE r_no = $1`;;
-        await client.query(updateRoomStatusToCleanQuery, [roomNo], async (err, results) => {
+        console.log("CALLING UPDATE API")
+        const room_no = body.room_no;
+        const status = 'X';
+        const updateRoomStatusToNAQuery = `UPDATE hotelbooking.room SET r_status = '${status}' WHERE r_no = ${room_no};`;
+        console.log(updateRoomStatusToNAQuery)
+        await client.query(updateRoomStatusToNAQuery, async (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();
-                res.status(200).json({ message: `Room ${roomNumber} is checked out successfully.` });
+                res.status(200).json({ message: `Room ${room_no} is checked out successfully.` });
+                console.log(`Room ${room_no} is checked out successfully.`);
             }
         });
 

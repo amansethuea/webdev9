@@ -39,11 +39,47 @@ function updateDetailsOnFinalCheckout() {
 
 var refButton = document.getElementById("complete_checkout_btn");
 refButton.addEventListener("click", function (event) {
-    document.body.innerHTML = `<h2>${getCheckoutDetails.customerName} is checked-out successfully. Re-directing to Home page in 5 seconds..</h2>`
-    window.setTimeout(function () {
-        window.location.href = "../Receptionist/index.html";
-    }, 5000);
+    function createData(room_no) {
+        const data = {
+            room_no: room_no
+        };
+        return JSON.stringify(data);
+    }
 
+    function createOptions(data) {
+        const fetchOptions = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: data
+        }
+
+        return fetchOptions;
+    }
+    const roomList = getCheckoutDetails.roomNo;
+    if (roomList.length > 1) {
+        for (let i = 0; i < roomList.length; i++) {
+            const data = createData(String(roomList[i]));
+            const fetchOptions = createOptions(data);
+            fetch('http://localhost:3000/api/receptionist/roomStatusUpdateOnCheckout', fetchOptions)
+        }
+        reDirectToHome();
+    }
+    else {
+        const data = createData(String(getCheckoutDetails.roomNo));
+        const fetchOptions = createOptions(data);
+        fetch('http://localhost:3000/api/receptionist/roomStatusUpdateOnCheckout', fetchOptions)
+        .then(reDirectToHome);
+    }
+
+    function reDirectToHome() {
+        document.body.innerHTML = `<h2>${getCheckoutDetails.customerName} is checked-out successfully. Re-directing to Home page in 5 seconds..</h2>`
+        window.setTimeout(function () {
+            window.location.href = "../Receptionist/index.html";
+        }, 5000);
+    }
 
     event.preventDefault();
 });

@@ -88,8 +88,8 @@ refButton.addEventListener("click", function (event) {
         bookingDetails.arrival_date, bookingDetails.checkout_date, bookingDetails.total_cost);
     const fetchOptions = createOptions(data);
 
-    fetch('http://localhost:3000/api/customer/newbooking', fetchOptions)
-        .then(window.location.href="http://localhost:3000/customer/payment_summary.html");
+    fetch('http://localhost:3000/api/receptionist/newbooking', fetchOptions)
+        .then(window.location.href="http://localhost:3000/receptionist/payment_summary.html");
 
     event.preventDefault();
 });
