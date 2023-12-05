@@ -227,6 +227,33 @@ app.get('/receptionist/getref', async (req, res) => {
     }
 });
 
+/* GET NA rooms from DB - Housekeeper*/
+app.get('/housekeeper/notAvailableRoomInfo', async (req, res) => {
+    try {
+        let results;
+        const pool = new pg.Pool(config);
+        const client = await pool.connect();
+        const naStatus = "X";
+
+        const q = `SELECT r_no hotelbooking.room WHERE r_status = ${naStatus}`;
+        await client.query(q, (err, results) => {
+            if (err) {
+                console.log(err.stack)
+                errors = err.stack.split(" at ");
+                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
+            } else {
+                client.release();
+                data = results.rows;
+                count = results.rows.length;
+                res.json({ results: data, rows: count });
+            }
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+});
+
 // Insert a new customer record with the booking in the DB - Customer
 app.post('/api/customer/newbooking', async (req, res) => {
     try {
@@ -497,15 +524,17 @@ app.post('/api/receptionist/roomStatusUpdateOnCheckout', async (req, res) => {
 
 
 // Housekeeper to update room back to available once cleaned
-app.put('/api/housekeeper/:roomNumber', async (req, res) => {
+app.post('/api/housekeeper/updateCleanedRoomToAvail', async (req, res) => {
     try {
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
-
-        const { roomNo } = req.query;
-        const updateRoomStatusToCleanQuery = `UPDATE hotelbooking.room SET r_status = C WHERE r_no = $1`;;
-        await client.query(updateRoomStatusToCleanQuery, [roomNo], async (err, results) => {
+        const body = req.body;
+        const roomNo  = body.room_no;
+        const cleanStatus  = "C";
+        const availStatus = "A"; 
+        const updateRoomStatusToCleanQuery = `UPDATE hotelbooking.room SET r_status = ${cleanStatus} WHERE r_no = ${roomNo}`;;
+        await client.query(updateRoomStatusToCleanQuery, async (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");
@@ -513,15 +542,15 @@ app.put('/api/housekeeper/:roomNumber', async (req, res) => {
             } else {
                 client.release();
                 // After changing room status to clean, update the status to Available
-                const updateRoomStatusToAvailableQuery = `UPDATE hotelbooking.room SET r_status = A WHERE r_no = $1`;
-                await client.query(updateRoomStatusToAvailableQuery, [roomNo], (err, results) => {
+                const updateRoomStatusToAvailableQuery = `UPDATE hotelbooking.room SET r_status = ${availStatus} WHERE r_no = ${roomNo}`;
+                await client.query(updateRoomStatusToAvailableQuery, (err, results) => {
                     if (err) {
                         console.log(err.stack)
                         errors = err.stack.split(" at ");
                         res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
                     } else {
                         client.release();
-                        res.status(200).json({ message: `Room ${roomNumber} is Available again to book.` });
+                        res.status(200).json({ message: `Room ${roomNo} is Available again to book.` });
                     }
                 });
             }
@@ -532,32 +561,6 @@ app.put('/api/housekeeper/:roomNumber', async (req, res) => {
     }
 });
 
-/* GET NA rooms from DB - Housekeeper*/
-app.get('/housekeeper/roomInfo', async (req, res) => {
-    try {
-        let results;
-        const pool = new pg.Pool(config);
-        const client = await pool.connect();
-
-        const q = 'SELECT r_no hotelbooking.room WHERE r_status = X';
-        await client.query(q, [b_ref, checkin_date, checkout_date], (err, results) => {
-            if (err) {
-                console.log(err.stack)
-                errors = err.stack.split(" at ");
-                res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
-            } else {
-                client.release();
-                // console.log(results); //
-                data = results.rows;
-                count = results.rows.length;
-                res.json({ results: data, rows: count });
-            }
-        });
-
-    } catch (e) {
-        console.log(e);
-    }
-});
 
 // handling errors // 
 app.use(function (err, req, res, next) {
