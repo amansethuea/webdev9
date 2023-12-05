@@ -523,7 +523,7 @@ app.post('/api/receptionist/roomStatusUpdateOnCheckout', async (req, res) => {
 });
 
 
-// Housekeeper to update room back to available once cleaned
+// Update room back to available once cleaned - Housekeeper
 app.post('/api/housekeeper/updateCleanedRoomToAvail', async (req, res) => {
     try {
         let results;
