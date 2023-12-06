@@ -79,6 +79,7 @@
                                 <input type="date" class="form-control" id="checkindate" name="checkindate"
                                     required="required" />
                                 <span id="span2" class="error">Check-in date can't be of a previous date</span>
+                                <span id="span9" class="error">Check-in date can't be empty</span>
                             </div>
                         </div>
                         <div class="form-element">
@@ -90,9 +91,12 @@
                                     required="required" />
                                 <span id="span4" class="error">Check-out date can't be of current or previous
                                     date</span>
+                                <span id="span10" class="error">Check-out date can't be empty</span>
+                                <span id="span11" class="error">Check-out date can't be of previous date</span>
                             </div>
                         </div>
                     </div>
+                    <span id="span12" class="error">No data found</span>
                     <div class="card-footer">
                         <p><button class="btn" id="refbtn" type="submit">Fetch Details</button></p>
                     </div>
@@ -102,7 +106,6 @@
         </div>
         <div id="refresults"></div>
     </main>
-    <script src="../JS/Receptionist_JS/checkin_validation.js"></script>
     <script src="../JS/Receptionist_JS/booking_ref_details.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>

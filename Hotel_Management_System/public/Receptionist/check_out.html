@@ -24,7 +24,8 @@
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
                         <li><span><a href="check_in.html">Check-in</a></span></span></li>
-                        <li><span style="font-size: larger; font-weight: bold"><a href="check_out.html">Checkout</a></span></li>
+                        <li><span style="font-size: larger; font-weight: bold"><a
+                                    href="check_out.html">Checkout</a></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
                     </ul>
                 </nav>
@@ -49,9 +50,9 @@
                                 </span>
                                 <span id="span2" class="error"> Reference number too short. Hint: Reference no. is a 5
                                     digit booking reference </span>
-                                <span id="span8" class="error"> Reference number too long. Hint: Reference no. is a 5
+                                <span id="span3" class="error"> Reference number too long. Hint: Reference no. is a 5
                                     digit booking reference </span>
-                                    <span id="span7" class="error"> Please enter a Reference Number </span>
+                                <span id="span4" class="error"> Please enter a Reference Number </span>
                             </div>
                         </div>
                         <div class="form-element">
@@ -59,10 +60,13 @@
                             <div class="form-control-container">
                                 <input type="date" class="form-control" id="checkoutdate" name="checkoutdate"
                                     required="required" />
+                                <span id="span5" class="error">Check-out date can't be of current or previous
+                                    date</span>
+                                <span id="span6" class="error">Check-out date can't be empty</span>
+
                             </div>
                         </div>
-
-                        
+                    <span id="span7" class="error">No record found</span>
                     </div>
                     <div class="card-footer">
                         <p><button class="btn" id="checkoutbtn" type="submit">Checkout</button></p>
@@ -74,7 +78,6 @@
         </div>
 
     </main>
-    <script src="../JS/Receptionist_JS/checkout_validation.js"></script>
     <script src="../JS/Receptionist_JS/viewDetailsOnCheckout.js"></script>
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>

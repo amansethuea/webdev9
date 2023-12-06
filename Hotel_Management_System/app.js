@@ -103,7 +103,6 @@ app.get('/receptionist/roomavailability', async (req, res) => {
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();
-                // console.log(results); //
                 data = results.rows;
                 count = results.rows.length;
                 res.json({ results: data, rows: count });
@@ -135,7 +134,6 @@ app.get('/customer/roomavailability', async (req, res) => {
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();
-                // console.log(results); //
                 data = results.rows;
                 count = results.rows.length;
                 res.json({ results: data, rows: count });
@@ -157,7 +155,8 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
         const { b_ref } = req.query;
         const { checkout_date } = req.query;
         const {room_status} = req.query;
-        const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $2 and hotelbooking.room.r_status = $3 group by hotelbooking.room.r_no, hotelbooking.customer.c_name, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding;'
+        const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $2 and hotelbooking.room.r_status = $3 group by hotelbooking.room.r_no, hotelbooking.customer.c_name, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding;';
+
         await client.query(q, [b_ref, checkout_date, room_status], (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -238,7 +237,7 @@ app.get('/housekeeper/notAvailableRoomInfo', async (req, res) => {
         await client.query(q, (err, results) => {
             if (err) {
                 console.log(err.stack)
-                errors = err.stack.split(" at ");
+                errors = err.stack.split(" at ");   
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();

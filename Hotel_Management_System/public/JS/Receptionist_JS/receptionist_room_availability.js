@@ -50,30 +50,64 @@ function onResponseForReceptionistAvailability(response) {
 
 var refButton = document.getElementById("bookingbtn");
 refButton.addEventListener("click", function (event) {
-    const checkin = document.getElementById('booking-in-date').value;
-    const checkout = document.getElementById('booking-out-date').value;
-    const roomType = document.getElementById('room_type_select').value;
-    let selectedRoom;
 
-    if (roomType == "standard_double") {
-        selectedRoom = "std_d";
-    }
-    else if (roomType == "standard_twin") {
-        selectedRoom = "std_t";
-    }
-    else if (roomType == "superior_double") {
-        selectedRoom = "sup_d";
-    }
-    else if (roomType == "superior_twin") {
-        selectedRoom = "sup_t";
+
+    const checkin = new Date(document.getElementById("booking-in-date").value).toJSON();
+    const checkout = new Date(document.getElementById("booking-out-date").value).toJSON();
+    const today = new Date().toJSON().slice(0, 10);
+    const roomType = document.getElementById('room_type_select').value;
+
+    if (checkin < today) {
+        document.getElementById("span1").style.display = "inline";
     }
     else {
-        console.log("Invalid room selection")
+        document.getElementById("span1").style.display = "none";
+    }
+    if (!checkin) {
+        document.getElementById("span2").style.display = "inline";
+    }
+    else {
+        document.getElementById("span2").style.display = "none";
     }
 
-    fetch(`http://localhost:3000/receptionist/roomavailability?checkin_date=${checkin}&checkout_date=${checkout}&room_type=${selectedRoom}`)
-        .then(onResponseForReceptionistAvailability)
-        .then(onTextReadyForReceptionistAvailability);
+    if (checkout <= today) {
+        document.getElementById("span3").style.display = "inline";
+    }
+    else {
+        document.getElementById("span3").style.display = "none";
+    }
+    if (!checkout) {
+        document.getElementById("span4").style.display = "inline";
+    }
+    else if (checkout <= checkin) {
+        document.getElementById("span5").style.display = "inline";
+        document.getElementById("span4").style.display = "none";
+    }
+    else {
+        document.getElementById("span5").style.display = "none";
+        let selectedRoom;
+
+        if (roomType == "standard_double") {
+            selectedRoom = "std_d";
+        }
+        else if (roomType == "standard_twin") {
+            selectedRoom = "std_t";
+        }
+        else if (roomType == "superior_double") {
+            selectedRoom = "sup_d";
+        }
+        else if (roomType == "superior_twin") {
+            selectedRoom = "sup_t";
+        }
+        else {
+            console.log("Invalid room selection")
+        }
+
+        fetch(`http://localhost:3000/receptionist/roomavailability?checkin_date=${checkin}&checkout_date=${checkout}&room_type=${selectedRoom}`)
+            .then(onResponseForReceptionistAvailability)
+            .then(onTextReadyForReceptionistAvailability);
+    }
+
     event.preventDefault();
 });
 
@@ -96,7 +130,7 @@ function updateRoomCount() {
 
 // Add click event listeners to all room elements
 rooms.forEach(room => {
-    room.addEventListener('click', function() {
+    room.addEventListener('click', function () {
         // Toggle the 'selected_room' class
         this.classList.toggle('selected_room');
 

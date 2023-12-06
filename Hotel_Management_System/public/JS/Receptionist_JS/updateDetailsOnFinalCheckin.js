@@ -1,3 +1,4 @@
+
 const getCheckinDetails = JSON.parse(localStorage.getItem("checkinDetails"));
 console.log(getCheckinDetails);
 
