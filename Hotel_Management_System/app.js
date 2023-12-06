@@ -233,9 +233,8 @@ app.get('/housekeeper/notAvailableRoomInfo', async (req, res) => {
         let results;
         const pool = new pg.Pool(config);
         const client = await pool.connect();
-        const naStatus = "X";
 
-        const q = `SELECT r_no hotelbooking.room WHERE r_status = ${naStatus}`;
+        const q = "SELECT r_no from hotelbooking.room WHERE r_status = \'X\'";
         await client.query(q, (err, results) => {
             if (err) {
                 console.log(err.stack)

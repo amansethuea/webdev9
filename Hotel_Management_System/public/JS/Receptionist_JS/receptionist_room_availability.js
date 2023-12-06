@@ -71,8 +71,6 @@ refButton.addEventListener("click", function (event) {
         console.log("Invalid room selection")
     }
 
-    console.log(checkin)
-    console.log(checkout)
     fetch(`http://localhost:3000/receptionist/roomavailability?checkin_date=${checkin}&checkout_date=${checkout}&room_type=${selectedRoom}`)
         .then(onResponseForReceptionistAvailability)
         .then(onTextReadyForReceptionistAvailability);
