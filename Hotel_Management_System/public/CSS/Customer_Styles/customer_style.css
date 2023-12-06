@@ -716,8 +716,9 @@
 }
 
 span.swiper-pagination-bullet {
-    width: 2vh;
+    width: 2.5vw;
     height: auto;
+    padding: 2px;
 }
 
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -796,7 +797,7 @@ This CSS rule targets the `.swiper-hover-text` class. It applies several propert
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 24px;
-    text-align: justify;
+    text-align: center;
     opacity: 0;
     transition: opacity 0.3s;
     background-color: rgba(6, 44, 18, 0.82);
