@@ -1,21 +1,40 @@
 function onHousekeeperTextReady(text){
     console.log(text);
     const data = JSON.parse(text);
+    console.log('Response data:', data.results); // Log the response data
 
-    let output = '<ul> '; 
-    data.results.forEach(element => {
-        // console.log(element);
-        output += `<li>  Room No: ${element.r_no } </li>`;
-    }) 
-    output += '</ul>'
- 
-    const results = document.querySelector('#narooms');
-    results.innerHTML = 
-    ` <h3> Results </h3>
-      <h6> rows count: ${data.rows} </h6>
-      <ul> ${output} </ul>
-    `;
+    // Get all room elements
+    const allRooms = document.querySelectorAll('.housekeeper_individual_room_container');
 
+    // Create a set of room numbers from the response data for quick lookup
+    // Convert room numbers to strings
+    const roomNumbers = new Set(data.results.map(element => element.r_no.toString()));
+    console.log('Room numbers:', roomNumbers); // Log the room numbers
+
+    // Iterate over all room elements
+    allRooms.forEach(room => {
+        // If the room's id is in the response data, show the room
+        if (roomNumbers.has(room.id)) {
+            room.style.display = "flex";
+        }
+        // If the room's id is not in the response data, hide the room
+        else {
+            room.style.display = "none";
+        }
+    });
+
+    // let output = '<ul> ';
+    // data.results.forEach(element => {
+    //     output += `<li>  Room No: ${element.r_no } </li>`;
+    // })
+    // output += '</ul>'
+    //
+    // const results = document.querySelector('#narooms');
+    // results.innerHTML =
+    //     ` <h3> Results </h3>
+    //   <h6> rows count: ${data.rows} </h6>
+    //   <ul> ${output} </ul>
+    // `;
 }
 
 function onHousekeeperResponse(response){
@@ -29,4 +48,77 @@ refButton.addEventListener("click", function (event) {
     .then(onHousekeeperResponse)
     .then(onHousekeeperTextReady);
     event.preventDefault();
+});
+
+document.getElementById('confirm_clean').addEventListener('click', function() {
+    // Get the selected room number
+    const selectedRoom = document.querySelector('.housekeeper_individual_room_container.selected');
+    if (!selectedRoom) {
+        console.log('No room selected');
+        return;
+    }
+    const roomNumber = selectedRoom.id;
+
+    // Send a fetch request to the server
+    fetch('/api/housekeeper/updateCleanedRoomToAvail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ room_no: roomNumber, newStatus: 'A' }), // Change status to 'A'
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Update the status on the client side
+            selectedRoom.classList.remove('selected');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+});
+
+// Get all radio buttons with value "icon2"
+const radioButtons = document.querySelectorAll('input[value="icon2"]');
+
+// Add an event listener to each radio button
+radioButtons.forEach(radioButton => {
+    radioButton.addEventListener('change', function() {
+        // Remove 'selected' class from any previously selected room
+        const selectedRoom = document.querySelector('.housekeeper_individual_room_container.selected');
+        if (selectedRoom) {
+            selectedRoom.classList.remove('selected');
+        }
+
+        // Add 'selected' class to the parent div of the toggled radio button
+        this.closest('.housekeeper_individual_room_container').classList.add('selected');
+    });
+});
+
+document.getElementById('confirm_clean').addEventListener('click', function() {
+    // Get the selected room number
+    const selectedRoom = document.querySelector('.housekeeper_individual_room_container.selected');
+    if (!selectedRoom) {
+        console.log('No room selected');
+        return;
+    }
+    const roomNumber = selectedRoom.id;
+
+    // Send a fetch request to the server
+    fetch('/api/housekeeper/updateCleanedRoomToAvail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ room_no: roomNumber, newStatus: 'A' }), // Change status to 'A'
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Update the status on the client side
+            selectedRoom.classList.remove('selected');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });

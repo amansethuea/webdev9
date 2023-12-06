@@ -234,7 +234,7 @@ app.get('/housekeeper/notAvailableRoomInfo', async (req, res) => {
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
-        const q = "SELECT r_no from hotelbooking.room WHERE r_status = \'X\'";
+        const q = "SELECT r_no from hotelbooking.room WHERE r_status = \'X\';";
         await client.query(q, (err, results) => {
             if (err) {
                 console.log(err.stack)
@@ -530,9 +530,9 @@ app.post('/api/housekeeper/updateCleanedRoomToAvail', async (req, res) => {
         const client = await pool.connect();
         const body = req.body;
         const roomNo  = body.room_no;
-        const cleanStatus  = "C";
-        const availStatus = "A"; 
-        const updateRoomStatusToCleanQuery = `UPDATE hotelbooking.room SET r_status = ${cleanStatus} WHERE r_no = ${roomNo}`;;
+        const cleanStatus  = 'C';
+        const availStatus = 'A';
+        const updateRoomStatusToCleanQuery = 'UPDATE hotelbooking.room SET r_status = ${availStatus} WHERE r_no = ${roomNo};';
         await client.query(updateRoomStatusToCleanQuery, async (err, results) => {
             if (err) {
                 console.log(err.stack)

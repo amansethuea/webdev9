@@ -89,21 +89,24 @@
         padding-left: 2%;
     }
     #housekeeper_room_container{
-        /*border: 2px solid black;*/
-        /*border-radius: 10px;*/
+        border: 2px solid black;
+        border-radius: 10px;
         width: 40vw;
         position: absolute;
         left: 30vw;
         height: 50vh;
         overflow-y: auto;
         margin-top: 5%;
+        padding: 1%;
+        box-shadow: -3px 3px 6px 0 #0000004f;
     }
     .housekeeper_individual_room_container{
-        display: flex;
+        /*display: flex;*/
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         border: 1px solid black;
+        display: none;
     }
     .icon-radio-selector input[type="radio"] {
         display: none;
@@ -133,10 +136,10 @@
         background: #083116;
     }
     #housekeeper_room_buttons {
-        right: 31vw;
+        right: 28vw;
         position: fixed;
-        top: 70vh;
-        width: 39%;
+        top: 88vh;
+        width: 42vw;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -216,6 +219,7 @@
         flex-direction: column;
         width: 100%;
         height: -webkit-fill-available;
+        height: 100%;
         overflow-y: scroll;
         position: absolute;
     }
@@ -335,9 +339,6 @@
         background-color: #eaeaea88;
         padding: 20px;
         width: 60%;
-        height: 320px;
-        margin: 25px 10px 20px 500px;
-        margin: auto;
         margin-top: 20px;
         height: 40%;
     }
@@ -407,7 +408,7 @@
 
     .btn:hover {
         background-color: #26690f;
-        box-shadow: 0px 0px 3px 3px #9e9b9b;
+        box-shadow: 0 0 3px 3px #9e9b9b;
     }
 
     .contact-form-footer {
