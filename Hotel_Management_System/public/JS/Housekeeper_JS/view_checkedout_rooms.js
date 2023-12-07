@@ -82,7 +82,7 @@ document.getElementById('confirm_clean').addEventListener('click', function() {
                 const radioButtons = document.querySelectorAll('input[type="radio"][value="icon1"]');
 
                 // Iterate over the radio buttons and set their checked property to true
-                // This is required to stop rooms from being 'grabbed' and the not cleaned button being unchecked.
+                // This is required to stop rooms from being 'grabbed' and the not cleaned button being unchecked
                 radioButtons.forEach(radioButton => {
                     radioButton.checked = true;
                 });
