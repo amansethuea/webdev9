@@ -13,6 +13,7 @@
         z-index: 2;
         align-items: center;
     }
+
     #header-spacer { /* To separate the logo and nav links */
         display: flex;
         justify-content: space-between;
@@ -22,23 +23,27 @@
         align-items: center;
         width: 100%;
     }
+
     header img { /* Logo  contained in header*/
         height: auto;
         width: 50px;
         /*margin-right: auto;*/
     }
+
     #header-links-container{ /*container for all the nav links*/
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
     }
+
     /* nav bar styling */
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
+
     nav ul {
         display: flex;
         flex-direction: row;
@@ -46,10 +51,12 @@
         margin: 0;
         padding: 0;
     }
+
     nav li {
         cursor: pointer;
         transition: transform 0.5s;
     }
+
     nav ul li a:link, nav ul li a:visited {
         padding: 10px 20px;
         text-decoration: none;
@@ -57,6 +64,7 @@
         color: #2d0945;
         transition: background-color 0.3s;
     }
+
     nav ul li a:hover {
         background-color: #ffffff;
         transform: scale(1.1);
@@ -84,10 +92,12 @@
         bottom: 0;
         width: 100%;
     }
+
     footer p {
         font-size: small;
         padding-left: 2%;
     }
+
     #housekeeper_room_container{
         border: 2px solid black;
         border-radius: 10px;
@@ -100,6 +110,7 @@
         padding: 1%;
         box-shadow: -3px 3px 6px 0 #0000004f;
     }
+
     .housekeeper_individual_room_container{
         /*display: flex;*/
         flex-direction: row;
@@ -108,6 +119,7 @@
         border: 1px solid black;
         display: none;
     }
+
     .icon-radio-selector input[type="radio"] {
         display: none;
     }
@@ -115,6 +127,7 @@
     .icon-radio-selector {
         display: flex;
     }
+
     .icon-radio-selector label {
         padding: 10px;
         cursor: pointer;
@@ -135,6 +148,7 @@
     .icon-radio-selector input[type="radio"]:checked + label::before {
         background: #083116;
     }
+
     #housekeeper_room_buttons {
         right: 28vw;
         position: fixed;
@@ -144,6 +158,7 @@
         flex-direction: row;
         justify-content: space-evenly;
     }
+
     .housekeeper_room_button_indv{
         width: 15vw;
         height: 40px;
@@ -153,16 +168,19 @@
         border-radius: 5px;
         cursor: pointer;
     }
+
     .housekeeper_room_button_indv:hover {
         background-color: rgb(15, 74, 35);
         font-size: x-large;
     }
+
     /*Main body styling*/
     body, html {
         font-family: serif;
         margin: 0;
         padding-top: 50px;
     }
+
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
@@ -176,6 +194,7 @@
         justify-content: center;
         align-items: center;
     }
+
     #landing_tag { /*The small text under the 'welcome to..'*/
         font-weight: lighter;
         font-size: 150%;
@@ -188,6 +207,7 @@
         height: 85vh;
         width: auto;
     }
+
     /*used on most pages to change h1*/
     .other_pages_main_header {
         font-size: 60px;
@@ -213,6 +233,7 @@
         position: relative;
         background-color: #eaeaea88;
     }
+
     .all_rooms_container {/*The container for all the individual rooms*/
         background-color: #eaeaea88;
         display: flex;
@@ -223,6 +244,7 @@
         overflow-y: scroll;
         position: absolute;
     }
+
     .room {/*Each individual room*/
         padding: 10px;
         /*border-bottom: 1px solid #000;*/
@@ -231,17 +253,12 @@
 
     /*BGallery Styling*/
     /*-------- PROGRESS LINE --------*/
-
-
-
-
     #landing_page_about_us {
         padding-top: 10px;
         padding-left: 10%;
         padding-right: 10%;
         text-align: justify
     }
-
 
     h1 {
         /*font-family: serif;*/
@@ -262,10 +279,6 @@
         font-weight: 100;
     }
 
-
-
-
-
     #contact_us_own_page {
         display: flex;
         flex-direction: column;
@@ -276,7 +289,6 @@
 
     }
 
-
     .addit-info-sections {
         display: flex;
         flex-direction: row;
@@ -284,12 +296,6 @@
         align-items: center;
         padding: 0 5% 0 2%
     }
-
-    /*
-    .addit-info-text {}
-    */
-
-
 
     #contact_us_form {
         width: 80%;
@@ -322,64 +328,6 @@
         padding-top: 0;
     }
 
-    .contact_box {
-        border: 2px solid rgba(7, 202, 75, 0.38);
-        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
-        border-radius: 10px;
-        background-color: #eaeaea88;
-        padding: 20px;
-        width: 60%;
-        margin: auto;
-    }
-
-    .contact_form_box {
-        border: 2px solid rgba(7, 202, 75, 0.38);
-        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
-        border-radius: 10px;
-        background-color: #eaeaea88;
-        padding: 20px;
-        width: 60%;
-        margin-top: 20px;
-        height: 40%;
-    }
-
-    .about_us_box {
-        margin: 30px;
-        padding: 20px;
-        float: left;
-    }
-
-    .selected_room {
-        background-color: rgba(0, 84, 29, 0.38);
-    }
-
-    .form-element {
-        height: 35px;
-        /*padding: auto;*/
-        margin-bottom: 20px;
-    }
-
-    .form-label {
-        width: 30%;
-        float: left;
-        font-size: 17px;
-        padding-top: 3%;
-    }
-
-    .form-control-container {
-        width: 70%;
-        float: left;
-    }
-
-    .form-control {
-        width: 100%;
-        padding: 8px;
-        border-radius: 3px;
-        border: 1px solid #5e9adf;
-        transition: box-shadow 0.3s;
-        margin-top: 3%;
-    }
-
     /* When the cursor is inside the form element, for eg. inside a text-box */
     .form-control:focus {
         box-shadow: 0 0 3px 2px #2b77be;
@@ -409,119 +357,6 @@
     .btn:hover {
         background-color: #26690f;
         box-shadow: 0 0 3px 3px #9e9b9b;
-    }
-
-    .contact-form-footer {
-        padding: 10px;
-        text-align: right;
-    }
-
-
-
-
-
-
-
-    .date-out-selection {
-        width: 23%;
-        height: 75%;
-        /*overflow-y: scroll;*/
-        border: 1px solid #000;
-        /*position: absolute;*/
-        left: 51%;
-        /*top: 25%;*/
-    }
-
-    .additional-booking-selection {
-        width: 23%;
-        height: 75%;
-        /*overflow-y: auto;*/
-        border: 1px solid #000;
-        /*position: absolute;*/
-        right: 1vw;
-        /*top: 25%;*/
-        background-color: #eaeaea88;
-    }
-
-
-
-    .additional-booking-selection-container {
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
-        height: 89%;
-    }
-
-
-
-
-
-
-    #toggle-on {
-        cursor: pointer;
-    }
-
-
-
-
-
-    .photo-gallery {
-        /*margin: 10px;*/
-        padding: 20px;
-        width: 30%;
-        height: 320px;
-        margin: 25px 10px 20px 500px;
-    }
-
-    .photo {
-        margin: 10px;
-        cursor: pointer;
-        transition: transform 0.5s;
-
-    }
-
-    .room:hover {
-        font-size: large;
-        font-weight: 400;
-
-    }
-
-
-    .img-caption {
-        text-align: center;
-    }
-
-    .photo:hover {
-        transform: scale(0.95);
-    }
-
-    .mySlides {
-        height: 400px;
-        width: 500px;
-        margin: 0;
-        padding: 0;
-
-    }
-
-    .facilities {
-        padding: 30px;
-        margin: auto;
-    }
-
-    .facility_image {
-        height: 200px;
-        width: 15%;
-        float: left;
-        padding: 30px;
-        margin-right: 0;
-    }
-
-    .facility_para {
-        float: left;
-        padding-left: 0;
-        color: #2d0945;
-        text-decoration: solid;
-
     }
 
 }
@@ -649,176 +484,5 @@
 
     #section5 {
         background-color: purple;
-    }
-}
-
-.swiper {
-    width: 100%;
-    height: 72vh;
-}
-
-.swiper-slide {
-    display: flex;
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 55vw;
-    height: 55vh;
-    margin-top: 20px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 22px;
-    cursor: pointer;
-}
-
-.image-shadow {
-    box-shadow: -3px 3px 11px 1px #00000038;
-}
-
-:root {
-    --swiper-theme-color: #0c4b22 !important;
-}
-
-.swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 12px;
-    color: #000;
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-span.swiper-pagination-bullet {
-    width: 5px;
-    height: 16px;
-}
-
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-/*animation: scrollDownAnimation 1s infinite linear;*/
-.swiper-pagination-bullet-active {
-    color: #fff;
-    background: #37ce56;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    /*background-color: #000;*/
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    animation: pulse;
-    animation-duration: 10s;
-    animation-timing-function: linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
-    /*animation-delay: 10s;*/
-    animation-iteration-count: infinite;
-}
-
-.swiper-button-next {
-    right: 10px;
-}
-
-.swiper-button-prev {
-    left: 10px;
-}
-
-.swiper-image-container {
-    position: relative;
-}
-
-.swiper-image-container:hover .swiper-image {
-    transition-duration: 500ms;
-    filter: blur(2px) opacity(0.5);
-    cursor: grab;
-}
-
-.swiper-image-container:active .swiper-image {
-    cursor: grabbing;
-}
-
-/*
-This CSS rule targets the `.swiper-hover-text` class. It applies several properties to style the text box that appears when hovering over the swiper image:
-
-- `position: absolute;` Positions the text box relative to the nearest positioned ancestor.
-- `top: 50%;` and `left: 50%;` Positions the text box at the center of the ancestor.
-- `transform: translate(-50%, -50%);` Moves the text box up and to the left by half of its own width and height.
-- `color: #fff;` Sets the text color to white.
-- `font-size: 24px;` Sets the font size of the text to 24 pixels.
-- `text-align: justify;` Justifies the text.
-- `opacity: 0;` Sets the initial opacity of the text box to 0.
-- `transition: opacity 0.3s;` Adds a transition effect to the opacity property.
-- `background-color: rgba(0, 0, 0, 0.5);` Sets the background color to a semi-transparent black.
-- `z-index: 1;` Positions the text box above the swiper image.
-- `border-radius: 6px;` Rounds the corners of the text box.
-- `padding: 20px;` Adds space around the text.
-- `width: 80%;` Sets the width of the text box to 80% of the ancestor.
-*/
-.swiper-hover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 24px;
-    text-align: justify;
-    opacity: 0;
-    transition: opacity 0.3s;
-    background-color: rgba(6, 44, 18, 0.82);
-    /* Add a semi-transparent black background */
-    z-index: 1;
-    /* Ensure the text box is on top of the image */
-    border-radius: 6px;
-    padding: 20px;
-    width: 80%;
-    box-shadow: -3px 3px 11px 1px #00000045;
-}
-
-/*This code will change the opacity of the text box to 1 as to appear on hover*/
-.swiper-image-container:hover .swiper-hover-text {
-    transition-duration: 1000ms;
-    opacity: 1;
-    cursor: grab;
-}
-
-.swiper-image-container:active .swiper-hover-text {
-    cursor: grabbing;
-}
-
-textarea {
-    resize: none;
-    overflow: auto;
-}
-
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    80% {
-        transform: scale(1);
-    }
-
-    90% {
-        transform: scale(1.5);
-    }
-
-    100% {
-        transform: scale(1);
     }
 }
