@@ -316,6 +316,7 @@
         padding: 2.2vh 4%;
         border-bottom: 1px solid #000;
         cursor: pointer;
+        display: none;
     }
 
     /*------ Summary of Booking------*/
