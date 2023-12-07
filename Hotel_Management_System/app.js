@@ -524,36 +524,22 @@ app.post('/api/receptionist/roomStatusUpdateOnCheckout', async (req, res) => {
 // Update room back to available once cleaned - Housekeeper
 app.post('/api/housekeeper/updateCleanedRoomToAvail', async (req, res) => {
     try {
-        let results;
+        const body = req.body;
+        const roomNo = body.room_no;
+        const availStatus = 'A';
         const pool = new pg.Pool(config);
         const client = await pool.connect();
-        const body = req.body;
-        const roomNo  = body.room_no;
-        const cleanStatus  = 'C';
-        const availStatus = 'A';
-        const updateRoomStatusToCleanQuery = 'UPDATE hotelbooking.room SET r_status = ${availStatus} WHERE r_no = ${roomNo};';
-        await client.query(updateRoomStatusToCleanQuery, async (err, results) => {
+        const updateRoomStatusToAvailableQuery = 'UPDATE hotelbooking.room SET r_status = $1 WHERE r_no = $2';
+        await client.query(updateRoomStatusToAvailableQuery, [availStatus, roomNo], (err, results) => {
             if (err) {
                 console.log(err.stack)
                 errors = err.stack.split(" at ");
                 res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
             } else {
                 client.release();
-                // After changing room status to clean, update the status to Available
-                const updateRoomStatusToAvailableQuery = `UPDATE hotelbooking.room SET r_status = ${availStatus} WHERE r_no = ${roomNo}`;
-                await client.query(updateRoomStatusToAvailableQuery, (err, results) => {
-                    if (err) {
-                        console.log(err.stack)
-                        errors = err.stack.split(" at ");
-                        res.json({ message: 'Sorry something went wrong! The data has not been processed ' + errors[0] });
-                    } else {
-                        client.release();
-                        res.status(200).json({ message: `Room ${roomNo} is Available again to book.` });
-                    }
-                });
+                res.status(200).json({ message: `Room ${roomNo} is Available again to book.` });
             }
         });
-
     } catch (e) {
         console.log(e);
     }
