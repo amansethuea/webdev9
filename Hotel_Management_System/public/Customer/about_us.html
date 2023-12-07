@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_about_us.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
 </head>
 
 <body>
@@ -14,19 +14,19 @@
         <div id="header-spacer">
             <div> <!-- Logo -->
                 <a href="index.html">
-                    <img
-                            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                            alt="Logo emblem of a hotel with a crown on top">
+                    <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                        alt="Logo emblem of a hotel with a crown on top">
                 </a>
             </div>
-            <div id="header-links"> 
+            <div id="header-links">
                 <nav>
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
                         <li><span><a href="room_booking.html">Book Now</a></span></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
                         <li><span><a href="contact_us.html">Contact us</a></span></li>
-                        <li><span style="font-size: larger; font-weight: bold"><a href="about_us.html">About us</a></span></li>
+                        <li><span style="font-size: larger; font-weight: bold"><a href="about_us.html">About
+                                    us</a></span></li>
                         <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
                     </ul>
                 </nav>
@@ -55,17 +55,21 @@
                     service, and we look forward to welcoming you to The
                     Crown Hotel.
                 </p>
+                
             </div>
-<!--            Not sure if i want to keep this yet-->
-<!--            <div class="scroll-down-arrow">-->
-<!--                <div id="about_us_scroll_down_arrow">-->
-<!--                    &dArr;-->
-<!--                </div>-->
-<!--                <h1>Scroll Down</h1>-->
-<!--            </div>-->
+            <button class="btn" id="scroll_btn" onclick="scrollToBottom()"><span class='fa fa-arrow-down'></span></button>
+            
+            <!--            Not sure if i want to keep this yet-->
+            <!--            <div class="scroll-down-arrow">-->
+            <!--                <div id="about_us_scroll_down_arrow">-->
+            <!--                    &dArr;-->
+            <!--                </div>-->
+            <!--                <h1>Scroll Down</h1>-->
+            <!--            </div>-->
 
         </div>
         </div>
+        <button class="btn" id="scroll_btn" onclick="scrollToTop()"><span class='fa fa-arrow-up'></span></button>
         <h2 class="aboutus_sub_heading" style="text-align:center"><em>Meet our team</em></h2>
         <div class="row">
             <div class="column">
@@ -118,6 +122,7 @@
         <div class="about_us_box"><span class="fa fa-mail-bulk"></span>thecrownhotel@gmail.com</div>
         <div class="about_us_box"><span class="fa fa-hotel"></span>UEA, Norwich, UK</div>
     </main>
+    <script src="../JS/Customer_JS/about_us_scroller.js"></script>
 
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>

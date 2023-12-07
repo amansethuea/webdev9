@@ -2,7 +2,8 @@
 @media screen and (min-width: 768px) {
 
     /*Header styles*/
-    header { /*The main bulk of the header style*/
+    header {
+        /*The main bulk of the header style*/
         background-color: #ffffff;
         color: white;
         display: flex;
@@ -14,7 +15,9 @@
         z-index: 2;
         align-items: center;
     }
-    #header-spacer { /* To separate the logo and nav links */
+
+    #header-spacer {
+        /* To separate the logo and nav links */
         display: flex;
         justify-content: space-between;
         flex-direction: row;
@@ -23,23 +26,29 @@
         align-items: center;
         width: 100%;
     }
-    header img { /* Logo  contained in header*/
+
+    header img {
+        /* Logo  contained in header*/
         height: auto;
         width: 50px;
         /*margin-right: auto;*/
     }
-    #header-links-container{ /*container for all the nav links*/
+
+    #header-links-container {
+        /*container for all the nav links*/
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
     }
+
     /* nav bar styling */
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
+
     nav ul {
         display: flex;
         flex-direction: row;
@@ -47,17 +56,21 @@
         margin: 0;
         padding: 0;
     }
+
     nav li {
         cursor: pointer;
         transition: transform 0.5s;
     }
-    nav ul li a:link, nav ul li a:visited {
+
+    nav ul li a:link,
+    nav ul li a:visited {
         padding: 10px 20px;
         text-decoration: none;
         display: inline-block;
         color: #2d0945;
         transition: background-color 0.3s;
     }
+
     nav ul li a:hover {
         background-color: #ffffff;
         transform: scale(1.1);
@@ -85,21 +98,24 @@
         bottom: 0;
         width: 100%;
     }
+
     footer p {
         font-size: small;
         padding-left: 2%;
     }
 
     /*Main body styling*/
-    body, html {
+    body,
+    html {
         font-family: serif;
         margin: 0;
         padding-top: 50px;
     }
+
     #main_landing_page {
         /* Lighten the image opacity */
         background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
-        url("../../Images/video_of_rooms/Hotel_background_image.jpeg");
+            url("../../Images/video_of_rooms/Hotel_background_image.jpeg");
         background-size: cover;
         background-position: center;
         height: 88vh;
@@ -109,7 +125,9 @@
         justify-content: center;
         align-items: center;
     }
-    #landing_tag { /*The small text under the 'welcome to..'*/
+
+    #landing_tag {
+        /*The small text under the 'welcome to..'*/
         font-weight: lighter;
         font-size: 150%;
         color: rgba(255, 255, 255, 0.71);
@@ -121,6 +139,7 @@
         height: 85vh;
         width: auto;
     }
+
     /*used on most pages to change h1*/
     .other_pages_main_header {
         font-size: 60px;
@@ -133,31 +152,41 @@
     }
 
     /*Book Now styling*/
-    .booking-mechanism {/*Contains the three booking boxes*/
+    .booking-mechanism {
+        /*Contains the three booking boxes*/
         padding-top: 7vh;
         position: relative;
         display: flex;
         justify-content: space-evenly;
         height: 70vh;
     }
-    .soft-box { /*Used for a few boxes to give them curved edges*/
+
+    .soft-box {
+        /*Used for a few boxes to give them curved edges*/
         border-radius: 10px;
     }
-    .booking-box {/*use to set for appropriate width for distribution*/
+
+    .booking-box {
+        /*use to set for appropriate width for distribution*/
         width: 30%;
     }
-    .light-shadow {/*Used for a generic shadow effect, rather subtle*/
+
+    .light-shadow {
+        /*Used for a generic shadow effect, rather subtle*/
         /*width: 30%;*/
         box-shadow: -3px 3px 6px 0 #0000004f;
     }
 
     /*------ Duration of stay ------*/
-    .stay-duration {/*used to style the box for 'duration'*/
+    .stay-duration {
+        /*used to style the box for 'duration'*/
         height: 75%;
         /*left: 26%;*/
         background-color: #eaeaea88;
     }
-    .booking-dates {/*used as a container for the dates and room types*/
+
+    .booking-dates {
+        /*used as a container for the dates and room types*/
         overflow-y: auto;
         display: flex;
         flex-direction: column;
@@ -167,7 +196,9 @@
         flex-wrap: nowrap;
         height: 85%;
     }
-    .booking-date-selections {/*Used to space and set the calendar and room types*/
+
+    .booking-date-selections {
+        /*Used to space and set the calendar and room types*/
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -176,36 +207,47 @@
         bottom: 20%;
         padding: 0 5% 0 5%;
     }
-    h3.booking-dates-heading {/*used for the headers of both in and out dates*/
+
+    h3.booking-dates-heading {
+        /*used for the headers of both in and out dates*/
         position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-    #booking-in-date, #booking-out-date {
+
+    #booking-in-date,
+    #booking-out-date {
         cursor: text;
         font-size: 1.2rem;
     }
-    select#room_type_select { /*used to style the dropdown box for the room type*/
+
+    select#room_type_select {
+        /*used to style the dropdown box for the room type*/
         width: 100%;
         font-size: 1.2rem;
         margin-bottom: 3%;
     }
-    .booking-dates-button-container{
+
+    .booking-dates-button-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     /*------ Selection Of Room ------*/
-    .room-selection {/*Used to style the box which holds the various rooms*/
+    .room-selection {
+        /*Used to style the box which holds the various rooms*/
         /*width: 23%;*/
         height: 75%;
         /* border: 1px solid #000; */
         position: relative;
         background-color: #eaeaea88;
     }
-    .all_rooms_container {/*The container for all the individual rooms*/
+
+    .all_rooms_container {
+        /*The container for all the individual rooms*/
         background-color: #eaeaea88;
         display: flex;
         flex-direction: column;
@@ -214,14 +256,18 @@
         overflow-y: scroll;
         position: absolute;
     }
-    .room {/*Each individual room*/
+
+    .room {
+        /*Each individual room*/
         padding: 2.2vh 4%;
         border-bottom: 1px solid #000;
         cursor: pointer;
         display: none;
     }
+
     /*------ Summary of Booking------*/
-    .booking-box-summary-container {/*This will hold all the individual divs for each summary point*/
+    .booking-box-summary-container {
+        /*This will hold all the individual divs for each summary point*/
         display: flex;
         flex-direction: column;
         height: 91%;
@@ -229,17 +275,23 @@
         overflow: auto;
         /* display: block; */
     }
-    .booking-box-summary.booking-box-summary-a { /*Just adds a darker colour per every other line*/
+
+    .booking-box-summary.booking-box-summary-a {
+        /*Just adds a darker colour per every other line*/
         background: #e1e1e1;
     }
-    .booking-box-summary {/*Styling for each line of text within the booking summary*/
+
+    .booking-box-summary {
+        /*Styling for each line of text within the booking summary*/
         font-size: 1.2rem;
         padding: 2.6vh 4%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    div#book-now-page-checkout-button {/*style for the button at the end of the summary*/
+
+    div#book-now-page-checkout-button {
+        /*style for the button at the end of the summary*/
         display: flex;
         justify-content: center;
     }
@@ -311,6 +363,7 @@
         height: 50vh;
     }
 
+
     .aboutus_sub_heading {
         font-weight: lighter;
         justify-content: center;
@@ -328,6 +381,11 @@
         border-radius: 10px;
         background-color: #eaeaea88;
         padding: 20px;
+    }
+
+    #scroll_btn {
+        margin-left: 50%;
+    
     }
 
     .contact_sub_heading {
@@ -683,8 +741,10 @@
     align-items: center;
     flex-direction: column;
 }
-.swiper-slide h1{
-    font-size: 45px; /* Makes the header per slider a little smaller than other h1's*/
+
+.swiper-slide h1 {
+    font-size: 45px;
+    /* Makes the header per slider a little smaller than other h1's*/
     padding: 16px 0 0;
 }
 
@@ -735,8 +795,9 @@ span.swiper-pagination-bullet {
     color: #fff;
     background: #37ce56;
 }
-.swiper-pagination-bullet{
-    border-radius: 10%!important;
+
+.swiper-pagination-bullet {
+    border-radius: 10% !important;
 }
 
 .swiper-button-next,
@@ -847,5 +908,3 @@ textarea {
         transform: scale(1);
     }
 }
-
-
