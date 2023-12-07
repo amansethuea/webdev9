@@ -1,0 +1,25 @@
+#main_screen_page {
+    height: 90vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#main_screen_page h1{
+    padding: 0 0;
+}
+
+#main_screen_page img{
+    height: 15vh;
+}
+/*.main_menu_con{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
+a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
