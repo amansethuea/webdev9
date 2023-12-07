@@ -168,6 +168,11 @@
         padding: 20px 0 0;
     }
 
+    #contact_us_form {
+        width: 80%;
+        height: 50vh;
+    }
+
     .contact_sub_heading {
         font-weight: lighter;
         justify-content: center;
@@ -456,11 +461,12 @@
     }
 
     .form-control {
-        width: 90%;
+        width: 100%;
         padding: 8px;
         border-radius: 3px;
         border: 1px solid #5e9adf;
         transition: box-shadow 0.3s;
+        margin-top: 3%;
     }
 
     /* When the cursor is inside the form element, for eg. inside a text-box */

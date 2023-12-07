@@ -354,7 +354,11 @@
         background-color: #eaeaea88;
         padding: 20px;
         width: 60%;
+        height: 320px;
+        margin: 25px 10px 20px 500px;
+        margin: auto;
         margin-top: 20px;
+        height: 40%;
     }
 
     .about_us_box {
@@ -369,7 +373,7 @@
 
     .form-element {
         height: 35px;
-        /*padding: auto;*/
+        padding: auto;
         margin-bottom: 20px;
     }
 
@@ -377,7 +381,6 @@
         width: 30%;
         float: left;
         font-size: 17px;
-        padding-top: 3%;
     }
 
     .form-control-container {

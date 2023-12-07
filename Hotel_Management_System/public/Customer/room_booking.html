@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Crown Hotel</title>
   <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/customer_style.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/room_booking_validation.css">
   <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
@@ -48,10 +49,15 @@
             <div class="booking-date-selections">
               <h3 class="booking-dates-heading">Arrival Date</h3>
               <label for="booking-in-date"></label><input type="date" id="booking-in-date">
+              <span id="span1" class="error">Check-in date can't be of a previous date</span>
+              <span id="span2" class="error">Check-in date can't be empty</span>
             </div>
             <div class="booking-date-selections">
               <h3 class="booking-dates-heading">Leaving Date</h3>
               <label for="booking-out-date"></label><input type="date" id="booking-out-date">
+              <span id="span3" class="error">Check-in date can't be of a previous date</span>
+              <span id="span4" class="error">Check-in date can't be empty</span>
+              <span id="span5" class="error">Check-out date can't be same or previous than check-in date</span>
             </div>
             <div class="booking-date-selections">
               <h3 class="booking-dates-heading">Room Type</h3>
