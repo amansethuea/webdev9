@@ -12,15 +12,24 @@
 <body>
   <header>
     <div id="header-spacer">
-        <div> <!-- Logo -->
-            <a href="index.html">
-                <img
-                        src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                        alt="Logo emblem of a hotel with a crown on top">
-            </a>
-          </div>
+      <div> <!-- Logo -->
+        <a href="index.html">
+          <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="Logo emblem of a hotel with a crown on top">
+        </a>
+      </div>
+      <div id="header-links-container"> <!-- Links -->
+        <nav>
+          <ul id="header_links">
+            <li><span><a href="../Customer/index.html">Home</a></span></li>
+            <li><span style="font-size: larger; font-weight: bold"><a href="../Customer/payment_process.html">Payment
+                  Details</a></span></li>
+            <li><span><a href="../Customer/customer_details.html">Back</a></span></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-</header>
+  </header>
   <main>
     <div class="landing_page_container">
       <h1 class="other_pages_main_header">Payment Details</h1>
@@ -108,7 +117,8 @@
         </div>
         <div class="col-25">
           <div class="container">
-            <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b id="cart_rooms">0</b></span></h4>
+            <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b
+                  id="cart_rooms">0</b></span></h4>
             <p><a href="#">Total Rooms</a> <span id="total_rooms" class="price">0</span></p>
             <hr>
             <p>Total <span id="total_cost" class="price" style="color:black"><b>0</b></span></p>
