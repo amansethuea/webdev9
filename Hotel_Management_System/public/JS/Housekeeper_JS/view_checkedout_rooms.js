@@ -51,31 +51,38 @@ refButton.addEventListener("click", function (event) {
 });
 
 document.getElementById('confirm_clean').addEventListener('click', function() {
-    // Get the selected room number
-    const selectedRoom = document.querySelector('.housekeeper_individual_room_container.selected');
-    if (!selectedRoom) {
+    // Get all cleaned rooms
+    const cleanedRooms = document.querySelectorAll('input[value="icon2"]:checked');
+    if (!cleanedRooms.length) {
         console.log('No room selected');
         return;
     }
-    const roomNumber = selectedRoom.id;
 
-    // Send a fetch request to the server
-    fetch('/api/housekeeper/updateCleanedRoomToAvail', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ room_no: roomNumber, newStatus: 'A' }), // Change status to 'A'
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            // Update the status on the client side
-            selectedRoom.classList.remove('selected');
+    // Iterate over cleaned rooms
+    cleanedRooms.forEach(cleanedRoom => {
+        const roomNumber = cleanedRoom.closest('.housekeeper_individual_room_container').id;
+
+        // Send a fetch request to the server for each cleaned room
+        fetch('/api/housekeeper/updateCleanedRoomToAvail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ room_no: roomNumber }) // Pass room number in the request body
         })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Update the status on the client side
+                cleanedRoom.closest('.housekeeper_individual_room_container').classList.remove('selected');
+                cleanedRoom.checked = false;
+                document.getElementById('grab_rooms').click(); // Acts as a refresh to press the get rooms buttons
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    });
+
 });
 
 // Get all radio buttons with value "icon2"
@@ -93,32 +100,4 @@ radioButtons.forEach(radioButton => {
         // Add 'selected' class to the parent div of the toggled radio button
         this.closest('.housekeeper_individual_room_container').classList.add('selected');
     });
-});
-
-document.getElementById('confirm_clean').addEventListener('click', function() {
-    // Get the selected room number
-    const selectedRoom = document.querySelector('.housekeeper_individual_room_container.selected');
-    if (!selectedRoom) {
-        console.log('No room selected');
-        return;
-    }
-    const roomNumber = selectedRoom.id;
-
-    // Send a fetch request to the server
-    fetch('/api/housekeeper/updateCleanedRoomToAvail', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ room_no: roomNumber, newStatus: 'A' }), // Change status to 'A'
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            // Update the status on the client side
-            selectedRoom.classList.remove('selected');
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
 });
