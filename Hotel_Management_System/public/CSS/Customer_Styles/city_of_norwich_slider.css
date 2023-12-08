@@ -4,6 +4,8 @@
 /*  height: 100%;*/
 /*}*/
 
+/*TODO: ADD COMMENTS*/
+
 .swiper-slide { /*This file conflicts with the customer style swiper. Couldn't not find a fix intimate so bruteforce this fix*/
     display: flex !important;
     text-align: center !important;
