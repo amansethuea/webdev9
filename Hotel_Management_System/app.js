@@ -462,7 +462,7 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
                 //Inserting new customer data
                 const insertNewCustQuery =
                     'INSERT INTO hotelbooking.customer (c_no, c_name, c_email, c_address, c_cardtype, c_cardexp, c_cardno) VALUES ($1, $2, $3, $4, $5, $6, $7);';
-                await client.query(insertNewCustQuery, [newCustomerNumber, customerName, customerEmail, customerAddr, customerCardType, cardExpMonthYear, customerCardNo], (err, results) => {
+                await client.query(insertNewCustQuery, [newCustomerNumber, customerName, customerEmail, customerAddr, customerCardType, cardExpMonthYear, hashedCardNo], (err, results) => {
                     if (err) {
                         console.log(err.stack)
                         errors = err.stack.split(" at ");
