@@ -63,11 +63,11 @@ app.get('/receptionist/refno', async (req, res) => {
 
         const {room_status, b_ref, checkin_date, checkout_date} = req.query;
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(room_status) || !validateInput(b_ref) || !validateInput(checkin_date) || !validateInput(checkout_date)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(room_status) || !validateInput(b_ref) || !validateInput(checkin_date) || !validateInput(checkout_date)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.booking.b_ref, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room where hotelbooking.customer.c_no = hotelbooking.booking.c_no and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.room.r_status = $1 and hotelbooking.booking.b_ref = $2 and (hotelbooking.roombooking.checkin = $3 and hotelbooking.roombooking.checkout = $4);';
         await client.query(q, [room_status, b_ref, checkin_date, checkout_date], (err, results) => {
@@ -97,11 +97,11 @@ app.get('/receptionist/roomavailability', async (req, res) => {
 
         const{checkin_date, checkout_date, room_type} = req.query;
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(checkin_date) || !validateInput(checkout_date) || !validateInput(room_type)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(checkin_date) || !validateInput(checkout_date) || !validateInput(room_type)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
         const q =
             'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.room.r_status = \'A\' and hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <= $1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;'
             console.log(q);
@@ -132,11 +132,11 @@ app.get('/customer/roomavailability', async (req, res) => {
 
         const{checkin_date, checkout_date, room_type} = req.query;
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(checkin_date) || !validateInput(checkout_date) || !validateInput(room_type)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(checkin_date) || !validateInput(checkout_date) || !validateInput(room_type)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const q =
             'select r_no FROM (select distinct(hotelbooking.room.r_no), hotelbooking.room.r_class from hotelbooking.room, hotelbooking.roombooking where hotelbooking.room.r_status = \'A\' and hotelbooking.roombooking.r_no not in( select hotelbooking.roombooking.r_no from hotelbooking.roombooking where(checkin <=$1 and checkout>= $2) and hotelbooking.room.r_no = hotelbooking.roombooking.r_no)) AS room_details WHERE r_class = $3;'
@@ -168,11 +168,11 @@ app.get('/receptionist/checkoutdetails', async (req, res) => {
 
         const{b_ref, checkout_date, room_status} = req.query;
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(b_ref) || !validateInput(checkout_date) || !validateInput(room_status)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(b_ref) || !validateInput(checkout_date) || !validateInput(room_status)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const q = 'select distinct(hotelbooking.customer.c_name), hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding, hotelbooking.room.r_no from hotelbooking.customer, hotelbooking.booking, hotelbooking.roombooking, hotelbooking.room  where hotelbooking.customer.c_no = hotelbooking.booking.c_no  and hotelbooking.room.r_no = hotelbooking.roombooking.r_no and hotelbooking.booking.b_ref = $1 and hotelbooking.roombooking.checkout = $2 and hotelbooking.room.r_status = $3 group by hotelbooking.room.r_no, hotelbooking.customer.c_name, hotelbooking.roombooking.checkin, hotelbooking.roombooking.checkout, hotelbooking.booking.b_cost, hotelbooking.booking.b_outstanding;';
 
@@ -282,11 +282,11 @@ app.post('/api/customer/newbooking', async (req, res) => {
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(body.full_name) || !validateInput(body.email) || !validateInput(body.address) || !validateInput(body.city) || !validateInput(body.state) || !validateInput(body.zip) || !validateInput(body.card_no) || !validateInput(body.card_expiry_month) || !validateInput(body.card_expiry_year)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(body.full_name) || !validateInput(body.email) || !validateInput(body.address) || !validateInput(body.city) || !validateInput(body.state) || !validateInput(body.zip) || !validateInput(body.card_no) || !validateInput(body.card_expiry_month) || !validateInput(body.card_expiry_year)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const latestCustNoQuery = 'SELECT MAX(c_no) FROM hotelbooking.customer;';
         await client.query(latestCustNoQuery, async (err, results) => {
@@ -310,9 +310,9 @@ app.post('/api/customer/newbooking', async (req, res) => {
                 const customerCardNo = body.card_no;
 
                 // Create a hash of the card number
-                const hash = crypto.createHash('sha256').update(customerCardNo).digest('hex');
-                // hash.update(customerCardNo);
-                // let hashedCardNo = hash.digest('hex');
+                const hash = crypto.createHash('sha256');
+                hash.update(customerCardNo);
+                let hashedCardNo = hash.digest('hex');
 
                 // Truncate or pad the hashedCardNo to 16 characters
                 if (hashedCardNo.length > 16) {
@@ -420,11 +420,11 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(body.full_name) || !validateInput(body.email) || !validateInput(body.address) || !validateInput(body.city) || !validateInput(body.state) || !validateInput(body.zip) || !validateInput(body.card_no) || !validateInput(body.card_expiry_month) || !validateInput(body.card_expiry_year)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(body.full_name) || !validateInput(body.email) || !validateInput(body.address) || !validateInput(body.city) || !validateInput(body.state) || !validateInput(body.zip) || !validateInput(body.card_no) || !validateInput(body.card_expiry_month) || !validateInput(body.card_expiry_year)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const latestCustNoQuery = 'SELECT MAX(c_no) FROM hotelbooking.customer;';
         await client.query(latestCustNoQuery, async (err, results) => {
@@ -447,10 +447,10 @@ app.post('/api/receptionist/newbooking', async (req, res) => {
                 const cardExpMonthYear = customerCardExpMonth + "/" + customerCardExpYear;
                 const customerCardNo = body.card_no;
 
-                // Create a hash of the card number
-                const hash = crypto.createHash('sha256').update(customerCardNo).digest('hex');
-                // hash.update(customerCardNo);
-                // let hashedCardNo = hash.digest('hex');
+                /// Create a hash of the card number
+                const hash = crypto.createHash('sha256');
+                hash.update(customerCardNo);
+                let hashedCardNo = hash.digest('hex');
 
                 // Truncate or pad the hashedCardNo to 16 characters
                 if (hashedCardNo.length > 16) {
@@ -560,11 +560,11 @@ app.post('/api/receptionist/roomStatusUpdateOnCheckout', async (req, res) => {
         const room_no = body.room_no;
         const status = 'X';
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(room_no)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(room_no)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const updateRoomStatusToNAQuery = `UPDATE hotelbooking.room SET r_status = '${status}' WHERE r_no = ${room_no};`;
         console.log(updateRoomStatusToNAQuery)
@@ -595,11 +595,11 @@ app.post('/api/housekeeper/updateCleanedRoomToAvail', async (req, res) => {
         const pool = new pg.Pool(config);
         const client = await pool.connect();
 
-        // Validate the inputs using the validateInput function to stop SQL injection
-        if (!validateInput(roomNo)) {
-            res.status(400).json({ message: 'Invalid input' });
-            return;
-        }
+        // // Validate the inputs using the validateInput function to stop SQL injection
+        // if (!validateInput(roomNo)) {
+        //     res.status(400).json({ message: 'Invalid input' });
+        //     return;
+        // }
 
         const updateRoomStatusToAvailableQuery = 'UPDATE hotelbooking.room SET r_status = $1 WHERE r_no = $2';
         await client.query(updateRoomStatusToAvailableQuery, [availStatus, roomNo], (err, results) => {
