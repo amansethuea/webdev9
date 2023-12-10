@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Crown Hotel</title>
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/extras_menu.css">
+    <link rel="stylesheet" href="../CSS/Receptionist_Styles/extra_item_payment.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <header>
+            <div id="header-spacer">
+                <div> <!-- Logo -->
+                    <a href="../Receptionist/index.html">
+                        <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                            alt="Logo emblem of a hotel with a crown on top">
+                    </a>
+                </div>
+                <div id="header-links-container"> <!-- Links -->
+                    <nav>
+                        <ul id="header_links">
+                            <li><span style="font-size: larger; font-weight: bold"><a
+                                        href="../Receptionist/extras_menu.html">Food & Drinks</a></span></li>
+                            <li><span><a href="../Receptionist/room_booking.html">Back</a></span></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </header>
+
+    <main>
+        <div class="landing_page_container">
+            <h1 class="other_pages_main_header">Food & Bar</h1>
+            <h4 class="contact_sub_heading"><em>Menu</em></h4>
+            <div class="row">
+                <div class="col-75">
+                    <div class="container">
+                        <form id="food_details_form">
+                            <div class="row">
+                                <div class="col-50">
+                                    <div id="menu">
+                                        <div id="menu_row">
+                                            <div id="menu_col">
+                                                <h2>Beverages</h2>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/bar/cappuccino.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Cappuccino</h3>
+                                                        <h4 class="price">10</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/bar/iced_latte.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Iced Latte</h3>
+                                                        <h4 class="price">8</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/bar/latte_macchiato.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Latte Macchiato</h3>
+                                                        <h4 class="price">7</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="menu_col">
+                                                <h2>Food</h2>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/dining_hall/burger.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Vegan Bean Burger</h3>
+                                                        <h4 class="price">25</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/dining_hall/pizza.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Chicken Woodfired Pizza</h3>
+                                                        <h4 class="price">28</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/dining_hall/burrito.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Burrito</h3>
+                                                        <h4 class="price">17</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="menu_col">
+                                                <h2>Drinks</h2>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/bar/beer.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Beer</h3>
+                                                        <h4 class="price">8</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/bar/whiskey.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>Whiskey</h3>
+                                                        <h4 class="price">16</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="box">
+                                                    <div id="image">
+                                                        <img src="../Images/bar/wine.jpg">
+                                                    </div>
+                                                    <div class="itemDesc">
+                                                        <h3>1864 Shiraz</h3>
+                                                        <h4 class="price">32</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn" id="extras_btn" type="submit">Proceed</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-25">
+                    <div class="container">
+                        <h4>Cart <span class="total_price" style="color:black"><i class="fa fa-shopping-cart"></i> <b
+                                    id="cart_items">0</b></span></h4>
+                        <p><a href="#">Total Items</a> <span id="total_items" class="total_price">0</span></p>
+                        <hr>
+                        <p>Total <span id="total_cost" class="total_price" style="color:black"><b>0</b></span></p>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <script src="../JS/Receptionist_JS/extras_menu.js"></script>
+    <footer>
+        <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+    </footer>
+
+</body>
+
+</html>

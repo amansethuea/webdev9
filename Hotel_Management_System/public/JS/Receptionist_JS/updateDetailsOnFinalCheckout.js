@@ -1,6 +1,9 @@
 const getCheckoutDetails = JSON.parse(localStorage.getItem("checkoutDetails"));
 console.log(getCheckoutDetails);
 
+const extraItemDetails = JSON.parse(localStorage.getItem("extraItemDetails"));
+console.log(extraItemDetails);
+
 
 window.onload = function () {
     updateDetailsOnFinalCheckout();
@@ -27,12 +30,14 @@ function updateDetailsOnFinalCheckout() {
         listElement.append(span);
     }
     const amount = getCheckoutDetails.totalCost;
+    const extrasAmount = extraItemDetails.total_fnb_bill;
+    const totalAmount = parseFloat(amount) + extrasAmount;
     const outstanding_amt = getCheckoutDetails.outstandingCost;
     const customerName = getCheckoutDetails.customerName;
 
     document.getElementById("checkin").innerText = newCheckin;
     document.getElementById("checkout").innerText = newCheckout;
-    document.getElementById("amount").innerText = amount;
+    document.getElementById("amount").innerText = totalAmount;
     document.getElementById("outstanding_amt").innerText = outstanding_amt;
     document.getElementById("personName").innerText = customerName;
 }
@@ -118,6 +123,13 @@ refButton.addEventListener("click", function (event) {
         }
         else {
             console.log("Local Storage checkoutDetails is already empty. Proceeding..");
+        }
+        if (localStorage.getItem("extraItemDetails") != null) {
+            localStorage.removeItem("extraItemDetails");
+            console.log("Cleared Local Storage extraItemDetails");
+        }
+        else {
+            console.log("Local Storage extraItemDetails is already empty. Proceeding..");
         }
     }
 

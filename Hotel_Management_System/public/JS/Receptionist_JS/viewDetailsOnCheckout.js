@@ -38,7 +38,7 @@ function collectCheckoutData(text) {
             const checkoutDetails = localStorage.getItem("checkoutDetails");
             console.log("Created new local storage data for checkoutDetails");
             console.log(checkoutDetails);
-            window.location.href = "http://localhost:3000/receptionist/final_checkout.html"
+            window.location.href = "http://localhost:3000/receptionist/extras_menu.html"
         }
         else {
             const customerName = data['results'][0]['c_name'];
@@ -53,7 +53,7 @@ function collectCheckoutData(text) {
             const checkoutDetails = localStorage.getItem("checkoutDetails");
             console.log("Created new local storage data for checkoutDetails");
             console.log(checkoutDetails);
-            window.location.href = "http://localhost:3000/receptionist/final_checkout.html"
+            window.location.href = "http://localhost:3000/receptionist/extras_menu.html"
         }
     }
 }

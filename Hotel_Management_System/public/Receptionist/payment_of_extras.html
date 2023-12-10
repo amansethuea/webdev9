@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+  <link rel="stylesheet" href="../CSS/Receptionist_Styles/payment_page.css">
+  <link rel="stylesheet" href="../CSS/Receptionist_Styles/payment_detail_validation.css">
+</head>
+
+<body>
+  <header>
+    <div id="header-spacer">
+      <div> <!-- Logo -->
+        <a href="../Receptionist/index.html">
+          <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="Logo emblem of a hotel with a crown on top">
+        </a>
+      </div>
+      <div id="header-links-container"> <!-- Links -->
+        <nav>
+          <ul id="header_links">
+            <li><span><a href="../Receptionist/index.html">Home</a></span></li>
+            <li><span style="font-size: larger; font-weight: bold"><a href="../Receptionist/payment_of_extras.html">Payment
+                  Details</a></span></li>
+            <li><span><a href="../Receptionist/extras_menu.html">Back</a></span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="landing_page_container">
+      <h1 class="other_pages_main_header">Payment Details</h1>
+      <h4 class="reception_sub_heading"><em>Payment Process</em></h4>
+      <div class="row">
+        <div class="col-75">
+          <div class="container">
+            <form id="payment_details_form">
+              <div class="row">
+                <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fullname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fullname" name="fullname" placeholder="John F Smith">
+                  <span id="span1" class="error">Full name can't be empty </span>
+                  <span id="span2" class="error">Full name contains alphabets only </span>
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="text" id="email" name="email" placeholder="example@gmail.com">
+                  <span id="span3" class="error">Please enter valid email address </span>
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="B305 St Crispin's House. Duke Street">
+                  <span id="span4" class="error">Please enter billing address </span>
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="city" name="city" placeholder="Norwich">
+                  <span id="span5" class="error">Please enter city name </span>
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="state">State</label>
+                      <input type="text" id="state" name="state" placeholder="Norfolk">
+                      <span id="span6" class="error">Please enter the state </span>
+                    </div>
+                    <div class="col-50">
+                      <label for="zip">Zip</label>
+                      <input type="text" id="zip" name="zip" placeholder="NR3 1PD">
+                      <span id="span7" class="error">Please enter postcode </span>
+                      <span id="span18" class="error">Invalid Postcode. Hint: NR3 1PD </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-50">
+                  <h3>Payment</h3>
+                  <label for="fname">Accepted Cards</label>
+                  <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  </div>
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="John Smith">
+                  <span id="span8" class="error">Please enter name on card </span>
+                  <span id="span9" class="error">Name on card contains alphabets only </span>
+                  <label for="ccnum">Debig/Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <span id="span10" class="error">Please enter credit / debit card number </span>
+                  <span id="span11" class="error">Invalid card no. Please enter 16 digit card no. </span>
+                  <label for="expmonth">Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="09">
+                  <span id="span12" class="error">Please enter month of card expiry </span>
+                  <br>
+                  <span id="span13" class="error">Invalid card expiry month </span>
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="26">
+                      <span id="span14" class="error">Please enter year of card expiry </span>
+                      <br>
+                      <span id="span15" class="error">Invalid card expiry year </span>
+                    </div>
+                    <div class="col-50">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                      <span id="span16" class="error">Please enter card CVV no. </span>
+                      <br>
+                      <span id="span17" class="error">Invalid CVV no. Please enter 3 digit CVV no. </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label>
+                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+              </label>
+              <button class="btn" id="extras_payment_btn" type="submit">Complete Payment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="../JS/Receptionist_JS/extras_payment_processing.js"></script>
+  <footer>
+    <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
+  </footer>
+</body>
+
+</html>
