@@ -23,18 +23,6 @@ function onHousekeeperTextReady(text){
         }
     });
 
-    // let output = '<ul> ';
-    // data.results.forEach(element => {
-    //     output += `<li>  Room No: ${element.r_no } </li>`;
-    // })
-    // output += '</ul>'
-    //
-    // const results = document.querySelector('#narooms');
-    // results.innerHTML =
-    //     ` <h3> Results </h3>
-    //   <h6> rows count: ${data.rows} </h6>
-    //   <ul> ${output} </ul>
-    // `;
 }
 
 function onHousekeeperResponse(response){
