@@ -887,7 +887,7 @@
     display: flex;
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    /*background: #fff;*/
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
