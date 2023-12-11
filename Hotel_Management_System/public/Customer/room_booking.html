@@ -9,6 +9,8 @@
   <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/customer_style.css">
   <!--Importing css file specific to room booking page to show client-side validations error messages  -->
   <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/room_booking_validation.css">
+  <script src="https://kit.fontawesome.com/67bd86ffdc.js" crossorigin="anonymous"></script>
+  <script src="../JS/hamburger.js" defer ></script>
 </head>
 
 <body>
@@ -26,7 +28,7 @@
           <ul id="header_links">
             <li><span><a href="index.html">Home</a></span></li>
             <!--Current page nav link remains in bold always when selected -->
-            <li><span style="font-size: larger; font-weight: bold"><a href="room_booking.html">Book Now</a></span></li>
+            <li><span  class="open_page"><a href="room_booking.html">Book Now</a></span></li>
             <li><span><a href="gallery.html">Gallery</a></span></li>
             <li><span><a href="contact_us.html">Contact us</a></span></li>
             <li><span><a href="about_us.html">About us</a></span></li>
@@ -34,8 +36,12 @@
           </ul>
         </nav>
       </div>
+      <a id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </a>
     </div>
   </header>
+
   <!-- Main tag in containing main body content related to the page -->
   <main>
     <div class="landing_page_container">

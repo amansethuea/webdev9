@@ -10,7 +10,7 @@
     display: flex !important;
     text-align: center !important;
     font-size: 18px !important;
-    background: #fff !important;
+    /*background: #fff !important;*/
     justify-content: flex-start !important;
     align-items: center !important;
     flex-direction: column !important;
