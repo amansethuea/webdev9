@@ -1,3 +1,4 @@
+// Client-side JS validations for contact us page form inputs
 document.getElementById("contact_us_form").addEventListener("submit", onSubmitClick);
 function onSubmitClick(event) {
     var name = document.getElementById("name").value;

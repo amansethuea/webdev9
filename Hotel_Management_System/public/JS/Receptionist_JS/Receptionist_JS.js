@@ -1,3 +1,5 @@
+// Swipe between the images to go to next or previous one 
+// Image swiper for receptionist gallery page
 document.addEventListener("DOMContentLoaded", function() {
     var swiper = new Swiper(".mySwiper", {
         speed: 600,

@@ -1,3 +1,4 @@
+// Getting room selection details as a local storage on Customer Details page
 const bookingDetails = JSON.parse(localStorage.getItem("roomDetails"));
 console.log(bookingDetails);
 
@@ -13,6 +14,7 @@ function createGuestDetailsData(guest, firstname, lastname, mobile, email) {
     return data;
 }
 
+// Client-side JS validations for the Customer Details form inputs 
 var refButton = document.getElementById("details_submit_btn");
 refButton.addEventListener("click", function (event) {
     const guest = document.getElementById('guest').value;
@@ -21,43 +23,49 @@ refButton.addEventListener("click", function (event) {
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
 
+    // If guest field is empty of given 0
     if (guest == "" || guest == 0) {
         document.getElementById("span1").style.display = "inline";
     }
     else {
         document.getElementById("span1").style.display = "none";
     }
+    // Checks if first name is not entered
     if (firstname == "") {
         document.getElementById("span4").style.display = "inline";
     }
     else {
         document.getElementById("span4").style.display = "none";
     }
+    // Checks if numeric values are entered in the first name field
     if (/^[a-zA-Z ]*$/.test(firstname) == true) {
         document.getElementById("span5").style.display = "none";
     }
     else {
         document.getElementById("span5").style.display = "inline";
     }
+    // Checks if last name is not entered
     if (lastname == "") {
         document.getElementById("span6").style.display = "inline";
     }
     else {
         document.getElementById("span6").style.display = "none";
     }
+    // Checks if numeric values are entered in the last name field
     if (/^[a-zA-Z ]*$/.test(lastname) == true) {
         document.getElementById("span7").style.display = "none";
     }
     else {
         document.getElementById("span7").style.display = "inline";
     }
+    // Checks if the mobile no field has any alphabets 
+    // Checks if the mobile number exceeds 11 numbers
     if (/^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(mobile) == true) {
         document.getElementById("span8").style.display = "none";
     }
     else {
         document.getElementById("span8").style.display = "inline";
     }
-
     // email check validation including blank field check
     if (/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(email) == true) {
         document.getElementById("span9").style.display = "none";

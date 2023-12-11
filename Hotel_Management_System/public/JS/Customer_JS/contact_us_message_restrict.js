@@ -1,3 +1,5 @@
+// To check the word limit of the Inquiry message
+// Restricts user to enter words more than 255 chars
 var content;
 $('textarea').on('keyup', function () {
     var letters = $(this).val().length;
