@@ -3,16 +3,17 @@
 
 <head>
   <title>The Crown Hotel</title>
+  <!--Importing common style sheet for gallery page-->
   <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+  <!--Importing font awesome and google font -->
   <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- Link Swiper's CSS -->
+  <!--Importing open source swiper bundle css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!--Invoking open source swiper budle js to make swiper work to swipe through images on the page -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <!--JS script to enable swiper -->
   <script src="../JS/Customer_JS/Customer_JS.js" defer></script>
-
-
 </head>
 
 <body>
@@ -20,16 +21,17 @@
     <div id="header-spacer">
       <div> <!-- Logo -->
         <a href="index.html">
-          <img
-                  src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                  alt="Logo emblem of a hotel with a crown on top">
+          <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+            alt="Logo emblem of a hotel with a crown on top">
         </a>
       </div>
       <div id="header-links"> <!-- Links -->
+        <!--Navigation bar-->
         <nav>
           <ul id="header_links">
             <li><span><a href="index.html">Home</a></span></li>
             <li><span><a href="room_booking.html">Book Now</a></span></li>
+            <!--Current page nav link remains in bold always when selected -->
             <li><span style="font-size: larger; font-weight: bold"><a href="gallery.html">Gallery</a></span></li>
             <li><span><a href="contact_us.html">Contact us</a></span></li>
             <li><span><a href="about_us.html">About us</a></span></li>
@@ -39,24 +41,26 @@
       </div>
     </div>
   </header>
-
+  <!-- Main tag in containing main body content related to the page -->
   <main>
-
     <div class="gallery_rooms">
       <div id="gallery_heading">
         <h1 class="other_pages_main_header">Welcome to luxury</h1>
         <h2 class="contact_sub_heading"><em>Rooms</em></h2>
       </div>
+      <!-- Implementing swiper to swipe through images on gallery page -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide" style="display: flex">
             <h1>Trafalgar Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_5f6b033c-2381-499c-a2c1-5d4de087bfec.jpeg"
                 alt="">
-              <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
-                comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              <!-- Display room/suite information on hover over -->
+              <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace
+                of
+                comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi
+                is
                 fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
                 flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
                 or pleasure, you'll feel like royalty at our hotel.</div>
@@ -64,7 +68,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Presidential Suite</h1>
             <div class="swiper-image-container">
@@ -81,13 +84,14 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Royal Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_6760ce93-6bfd-43ba-ad02-ff003bc7aee9.jpeg">
-              <div class="swiper-hover-text">Elegance extends beyond the sleeping quarters, as each room boasts a curated
-                selection of amenities fit for royalty. Experience the convenience of a well-stocked minibar, providing an
+              <div class="swiper-hover-text">Elegance extends beyond the sleeping quarters, as each room boasts a
+                curated
+                selection of amenities fit for royalty. Experience the convenience of a well-stocked minibar, providing
+                an
                 array of refreshments to satisfy your discerning palate. For those seeking the perfect brew, our in-room
                 coffee maker stands ready to craft your favorite beverage. A state-of-the-art flat-screen TV awaits your
                 entertainment desires, providing a delightful escape within the confines of your majestic retreat.
@@ -96,12 +100,12 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Prestige Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_34530e4f-8d42-4b4e-8778-7da3814a58ce.jpeg">
-              <div class="swiper-hover-text">The allure of regality continues into the lavishly appointed bathrooms, where
+              <div class="swiper-hover-text">The allure of regality continues into the lavishly appointed bathrooms,
+                where
                 luxury knows no bounds. Revel in the embrace of complimentary toiletries and envelop yourself in the
                 sumptuous comfort of our provided bathrobes. Whether your visit is driven by business or leisure, The
                 Crown Hotel ensures an experience that transcends expectations, leaving you with a profound sense of
@@ -112,14 +116,15 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>King Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_433771c2-1ac7-49b7-987c-53140b6a56ba.jpeg">
               <div class="swiper-hover-text">
-                Indulge in the regal ambiance of our castle hotel, where each accommodation is a sanctuary of opulence and
-                sophistication. Revel in the spacious allure of our double beds, adorned with exquisite premium linens and
+                Indulge in the regal ambiance of our castle hotel, where each accommodation is a sanctuary of opulence
+                and
+                sophistication. Revel in the spacious allure of our double beds, adorned with exquisite premium linens
+                and
                 plump pillows that invite a restful repose. Seamlessly blending modern convenience with timeless charm,
                 our fast and dependable wifi ensures you stay connected while immersed in the historical surroundings.
               </div>
@@ -127,7 +132,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Queen Suite</h1>
             <div class="swiper-image-container">
@@ -141,7 +145,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Emperor Suite</h1>
             <div class="swiper-image-container">
@@ -156,7 +159,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Empress Suite</h1>
             <div class="swiper-image-container">
@@ -164,14 +166,14 @@
               <div class="swiper-hover-text">Immerse yourself in the historical grandeur of our castle hotel room, where
                 each detail tells a story of bygone eras. The four-poster canopy bed takes center stage, surrounded by
                 antique furnishings that transport you to a different time. Yet, modernity is not forgotten, with
-                high-speed wifi and contemporary amenities seamlessly integrated. The room's ambiance is a symphony of the
+                high-speed wifi and contemporary amenities seamlessly integrated. The room's ambiance is a symphony of
+                the
                 past and present, offering a unique and enchanting experience that befits the castle's rich heritage.
               </div>
             </div>
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Prince Suite</h1>
             <div class="swiper-image-container">
@@ -179,7 +181,8 @@
               <div class="swiper-hover-text">Experience the epitome of serenity in our castle hotel's luxurious suite.
                 The expansive living area, adorned with regal decor, invites you to unwind in style. The king-sized bed,
                 swathed in luxurious linens, promises a night of unparalleled comfort. Bask in the ambiance of a private
-                retreat as you enjoy the convenience of a well-equipped minibar and a Nespresso coffee maker. The suite's
+                retreat as you enjoy the convenience of a well-equipped minibar and a Nespresso coffee maker. The
+                suite's
                 opulent bathroom, featuring premium toiletries and plush bathrobes, completes the indulgent experience,
                 ensuring your stay is nothing short of extraordinary.
               </div>
@@ -187,7 +190,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Princess Suite</h1>
             <div class="swiper-image-container">
@@ -203,13 +205,13 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Duke Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_8f73a4a9-9eb8-4956-b82f-1773a2449c1f.jpeg">
               <div class="swiper-hover-text">Enter a realm of refined elegance as you step into our castle hotel room.
-                Every corner exudes a timeless charm that seamlessly intertwines with modern comforts. The grandeur of our
+                Every corner exudes a timeless charm that seamlessly intertwines with modern comforts. The grandeur of
+                our
                 king-sized beds, adorned with plush linens, guarantees a restful night's sleep. Immerse yourself in the
                 tranquility of our thoughtfully designed space, where antique furnishings and contemporary amenities
                 harmoniously coexist. Indulge in the art of relaxation amidst the regal ambiance, and let the allure of
@@ -219,7 +221,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Duchess Suite</h1>
             <div class="swiper-image-container">
@@ -235,7 +236,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Marquis Suite</h1>
             <div class="swiper-image-container">
@@ -250,7 +250,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Marquis Suite</h1>
             <div class="swiper-image-container">
@@ -258,30 +257,31 @@
               <div class="swiper-hover-text">Ascend to tranquility in our castle hotel's exclusive tower oasis. This
                 unique room offers panoramic views of the surrounding landscapes from its lofty vantage point. The king-
                 sized bed, surrounded by antique furnishings, provides a regal retreat. Delight in the modern amenities
-                seamlessly integrated into the historical setting, ensuring a serene escape. The tower oasis is a haven of
+                seamlessly integrated into the historical setting, ensuring a serene escape. The tower oasis is a haven
+                of
                 peace, inviting you to unwind in the lap of both nature and luxury.
               </div>
             </div>
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Marchioness Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_13536280-1f79-47b0-ba11-4c716f2bd140.jpeg">
-              <div class="swiper-hover-text">Embrace the extravagance of our noble suite, where every element speaks to a
+              <div class="swiper-hover-text">Embrace the extravagance of our noble suite, where every element speaks to
+                a
                 sense of grandeur. The suite features a lavish canopy bed, complemented by rich tapestries and exquisite
                 furnishings. Indulge in the spacious living area, equipped with a minibar and a state-of-the-art
                 entertainment system. The suite's opulent bathroom, complete with premium toiletries and soft bathrobes,
-                ensures a pampering experience fit for royalty. Revel in the splendor that defines this noble abode within
+                ensures a pampering experience fit for royalty. Revel in the splendor that defines this noble abode
+                within
                 the castle walls.
               </div>
             </div>
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Earl Suite</h1>
             <div class="swiper-image-container">
@@ -296,13 +296,14 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Countess Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_a19475ce-b27b-4762-8128-6a0f77266f0c.jpeg">
-              <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
-                comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace
+                of
+                comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi
+                is
                 fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
                 flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
                 or pleasure, you'll feel like royalty at our hotel.</div>
@@ -310,7 +311,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Viscount Suite</h1>
             <div class="swiper-image-container">
@@ -324,7 +324,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Viscountess Suite</h1>
             <div class="swiper-image-container">
@@ -339,13 +338,13 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Baron Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_7b98afb9-c465-4b71-8309-26093fd1cc7c.jpeg">
               <div class="swiper-hover-text">Unwind in the serenity of our castle hotel room overlooking the lush castle
-                gardens. The queen-sized bed, adorned with sumptuous linens, invites a peaceful night's sleep. Bask in the
+                gardens. The queen-sized bed, adorned with sumptuous linens, invites a peaceful night's sleep. Bask in
+                the
                 natural beauty just beyond your window while enjoying the modern conveniences seamlessly integrated into
                 the room. The ambiance is one of tranquil elegance, offering a retreat into nature's embrace within the
                 historic confines of the castle.</div>
@@ -353,13 +352,14 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Baroness Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_8a3d06ad-8710-4248-aa93-e8ea14f9020a.jpeg">
-              <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace of
-                comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi is
+              <div class="swiper-hover-text">Experience the royal treatment at our hotel, where every room is a palace
+                of
+                comfort and elegance. Our spacious double beds are fitted with premium linens and pillows, and our wifi
+                is
                 fast and reliable. You'll also enjoy a range of amenities, such as a minibar, a coffee maker, a
                 flat-screen TV, and a luxurious bathroom with toiletries and bathrobes. Whether you're here for business
                 or pleasure, you'll feel like royalty at our hotel.</div>
@@ -367,22 +367,20 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
-
           <div class="swiper-slide" style="display: flex">
             <h1>Knight Suite</h1>
             <div class="swiper-image-container">
               <img class="swiper-image image-shadow" src="../Images/rooms/_89c90bc8-18ef-43d2-bc84-b569783db531.jpeg">
               <div class="swiper-hover-text">Ascend to an imperial refuge in our castle hotel's tower suite. The room,
                 set against the backdrop of ancient stone walls, features a king-sized bed enveloped in regal luxury.
-                Delight in the tower's unique charm, with panoramic views of the surrounding landscapes. Modern amenities,
+                Delight in the tower's unique charm, with panoramic views of the surrounding landscapes. Modern
+                amenities,
                 such as high-speed wifi and a well-appointed workstation, ensure a seamless blend of past and present,
                 making your stay in the imperial tower an unforgettable experience.</div>
             </div>
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Dame Suite</h1>
             <div class="swiper-image-container">
@@ -397,7 +395,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
           <div class="swiper-slide" style="display: flex">
             <h1>Squire Suite</h1>
             <div class="swiper-image-container">
@@ -413,8 +410,6 @@
             <div class="swiper-button-next" style="right: 10%"></div>
             <div class="swiper-button-prev" style="left: 10%"></div>
           </div>
-
-
           <div class="swiper-slide" style="display: flex">
             <h1>Lady Suite</h1>
             <div class="swiper-image-container">
@@ -434,10 +429,8 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
-
-
+    <!-- Div to show facilities information such as gym, bar etc -->
     <div class="gallery_facilities">
-
       <h1>The Dining Hall</h1>
       <div class="gallery_facilities_img_text_container">
         <img class='soft-box image-shadow' src="../Images/dining_hall/_185e3a35-d452-474b-b26a-8a2fefc46435.jpeg">
@@ -453,7 +446,7 @@
 
       <h1>The Bar</h1>
       <div class="gallery_facilities_img_text_container">
-        <img class='soft-box image-shadow'  src="../Images/bar/_125af034-89a3-4846-a1a5-f5a6e925879c.jpeg">
+        <img class='soft-box image-shadow' src="../Images/bar/_125af034-89a3-4846-a1a5-f5a6e925879c.jpeg">
         <p>If you are looking for a lively night out, look no further than
           The Crown Hotel. Our stylish bar offers a variety of drinks, from
           classic cocktails to craft beers. Whether you want a fun party
@@ -478,7 +471,7 @@
 
       <h1>The Conference Room</h1>
       <div class="gallery_facilities_img_text_container">
-       <img class='soft-box image-shadow' src="../Images/conference_room/_936d4131-1c48-498a-85fd-11f6df70e186.jpeg">
+        <img class='soft-box image-shadow' src="../Images/conference_room/_936d4131-1c48-498a-85fd-11f6df70e186.jpeg">
         <p>If you are looking for a professional venue, look no further than
           The Crown Hotel. Our spacious conference room offers a variety
           of features, from audio-visual equipment to catering services.
@@ -489,12 +482,14 @@
           your reservation today and treat yourself to a royal business at
           The Crown Hotel.</p>
       </div>
-      
+
     </div>
   </main>
+  <!-- Page footer -->
   <footer>
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
   </footer>
 
 </body>
+
 </html>

@@ -3,9 +3,13 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Importing font awesome for fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Importing common style sheet for payment process page-->
   <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+  <!--Importing css file specific to payment process form styling  -->
   <link rel="stylesheet" href="../CSS/Customer_Styles/payment_page.css">
+  <!--Importing css file specific to payment process page to show client-side validations error messages  -->
   <link rel="stylesheet" href="../CSS/Customer_Styles/payment_detail_validation.css">
 </head>
 
@@ -19,9 +23,11 @@
         </a>
       </div>
       <div id="header-links-container"> <!-- Links -->
+        <!--Navigation bar-->
         <nav>
           <ul id="header_links">
             <li><span><a href="../Customer/index.html">Home</a></span></li>
+            <!--Current page nav link remains in bold always when selected -->
             <li><span style="font-size: larger; font-weight: bold"><a href="../Customer/payment_process.html">Payment
                   Details</a></span></li>
             <li><span><a href="../Customer/customer_details.html">Back</a></span></li>
@@ -30,15 +36,15 @@
       </div>
     </div>
   </header>
+  <!-- Main tag in containing main body content related to the page -->
   <main>
-<!--    TODO: ADD COMMENTS-->
-
     <div class="landing_page_container">
       <h1 class="other_pages_main_header">Payment Details</h1>
       <h4 class="contact_sub_heading"><em>Payment Process</em></h4>
       <div class="row">
         <div class="col-75">
           <div class="container">
+            <!-- Payment Details form -->
             <form id="payment_details_form">
               <div class="row">
                 <div class="col-50">
@@ -117,6 +123,7 @@
             </form>
           </div>
         </div>
+        <!-- Cart div to show qty of rooms and total booking cost -->
         <div class="col-25">
           <div class="container">
             <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b
@@ -130,7 +137,9 @@
     </div>
 
   </main>
+  <!-- JS Script to process the payment and take customer to payment summary page -->
   <script src="../JS/Customer_JS/payment_processing.js"></script>
+  <!-- Page footer -->
   <footer>
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
   </footer>

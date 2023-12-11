@@ -3,28 +3,32 @@
 
 <head>
     <title>The Crown Hotel</title>
+    <!--Importing common style sheet for contact us page-->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+    <!--Importing css file specific to contact us page to show client-side validations error messages  -->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_contact_validate.css">
+    <!--Importing font awesome and google font -->
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<!--    TODO: ADD COMMENTS-->
+
 <body>
     <header>
         <div id="header-spacer">
             <div> <!-- Logo -->
                 <a href="index.html">
-                    <img
-                            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                            alt="Logo emblem of a hotel with a crown on top">
+                    <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                        alt="Logo emblem of a hotel with a crown on top">
                 </a>
             </div>
             <div id="header-links">
+                <!--Navigation bar-->
                 <nav>
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
                         <li><span><a href="room_booking.html">Book Now</a></span></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
+                        <!--Current page nav link remains in bold always when selected -->
                         <li><span style="font-size: larger; font-weight: bold"><a href="contact_us.html">Contact
                                     us</a></span></li>
                         <li><span><a href="about_us.html">About us</a></span></li>
@@ -34,7 +38,7 @@
             </div>
         </div>
     </header>
-
+    <!-- Main tag in containing main body content related to the page -->
     <main>
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Contact Information</h1>
@@ -43,6 +47,7 @@
             <div class="contact_box"><span class="fa fa-mail-bulk"></span><a
                     href="mailto:zfb23ecu@uea.ac.uk">thecrownhotel@gmail.com</a></div>
             <div class="contact_form_box"><span class="fa fa-person-booth"> Quick Inquiry Booth</span>
+                <!-- Contact us form -->
                 <form id="contact_us_form">
                     <div class="form-element">
                         <div class="form-element">
@@ -81,6 +86,7 @@
                             <span id="span7">255 words left</span>
                         </div>
                     </div>
+                    <!-- Contact us form footer -->
                     <div class="contact-form-footer">
                         <button class="btn" id="contact_submit_btn" type="submit">Submit</button>
                         <button class="btn" id="contact_reset_btn" type="reset">Reset</button>
@@ -90,8 +96,11 @@
         </div>
     </main>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <!-- JS script to restrict inquiry message to 255 characters -->
     <script src="../JS/Customer_JS/contact_us_message_restrict.js"></script>
+    <!-- JS script for client-side validations on unexpected or invalid inputs in form -->
     <script src="../JS/Customer_JS/contact_us_form_validation.js"></script>
+    <!-- Page footer -->
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
