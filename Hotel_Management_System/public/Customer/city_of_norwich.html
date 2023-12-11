@@ -3,14 +3,18 @@
 
 <head>
   <title>The Crown Hotel</title>
+  <!--Importing css file specific to city of norwich page  -->
   <link rel="stylesheet" href="../CSS/Customer_Styles/city_of_norwich_slider.css">
+  <!--Importing common style sheet for city of norwich page-->
   <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+  <!--Importing open source swiper bundle css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!--Invoking open source swiper budle js to make swiper work to swipe through images on the page -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!--Invoking js specific to city of norwich page to display image swiper -->
   <script src="../JS/Customer_JS/city_of_norwich_swiper.js" defer></script>
 
 </head>
-<!--    TODO: ADD COMMENTS-->
 <body>
   <header>
     <div id="header-spacer">
@@ -22,6 +26,7 @@
         </a>
       </div>
       <div id="header-links"> <!-- Links -->
+        <!--Navigation bar-->
         <nav>
           <ul id="header_links">
             <li><span><a href="index.html">Home</a></span></li>
@@ -29,25 +34,30 @@
             <li><span><a href="gallery.html">Gallery</a></span></li>
             <li><span><a href="contact_us.html">Contact us</a></span></li>
             <li><span><a href="about_us.html">About us</a></span></li>
+            <!--Current page nav link remains in bold always when selected -->
             <li><span style="font-size: larger; font-weight: bold"><a href="city_of_norwich.html">City of Norwich</a></span></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
+  <!-- Main tag in containing main body content related to the page -->
   <main>
     <div id="City_of_Norwich_heading">
       <h1 class="other_pages_main_header">The City of Norwich</h1>
       <h2 class="contact_sub_heading"><em>A fine city indeed</em></h2>
     </div>
 
+    <!-- Div containing images which can be swiped through for viewing purpose -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <h1>Sainbury Art Centre</h1>
+          <!-- Source of image -->
           <img src="../Images/online_images_for_website/Sainsbury_Centre_for_the_Visual_Arts_External_Large.jpeg">
         </div>
         <div class="swiper-slide">
+          <!-- Heading of first image -->
           <h1>Eaton Park</h1>
           <img src="../Images/online_images_for_website/Eaton_Park_Lake_Side_External.jpg">
         </div>
@@ -64,10 +74,12 @@
           <img src="../Images/online_images_for_website/Norwich_Theatre_Royal_External_Photograph.jpg">
         </div>
       </div>
+      <!-- Divs for left and right arrow display on webpage for swiping purpose -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
       <div class="autoplay-progress">
+        <!-- Graphics tag to create circle in a box -->
         <svg viewBox="0 0 48 48">
           <circle cx="24" cy="24" r="20"></circle>
         </svg>
@@ -76,6 +88,7 @@
     </div>
     
   </main>
+  <!-- Page footer -->
   <footer>
     <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
   </footer>
