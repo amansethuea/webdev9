@@ -64,16 +64,20 @@ refButton.addEventListener("click", function (event) {
     var usercheckoutdate = new Date(document.getElementById("checkoutdate").value).toJSON();
     var today = new Date().toJSON().slice(0, 10);
 
+    // Client-side JS validations on Checkin page for Already Have a Booking section
+    // Checks if the reference field is empty
     if (referenceno == "") {
         document.getElementById("span5").style.display = "inline";
     }
     else {
         document.getElementById("span5").style.display = "none";
     }
+    // Checks if the reference number length is smaller than 5 since the booking ref no. has to be a 5 digit ID
     if (referenceno.length >= 1 && referenceno.length < 5) {
         document.getElementById("span6").style.display = "inline";
         document.getElementById("span8").style.display = "none";
     }
+    // Checks if the reference number length is greater than 5 since the booking ref no. has to be a 5 digit ID
     else if (referenceno.length > 5) {
         document.getElementById("span8").style.display = "inline";
         document.getElementById("span6").style.display = "none";
@@ -82,29 +86,33 @@ refButton.addEventListener("click", function (event) {
         document.getElementById("span6").style.display = "none";
         document.getElementById("span8").style.display = "none";
     }
-
+    // Checks if the checkin date is of previous date than today's date
     if (usercheckindate < today) {
         document.getElementById("span2").style.display = "inline";
     }
     else {
         document.getElementById("span2").style.display = "none";
     }
+    // Checks if the checkin date is not provided
     if (!usercheckindate) {
         document.getElementById("span9").style.display = "inline";
     }
     else {
         document.getElementById("span9").style.display = "none";
     }
-
+    // Checks if the checkout date is same as today or of previous date
     if (usercheckoutdate <= today) {
         document.getElementById("span4").style.display = "inline";
     }
     else {
         document.getElementById("span4").style.display = "none";
     }
+    // Checks if the checkout date is not provided
     if (!usercheckoutdate) {
         document.getElementById("span10").style.display = "inline";
     }
+    // Checks if the checkout date is same as checkin date
+    // Checks if the checkout date is of previous date than checkin date
     else if (usercheckoutdate <= usercheckindate) {
         document.getElementById("span11").style.display = "inline";
         document.getElementById("span10").style.display = "none";
@@ -118,14 +126,13 @@ refButton.addEventListener("click", function (event) {
         const checkin = document.getElementById('checkindate').value;
         const checkout = document.getElementById('checkoutdate').value;
         const roomStatus = 'O';
+        // GET call to fetch booking details of a customer as per the reference number and checkin, checkout dates
         fetch(`http://localhost:3000/receptionist/refno?room_status=${roomStatus}&b_ref=${referenceNo}&checkin_date=${checkin}&checkout_date=${checkout}`)
             .then(onResponseReceptionistCheckinData)
             .then(onTextReadyReceptionistCheckinData)
     }
 
-
-
-
+    // Prevent auto submit of the details on button click
     event.preventDefault();
 });
 

@@ -48,37 +48,41 @@ function onResponseForReceptionistAvailability(response) {
     return response.text();
 }
 
+// Client-side JS validations for Book Now page for customer 
 var refButton = document.getElementById("bookingbtn");
 refButton.addEventListener("click", function (event) {
-
 
     const checkin = new Date(document.getElementById("booking-in-date").value).toJSON();
     const checkout = new Date(document.getElementById("booking-out-date").value).toJSON();
     const today = new Date().toJSON().slice(0, 10);
     const roomType = document.getElementById('room_type_select').value;
 
+    // Checks if checkin date is of previous date than today's date
     if (checkin < today) {
         document.getElementById("span1").style.display = "inline";
     }
     else {
         document.getElementById("span1").style.display = "none";
     }
+    // Checks if there is no input provided for checkin date
     if (!checkin) {
         document.getElementById("span2").style.display = "inline";
     }
     else {
         document.getElementById("span2").style.display = "none";
     }
-
+    // Checks if the checkout is of same as today's date or of a previous date. 
     if (checkout <= today) {
         document.getElementById("span3").style.display = "inline";
     }
     else {
         document.getElementById("span3").style.display = "none";
     }
+    // Checks if there is no input provided for the checkout date
     if (!checkout) {
         document.getElementById("span4").style.display = "inline";
     }
+    // Checks if the checkout date is same as checkin date or of a previous date than the checkin date
     else if (checkout <= checkin) {
         document.getElementById("span5").style.display = "inline";
         document.getElementById("span4").style.display = "none";
@@ -86,6 +90,7 @@ refButton.addEventListener("click", function (event) {
     else {
         document.getElementById("span5").style.display = "none";
         let selectedRoom;
+        // Mapping input selection by the user to the DB values
 
         if (roomType == "standard_double") {
             selectedRoom = "std_d";
@@ -102,7 +107,8 @@ refButton.addEventListener("click", function (event) {
         else {
             console.log("Invalid room selection")
         }
-
+        
+        // GET call to fetch the room data available within the given time range and as per room type selection
         fetch(`http://localhost:3000/receptionist/roomavailability?checkin_date=${checkin}&checkout_date=${checkout}&room_type=${selectedRoom}`)
             .then(onResponseForReceptionistAvailability)
             .then(onTextReadyForReceptionistAvailability);

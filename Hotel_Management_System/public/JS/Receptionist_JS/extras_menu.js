@@ -11,32 +11,39 @@ function createExtraItemsDetailsData(total_fnb_bill) {
 
 var refButton = document.getElementById("extras_btn");
 refButton.addEventListener("click", function (event) {
+    // Checks if the local storage contains previous data, then resets it
     if (localStorage.getItem('extraItemDetails') != null) {
         console.log("Previous data found in local storage extraItemDetails. Clearing it first before proceeding.")
         localStorage.removeItem('extraItemDetails');
+        // Creates a new local storage containing the food and drinks costs
         localStorage.setItem('extraItemDetails', JSON.stringify(createExtraItemsDetailsData(totalCost)));
         const extraItemDetails = localStorage.getItem("extraItemDetails");
         console.log("Created new local storage data for extraItemDetails");
         console.log(extraItemDetails);
+        // If no food or drinks are selected, then directs to final checkout page 
         if (totalCost == 0 || totalCost == 0.00 || totalCost == '0') {
             window.location.href = "http://localhost:3000/receptionist/final_checkout.html";
 
         }
+        // If food or drinks are selected, then directs to the payment page for food and drinks
         else {
             window.location.href = "http://localhost:3000/receptionist/payment_of_extras.html";
         }
         
     }
     else {
+        // Creates local storage if no existing local storage data is found to have food and drinks cost
         localStorage.setItem('extraItemDetails', JSON.stringify(createExtraItemsDetailsData(totalCost)));
         console.log("No previous data in local storage found for extraItemDetails. Creating fresh..");
         const extraItemDetails = localStorage.getItem("extraItemDetails");
         console.log(extraItemDetails);
+        // If no food or drinks are selected, then directs to final checkout page
         if (totalCost == 0 || totalCost == 0.00 || totalCost == '0') {
             console.log(typeof(totalCost));
             window.location.href = "http://localhost:3000/receptionist/final_checkout.html";
 
         }
+        // If food or drinks are selected, then directs to the payment page for food and drinks
         else {
             console.log(totalCost);
             window.location.href = "http://localhost:3000/receptionist/payment_of_extras.html";
@@ -72,6 +79,7 @@ items.forEach(item => {
             const getChildren = getDivs.querySelector('.itemDesc');
             const price = getChildren.querySelector('.price').innerText;
 
+            // Calculate the total cost of food and drinks
             const cost = parseFloat(price) + totalCost;
             console.log('Calculated cost on selection:', cost);
             totalCost = cost;
@@ -84,7 +92,8 @@ items.forEach(item => {
             const getDivs = this;
             const getChildren = getDivs.querySelector('.itemDesc');
             const price = getChildren.querySelector('.price').innerText;
-
+            
+            // Calculate the total cost of food and drinks
             const cost = totalCost - parseFloat(price);
             console.log('Calculated cost on de-selection:', cost);
             totalCost = cost;

@@ -52,7 +52,6 @@ function onResponseForCustomerAvailability(response) {
 var refButton = document.getElementById("bookingbtn");
 refButton.addEventListener("click", function (event) {
 
-
     const checkin = new Date(document.getElementById("booking-in-date").value).toJSON();
     const checkout = new Date(document.getElementById("booking-out-date").value).toJSON();
     const today = new Date().toJSON().slice(0, 10);
