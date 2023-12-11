@@ -5,7 +5,7 @@ $('textarea').on('keyup', function () {
     // limit message
     if (letters >= 255) {
         $(this).val(content);
-        alert('no more than 10 letters, please!');
+        alert('no more than 255 letters, please!');
     } else {
         content = $(this).val();
     }
