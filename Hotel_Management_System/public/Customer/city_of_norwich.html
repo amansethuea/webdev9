@@ -13,6 +13,8 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!--Invoking js specific to city of norwich page to display image swiper -->
   <script src="../JS/Customer_JS/city_of_norwich_swiper.js" defer></script>
+  <script src="https://kit.fontawesome.com/67bd86ffdc.js" crossorigin="anonymous"></script>
+  <script src="../JS/hamburger.js" defer ></script>
 
 </head>
 <body>
@@ -25,8 +27,9 @@
                   alt="Logo emblem of a hotel with a crown on top">
         </a>
       </div>
-      <div id="header-links"> <!-- Links -->
+      <div id=header-links-container"> <!-- Links -->
         <!--Navigation bar-->
+
         <nav>
           <ul id="header_links">
             <li><span><a href="index.html">Home</a></span></li>
@@ -34,11 +37,15 @@
             <li><span><a href="gallery.html">Gallery</a></span></li>
             <li><span><a href="contact_us.html">Contact us</a></span></li>
             <li><span><a href="about_us.html">About us</a></span></li>
+            <li><span  class="open_page"><a href="city_of_norwich.html">City of Norwich</a></span></li>
             <!--Current page nav link remains in bold always when selected -->
             <li><span style="font-size: larger; font-weight: bold"><a href="city_of_norwich.html">City of Norwich</a></span></li>
           </ul>
         </nav>
       </div>
+      <a id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </a>
     </div>
   </header>
   <!-- Main tag in containing main body content related to the page -->

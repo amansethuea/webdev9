@@ -4,6 +4,13 @@
   <title>The Crown Hotel</title>
   <!--Importing common style sheet for index page-->
   <link rel="stylesheet" type="text/css" href="../CSS/Customer_Styles/customer_style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../JS/Customer_JS/Customer_JS.js"></script>
+  <script src="https://kit.fontawesome.com/67bd86ffdc.js" crossorigin="anonymous"></script>
+  <script src="../JS/hamburger.js" defer ></script>
+
 </head>
 
 <body>
@@ -20,6 +27,7 @@
         <!--Navigation bar-->
         <nav>
           <ul id="header_links">
+            <li><span class="open_page"><a href="index.html">Home</a></span></li>
             <!--Current page nav link remains in bold always when selected -->
             <li><span style="font-size: larger; font-weight: bold"><a href="index.html">Home</a></span></li>
             <li><span><a href="room_booking.html">Book Now</a></span></li>
@@ -30,6 +38,9 @@
           </ul>
         </nav>
       </div>
+      <a id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </a>
     </div>
   </header>
   <!-- Main tag in containing main body content related to the page -->
