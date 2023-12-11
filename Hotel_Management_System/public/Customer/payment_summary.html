@@ -3,36 +3,42 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Importing font awesome for fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Importing common style sheet for payment summary page-->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+    <!--Importing css file specific to payment summary invoice styling  -->
     <link rel="stylesheet" href="../CSS/Customer_Styles/payment_summary.css">
-    <link rel="stylesheet" href="../CSS/Customer_Styles/payment_detail_validation.css">
 </head>
-<!--    TODO: ADD COMMENTS-->
+
 <body>
     <header>
         <div id="header-spacer">
             <div> <!-- Logo -->
                 <a href="../Customer/index.html">
-                    <img
-                            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                            alt="Logo emblem of a hotel with a crown on top">
+                    <img src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                        alt="Logo emblem of a hotel with a crown on top">
                 </a>
             </div>
-            <div id="header-links"> 
+            <div id="header-links">
+                <!--Navigation bar-->
                 <nav>
                     <ul id="header_links">
-                        <li><span style="font-size: larger; font-weight: bold"><a href="../Customer/index.html">Back to Home</a></span></li>
+                        <!--Current page nav link remains in bold always when selected -->
+                        <li><span style="font-size: larger; font-weight: bold"><a href="../Customer/index.html">Back to
+                                    Home</a></span></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+    <!-- Main tag in containing main body content related to the page -->
     <main>
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Booking Summary</h1>
             <h4 class="contact_sub_heading"><em>Booking Details</em></h4>
             <div class="wapper">
+                <!-- Sidebar to show booking summary information -->
                 <section class="sidebar-section">
                     <div class="paysam">
                         <h2>Payment Summary</h2>
@@ -71,6 +77,7 @@
                             <p><span>From:</span><em>thecrownhotel@uea.ac.uk</em></p>
                             <p><span>To:</span><em id="receiveremail">dummy@gmail.com</em></p>
                         </div>
+                        <!-- Booking confirmation message -->
                         <div class="msg">
                             <h2>Hi, <strong id="personName">dummy!</strong></h2>
                             <p>Thank you for your booking. We are exteremly delighted to confirm that
@@ -83,18 +90,20 @@
                             </p>
                             <a href="#">Print Invoice</a>
                         </div>
+                        <!-- Booking Summary card footer -->
                         <div class="bottom">
                             <p class="nlink">www.thecrownhotel.uea.ac.uk/help</p>
                             <p class="brand">The Crown Hotel Inc</p>
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
 
     </main>
+    <!-- JS Script to load booking details fetching from GET call via valid booking reference no. -->
     <script src="../JS/Customer_JS/payment_summary.js"></script>
+    <!-- Page footer -->
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

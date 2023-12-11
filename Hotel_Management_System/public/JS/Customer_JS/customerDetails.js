@@ -69,9 +69,11 @@ refButton.addEventListener("click", function (event) {
     // email check validation including blank field check
     if (/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(email) == true) {
         document.getElementById("span9").style.display = "none";
+        // Checks if the local storage contains existing values, then resets it to avoid conflicts with old data
         if (localStorage.getItem('customerDetails') != null) {
             console.log("Previous data found in local storage customerDetails. Clearing it first before proceeding.")
             localStorage.removeItem('customerDetails');
+            // Creates local storage with customer data
             localStorage.setItem('customerDetails', JSON.stringify(createGuestDetailsData(guest.trim(), firstname.trim(), lastname.trim(), mobile.trim(), email.trim())));
             const customerDetails = localStorage.getItem("customerDetails");
             console.log("Created new local storage data for customerDetails");
@@ -79,6 +81,7 @@ refButton.addEventListener("click", function (event) {
             window.location.href = "http://localhost:3000/customer/payment_process.html";
         }
         else {
+            // Creates fresh local storage with customer data if no old local storage data is found
             localStorage.setItem('customerDetails', JSON.stringify(createGuestDetailsData(guest.trim(), firstname.trim(), lastname.trim(), mobile.trim(), email.trim())));
             console.log("No previous data in local storage found for customerDetails. Creating fresh..");
             const customerDetails = localStorage.getItem("customerDetails");

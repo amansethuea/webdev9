@@ -3,12 +3,15 @@
 
 <head>
     <title>The Crown Hotel</title>
+    <!--Importing common style sheet for about us page-->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+    <!--Importing css specific style to about us page to display error messages caught within client-side JS validations on form submission -->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_about_us.css">
+    <!--Importing font awesome and google font -->
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<!--    TODO: ADD COMMENTS-->
+
 <body>
     <header>
         <div id="header-spacer">
@@ -19,12 +22,14 @@
                 </a>
             </div>
             <div id="header-links">
+                <!--Navigation bar-->
                 <nav>
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
                         <li><span><a href="room_booking.html">Book Now</a></span></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
                         <li><span><a href="contact_us.html">Contact us</a></span></li>
+                        <!--Current page nav link remains in bold always when selected -->
                         <li><span style="font-size: larger; font-weight: bold"><a href="about_us.html">About
                                     us</a></span></li>
                         <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
@@ -34,6 +39,7 @@
         </div>
     </header>
 
+    <!-- Main tag in containing main body content related to the page -->
     <main>
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Our History</h1>
@@ -55,21 +61,16 @@
                     service, and we look forward to welcoming you to The
                     Crown Hotel.
                 </p>
-                
-            </div>
-            <button class="btn" id="scroll_btn" onclick="scrollToBottom()"><span class='fa fa-arrow-down'></span></button>
-            
-            <!--            Not sure if i want to keep this yet-->
-            <!--            <div class="scroll-down-arrow">-->
-            <!--                <div id="about_us_scroll_down_arrow">-->
-            <!--                    &dArr;-->
-            <!--                </div>-->
-            <!--                <h1>Scroll Down</h1>-->
-            <!--            </div>-->
 
+            </div>
+            <!-- Scroll to bottom of the page button -->
+            <button class="btn" id="scroll_btn" onclick="scrollToBottom()"><span
+                    class='fa fa-arrow-down'></span></button>
         </div>
         </div>
+        <!-- Scroll to top of the page button -->
         <button class="btn" id="scroll_btn" onclick="scrollToTop()"><span class='fa fa-arrow-up'></span></button>
+        <!-- Team information div -->
         <h2 class="aboutus_sub_heading" style="text-align:center"><em>Meet our team</em></h2>
         <div class="row">
             <div class="column">
@@ -122,8 +123,10 @@
         <div class="about_us_box"><span class="fa fa-mail-bulk"></span>thecrownhotel@gmail.com</div>
         <div class="about_us_box"><span class="fa fa-hotel"></span>UEA, Norwich, UK</div>
     </main>
+    <!-- JS script to make scroll bottom / up working -->
     <script src="../JS/Customer_JS/about_us_scroller.js"></script>
 
+    <!-- Page footer -->
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

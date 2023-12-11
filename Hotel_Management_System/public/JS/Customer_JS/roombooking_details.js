@@ -81,6 +81,7 @@ refButton.addEventListener("click", function (event) {
             const duration = document.getElementById('duration_of_stay').innerText;
             const total_cost = document.getElementById('price_of_stay').innerText;
 
+            // If there are multiple rooms selected by the user for a single booking
             const selectedRoomsList = document.querySelectorAll('.room.selected_room')
             roomIdList = [];
             for (let i = 0; i < selectedRoomsList.length; i++) {

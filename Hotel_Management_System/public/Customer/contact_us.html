@@ -3,14 +3,17 @@
 
 <head>
     <title>The Crown Hotel</title>
+    <!--Importing common style sheet for contact us page-->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_style.css">
+    <!--Importing css file specific to contact us page to show client-side validations error messages  -->
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_contact_validate.css">
+    <!--Importing font awesome and google font -->
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/67bd86ffdc.js" crossorigin="anonymous"></script>
     <script src="../JS/hamburger.js" defer ></script>
 </head>
-<!--    TODO: ADD COMMENTS-->
+
 <body>
 <header>
     <div id="header-spacer">
@@ -38,7 +41,7 @@
         </a>
     </div>
 </header>
-
+    <!-- Main tag in containing main body content related to the page -->
     <main>
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Contact Information</h1>
@@ -51,6 +54,8 @@
                 <span class="fa fa-person-booth"></span>
                 <h3>Quick Inquiry Booth</h3>
                 </div>
+            <div class="contact_form_box"><span class="fa fa-person-booth"> Quick Inquiry Booth</span>
+                <!-- Contact us form -->
                 <form id="contact_us_form">
                     <div class="form-element">
                         <div class="form-element">
@@ -89,6 +94,7 @@
                             <span id="span7">255 words left</span>
                         </div>
                     </div>
+                    <!-- Contact us form footer -->
                     <div class="contact-form-footer">
                         <button class="btn" id="contact_submit_btn" type="submit">Submit</button>
                         <button class="btn" id="contact_reset_btn" type="reset">Reset</button>
@@ -98,8 +104,11 @@
         </div>
     </main>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <!-- JS script to restrict inquiry message to 255 characters -->
     <script src="../JS/Customer_JS/contact_us_message_restrict.js"></script>
+    <!-- JS script for client-side validations on unexpected or invalid inputs in form -->
     <script src="../JS/Customer_JS/contact_us_form_validation.js"></script>
+    <!-- Page footer -->
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
