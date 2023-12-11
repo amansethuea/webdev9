@@ -3,8 +3,11 @@
 
 <head>
     <title>The Crown Hotel</title>
+    <!--Importing common style sheet for receptionist checkin page-->
     <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+    <!--Importing css file specific to receptionist checkin page to show client-side validations error messages  -->
     <link rel="stylesheet" href="../CSS/Receptionist_Styles/checkin_validation.css">
+    <!--Importing font awesome and google font -->
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -20,9 +23,11 @@
                 </a>
             </div>
             <div id="header-links-container"> <!-- Links -->
+                <!--Navigation bar-->
                 <nav>
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
+                        <!--Current page nav link remains in bold always when selected -->
                         <li><span style="font-size: larger; font-weight: bold"><a
                                     href="check_in.html">Check-in</a></span></li>
                         <li><span><a href="check_out.html">Checkout</a></span></span></li>
@@ -32,13 +37,14 @@
             </div>
         </div>
     </header>
-
+    <!-- Main tag in containing main body content related to the page -->
     <main>
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-in</h1>
             <h4 class="reception_sub_heading"><em>Onboarding Customers</em></h4>
             <section id="form1">
                 <div class="card signup-card">
+                    <!-- Div for a new booking -->
                     <div class="card-header">New Booking ?</div>
                     <div class="card-body">
                         <div class="form-element">
@@ -55,6 +61,7 @@
             </section>
             <section id="form2">
                 <div class="card signup-card">
+                    <!-- Div for existing booking -->
                     <div class="card-header">Already have a booking ?</div>
                     <div class="card-body">
                         <div class="form-element">
@@ -106,7 +113,9 @@
         </div>
         <div id="refresults"></div>
     </main>
+    <!-- JS script to fetch existing booking data from the DB for the guest -->
     <script src="../JS/Receptionist_JS/booking_ref_details.js"></script>
+    <!-- Page footer -->
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>

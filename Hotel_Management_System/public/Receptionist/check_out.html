@@ -3,8 +3,11 @@
 
 <head>
     <title>The Crown Hotel</title>
+    <!--Importing common style sheet for receptionist checkout page-->
     <link rel="stylesheet" href="../CSS/Receptionist_Styles/receptionist_style.css">
+    <!--Importing css file specific to receptionist checkout page to show client-side validations error messages  -->
     <link rel="stylesheet" href="../CSS/Receptionist_Styles/checkout_detail_val.css">
+    <!--Importing font awesome and google font -->
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -20,10 +23,12 @@
                 </a>
             </div>
             <div id="header-links-container"> <!-- Links -->
+                <!--Navigation bar-->
                 <nav>
                     <ul id="header_links">
                         <li><span><a href="index.html">Home</a></span></li>
                         <li><span><a href="check_in.html">Check-in</a></span></span></li>
+                        <!--Current page nav link remains in bold always when selected -->
                         <li><span style="font-size: larger; font-weight: bold"><a
                                     href="check_out.html">Checkout</a></span></li>
                         <li><span><a href="gallery.html">Gallery</a></span></span></li>
@@ -37,6 +42,7 @@
         <div class="landing_page_container">
             <h1 class="other_pages_main_header">Customer Check-out</h1>
             <h4 class="reception_sub_heading"><em>Checking out Customer</em></h4>
+            <!-- Checkout form -->
             <section id="checkout_details_form">
                 <div class="card signup-card">
                     <div class="card-header">Checkout Details</div>
@@ -78,7 +84,9 @@
         </div>
 
     </main>
+    <!-- JS script to fetch checkout data from the DB for the guest -->
     <script src="../JS/Receptionist_JS/viewDetailsOnCheckout.js"></script>
+    <!-- Page footer -->
     <footer>
         <p><em>Crown Hotel 2023 . All rights reserved.</em></p>
     </footer>
