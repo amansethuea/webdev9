@@ -601,18 +601,83 @@
 
 /*Small Screen*/
 @media screen and (max-width: 768px) {
+    em {
+        padding-left: 2%;
+    }
+
+    /*Header Code Start*/
+
     header {
         background-color: #ffffff;
         color: white;
         display: flex;
-        padding: 10px 0 10px 0;
+        padding: 10px 10px;
         position: fixed;
         top: 0;
         width: 100%;
     }
+    #header-spacer {
+        /* To separate the logo and nav links */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #hamburger{
+        display:inline-block;
+        float:right;
+        padding: 12px;
+        background-color: rgba(12, 75, 34, 0.24);
+        border: rgba(12, 75, 34, 0.32) 2.5px solid;
+        color: black;
+        margin-right: 3%;
+        border-radius: 8%;
+    }
+    #hamburger:hover{
+        cursor: pointer;
+    }
+    #header-links-container{
+        /*height: 0;*/
+        /*overflow: hidden;*/
+    }
+
+
+    #header-links-container {
+        /*display: none;*/
+    }
 
     #header_links {
         display: none;
+        /* other styles */
+    }
+    #header_links.showNav {
+        display: flex;
+        position: absolute;
+        /* other styles */
+        flex-direction: column;
+        align-items: flex-start;
+        /*border: black 2px solid;*/
+        right: 2%;
+        top: 100%;
+        background: white;
+        padding: 2%;
+    }
+
+    #header_links.showNav li {
+        padding: 2%;
+    }
+    #header-links li {
+        padding: 5%
+        /* other styles */
+    }
+
+    .fa-solid, .fas {
+        font-weight: 900;
+        font-size: x-large;
     }
 
     header img {
@@ -622,17 +687,100 @@
         position: relative;
     }
 
+    /*Header Code Stop*/
+
+    /*Index code Start*/
+    #main_landing_page {
+        /* Lighten the image opacity */
+        background-image: linear-gradient(rgb(255 255 255 / 7%), rgb(0 0 0 / 27%)),
+        url("../../Images/video_of_rooms/Hotel_background_image.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h2#landing_tag {
+        color: white;
+    }
+
     #landing_page_about_us {
         padding-top: 10px;
         padding-left: 1vh;
         padding-right: 1vh;
         text-align: justify;
     }
+    /*Index code End*/
 
+    /*contact us code start*/
     #contact_us_form {
         /*width: 67vh;*/
         height: 20vh;
     }
+
+    h1.other_pages_main_header{
+        margin-top: 15%;
+        font-size: xxx-large;
+    }
+    h4.contact_sub_heading {
+        text-align: center;
+        margin: 1%;
+        font-size: x-large;
+    }
+
+    .contact_box {
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: #eaeaea88;
+        padding: 20px;
+        width: 60%;
+        margin: auto;
+    }
+    #contact_form_box_wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contact_form_box_wrapper h3{
+        padding-left: 3%;
+    }
+    input#name, input#email, input#mobile {
+        width: 100%;
+        font-size: x-large;
+        margin-bottom: 7%;
+    }
+    textarea#message{
+        width: 100%;
+    }
+    .form-label label {
+        font-size: x-large;
+    }
+
+    .contact_form_box {
+        border: 2px solid rgba(7, 202, 75, 0.38);
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: #eaeaea88;
+        padding: 20px;
+        width: 60%;
+        height: 320px;
+        margin: 25px 10px 20px 500px;
+        margin: auto;
+        margin-top: 20px;
+        height: 50%;
+    }
+
+    button#contact_submit_btn, button#contact_reset_btn {
+        padding: 3%;
+    }
+
+
+    /*contact us code end*/
 
     h1 {
         /*font-family: serif;*/
@@ -694,7 +842,7 @@
     html {
         font-family: "Cormorant Garamond", serif;
         margin: 0;
-        padding-top: 50px;
+        /*padding-top: 50px;*/
     }
 
     .landing_page_container {
@@ -723,6 +871,11 @@
     #section5 {
         background-color: purple;
     }
+}
+
+.open_page{
+    font-size: larger;
+    font-weight: bold;
 }
 
 .swiper {

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../Lab Work/.idea/Lab Work.iml" filepath="$PROJECT_DIR$/../../../Lab Work/.idea/Lab Work.iml" />
+      <module fileurl="file://$USER_HOME$/Lab Work/.idea/Lab Work.iml" filepath="$USER_HOME$/Lab Work/.idea/Lab Work.iml" />
+      <module fileurl="file://$USER_HOME$/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Lab Work/Week05/js-events-solutions/.idea/js-events-solutions.iml" filepath="$USER_HOME$/Library/CloudStorage/OneDrive-UniversityofEastAnglia/Modules/Web Development/Lab Work/Week05/js-events-solutions/.idea/js-events-solutions.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/webdev9.iml" filepath="$PROJECT_DIR$/.idea/webdev9.iml" />
     </modules>
   </component>

@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Lab Work" />
+    <orderEntry type="module" module-name="js-events-solutions" />
   </component>
 </module>

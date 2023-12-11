@@ -7,33 +7,37 @@
     <link rel="stylesheet" href="../CSS/Customer_Styles/customer_contact_validate.css">
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/67bd86ffdc.js" crossorigin="anonymous"></script>
+    <script src="../JS/hamburger.js" defer ></script>
 </head>
 <!--    TODO: ADD COMMENTS-->
 <body>
-    <header>
-        <div id="header-spacer">
-            <div> <!-- Logo -->
-                <a href="index.html">
-                    <img
-                            src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
-                            alt="Logo emblem of a hotel with a crown on top">
-                </a>
-            </div>
-            <div id="header-links">
-                <nav>
-                    <ul id="header_links">
-                        <li><span><a href="index.html">Home</a></span></li>
-                        <li><span><a href="room_booking.html">Book Now</a></span></span></li>
-                        <li><span><a href="gallery.html">Gallery</a></span></span></li>
-                        <li><span style="font-size: larger; font-weight: bold"><a href="contact_us.html">Contact
-                                    us</a></span></li>
-                        <li><span><a href="about_us.html">About us</a></span></li>
-                        <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
-                    </ul>
-                </nav>
-            </div>
+<header>
+    <div id="header-spacer">
+        <div> <!-- Logo -->
+            <a href="index.html">
+                <img
+                        src="../Images/basic_crown_logo/_8a77eb3d-9460-40a8-8c5b-96aa64821257-transformed-cropped.png"
+                        alt="Logo emblem of a hotel with a crown on top">
+            </a>
         </div>
-    </header>
+        <div id="header-links-container"> <!-- Links -->
+            <nav>
+                <ul id="header_links">
+                    <li><span class="open_page"><a href="index.html">Home</a></span></li>
+                    <li><span><a href="room_booking.html">Book Now</a></span></li>
+                    <li><span><a href="gallery.html">Gallery</a></span></li>
+                    <li><span class="open_page"><a href="contact_us.html">Contact us</a></span></li>
+                    <li><span><a href="about_us.html">About us</a></span></li>
+                    <li><span><a href="city_of_norwich.html">City of Norwich</a></span></li>
+                </ul>
+            </nav>
+        </div>
+        <a id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </div>
+</header>
 
     <main>
         <div class="landing_page_container">
@@ -42,7 +46,11 @@
             <div class="contact_box"><span class="fa fa-phone"></span>+44 7407267950</div>
             <div class="contact_box"><span class="fa fa-mail-bulk"></span><a
                     href="mailto:zfb23ecu@uea.ac.uk">thecrownhotel@gmail.com</a></div>
-            <div class="contact_form_box"><span class="fa fa-person-booth"> Quick Inquiry Booth</span>
+            <div class="contact_form_box">
+                <div id="contact_form_box_wrapper">
+                <span class="fa fa-person-booth"></span>
+                <h3>Quick Inquiry Booth</h3>
+                </div>
                 <form id="contact_us_form">
                     <div class="form-element">
                         <div class="form-element">
