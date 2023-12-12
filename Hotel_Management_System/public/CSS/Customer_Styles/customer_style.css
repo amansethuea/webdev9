@@ -1,3 +1,22 @@
+/*Generic booking box code start*/
+.light-shadow {
+    /*Used for a generic shadow effect, rather subtle*/
+    /*width: 30%;*/
+    box-shadow: -3px 3px 6px 0 #0000004f;
+}
+
+.soft-box {
+    /*Used for a few boxes to give them curved edges*/
+    border-radius: 10px;
+}
+
+.booking-box-summary.booking-box-summary-a {
+    /*Just adds a darker colour per every other line*/
+    background: #e1e1e1;
+}
+/*Generic booking box code end*/
+
+
 /*Large Screen*/
 @media screen and (min-width: 768px) {
 
@@ -140,6 +159,10 @@
         width: auto;
     }
 
+    .landing_page_container_booking {
+        height: 85vh;
+        width: auto;
+    }
     /*used on most pages to change h1*/
     .other_pages_main_header {
         font-size: 60px;
@@ -161,21 +184,14 @@
         height: 70vh;
     }
 
-    .soft-box {
-        /*Used for a few boxes to give them curved edges*/
-        border-radius: 10px;
-    }
+
 
     .booking-box {
         /*use to set for appropriate width for distribution*/
         width: 30%;
     }
 
-    .light-shadow {
-        /*Used for a generic shadow effect, rather subtle*/
-        /*width: 30%;*/
-        box-shadow: -3px 3px 6px 0 #0000004f;
-    }
+
 
     /*------ Duration of stay ------*/
     .stay-duration {
@@ -276,10 +292,7 @@
         /* display: block; */
     }
 
-    .booking-box-summary.booking-box-summary-a {
-        /*Just adds a darker colour per every other line*/
-        background: #e1e1e1;
-    }
+
 
     .booking-box-summary {
         /*Styling for each line of text within the booking summary*/
@@ -606,7 +619,6 @@
     }
 
     /*Header Code Start*/
-
     header {
         background-color: #ffffff;
         color: white;
@@ -626,7 +638,6 @@
         align-items: center;
         width: 100%;
     }
-
     #hamburger{
         display:inline-block;
         float:right;
@@ -644,12 +655,9 @@
         /*height: 0;*/
         /*overflow: hidden;*/
     }
-
-
     #header-links-container {
         /*display: none;*/
     }
-
     #header_links {
         display: none;
         /* other styles */
@@ -666,7 +674,6 @@
         background: white;
         padding: 2%;
     }
-
     #header_links.showNav li {
         padding: 2%;
     }
@@ -674,19 +681,16 @@
         padding: 5%
         /* other styles */
     }
-
     .fa-solid, .fas {
         font-weight: 900;
         font-size: x-large;
     }
-
     header img {
         height: 50px;
         width: 50px;
         left: 5px;
         position: relative;
     }
-
     /*Header Code Stop*/
 
     /*Index code Start*/
@@ -706,7 +710,6 @@
     h2#landing_tag {
         color: white;
     }
-
     #landing_page_about_us {
         padding-top: 10px;
         padding-left: 1vh;
@@ -768,11 +771,11 @@
         background-color: #eaeaea88;
         padding: 20px;
         width: 60%;
-        height: 320px;
-        margin: 25px 10px 20px 500px;
+        /*height: 320px;*/
+        /*margin: 25px 10px 20px 500px;*/
         margin: auto;
         margin-top: 20px;
-        height: 50%;
+        height: 70%;
     }
 
     button#contact_submit_btn, button#contact_reset_btn {
@@ -780,7 +783,127 @@
     }
 
 
-    /*contact us code end*/
+/*contact us code end*/
+
+/*Booking code starts*/
+
+    /*------ Booking boxes------*/
+    .booking-mechanism{
+        margin: 0 12%;
+        padding: 4% 0 0 0 ;
+    }
+    .stay-duration{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 55vh;
+    }
+    .stay-duration h2{
+        width: 100%;
+    }
+    .booking-date-selections{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #booking-in-date, #booking-out-date,  #room_type_select, #bookingbtn{
+        width: 70vw;
+        font-size: large;
+    }
+    .booking-box{
+        margin-top: 5%;
+    }
+
+    .room {
+        /*Each individual room*/
+        padding: 2.2vh 4%;
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+        display: none;
+    }
+
+    .all_rooms_container {
+        /*The container for all the individual rooms*/
+        background-color: #eaeaea88;
+        display: flex;
+        flex-direction: column;
+        width: 76vw;
+        height: -webkit-fill-available;
+        overflow-y: scroll;
+        position: absolute;
+    }
+    .room-selection {
+        /*Used to style the box which holds the various rooms*/
+        /*width: 23%;*/
+        height: 54vh;
+        /* border: 1px solid #000; */
+        position: relative;
+        background-color: #eaeaea88;
+    }
+
+    /*------ Summary of Booking------*/
+    .booking-box-summary-container {
+        /*This will hold all the individual divs for each summary point*/
+        display: flex;
+        flex-direction: column;
+        height: 91%;
+        justify-content: space-between;
+        overflow: auto;
+        /* display: block; */
+    }
+
+    .booking-box-summary {
+        /*Styling for each line of text within the booking summary*/
+        font-size: 1.2rem;
+        padding: 2.6vh 4%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div#book-now-page-checkout-button {
+        /*style for the button at the end of the summary*/
+        display: flex;
+        justify-content: center;
+    }
+
+    .landing_page_container_booking {
+        height: 206vh;
+        /*width: 100vh;*/
+        width: 100%;
+    }
+    .booking-date-selections h3{
+        font-size: x-large;
+    }
+    #reserve_room_btn{
+        font-size: large;
+    }
+    /*------ Customer Details------*/
+    #guest, #firstname, #lastname, #mobile, #email{
+        width: 100%;
+        font-size: large;
+        /*margin-bottom: 5%*/
+    }
+    #details_submit_btn, #contact_reset_btn{
+        padding: 3%;
+        font-size: larger;
+        width: 40%;
+    }
+
+    .contact-form-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .form-element{
+        padding: 1% 0;
+    }
+    .landing_page_container_pay_proc{
+        width: 100%;
+        height: 230vh;
+    }
+
+    /*booking code ends*/
 
     h1 {
         /*font-family: serif;*/
