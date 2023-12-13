@@ -16,3 +16,37 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
 });
+
+
+// Select all the image elements within the slides
+let images = document.querySelectorAll('.swiper-image-container img'); // Select all the image elements within the slides
+let image_paragraph = document.querySelectorAll('.swiper-hover-text'); // Select all the image hover paragraph elements within the slides
+
+// Iterate over each image element
+images.forEach(img => {
+    // Create a new anchor element
+    let anchor = document.createElement('a');
+
+    // Set the href attribute of the anchor element
+    anchor.href = 'room_booking.html';
+
+    // Wrap the image with the anchor element
+    anchor.appendChild(img.cloneNode(true));
+
+    // Replace the image in the slide with the new anchor element
+    img.parentNode.replaceChild(anchor, img);
+});
+
+image_paragraph.forEach(img => {
+    // Create a new anchor element
+    let anchor = document.createElement('a');
+
+    // Set the href attribute of the anchor element
+    anchor.href = 'room_booking.html';
+
+    // Wrap the image with the anchor element
+    anchor.appendChild(img.cloneNode(true));
+
+    // Replace the image in the slide with the new anchor element
+    img.parentNode.replaceChild(anchor, img);
+});

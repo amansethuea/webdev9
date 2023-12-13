@@ -389,7 +389,7 @@
 
     #contact_us_form {
         width: 80%;
-        height: 50vh;
+        /*height: 50vh;*/
     }
 
 
@@ -446,6 +446,7 @@
         margin: auto;
         margin-top: 20px;
         height: 50%;
+        overflow-y: auto;
     }
 
     .about_us_box {
