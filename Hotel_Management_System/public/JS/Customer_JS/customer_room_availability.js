@@ -88,6 +88,7 @@ refButton.addEventListener("click", function (event) {
     }
     else {
         document.getElementById("span5").style.display = "none";
+        document.getElementById("span4").style.display = "none";
         let selectedRoom;
         // Mapping input selection by the user to the DB values
 
