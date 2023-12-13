@@ -330,6 +330,7 @@
         width: 33vw;
         text-align: justify;
         font-size: larger;
+        padding-left: 5%;
     }
     .gallery_facilities_img_text_container{
         display: flex;
