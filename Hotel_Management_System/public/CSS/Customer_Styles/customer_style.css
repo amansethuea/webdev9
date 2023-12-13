@@ -286,7 +286,7 @@
         /*This will hold all the individual divs for each summary point*/
         display: flex;
         flex-direction: column;
-        height: 91%;
+        height: 82%;
         justify-content: space-between;
         overflow: auto;
         /* display: block; */
