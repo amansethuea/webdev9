@@ -84,20 +84,6 @@ refButton.addEventListener("click", async function (event) {
     else {
         document.getElementById("span4").style.display = "none";
     }
-    // Checks if the reference number is less than the expected length i.e 5
-    if (ref_no >= 1 && ref_no.length < 5) {
-        document.getElementById("span2").style.display = "inline";
-        document.getElementById("span3").style.display = "none";
-    }
-    //Checks if the reference number is greater than the expected length i.e 5
-    else if (ref_no.length > 5) {
-        document.getElementById("span3").style.display = "inline";
-        document.getElementById("span2").style.display = "none";
-    }
-    else {
-        document.getElementById("span2").style.display = "none";
-        document.getElementById("span3").style.display = "none";
-    }
     // Checks if the checkout date is less than today's date
     if (usercheckoutdate < today) {
         document.getElementById("span5").style.display = "inline";
